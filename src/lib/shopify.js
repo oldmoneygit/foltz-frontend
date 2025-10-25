@@ -86,6 +86,11 @@ export async function getAllProducts(limit = 250, after = null) {
                 }
               }
             }
+            options {
+              id
+              name
+              values
+            }
             variants(first: 25) {
               edges {
                 node {
@@ -152,6 +157,11 @@ export async function getProductsByTag(tag, limit = 100) {
                   height
                 }
               }
+            }
+            options {
+              id
+              name
+              values
             }
             variants(first: 25) {
               edges {

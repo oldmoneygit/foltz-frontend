@@ -26,10 +26,9 @@ function transformShopifyProduct(shopifyProduct) {
   // Get league info
   const league = getLeagueFromProduct(node)
 
-  // Extract sizes from variants
-  const sizes = node.variants?.edges?.map(({ node: variant }) => {
-    return variant.title
-  }) || []
+  // Extract sizes from options (Size option)
+  const sizeOption = node.options?.find(option => option.name === 'Size')
+  const sizes = sizeOption?.values || []
 
   return {
     id: node.handle,
@@ -43,7 +42,7 @@ function transformShopifyProduct(shopifyProduct) {
     price: price,
     regularPrice: compareAtPrice || price * 1.4, // Fallback if no compareAt price
     stock: 'available',
-    sizes: sizes.join(', ') || 'Size M-XL',
+    sizes: sizes, // Now returns array directly: ['S', 'M', 'L', 'XL', 'XXL']
     tags: node.tags || [],
     league: {
       id: league.name.toLowerCase().replace(/\s+/g, '-'),

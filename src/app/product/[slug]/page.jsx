@@ -3,7 +3,7 @@ import Footer from '@/components/Footer'
 import ProductGallery from '@/components/product/ProductGallery'
 import ProductInfo from '@/components/product/ProductInfo'
 import BackButton from '@/components/product/BackButton'
-import { getProductBySlug, getAllProductSlugs, parseSizes } from '@/utils/shopifyData'
+import { getProductBySlug, getAllProductSlugs } from '@/utils/shopifyData'
 
 // Generate static params for all products
 export async function generateStaticParams() {
@@ -63,10 +63,13 @@ export default async function ProductPage({ params }) {
     ? product.images
     : ['/images/placeholder-product.jpg']
 
-  // Parse sizes from string like "Size S-XXL" to array ["S", "M", "L", "XL", "XXL"]
-  const sizesArray = parseSizes(product.sizes)
+  // Sizes are already an array from transform: ['S', 'M', 'L', 'XL', 'XXL']
+  const sizesArray = Array.isArray(product.sizes) ? product.sizes : []
 
-  // Enhanced product with parsed sizes
+  // Sizes display string for description
+  const sizesString = sizesArray.join(', ') || 'M, L, XL'
+
+  // Enhanced product with sizes array
   const enhancedProduct = {
     ...product,
     gallery: galleryImages,
@@ -79,7 +82,7 @@ export default async function ProductPage({ params }) {
         <li>Material: Poliéster de alta calidad</li>
         <li>Tecnología Dri-FIT</li>
         <li>Diseño oficial de la temporada</li>
-        <li>Tallas disponibles: ${product.sizes}</li>
+        <li>Tallas disponibles: ${sizesString}</li>
         <li>Calidad Premium 1:1</li>
       </ul>
       <h3>Información de la Liga:</h3>
