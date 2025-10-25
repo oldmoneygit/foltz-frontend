@@ -33,6 +33,7 @@ function transformShopifyProduct(shopifyProduct) {
 
   return {
     id: node.handle,
+    slug: node.handle, // Add slug field for product links
     name: node.title,
     handle: node.handle,
     description: node.description,
