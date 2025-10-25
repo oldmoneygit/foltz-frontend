@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Heart } from 'lucide-react';
 import { useState } from 'react';
+import Footer from '@/components/Footer';
 
 const ProductCard = ({ product, index }) => {
   const [isWishlisted, setIsWishlisted] = useState(false);
@@ -223,6 +224,9 @@ export default function LeagueContent({ league, products = [] }) {
         </div>
 
       </div>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }

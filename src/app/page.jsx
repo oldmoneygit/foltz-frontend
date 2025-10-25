@@ -1,4 +1,5 @@
 import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 import Hero from '@/components/Hero'
 import BestSellers from '@/components/BestSellersServer'
 import HowItWorks from '@/components/HowItWorks'
@@ -53,6 +54,9 @@ export default function Home() {
 
       {/* Featured Products Grid */}
       <FeaturedProducts />
+
+      {/* Footer */}
+      <Footer />
     </main>
   )
 }
