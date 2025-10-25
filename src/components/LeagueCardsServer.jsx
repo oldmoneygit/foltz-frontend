@@ -8,23 +8,74 @@ export default async function LeagueCards() {
   // Fetch all unique leagues from Shopify
   const shopifyLeagues = await getAllLeagues()
 
-  // Map league images
+  // Define league order by popularity (exclude Champions League, Libertadores)
+  const leagueOrder = [
+    'Premier League',
+    'La Liga',
+    'Serie A',
+    'Ligue 1',
+    'Bundesliga',
+    'Eredivisie',
+    'Primeira Liga',
+    'Liga MX',
+    'MLS',
+    'Sul-Americana',
+    'Brasileirão',
+    'National Teams'
+  ]
+
+  // Filter out campeonatos (Champions League, Libertadores) and Manga Longa
+  const filteredLeagues = shopifyLeagues.filter(league => {
+    const excludedLeagues = ['Champions League', 'Libertadores', 'Manga Longa', 'CONMEBOL Libertadores']
+    return !excludedLeagues.includes(league.name)
+  })
+
+  // Add manual leagues (not in Shopify productType)
+  const manualLeagues = [
+    {
+      id: 'national-teams',
+      name: 'National Teams',
+      slug: 'national-teams'
+    },
+    {
+      id: 'brasileirao',
+      name: 'Brasileirão',
+      slug: 'brasileirao'
+    }
+  ]
+
+  const allLeagues = [...filteredLeagues, ...manualLeagues]
+
+  // Sort leagues by popularity order
+  const sortedLeagues = allLeagues.sort((a, b) => {
+    const indexA = leagueOrder.indexOf(a.name)
+    const indexB = leagueOrder.indexOf(b.name)
+
+    // If not in order list, put at end
+    if (indexA === -1) return 1
+    if (indexB === -1) return -1
+
+    return indexA - indexB
+  })
+
+  // Map league images (all leagues now have correct images)
   const leagueImageMap = {
-    'Serie A': '/images/leagues/replicate-prediction-21q4zb6bx1rm80ct304tg0gpyc.jpeg',
-    'La Liga': '/images/leagues/replicate-prediction-3gmhza452srma0ct31n9g8w1w8.jpeg',
-    'Premier League': '/images/leagues/replicate-prediction-6f1fa3n909rme0ct30st4pfk5r.jpeg',
-    'Bundesliga': '/images/leagues/replicate-prediction-8ep34ktvnnrma0ct30nb3pwn14.jpeg',
-    'Ligue 1': '/images/leagues/replicate-prediction-9d0ac73d99rme0ct308as6raz8.jpeg',
-    'Eredivisie': '/images/leagues/replicate-prediction-fhg8t7vzesrme0ct30japhna94.jpeg',
-    'Primeira Liga': '/images/leagues/replicate-prediction-g3kvswhvhnrmc0ct30h833c67r.jpeg',
-    'Liga MX': '/images/leagues/replicate-prediction-ht9wfsvbb5rm80ct30vtxbdm7m.jpeg',
-    'Sul-Americana': '/images/leagues/replicate-prediction-mn3m7q1jh9rma0ct30ebpv1wvc.jpeg',
-    'MLS': '/images/leagues/replicate-prediction-mtawn898asrmc0ct30ct2mxgkc.jpeg',
-    'Manga Longa': '/images/leagues/replicate-prediction-ne6kdck271rm80ct30m8cj9jac.jpeg',
+    'Premier League': '/images/leagues/premier-league.jpeg',
+    'La Liga': '/images/leagues/la-liga.jpeg',
+    'Serie A': '/images/leagues/serie-a.jpeg',
+    'Ligue 1': '/images/leagues/ligue-1.jpeg',
+    'Bundesliga': '/images/leagues/bundesliga.jpeg',
+    'Eredivisie': '/images/leagues/eredivisie.jpeg',
+    'Primeira Liga': '/images/leagues/primeira-liga.jpeg',
+    'Liga MX': '/images/leagues/liga-mx.jpeg',
+    'MLS': '/images/leagues/mls.jpeg',
+    'Sul-Americana': '/images/leagues/sul-americana.jpeg',
+    'Brasileirão': '/images/leagues/brasileirao.jpeg',
+    'National Teams': '/images/leagues/national-teams.jpeg',
   }
 
   // Map leagues with gradients and styling
-  const leaguesWithStyling = shopifyLeagues.map((league, index) => {
+  const leaguesWithStyling = sortedLeagues.map((league, index) => {
     // Define gradients for each league
     const gradientMap = {
       'Serie A': { gradient: 'from-blue-400 via-cyan-500 to-blue-600', glow: 'group-hover:shadow-cyan-500/50' },
@@ -37,7 +88,8 @@ export default async function LeagueCards() {
       'Eredivisie': { gradient: 'from-orange-600 via-blue-600 to-orange-700', glow: 'group-hover:shadow-orange-500/50' },
       'Primeira Liga': { gradient: 'from-red-600 via-green-600 to-red-700', glow: 'group-hover:shadow-green-500/50' },
       'MLS': { gradient: 'from-red-600 via-blue-600 to-red-700', glow: 'group-hover:shadow-red-500/50' },
-      'Manga Longa': { gradient: 'from-zinc-700 via-zinc-800 to-zinc-900', glow: 'group-hover:shadow-zinc-500/50' },
+      'Brasileirão': { gradient: 'from-green-500 via-yellow-500 to-blue-600', glow: 'group-hover:shadow-green-500/50' },
+      'National Teams': { gradient: 'from-blue-500 via-cyan-500 to-blue-700', glow: 'group-hover:shadow-blue-500/50' },
     }
 
     const styling = gradientMap[league.name] || {
