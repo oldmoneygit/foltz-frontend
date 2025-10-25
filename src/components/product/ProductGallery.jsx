@@ -43,6 +43,7 @@ const ProductGallery = ({ images = [], productName }) => {
           sizes="(max-width: 768px) 100vw, 50vw"
           priority={currentImageIndex === 0}
           quality={90}
+          unoptimized
         />
 
         {/* Navigation Arrows */}
@@ -100,6 +101,7 @@ const ProductGallery = ({ images = [], productName }) => {
                   className="object-contain"
                   sizes="80px"
                   quality={60}
+                  unoptimized
                 />
               </button>
             ))}

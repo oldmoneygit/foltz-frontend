@@ -28,7 +28,7 @@ export async function generateMetadata({ params }) {
       description: `AR$${product.price.toLocaleString()}`,
       images: [
         {
-          url: product.gallery?.[0],
+          url: product.main_image || product.images?.[0] || '',
           width: 1200,
           height: 1200,
           alt: product.name,
@@ -58,9 +58,9 @@ export default async function ProductPage({ params }) {
     )
   }
 
-  // Format images paths (prepend /)
+  // Use images directly from Shopify CDN (they are already full URLs)
   const galleryImages = product.images && product.images.length > 0
-    ? product.images.map((img) => `/${img}`)
+    ? product.images
     : ['/images/placeholder-product.jpg']
 
   // Parse sizes from string like "Size S-XXL" to array ["S", "M", "L", "XL", "XXL"]
