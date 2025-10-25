@@ -1,338 +1,312 @@
 # 🚀 Guia de Deploy na Vercel - Foltz Fanwear
 
-Este guia explica como preparar o projeto para deploy na Vercel, incluindo otimização de imagens e integração com Shopify.
+✅ **ATUALIZADO**: Projeto já migrado para Shopify API! Pronto para deploy.
+
+Este guia explica como fazer o deploy do projeto na Vercel agora que a migração para Shopify está completa.
 
 ---
 
-## 📊 Situação Atual do Projeto
+## ✅ Status do Projeto
 
-### Análise de Imagens:
+### O que já está pronto:
 
-**✅ Imagens em `/public/images`: ~52MB**
-- Logo, hero sections, categorias
-- **Ação**: Manter no projeto (OK para Vercel)
-
-**⚠️ Imagens em `/Leagues`: Milhares de imagens de produtos**
-- Imagens de todos os produtos
-- **Problema**: Aumenta drasticamente o tamanho do build
-- **Solução**: Migrar para Shopify CDN (obrigatório)
-
----
-
-## 🎯 Estratégia de Deploy
-
-### Opção 1: Deploy Rápido (Desenvolvimento) ⚡
-
-Se você quiser testar o site rapidamente SEM produtos da Shopify:
-
-1. **Adicione a pasta Leagues ao .gitignore**:
-   ```bash
-   echo "Leagues/" >> .gitignore
-   ```
-
-2. **Deploy na Vercel**:
-   - O site vai funcionar, mas sem imagens de produtos
-   - Produtos vão aparecer sem imagem ou com erro
-   - **Use apenas para testes de desenvolvimento**
-
-### Opção 2: Deploy Completo (Produção) ⭐ **RECOMENDADO**
-
-Deploy profissional com todas as imagens otimizadas via Shopify CDN:
-
-#### Pré-requisitos:
-- ✅ Conta Shopify criada
-- ✅ Produtos importados via CSV
-- ✅ Imagens adicionadas aos produtos na Shopify
-- ✅ API Tokens configurados
+- ✅ **Integração com Shopify Storefront API v2024-10** completa
+- ✅ **271 produtos** importados na Shopify
+- ✅ **2,083 imagens** hospedadas no Shopify CDN
+- ✅ **Todos os componentes migrados** para usar Shopify API:
+  - BestSellers (Server + Client Components)
+  - FeaturedProducts (Server + Client Components)
+  - CollectionCarousel (Server + Client Components)
+  - LeagueCards (Server + Client Components)
+- ✅ **Páginas de produtos e ligas** usando Shopify
+- ✅ **Build de produção testado** (255 páginas geradas)
+- ✅ **Código no GitHub**: https://github.com/oldmoneygit/foltz-frontend.git
+- ✅ **/Leagues excluído do Git** (2-3GB economizados)
 
 ---
 
-## 📝 Passo a Passo - Deploy Completo
+## 🎯 Deploy na Vercel - Passo a Passo
 
-### Etapa 1: Importar Produtos para Shopify
+### Etapa 1: Configurar Projeto na Vercel
 
-1. **Gerar CSV dos produtos**:
-   ```bash
-   npm run generate-csv
-   ```
+1. **Acesse** [vercel.com](https://vercel.com) e faça login com GitHub
 
-2. **Importar na Shopify**:
-   - Acesse: Shopify Admin > Products > Import
-   - Faça upload do `shopify-products-import.csv`
-   - Aguarde a importação
+2. **Importe o repositório**:
+   - Clique em "Add New..." > "Project"
+   - Selecione: `oldmoneygit/foltz-frontend`
+   - Clique em "Import"
 
-3. **Adicionar imagens dos produtos**:
+3. **Configure o projeto**:
+   - **Framework Preset**: Next.js (detectado automaticamente)
+   - **Root Directory**: `./` (padrão)
+   - **Build Command**: `npm run build` (padrão)
+   - **Output Directory**: `.next` (padrão)
 
-   **Opção A - Manual** (mais rápido para poucos produtos):
-   - Entre em cada produto no Shopify Admin
-   - Faça upload das imagens da pasta `/Leagues`
-   - Adicione 2-3 imagens por produto
+### Etapa 2: Adicionar Environment Variables
 
-   **Opção B - Via API** (automatizado, para muitos produtos):
-   ```bash
-   # Criar script de upload em massa
-   npm run upload-images-bulk
-   ```
-   *(Você pode pedir para eu criar esse script se precisar)*
+Na seção "Environment Variables" da Vercel, adicione:
 
-### Etapa 2: Configurar Environment Variables
-
-1. **Obter credenciais da Shopify**:
-   - Storefront API Token (para leitura)
-   - Admin API Token (para gerenciamento)
-   - [Veja SHOPIFY-SETUP.md para instruções detalhadas](./SHOPIFY-SETUP.md)
-
-2. **Criar arquivo `.env.local`**:
-   ```env
-   NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN=sua-loja.myshopify.com
-   NEXT_PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN=seu-storefront-token
-   SHOPIFY_ADMIN_ACCESS_TOKEN=seu-admin-token
-   ```
-
-3. **Testar localmente**:
-   ```bash
-   npm run dev
-   ```
-   - Acesse http://localhost:3000
-   - Verifique se os produtos aparecem com imagens da Shopify
-
-### Etapa 3: Atualizar Componentes para Usar Shopify
-
-Precisamos atualizar os componentes que atualmente usam `leagues_data.json`:
-
-**Arquivos que precisam ser atualizados**:
-- [ ] `src/app/page.jsx` - Homepage
-- [ ] `src/components/BestSellers.jsx` - Usar `getProductsInCollection()`
-- [ ] `src/components/CollectionCarousel.jsx` - Usar `getProductsInCollection()`
-- [ ] `src/components/FeaturedProducts.jsx` - Usar `getProductsInCollection()`
-- [ ] `src/app/liga/[slug]/page.jsx` - Usar `getProduct(handle)`
-
-**Exemplo de migração**:
-
-```javascript
-// ANTES (usando JSON local):
-import productsData from '@/data/leagues_data.json'
-
-// DEPOIS (usando Shopify):
-import { getProductsInCollection } from '@/lib/shopify'
-
-export default async function BestSellers() {
-  const shopifyProducts = await getProductsInCollection()
-  const products = shopifyProducts.map(formatShopifyProduct)
-
-  return (
-    // Renderizar produtos
-  )
-}
+```env
+NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN
 ```
+**Value**: `sua-loja.myshopify.com`
 
-*(Posso fazer essas atualizações para você se quiser)*
+```env
+NEXT_PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN
+```
+**Value**: `seu-storefront-access-token`
 
-### Etapa 4: Limpar Projeto
+**Importante**:
+- Use os mesmos valores do seu arquivo `.env.local`
+- Marque "Production", "Preview", e "Development"
 
-1. **Remover pasta Leagues**:
-   ```bash
-   # ATENÇÃO: Faça backup antes!
-   # Só faça isso DEPOIS de ter certeza que as imagens estão na Shopify
+### Etapa 3: Deploy
 
-   # No Windows:
-   cmd.exe /c "rd /s /q Leagues"
+1. **Clique em "Deploy"**
+   - A Vercel vai:
+     - Clonar o repositório
+     - Instalar dependências
+     - Executar `npm run build`
+     - Gerar 255 páginas estáticas
+     - Fazer deploy
 
-   # Ou adicione ao .gitignore:
-   echo "Leagues/" >> .gitignore
-   ```
+2. **Aguarde o build** (5-10 minutos na primeira vez)
 
-2. **Verificar tamanho do projeto**:
-   ```bash
-   du -sh .
-   ```
-   - Deve estar < 100MB para deploy rápido
-
-### Etapa 5: Deploy na Vercel
-
-1. **Instalar Vercel CLI**:
-   ```bash
-   npm i -g vercel
-   ```
-
-2. **Fazer login**:
-   ```bash
-   vercel login
-   ```
-
-3. **Deploy**:
-   ```bash
-   vercel
-   ```
-
-4. **Configurar Environment Variables na Vercel**:
-   - Acesse: Vercel Dashboard > Seu Projeto > Settings > Environment Variables
-   - Adicione:
-     - `NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN`
-     - `NEXT_PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN`
-     - `SHOPIFY_ADMIN_ACCESS_TOKEN`
-   - Salve e faça redeploy:
-     ```bash
-     vercel --prod
-     ```
+3. **Acesse seu site**:
+   - URL provisória: `foltz-frontend.vercel.app`
+   - Será fornecida após o deploy
 
 ---
 
-## ⚙️ Otimizações no next.config.js
+## ⚙️ Configurações Já Otimizadas
+
+### next.config.js
 
 O arquivo já está otimizado para Vercel:
 
 ```javascript
-// ✅ Já configurado:
 {
   images: {
-    // Permite imagens da Shopify
     remotePatterns: [
-      { protocol: 'https', hostname: 'cdn.shopify.com' }
+      {
+        protocol: 'https',
+        hostname: 'cdn.shopify.com',
+      },
     ],
-
-    // Formatos otimizados (AVIF, WebP)
     formats: ['image/avif', 'image/webp'],
-
-    // Cache de 1 ano
     minimumCacheTTL: 31536000,
-
-    // Otimização habilitada
-    unoptimized: false,
   },
-
-  // Compressão ativada
   compress: true,
-
-  // Minificação com SWC
   swcMinify: true,
-
-  // Remove console.log em produção
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   }
 }
 ```
 
----
+### .gitignore
 
-## ✅ Checklist Final
-
-Antes de fazer o deploy em produção, confirme:
-
-- [ ] Produtos importados para Shopify
-- [ ] Imagens adicionadas aos produtos na Shopify
-- [ ] Credenciais Shopify (Storefront + Admin API) obtidas
-- [ ] Arquivo `.env.local` criado e testado localmente
-- [ ] Site funcionando localmente com dados da Shopify
-- [ ] Componentes atualizados para usar API Shopify
-- [ ] Pasta `/Leagues` removida ou ignorada
-- [ ] Environment variables configuradas na Vercel
-- [ ] Build testado: `npm run build`
-- [ ] Deploy realizado: `vercel --prod`
+Já configurado para excluir:
+- `/Leagues` (2-3GB de imagens locais)
+- `node_modules`
+- `.next`
+- `.env.local`
+- Arquivos CSV de importação
 
 ---
 
-## 🐛 Problemas Comuns
+## 📊 O que esperar do Build
 
-### Build falha com "Image Optimization error"
+### Estatísticas do Build:
 
-**Causa**: Imagens muito grandes ou não otimizadas.
+```
+✓ Generating static pages (255/255)
+✓ Finalizing page optimization
 
-**Solução**:
-```javascript
-// Temporariamente em next.config.js:
-images: {
-  unoptimized: true, // Use apenas para debug!
-}
+Route (app)                    Size      First Load JS
+┌ ○ /                         43.2 kB    184 kB
+├ ƒ /liga/[slug]              2.52 kB    139 kB
+├ ○ /ligas                    2.45 kB    134 kB
+└ ● /product/[slug]           5.13 kB    149 kB
+    └ [+250 paths]
+
++ First Load JS shared         87.2 kB
 ```
 
-### "Module not found" durante build
+### Páginas geradas:
+- **1** homepage
+- **1** página de ligas
+- **250** páginas de produtos (SSG - Static Site Generation)
+- **~3** páginas dinâmicas de liga
 
-**Causa**: Alguma importação de arquivo local que não existe.
+---
+
+## 🔧 Deployments Futuros
+
+### Deploy Automático
+
+Cada push para `master` vai automaticamente:
+1. Triggerar novo build na Vercel
+2. Gerar preview deployment
+3. Fazer deploy em produção (se bem-sucedido)
+
+### Deploy Manual via CLI
+
+```bash
+# Instalar Vercel CLI
+npm i -g vercel
+
+# Login
+vercel login
+
+# Deploy preview
+vercel
+
+# Deploy produção
+vercel --prod
+```
+
+---
+
+## 🐛 Troubleshooting
+
+### Build falha com erro de Environment Variables
+
+**Causa**: Variables não configuradas na Vercel.
 
 **Solução**:
-- Verifique imports de `leagues_data.json`
-- Certifique-se que todos os componentes usam Shopify API
+1. Vá em: Settings > Environment Variables
+2. Adicione `NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN`
+3. Adicione `NEXT_PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN`
+4. Clique em "Redeploy" no último deployment
 
 ### Imagens da Shopify não carregam
 
 **Causa**: Domain não autorizado em `remotePatterns`.
 
-**Solução**:
+**Solução**: Já está configurado! Se persistir:
 ```javascript
-// next.config.js
-images: {
-  remotePatterns: [
-    {
-      protocol: 'https',
-      hostname: 'cdn.shopify.com',
-    },
-    {
-      protocol: 'https',
-      hostname: '**.shopify.com', // Permite subdomínios
-    },
-  ],
-}
+// next.config.js - adicionar fallback
+remotePatterns: [
+  {
+    protocol: 'https',
+    hostname: 'cdn.shopify.com',
+  },
+  {
+    protocol: 'https',
+    hostname: '**.shopify.com', // Wildcard para subdomínios
+  },
+]
 ```
+
+### "Module not found" durante build
+
+**Causa**: Importação de arquivo local inexistente.
+
+**Solução**: Todos os componentes já foram atualizados para usar Shopify API. Se ocorrer:
+1. Verifique imports de `leagues_data.json`
+2. Certifique-se que está na branch correta
+3. Execute `git pull` para pegar últimas mudanças
 
 ### Build muito lento
 
-**Causa**: Muitas imagens sendo otimizadas durante build.
+**Causa**: Muitas páginas sendo geradas.
 
 **Solução**:
-- As imagens da Shopify já vêm otimizadas do CDN
-- Reduza imagens em `/public/images` se necessário
-- Use `quality={75}` nas imagens
+- Normal na primeira vez (255 páginas)
+- Builds incrementais serão mais rápidos
+- Shopify CDN já otimiza imagens
 
 ---
 
-## 📚 Próximos Passos
+## 📈 Próximos Passos (Opcional)
 
-Depois do deploy bem-sucedido:
+### 1. Domínio Customizado
 
-1. **Configurar domínio customizado** na Vercel
-2. **Ativar Analytics** para monitorar performance
-3. **Configurar Shopify Checkout** para vendas
-4. **Adicionar Google Analytics**
-5. **Testar performance** com Lighthouse
+Na Vercel:
+1. Settings > Domains
+2. Adicionar: `www.foltzfanwear.com`
+3. Seguir instruções de DNS
 
----
+### 2. Analytics
 
-## 💡 Dicas de Performance
+Na Vercel:
+1. Analytics > Enable
+2. Monitorar:
+   - Page views
+   - Performance (Core Web Vitals)
+   - Top pages
 
-1. **Use o CDN da Shopify para TODAS as imagens de produtos**
-   - Nunca armazene imagens de produtos no repositório
+### 3. Performance Monitoring
 
-2. **Lazy loading**:
-   ```jsx
-   <Image loading="lazy" />
-   ```
+```bash
+# Testar localmente com Lighthouse
+npm run build
+npm start
+# Abrir DevTools > Lighthouse > Run
+```
 
-3. **Blur placeholder**:
-   ```jsx
-   <Image
-     placeholder="blur"
-     blurDataURL="data:image/jpeg;base64,..."
-   />
-   ```
+### 4. Shopify Checkout
 
-4. **Quality ajustado**:
-   ```jsx
-   <Image quality={75} /> // Produtos
-   <Image quality={90} /> // Hero/Landing
-   ```
+Configurar Buy Button ou Checkout completo:
+1. Shopify Admin > Sales Channels
+2. Adicionar "Buy Button"
+3. Integrar no site
 
 ---
 
-## 🔗 Recursos Úteis
+## ✅ Checklist de Deploy
 
-- [Vercel Deployment Docs](https://vercel.com/docs/deployments/overview)
-- [Next.js Image Optimization](https://nextjs.org/docs/app/building-your-application/optimizing/images)
-- [Shopify CDN Docs](https://shopify.dev/docs/api/admin-graphql/latest/objects/Image)
-- [SHOPIFY-SETUP.md](./SHOPIFY-SETUP.md) - Setup da integração Shopify
-- [PRODUCT-MANAGEMENT.md](./PRODUCT-MANAGEMENT.md) - Gerenciamento de produtos
+Antes de fazer deploy em produção:
+
+- [x] Produtos importados para Shopify (271 produtos)
+- [x] Imagens adicionadas aos produtos (2,083 imagens)
+- [x] Credenciais Shopify obtidas
+- [x] Site funcionando localmente com Shopify
+- [x] Componentes atualizados para usar Shopify API
+- [x] Pasta `/Leagues` excluída do Git
+- [x] Build testado: `npm run build` ✓
+- [x] Código no GitHub ✓
+- [ ] Environment variables configuradas na Vercel
+- [ ] Deploy realizado: primeiro deployment
+- [ ] Site testado em produção
 
 ---
 
-✅ **Quando estiver pronto, me avise que eu atualizo os componentes para usar Shopify e te ajudo com o deploy!**
+## 💡 Dicas Finais
+
+### Performance
+
+1. **Imagens já otimizadas** pelo Shopify CDN
+2. **SSG (Static Site Generation)** para produtos = ultra rápido
+3. **Edge Functions** da Vercel para páginas dinâmicas
+4. **CDN global** da Vercel = baixa latência mundial
+
+### Segurança
+
+1. **Environment variables** nunca expostas no código
+2. **HTTPS** automático pela Vercel
+3. **Storefront API** (read-only) segura para frontend
+
+### Monitoramento
+
+1. **Vercel Dashboard** para métricas de deploy
+2. **Shopify Analytics** para vendas
+3. **Console da Vercel** para logs de erro
+
+---
+
+## 🔗 Links Úteis
+
+- **Repositório**: https://github.com/oldmoneygit/foltz-frontend.git
+- **Vercel Docs**: https://vercel.com/docs
+- **Next.js Image**: https://nextjs.org/docs/app/building-your-application/optimizing/images
+- **Shopify API**: https://shopify.dev/docs/api/storefront
+
+---
+
+## 🎉 Pronto para Deploy!
+
+Seu projeto está **100% pronto** para deploy na Vercel. Todos os componentes foram migrados para Shopify API e o build de produção foi testado com sucesso.
+
+**Próximo passo**: Importar o repositório na Vercel e adicionar as environment variables!
