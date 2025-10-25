@@ -1,0 +1,108 @@
+{
+  "leagues": [
+    {
+      "id": "bundesliga",
+      "name": "Bundesliga",
+      "country": "Alemanha",
+      "description": "Liga alemã de futebol - os melhores times da Alemanha",
+      "color": "#D20515",
+      "product_count": 22,
+      "image_count": 161
+    },
+    {
+      "id": "eredivisie",
+      "name": "Eredivisie",
+      "country": "Holanda",
+      "description": "Campeonato holandês de futebol profissional",
+      "color": "#FF6C00",
+      "product_count": 5,
+      "image_count": 36
+    },
+    {
+      "id": "la-liga",
+      "name": "La Liga",
+      "country": "Espanha",
+      "description": "Liga espanhola - Real Madrid, Barcelona e mais",
+      "color": "#FF4747",
+      "product_count": 57,
+      "image_count": 457
+    },
+    {
+      "id": "liga-mx",
+      "name": "Liga MX",
+      "country": "México",
+      "description": "Campeonato mexicano de futebol",
+      "color": "#006847",
+      "product_count": 12,
+      "image_count": 76
+    },
+    {
+      "id": "ligue-1",
+      "name": "Ligue 1",
+      "country": "França",
+      "description": "Liga francesa - PSG, Lyon, Marseille e mais",
+      "color": "#0055A4",
+      "product_count": 12,
+      "image_count": 95
+    },
+    {
+      "id": "long-sleeve",
+      "name": "Manga Longa",
+      "country": "Internacional",
+      "description": "Camisas de manga longa de todas as ligas",
+      "color": "#1A1A1A",
+      "product_count": 43,
+      "image_count": 344
+    },
+    {
+      "id": "mls",
+      "name": "MLS",
+      "country": "Estados Unidos",
+      "description": "Major League Soccer - futebol americano",
+      "color": "#C4122E",
+      "product_count": 5,
+      "image_count": 29
+    },
+    {
+      "id": "premier-league",
+      "name": "Premier League",
+      "country": "Inglaterra",
+      "description": "Liga inglesa - a mais competitiva do mundo",
+      "color": "#3D195B",
+      "product_count": 42,
+      "image_count": 328
+    },
+    {
+      "id": "primeira-liga",
+      "name": "Primeira Liga",
+      "country": "Portugal",
+      "description": "Campeonato português - Benfica, Porto, Sporting",
+      "color": "#006F3C",
+      "product_count": 13,
+      "image_count": 105
+    },
+    {
+      "id": "saf",
+      "name": "Sul-Americana",
+      "country": "América do Sul",
+      "description": "Ligas sul-americanas - Brasil, Argentina e mais",
+      "color": "#009B3A",
+      "product_count": 33,
+      "image_count": 244
+    },
+    {
+      "id": "serie-a",
+      "name": "Serie A",
+      "country": "Itália",
+      "description": "Liga italiana - Juventus, Milan, Inter e mais",
+      "color": "#008FD7",
+      "product_count": 27,
+      "image_count": 208
+    }
+  ],
+  "stats": {
+    "total_leagues": 11,
+    "total_products": 271,
+    "total_images": 2083
+  }
+}

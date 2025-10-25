@@ -1,0 +1,4472 @@
+[
+  {
+    "league": "Albums belong to Bundesliga",
+    "original_name": "1989 Dortmund Home (Size S-XXL)",
+    "new_name": "Dortmund 1989 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Dortmund",
+      "year": "1989",
+      "year_format": "full",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "1989 Dortmund Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Bundesliga\\1989 Dortmund Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Bundesliga",
+    "original_name": "1992 Germany Away (Size S-XXL)",
+    "new_name": "Germany 1992 Away (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Germany",
+      "year": "1992",
+      "year_format": "full",
+      "type": "Away",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "1992 Germany Away (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Bundesliga\\1992 Germany Away (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Bundesliga",
+    "original_name": "1994 Germany Away (Size S-XXL)",
+    "new_name": "Germany 1994 Away (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Germany",
+      "year": "1994",
+      "year_format": "full",
+      "type": "Away",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "1994 Germany Away (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Bundesliga\\1994 Germany Away (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Bundesliga",
+    "original_name": "1996 Germany Away (Size S-XXL)",
+    "new_name": "Germany 1996 Away (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Germany",
+      "year": "1996",
+      "year_format": "full",
+      "type": "Away",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "1996 Germany Away (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Bundesliga\\1996 Germany Away (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Bundesliga",
+    "original_name": "1998 Germany Away (Size S-XXL)",
+    "new_name": "Germany 1998 Away (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Germany",
+      "year": "1998",
+      "year_format": "full",
+      "type": "Away",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "1998 Germany Away (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Bundesliga\\1998 Germany Away (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Bundesliga",
+    "original_name": "2014 Germany Home (Size S-XXL)",
+    "new_name": "Germany 2014 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Germany",
+      "year": "2014",
+      "year_format": "full",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "2014 Germany Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Bundesliga\\2014 Germany Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Bundesliga",
+    "original_name": "Bayern 07_08 Home (Size S-XXL)",
+    "new_name": "Bayern 07-08 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Bayern",
+      "year": "07-08",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Bayern 07_08 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Bundesliga\\Bayern 07_08 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Bundesliga",
+    "original_name": "Bayern Munich 125Th Anniversary 25_26 (Size S-4XL)",
+    "new_name": "Bayern Munich 25-26 Home 125Th Anniversary (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Bayern Munich",
+      "year": "25-26",
+      "year_format": "short",
+      "type": null,
+      "extras": [
+        "125Th Anniversary"
+      ],
+      "size": "S-4XL",
+      "original": "Bayern Munich 125Th Anniversary 25_26 (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Bundesliga\\Bayern Munich 125Th Anniversary 25_26 (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Bundesliga",
+    "original_name": "Bayern Munich 14_15 Home (Size S-XXL)",
+    "new_name": "Bayern Munich 14-15 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Bayern Munich",
+      "year": "14-15",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Bayern Munich 14_15 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Bundesliga\\Bayern Munich 14_15 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Bundesliga",
+    "original_name": "Bayern Munich 17_18 Home (Size S-XXL)",
+    "new_name": "Bayern Munich 17-18 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Bayern Munich",
+      "year": "17-18",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Bayern Munich 17_18 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Bundesliga\\Bayern Munich 17_18 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Bundesliga",
+    "original_name": "Bayern Munich 25_26 Away (Size S-4XL)",
+    "new_name": "Bayern Munich 25-26 Away (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Bayern Munich",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Bayern Munich 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Bundesliga\\Bayern Munich 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Bundesliga",
+    "original_name": "Bayern Munich 25_26 Home (Size S-4XL)",
+    "new_name": "Bayern Munich 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Bayern Munich",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Bayern Munich 25_26 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Bundesliga\\Bayern Munich 25_26 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Bundesliga",
+    "original_name": "Bayern Munich Adicolor Classics 3-Stripes Red T- (Size S-3XL)",
+    "new_name": "Bayern Munich T Adicolor Classics 3-Stripes Red (Size S-3XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Bayern Munich T",
+      "year": null,
+      "year_format": null,
+      "type": null,
+      "extras": [
+        "Adicolor Classics",
+        "3-Stripes",
+        "Red"
+      ],
+      "size": "S-3XL",
+      "original": "Bayern Munich Adicolor Classics 3-Stripes Red T- (Size S-3XL)"
+    },
+    "path": "Leagues\\Albums belong to Bundesliga\\Bayern Munich Adicolor Classics 3-Stripes Red T- (Size S-3XL)"
+  },
+  {
+    "league": "Albums belong to Bundesliga",
+    "original_name": "Bayern Munich Baseball 25_26 (Size S-4XL)",
+    "new_name": "Bayern Munich 25-26 Home Baseball (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Bayern Munich",
+      "year": "25-26",
+      "year_format": "short",
+      "type": null,
+      "extras": [
+        "Baseball"
+      ],
+      "size": "S-4XL",
+      "original": "Bayern Munich Baseball 25_26 (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Bundesliga\\Bayern Munich Baseball 25_26 (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Bundesliga",
+    "original_name": "Bayern Munich Special Edition 25_26 (Size S-4XL)",
+    "new_name": "Bayern Munich 25-26 Home Special Edition (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Bayern Munich",
+      "year": "25-26",
+      "year_format": "short",
+      "type": null,
+      "extras": [
+        "Special Edition"
+      ],
+      "size": "S-4XL",
+      "original": "Bayern Munich Special Edition 25_26 (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Bundesliga\\Bayern Munich Special Edition 25_26 (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Bundesliga",
+    "original_name": "Bayern Munich Third 25_26 Away (Size S-4XL)",
+    "new_name": "Bayern Munich 25-26 Third (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Bayern Munich",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Third",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Bayern Munich Third 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Bundesliga\\Bayern Munich Third 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Bundesliga",
+    "original_name": "Dortmund 12_13 Home (Size S-XXL)",
+    "new_name": "Dortmund 12-13 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Dortmund",
+      "year": "12-13",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Dortmund 12_13 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Bundesliga\\Dortmund 12_13 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Bundesliga",
+    "original_name": "Dortmund 1988 Home (Size S-XXL)",
+    "new_name": "Dortmund 1988 Home (Size S-XXL)",
+    "needs_change": false,
+    "components": {
+      "team": "Dortmund",
+      "year": "1988",
+      "year_format": "full",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Dortmund 1988 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Bundesliga\\Dortmund 1988 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Bundesliga",
+    "original_name": "Dortmund 1997 Home (Size S-XXL)",
+    "new_name": "Dortmund 1997 Home (Size S-XXL)",
+    "needs_change": false,
+    "components": {
+      "team": "Dortmund",
+      "year": "1997",
+      "year_format": "full",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Dortmund 1997 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Bundesliga\\Dortmund 1997 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Bundesliga",
+    "original_name": "Dortmund 95_96 Away (Size S-XXL)",
+    "new_name": "Dortmund 95-96 Away (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Dortmund",
+      "year": "95-96",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Dortmund 95_96 Away (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Bundesliga\\Dortmund 95_96 Away (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Bundesliga",
+    "original_name": "Dortmund 95_96 Home (Size S-XXL)",
+    "new_name": "Dortmund 95-96 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Dortmund",
+      "year": "95-96",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Dortmund 95_96 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Bundesliga\\Dortmund 95_96 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Bundesliga",
+    "original_name": "Dortmund 96_97 Home (Size S-XXL)",
+    "new_name": "Dortmund 96-97 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Dortmund",
+      "year": "96-97",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Dortmund 96_97 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Bundesliga\\Dortmund 96_97 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to EREDIVISIE",
+    "original_name": "Ajax 25_26 Away (Size S-4XL)",
+    "new_name": "Ajax 25-26 Away (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Ajax",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Ajax 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to EREDIVISIE\\Ajax 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to EREDIVISIE",
+    "original_name": "Ajax Commemorative Edition 25_26 (Size S-4XL)",
+    "new_name": "Ajax 25-26 Home Commemorative Edition (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Ajax",
+      "year": "25-26",
+      "year_format": "short",
+      "type": null,
+      "extras": [
+        "Commemorative Edition"
+      ],
+      "size": "S-4XL",
+      "original": "Ajax Commemorative Edition 25_26 (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to EREDIVISIE\\Ajax Commemorative Edition 25_26 (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to EREDIVISIE",
+    "original_name": "Ajax Third 25_26 Away (Size S-4XL)",
+    "new_name": "Ajax 25-26 Third (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Ajax",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Third",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Ajax Third 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to EREDIVISIE\\Ajax Third 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to EREDIVISIE",
+    "original_name": "Psv 25_26 Home (Size S-4XL)",
+    "new_name": "Psv 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Psv",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Psv 25_26 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to EREDIVISIE\\Psv 25_26 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to EREDIVISIE",
+    "original_name": "Psv 94_95 Home (Size S-XXL)",
+    "new_name": "Psv 94-95 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Psv",
+      "year": "94-95",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Psv 94_95 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to EREDIVISIE\\Psv 94_95 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Albacete 25_26 Away (Size S-4XL)",
+    "new_name": "Albacete 25-26 Away (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Albacete",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Albacete 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Albacete 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Albacete 25_26 Home (Size S-4XL)",
+    "new_name": "Albacete 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Albacete",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Albacete 25_26 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Albacete 25_26 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Athletic Bilbao 25_26 Away (Size S-4XL)",
+    "new_name": "Athletic Bilbao 25-26 Away (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Athletic Bilbao",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Athletic Bilbao 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Athletic Bilbao 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Athletic Bilbao 25_26 Home (Size S-4XL)",
+    "new_name": "Athletic Bilbao 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Athletic Bilbao",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Athletic Bilbao 25_26 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Athletic Bilbao 25_26 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Barcelona 09_10 Home (Size S-XXL)",
+    "new_name": "Barcelona 09-10 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Barcelona",
+      "year": "09-10",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Barcelona 09_10 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Barcelona 09_10 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Barcelona 10_11 Away (Size S-XXL)",
+    "new_name": "Barcelona 10-11 Away (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Barcelona",
+      "year": "10-11",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Barcelona 10_11 Away (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Barcelona 10_11 Away (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Barcelona 10_11 Home (Size S-4XL)",
+    "new_name": "Barcelona 10-11 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Barcelona",
+      "year": "10-11",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Barcelona 10_11 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Barcelona 10_11 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Barcelona 10_11 Home (Size S-4XL)_1",
+    "new_name": "Barcelona Home_1 10-11 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Barcelona Home_1",
+      "year": "10-11",
+      "year_format": "short",
+      "type": null,
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Barcelona 10_11 Home (Size S-4XL)_1"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Barcelona 10_11 Home (Size S-4XL)_1"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Barcelona 11_12 Away (Size S-XXL)",
+    "new_name": "Barcelona 11-12 Away (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Barcelona",
+      "year": "11-12",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Barcelona 11_12 Away (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Barcelona 11_12 Away (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Barcelona 11_12 Home (Size S-4XL)",
+    "new_name": "Barcelona 11-12 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Barcelona",
+      "year": "11-12",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Barcelona 11_12 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Barcelona 11_12 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Barcelona 12_13 Home (Size S-XXL)",
+    "new_name": "Barcelona 12-13 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Barcelona",
+      "year": "12-13",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Barcelona 12_13 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Barcelona 12_13 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Barcelona 13_14 Away (Size S-XXL)",
+    "new_name": "Barcelona 13-14 Away (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Barcelona",
+      "year": "13-14",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Barcelona 13_14 Away (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Barcelona 13_14 Away (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Barcelona 13_14 Home (Size S-XXL)",
+    "new_name": "Barcelona 13-14 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Barcelona",
+      "year": "13-14",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Barcelona 13_14 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Barcelona 13_14 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Barcelona 24_25 Home (Size S-4XL)",
+    "new_name": "Barcelona 24-25 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Barcelona",
+      "year": "24-25",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Barcelona 24_25 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Barcelona 24_25 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Barcelona 25_26 (Size S-4XL)",
+    "new_name": "Barcelona 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Barcelona",
+      "year": "25-26",
+      "year_format": "short",
+      "type": null,
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Barcelona 25_26 (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Barcelona 25_26 (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Barcelona 25_26 (Size S-4XL)_1",
+    "new_name": "Barcelona 25_26_1 (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Barcelona 25_26_1",
+      "year": null,
+      "year_format": null,
+      "type": null,
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Barcelona 25_26 (Size S-4XL)_1"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Barcelona 25_26 (Size S-4XL)_1"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Barcelona 25_26 Away (Size S-4XL)",
+    "new_name": "Barcelona 25-26 Away (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Barcelona",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Barcelona 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Barcelona 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Barcelona 25_26 Home (Size S-4XL)",
+    "new_name": "Barcelona 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Barcelona",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Barcelona 25_26 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Barcelona 25_26 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Barcelona Joint Edition 25_26 (Size S-4XL)",
+    "new_name": "Barcelona Joint Edition 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Barcelona Joint Edition",
+      "year": "25-26",
+      "year_format": "short",
+      "type": null,
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Barcelona Joint Edition 25_26 (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Barcelona Joint Edition 25_26 (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Barcelona Third Game 25_26 Away (Size S-4XL)",
+    "new_name": "Barcelona 25-26 Third Game (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Barcelona",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Third",
+      "extras": [
+        "Game"
+      ],
+      "size": "S-4XL",
+      "original": "Barcelona Third Game 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Barcelona Third Game 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Burgos 25_26 Home (Size S-XXL)",
+    "new_name": "Burgos 25-26 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Burgos",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Burgos 25_26 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Burgos 25_26 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Cadiz 25_26 Home (Size S-4XL)",
+    "new_name": "Cadiz 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Cadiz",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Cadiz 25_26 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Cadiz 25_26 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Celta 25_26 Away (Size S-4XL)",
+    "new_name": "Celta 25-26 Away (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Celta",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Celta 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Celta 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Celta 25_26 Home (Size S-4XL)",
+    "new_name": "Celta 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Celta",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Celta 25_26 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Celta 25_26 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Celta Third 25_26 Away (Size S-4XL)",
+    "new_name": "Celta 25-26 Third (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Celta",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Third",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Celta Third 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Celta Third 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Deportivo La Coruna 25_26 Home (Size S-4XL)",
+    "new_name": "Deportivo La Coruna 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Deportivo La Coruna",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Deportivo La Coruna 25_26 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Deportivo La Coruna 25_26 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Deportivo La Coruna Special Edition 25_26 (Size S-4XL)",
+    "new_name": "Deportivo La Coruna 25-26 Home Special Edition (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Deportivo La Coruna",
+      "year": "25-26",
+      "year_format": "short",
+      "type": null,
+      "extras": [
+        "Special Edition"
+      ],
+      "size": "S-4XL",
+      "original": "Deportivo La Coruna Special Edition 25_26 (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Deportivo La Coruna Special Edition 25_26 (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Elche 25_26 Away (Size S-4XL)",
+    "new_name": "Elche 25-26 Away (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Elche",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Elche 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Elche 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Granada 25_26 Away (Size S-4XL)",
+    "new_name": "Granada 25-26 Away (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Granada",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Granada 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Granada 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Granada 25_26 Home (Size S-4XL)",
+    "new_name": "Granada 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Granada",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Granada 25_26 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Granada 25_26 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Las Palmas 25_26 Away (Size S-XXL)",
+    "new_name": "Las Palmas 25-26 Away (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Las Palmas",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Las Palmas 25_26 Away (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Las Palmas 25_26 Away (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Las Palmas 25_26 Home (Size S-4XL)",
+    "new_name": "Las Palmas 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Las Palmas",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Las Palmas 25_26 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Las Palmas 25_26 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Malaga 25_26 Away (Size S-4XL)",
+    "new_name": "Malaga 25-26 Away (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Malaga",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Malaga 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Malaga 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Osasuna 25_26 Home (Size S-XXL)",
+    "new_name": "Osasuna 25-26 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Osasuna",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Osasuna 25_26 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Osasuna 25_26 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Rcd Mallorca 25_26 Away (Size S-3XL)",
+    "new_name": "Rcd Mallorca 25-26 Away (Size S-3XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Rcd Mallorca",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-3XL",
+      "original": "Rcd Mallorca 25_26 Away (Size S-3XL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Rcd Mallorca 25_26 Away (Size S-3XL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Rcd Mallorca 25_26 Home (Size S-3XL)",
+    "new_name": "Rcd Mallorca 25-26 Home (Size S-3XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Rcd Mallorca",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-3XL",
+      "original": "Rcd Mallorca 25_26 Home (Size S-3XL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Rcd Mallorca 25_26 Home (Size S-3XL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Real Betis 25_26 Home (Size S-4XL)",
+    "new_name": "Real Betis 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Real Betis",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Real Betis 25_26 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Real Betis 25_26 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Real Betis Special Edition 25_26 (Size S-4XL)",
+    "new_name": "Real Betis 25-26 Home Special Edition (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Real Betis",
+      "year": "25-26",
+      "year_format": "short",
+      "type": null,
+      "extras": [
+        "Special Edition"
+      ],
+      "size": "S-4XL",
+      "original": "Real Betis Special Edition 25_26 (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Real Betis Special Edition 25_26 (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Real Madrid 13_14 Home (Size S-XXL)",
+    "new_name": "Real Madrid 13-14 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Real Madrid",
+      "year": "13-14",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Real Madrid 13_14 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Real Madrid 13_14 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Real Madrid 14_15 Away (Size S-XXL)",
+    "new_name": "Real Madrid 14-15 Away (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Real Madrid",
+      "year": "14-15",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Real Madrid 14_15 Away (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Real Madrid 14_15 Away (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Real Madrid 14_15 Home (Size S-4XL)",
+    "new_name": "Real Madrid 14-15 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Real Madrid",
+      "year": "14-15",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Real Madrid 14_15 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Real Madrid 14_15 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Real Madrid 15_16 Away (Size S-XXL)",
+    "new_name": "Real Madrid 15-16 Away (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Real Madrid",
+      "year": "15-16",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Real Madrid 15_16 Away (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Real Madrid 15_16 Away (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Real Madrid 15_16 Home (Size S-XXL)",
+    "new_name": "Real Madrid 15-16 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Real Madrid",
+      "year": "15-16",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Real Madrid 15_16 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Real Madrid 15_16 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Real Madrid 16_17 Away (Size S-XXL)",
+    "new_name": "Real Madrid 16-17 Away (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Real Madrid",
+      "year": "16-17",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Real Madrid 16_17 Away (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Real Madrid 16_17 Away (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Real Madrid 16_17 Home (Size S-XXL)",
+    "new_name": "Real Madrid 16-17 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Real Madrid",
+      "year": "16-17",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Real Madrid 16_17 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Real Madrid 16_17 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Real Madrid 17_18 Away (Size S-XXL)",
+    "new_name": "Real Madrid 17-18 Away (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Real Madrid",
+      "year": "17-18",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Real Madrid 17_18 Away (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Real Madrid 17_18 Away (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Real Madrid 17_18 Home (Size S-XXL)",
+    "new_name": "Real Madrid 17-18 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Real Madrid",
+      "year": "17-18",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Real Madrid 17_18 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Real Madrid 17_18 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Real Madrid 19_20 Home (Size S-XXL)",
+    "new_name": "Real Madrid 19-20 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Real Madrid",
+      "year": "19-20",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Real Madrid 19_20 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Real Madrid 19_20 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Real Madrid 25_26 Away (Size S-4XL)",
+    "new_name": "Real Madrid 25-26 Away (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Real Madrid",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Real Madrid 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Real Madrid 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Real Madrid 25_26 Home (Size S-4XL)",
+    "new_name": "Real Madrid 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Real Madrid",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Real Madrid 25_26 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Real Madrid 25_26 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Real Madrid Special Edition 25_26 (Size S-4XL)",
+    "new_name": "Real Madrid 25-26 Home Special Edition (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Real Madrid",
+      "year": "25-26",
+      "year_format": "short",
+      "type": null,
+      "extras": [
+        "Special Edition"
+      ],
+      "size": "S-4XL",
+      "original": "Real Madrid Special Edition 25_26 (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Real Madrid Special Edition 25_26 (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Real Madrid Third 25_26 Away (Size S-4XL)",
+    "new_name": "Real Madrid 25-26 Third (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Real Madrid",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Third",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Real Madrid Third 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Real Madrid Third 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Real Oviedo 25_26 Away (Size S-4XL)",
+    "new_name": "Real Oviedo 25-26 Away (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Real Oviedo",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Real Oviedo 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Real Oviedo 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Real Oviedo 25_26 Home (Size S-4XL)",
+    "new_name": "Real Oviedo 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Real Oviedo",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Real Oviedo 25_26 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Real Oviedo 25_26 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Sporting Gijon 25_26 Home (Size S-4XL)",
+    "new_name": "Sporting Gijon 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Sporting Gijon",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Sporting Gijon 25_26 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Sporting Gijon 25_26 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Valencia 25_26 Home (Size S-4XL)",
+    "new_name": "Valencia 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Valencia",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Valencia 25_26 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Valencia 25_26 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to La Liga",
+    "original_name": "Villarreal 25_26 Away (Size S-4XL7)",
+    "new_name": "Villarreal 25-26 Away (Size S-4XL7)",
+    "needs_change": true,
+    "components": {
+      "team": "Villarreal",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-4XL7",
+      "original": "Villarreal 25_26 Away (Size S-4XL7)"
+    },
+    "path": "Leagues\\Albums belong to La Liga\\Villarreal 25_26 Away (Size S-4XL7)"
+  },
+  {
+    "league": "Albums belong to LIGA MX",
+    "original_name": "1970 Mexico Home (Size S-XXL)",
+    "new_name": "Mexico 1970 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Mexico",
+      "year": "1970",
+      "year_format": "full",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "1970 Mexico Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to LIGA MX\\1970 Mexico Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to LIGA MX",
+    "original_name": "1998 Mexico Home (Size S-XXL)",
+    "new_name": "Mexico 1998 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Mexico",
+      "year": "1998",
+      "year_format": "full",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "1998 Mexico Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to LIGA MX\\1998 Mexico Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to LIGA MX",
+    "original_name": "2014 Mexico Home (Size S-XXL)",
+    "new_name": "Mexico 2014 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Mexico",
+      "year": "2014",
+      "year_format": "full",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "2014 Mexico Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to LIGA MX\\2014 Mexico Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to LIGA MX",
+    "original_name": "America 1987 Home (Size S-XXL)",
+    "new_name": "America 1987 Home (Size S-XXL)",
+    "needs_change": false,
+    "components": {
+      "team": "America",
+      "year": "1987",
+      "year_format": "full",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "America 1987 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to LIGA MX\\America 1987 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to LIGA MX",
+    "original_name": "America 1995 Away (Size S-XXL)",
+    "new_name": "America 1995 Away (Size S-XXL)",
+    "needs_change": false,
+    "components": {
+      "team": "America",
+      "year": "1995",
+      "year_format": "full",
+      "type": "Away",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "America 1995 Away (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to LIGA MX\\America 1995 Away (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to LIGA MX",
+    "original_name": "America 1995 Away (Size S-XXL)_1",
+    "new_name": "America Away_1 1995 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "America Away_1",
+      "year": "1995",
+      "year_format": "full",
+      "type": null,
+      "extras": [],
+      "size": "S-XXL",
+      "original": "America 1995 Away (Size S-XXL)_1"
+    },
+    "path": "Leagues\\Albums belong to LIGA MX\\America 1995 Away (Size S-XXL)_1"
+  },
+  {
+    "league": "Albums belong to LIGA MX",
+    "original_name": "America 1995 Home (Size S-XXL)",
+    "new_name": "America 1995 Home (Size S-XXL)",
+    "needs_change": false,
+    "components": {
+      "team": "America",
+      "year": "1995",
+      "year_format": "full",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "America 1995 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to LIGA MX\\America 1995 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to LIGA MX",
+    "original_name": "Mexico 1986 Home (Size S-XXL)",
+    "new_name": "Mexico 1986 Home (Size S-XXL)",
+    "needs_change": false,
+    "components": {
+      "team": "Mexico",
+      "year": "1986",
+      "year_format": "full",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Mexico 1986 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to LIGA MX\\Mexico 1986 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to LIGA MX",
+    "original_name": "Mexico 1995 Home (Size S-XXL)",
+    "new_name": "Mexico 1995 Home (Size S-XXL)",
+    "needs_change": false,
+    "components": {
+      "team": "Mexico",
+      "year": "1995",
+      "year_format": "full",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Mexico 1995 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to LIGA MX\\Mexico 1995 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to LIGA MX",
+    "original_name": "Monterrey 93_94 Home (Size S-XXL)",
+    "new_name": "Monterrey 93-94 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Monterrey",
+      "year": "93-94",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Monterrey 93_94 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to LIGA MX\\Monterrey 93_94 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to LIGA MX",
+    "original_name": "Monterrey 95_96 Home (Size S-XXL)",
+    "new_name": "Monterrey 95-96 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Monterrey",
+      "year": "95-96",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Monterrey 95_96 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to LIGA MX\\Monterrey 95_96 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to LIGA MX",
+    "original_name": "Pumas Unam 97_98 Away (Size S-XXL)",
+    "new_name": "Pumas Unam 97-98 Away (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Pumas Unam",
+      "year": "97-98",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Pumas Unam 97_98 Away (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to LIGA MX\\Pumas Unam 97_98 Away (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Ligue 1",
+    "original_name": "Lyon 25_26 Away (Size S-4XL)",
+    "new_name": "Lyon 25-26 Away (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Lyon",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Lyon 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Ligue 1\\Lyon 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Ligue 1",
+    "original_name": "Lyon 25_26 Home (Size S-4XL)",
+    "new_name": "Lyon 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Lyon",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Lyon 25_26 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Ligue 1\\Lyon 25_26 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Ligue 1",
+    "original_name": "Marseille 25_26 Away (Size S-4XL)",
+    "new_name": "Marseille 25-26 Away (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Marseille",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Marseille 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Ligue 1\\Marseille 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Ligue 1",
+    "original_name": "Marseille 25_26 Home (Size S-4XL)",
+    "new_name": "Marseille 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Marseille",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Marseille 25_26 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Ligue 1\\Marseille 25_26 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Ligue 1",
+    "original_name": "Marseille Third 25_26 Away (Size S-4XL)",
+    "new_name": "Marseille 25-26 Third (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Marseille",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Third",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Marseille Third 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Ligue 1\\Marseille Third 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Ligue 1",
+    "original_name": "Paris Saint-Germain 18_19 (Size S-XXL)_1",
+    "new_name": "Paris Saint-Germain 18_19_1 (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Paris Saint-Germain 18_19_1",
+      "year": null,
+      "year_format": null,
+      "type": null,
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Paris Saint-Germain 18_19 (Size S-XXL)_1"
+    },
+    "path": "Leagues\\Albums belong to Ligue 1\\Paris Saint-Germain 18_19 (Size S-XXL)_1"
+  },
+  {
+    "league": "Albums belong to Ligue 1",
+    "original_name": "Paris Saint-Germain 24_25 Away (Size S-4XL)",
+    "new_name": "Paris Saint-Germain 24-25 Away (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Paris Saint-Germain",
+      "year": "24-25",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Paris Saint-Germain 24_25 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Ligue 1\\Paris Saint-Germain 24_25 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Ligue 1",
+    "original_name": "Paris Saint-Germain 24_25 Home (Size S-4XL)",
+    "new_name": "Paris Saint-Germain 24-25 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Paris Saint-Germain",
+      "year": "24-25",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Paris Saint-Germain 24_25 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Ligue 1\\Paris Saint-Germain 24_25 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Ligue 1",
+    "original_name": "Paris Saint-Germain 25_26 (Size S-4XL)",
+    "new_name": "Paris Saint-Germain 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Paris Saint-Germain",
+      "year": "25-26",
+      "year_format": "short",
+      "type": null,
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Paris Saint-Germain 25_26 (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Ligue 1\\Paris Saint-Germain 25_26 (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Ligue 1",
+    "original_name": "Paris Saint-Germain 25_26 (Size S-XXL)",
+    "new_name": "Paris Saint-Germain 25-26 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Paris Saint-Germain",
+      "year": "25-26",
+      "year_format": "short",
+      "type": null,
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Paris Saint-Germain 25_26 (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Ligue 1\\Paris Saint-Germain 25_26 (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Ligue 1",
+    "original_name": "Paris Saint-Germain 25_26 Away (Size S-4XL)",
+    "new_name": "Paris Saint-Germain 25-26 Away (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Paris Saint-Germain",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Paris Saint-Germain 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Ligue 1\\Paris Saint-Germain 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Ligue 1",
+    "original_name": "Paris Saint-Germain 25_26 Home (Size S-4XL)",
+    "new_name": "Paris Saint-Germain 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Paris Saint-Germain",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Paris Saint-Germain 25_26 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Ligue 1\\Paris Saint-Germain 25_26 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Long sleeve",
+    "original_name": "1981 Boca Juniors Home Long Sleeve (Size S-XXL)",
+    "new_name": "Boca Juniors 1981 Home Long Sleeve (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Boca Juniors",
+      "year": "1981",
+      "year_format": "full",
+      "type": "Home",
+      "extras": [
+        "Long Sleeve"
+      ],
+      "size": "S-XXL",
+      "original": "1981 Boca Juniors Home Long Sleeve (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Long sleeve\\1981 Boca Juniors Home Long Sleeve (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Long sleeve",
+    "original_name": "Ac Milan 06_07 Home Long Sleeve (Size S-XXL)",
+    "new_name": "Ac Milan 06-07 Home Long Sleeve (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Ac Milan",
+      "year": "06-07",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [
+        "Long Sleeve"
+      ],
+      "size": "S-XXL",
+      "original": "Ac Milan 06_07 Home Long Sleeve (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Long sleeve\\Ac Milan 06_07 Home Long Sleeve (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Long sleeve",
+    "original_name": "Ac Milan 07_08 Home Long Sleeve (Size S-XXL)",
+    "new_name": "Ac Milan 07-08 Home Long Sleeve (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Ac Milan",
+      "year": "07-08",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [
+        "Long Sleeve"
+      ],
+      "size": "S-XXL",
+      "original": "Ac Milan 07_08 Home Long Sleeve (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Long sleeve\\Ac Milan 07_08 Home Long Sleeve (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Long sleeve",
+    "original_name": "Ac Milan 08_09 Home Long Sleeve (Size S-XXL)",
+    "new_name": "Ac Milan 08-09 Home Long Sleeve (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Ac Milan",
+      "year": "08-09",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [
+        "Long Sleeve"
+      ],
+      "size": "S-XXL",
+      "original": "Ac Milan 08_09 Home Long Sleeve (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Long sleeve\\Ac Milan 08_09 Home Long Sleeve (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Long sleeve",
+    "original_name": "Ac Milan 09_10 Home Long Sleeve (Size S-XXL)",
+    "new_name": "Ac Milan 09-10 Home Long Sleeve (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Ac Milan",
+      "year": "09-10",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [
+        "Long Sleeve"
+      ],
+      "size": "S-XXL",
+      "original": "Ac Milan 09_10 Home Long Sleeve (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Long sleeve\\Ac Milan 09_10 Home Long Sleeve (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Long sleeve",
+    "original_name": "Ac Milan 11_12 Away Long Sleeve (Size S-XXL)",
+    "new_name": "Ac Milan 11-12 Away Long Sleeve (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Ac Milan",
+      "year": "11-12",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [
+        "Long Sleeve"
+      ],
+      "size": "S-XXL",
+      "original": "Ac Milan 11_12 Away Long Sleeve (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Long sleeve\\Ac Milan 11_12 Away Long Sleeve (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Long sleeve",
+    "original_name": "Ac Milan 125Th Anniversary Red 24_25 Long Sleeve (Size S-XXL)",
+    "new_name": "Ac Milan 24-25 Home 125Th Anniversary Long Sleeve Red (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Ac Milan",
+      "year": "24-25",
+      "year_format": "short",
+      "type": null,
+      "extras": [
+        "125Th Anniversary",
+        "Long Sleeve",
+        "Red"
+      ],
+      "size": "S-XXL",
+      "original": "Ac Milan 125Th Anniversary Red 24_25 Long Sleeve (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Long sleeve\\Ac Milan 125Th Anniversary Red 24_25 Long Sleeve (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Long sleeve",
+    "original_name": "Ac Milan 13_14 Home Long Sleeve (Size S-XXL)",
+    "new_name": "Ac Milan 13-14 Home Long Sleeve (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Ac Milan",
+      "year": "13-14",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [
+        "Long Sleeve"
+      ],
+      "size": "S-XXL",
+      "original": "Ac Milan 13_14 Home Long Sleeve (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Long sleeve\\Ac Milan 13_14 Home Long Sleeve (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Long sleeve",
+    "original_name": "Ajax Commemorative Edition 25_26 Long Sleeve (Size S-XXL)",
+    "new_name": "Ajax 25-26 Home Long Sleeve Commemorative Edition (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Ajax",
+      "year": "25-26",
+      "year_format": "short",
+      "type": null,
+      "extras": [
+        "Long Sleeve",
+        "Commemorative Edition"
+      ],
+      "size": "S-XXL",
+      "original": "Ajax Commemorative Edition 25_26 Long Sleeve (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Long sleeve\\Ajax Commemorative Edition 25_26 Long Sleeve (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Long sleeve",
+    "original_name": "Arsenal 25_26 Away Long Sleeve (Size S-4XL)",
+    "new_name": "Arsenal 25-26 Away Long Sleeve (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Arsenal",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [
+        "Long Sleeve"
+      ],
+      "size": "S-4XL",
+      "original": "Arsenal 25_26 Away Long Sleeve (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Long sleeve\\Arsenal 25_26 Away Long Sleeve (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Long sleeve",
+    "original_name": "Arsenal 25_26 Home Long Sleeve (Size S-4XL)",
+    "new_name": "Arsenal 25-26 Home Long Sleeve (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Arsenal",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [
+        "Long Sleeve"
+      ],
+      "size": "S-4XL",
+      "original": "Arsenal 25_26 Home Long Sleeve (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Long sleeve\\Arsenal 25_26 Home Long Sleeve (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Long sleeve",
+    "original_name": "Barcelona 09_10 Home Long Sleeve (Size S-XXL)",
+    "new_name": "Barcelona 09-10 Home Long Sleeve (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Barcelona",
+      "year": "09-10",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [
+        "Long Sleeve"
+      ],
+      "size": "S-XXL",
+      "original": "Barcelona 09_10 Home Long Sleeve (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Long sleeve\\Barcelona 09_10 Home Long Sleeve (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Long sleeve",
+    "original_name": "Barcelona 12_13 Home Long Sleeve (Size S-XXL)",
+    "new_name": "Barcelona 12-13 Home Long Sleeve (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Barcelona",
+      "year": "12-13",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [
+        "Long Sleeve"
+      ],
+      "size": "S-XXL",
+      "original": "Barcelona 12_13 Home Long Sleeve (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Long sleeve\\Barcelona 12_13 Home Long Sleeve (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Long sleeve",
+    "original_name": "Barcelona 25_26 Home Long Sleeve (Size S-4XL)",
+    "new_name": "Barcelona 25-26 Home Long Sleeve (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Barcelona",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [
+        "Long Sleeve"
+      ],
+      "size": "S-4XL",
+      "original": "Barcelona 25_26 Home Long Sleeve (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Long sleeve\\Barcelona 25_26 Home Long Sleeve (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Long sleeve",
+    "original_name": "Bayern Munich 25_26 Home Long Sleeve (Size S-4XL)",
+    "new_name": "Bayern Munich 25-26 Home Long Sleeve (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Bayern Munich",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [
+        "Long Sleeve"
+      ],
+      "size": "S-4XL",
+      "original": "Bayern Munich 25_26 Home Long Sleeve (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Long sleeve\\Bayern Munich 25_26 Home Long Sleeve (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Long sleeve",
+    "original_name": "Benfica 25_26 Home Long Sleeve (Size S-XXL)",
+    "new_name": "Benfica 25-26 Home Long Sleeve (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Benfica",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [
+        "Long Sleeve"
+      ],
+      "size": "S-XXL",
+      "original": "Benfica 25_26 Home Long Sleeve (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Long sleeve\\Benfica 25_26 Home Long Sleeve (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Long sleeve",
+    "original_name": "Boca Juniors 03_04 Home Long Sleeve (Size S-XXL)",
+    "new_name": "Boca Juniors 03-04 Home Long Sleeve (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Boca Juniors",
+      "year": "03-04",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [
+        "Long Sleeve"
+      ],
+      "size": "S-XXL",
+      "original": "Boca Juniors 03_04 Home Long Sleeve (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Long sleeve\\Boca Juniors 03_04 Home Long Sleeve (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Long sleeve",
+    "original_name": "Brazil Internacional 25_26 Home Long Sleeve (Size S-4XL)",
+    "new_name": "Brazil Internacional 25-26 Home Long Sleeve (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Brazil Internacional",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [
+        "Long Sleeve"
+      ],
+      "size": "S-4XL",
+      "original": "Brazil Internacional 25_26 Home Long Sleeve (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Long sleeve\\Brazil Internacional 25_26 Home Long Sleeve (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Long sleeve",
+    "original_name": "Chelsea 09_10 Home Long Sleeve (Size S-XXL)",
+    "new_name": "Chelsea 09-10 Home Long Sleeve (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Chelsea",
+      "year": "09-10",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [
+        "Long Sleeve"
+      ],
+      "size": "S-XXL",
+      "original": "Chelsea 09_10 Home Long Sleeve (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Long sleeve\\Chelsea 09_10 Home Long Sleeve (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Long sleeve",
+    "original_name": "Chelsea 12_13 Home Long Sleeve (Size S-XXL)",
+    "new_name": "Chelsea 12-13 Home Long Sleeve (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Chelsea",
+      "year": "12-13",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [
+        "Long Sleeve"
+      ],
+      "size": "S-XXL",
+      "original": "Chelsea 12_13 Home Long Sleeve (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Long sleeve\\Chelsea 12_13 Home Long Sleeve (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Long sleeve",
+    "original_name": "Chelsea 25_26 Away Long Sleeve (Size S-4XL)",
+    "new_name": "Chelsea 25-26 Away Long Sleeve (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Chelsea",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [
+        "Long Sleeve"
+      ],
+      "size": "S-4XL",
+      "original": "Chelsea 25_26 Away Long Sleeve (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Long sleeve\\Chelsea 25_26 Away Long Sleeve (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Long sleeve",
+    "original_name": "Chelsea 25_26 Home Long Sleeve (Size S-4XL)",
+    "new_name": "Chelsea 25-26 Home Long Sleeve (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Chelsea",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [
+        "Long Sleeve"
+      ],
+      "size": "S-4XL",
+      "original": "Chelsea 25_26 Home Long Sleeve (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Long sleeve\\Chelsea 25_26 Home Long Sleeve (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Long sleeve",
+    "original_name": "Flamengo 25_26 Home Long Sleeve (Size S-4XL)",
+    "new_name": "Flamengo 25-26 Home Long Sleeve (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Flamengo",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [
+        "Long Sleeve"
+      ],
+      "size": "S-4XL",
+      "original": "Flamengo 25_26 Home Long Sleeve (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Long sleeve\\Flamengo 25_26 Home Long Sleeve (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Long sleeve",
+    "original_name": "Gremio 25_26 Home Long Sleeve (Size S-4XL)",
+    "new_name": "Gremio 25-26 Home Long Sleeve (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Gremio",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [
+        "Long Sleeve"
+      ],
+      "size": "S-4XL",
+      "original": "Gremio 25_26 Home Long Sleeve (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Long sleeve\\Gremio 25_26 Home Long Sleeve (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Long sleeve",
+    "original_name": "LA Galaxy 11_12 Away Long Sleeve (Size S-XXL)",
+    "new_name": "LA Galaxy 11-12 Away Long Sleeve (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "LA Galaxy",
+      "year": "11-12",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [
+        "Long Sleeve"
+      ],
+      "size": "S-XXL",
+      "original": "LA Galaxy 11_12 Away Long Sleeve (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Long sleeve\\LA Galaxy 11_12 Away Long Sleeve (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Long sleeve",
+    "original_name": "Manchester City 25_26 Away Long Sleeve (Size S-4XL)",
+    "new_name": "Manchester City 25-26 Away Long Sleeve (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Manchester City",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [
+        "Long Sleeve"
+      ],
+      "size": "S-4XL",
+      "original": "Manchester City 25_26 Away Long Sleeve (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Long sleeve\\Manchester City 25_26 Away Long Sleeve (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Long sleeve",
+    "original_name": "Manchester City 25_26 Home Long Sleeve (Size S-4XL)",
+    "new_name": "Manchester City 25-26 Home Long Sleeve (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Manchester City",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [
+        "Long Sleeve"
+      ],
+      "size": "S-4XL",
+      "original": "Manchester City 25_26 Home Long Sleeve (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Long sleeve\\Manchester City 25_26 Home Long Sleeve (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Long sleeve",
+    "original_name": "Manchester United 25_26 Away Long Sleeve (Size S-4XL)",
+    "new_name": "Manchester United 25-26 Away Long Sleeve (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Manchester United",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [
+        "Long Sleeve"
+      ],
+      "size": "S-4XL",
+      "original": "Manchester United 25_26 Away Long Sleeve (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Long sleeve\\Manchester United 25_26 Away Long Sleeve (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Long sleeve",
+    "original_name": "Manchester United 25_26 Home Long Sleeve (Size S-4XL)",
+    "new_name": "Manchester United 25-26 Home Long Sleeve (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Manchester United",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [
+        "Long Sleeve"
+      ],
+      "size": "S-4XL",
+      "original": "Manchester United 25_26 Home Long Sleeve (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Long sleeve\\Manchester United 25_26 Home Long Sleeve (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Long sleeve",
+    "original_name": "Manchester United Third 25_26 Away Long Sleeve (Size S-4XL)",
+    "new_name": "Manchester United 25-26 Third Long Sleeve (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Manchester United",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Third",
+      "extras": [
+        "Long Sleeve"
+      ],
+      "size": "S-4XL",
+      "original": "Manchester United Third 25_26 Away Long Sleeve (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Long sleeve\\Manchester United Third 25_26 Away Long Sleeve (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Long sleeve",
+    "original_name": "Newcastle United 25_26 Home Long Sleeve (Size S-4XL)",
+    "new_name": "Newcastle United 25-26 Home Long Sleeve (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Newcastle United",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [
+        "Long Sleeve"
+      ],
+      "size": "S-4XL",
+      "original": "Newcastle United 25_26 Home Long Sleeve (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Long sleeve\\Newcastle United 25_26 Home Long Sleeve (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Long sleeve",
+    "original_name": "Paris Saint-Germain 18_19 Away Long Sleeve (Size S-XXL)",
+    "new_name": "Paris Saint-Germain 18-19 Away Long Sleeve (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Paris Saint-Germain",
+      "year": "18-19",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [
+        "Long Sleeve"
+      ],
+      "size": "S-XXL",
+      "original": "Paris Saint-Germain 18_19 Away Long Sleeve (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Long sleeve\\Paris Saint-Germain 18_19 Away Long Sleeve (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Long sleeve",
+    "original_name": "Paris Saint-Germain 25_26 Home Long Sleeve (Size S-4XL)",
+    "new_name": "Paris Saint-Germain 25-26 Home Long Sleeve (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Paris Saint-Germain",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [
+        "Long Sleeve"
+      ],
+      "size": "S-4XL",
+      "original": "Paris Saint-Germain 25_26 Home Long Sleeve (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Long sleeve\\Paris Saint-Germain 25_26 Home Long Sleeve (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Long sleeve",
+    "original_name": "Real Madrid 13_14 Home Long Sleeve (Size S-XXL)",
+    "new_name": "Real Madrid 13-14 Home Long Sleeve (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Real Madrid",
+      "year": "13-14",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [
+        "Long Sleeve"
+      ],
+      "size": "S-XXL",
+      "original": "Real Madrid 13_14 Home Long Sleeve (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Long sleeve\\Real Madrid 13_14 Home Long Sleeve (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Long sleeve",
+    "original_name": "Real Madrid 14_15 Away Long Sleeve (Size S-XXL)",
+    "new_name": "Real Madrid 14-15 Away Long Sleeve (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Real Madrid",
+      "year": "14-15",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [
+        "Long Sleeve"
+      ],
+      "size": "S-XXL",
+      "original": "Real Madrid 14_15 Away Long Sleeve (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Long sleeve\\Real Madrid 14_15 Away Long Sleeve (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Long sleeve",
+    "original_name": "Real Madrid 15_16 Home Long Sleeve (Size S-XXL)",
+    "new_name": "Real Madrid 15-16 Home Long Sleeve (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Real Madrid",
+      "year": "15-16",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [
+        "Long Sleeve"
+      ],
+      "size": "S-XXL",
+      "original": "Real Madrid 15_16 Home Long Sleeve (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Long sleeve\\Real Madrid 15_16 Home Long Sleeve (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Long sleeve",
+    "original_name": "Real Madrid 16_17 Home Long Sleeve (Size S-XXL)",
+    "new_name": "Real Madrid 16-17 Home Long Sleeve (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Real Madrid",
+      "year": "16-17",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [
+        "Long Sleeve"
+      ],
+      "size": "S-XXL",
+      "original": "Real Madrid 16_17 Home Long Sleeve (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Long sleeve\\Real Madrid 16_17 Home Long Sleeve (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Long sleeve",
+    "original_name": "Real Madrid 17_18 Away Long Sleeve (Size S-XXL)",
+    "new_name": "Real Madrid 17-18 Away Long Sleeve (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Real Madrid",
+      "year": "17-18",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [
+        "Long Sleeve"
+      ],
+      "size": "S-XXL",
+      "original": "Real Madrid 17_18 Away Long Sleeve (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Long sleeve\\Real Madrid 17_18 Away Long Sleeve (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Long sleeve",
+    "original_name": "Real Madrid 17_18 Home Long Sleeve (Size S-XXL)",
+    "new_name": "Real Madrid 17-18 Home Long Sleeve (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Real Madrid",
+      "year": "17-18",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [
+        "Long Sleeve"
+      ],
+      "size": "S-XXL",
+      "original": "Real Madrid 17_18 Home Long Sleeve (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Long sleeve\\Real Madrid 17_18 Home Long Sleeve (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Long sleeve",
+    "original_name": "Real Madrid 25_26 Away Long Sleeve (Size S-4XL)",
+    "new_name": "Real Madrid 25-26 Away Long Sleeve (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Real Madrid",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [
+        "Long Sleeve"
+      ],
+      "size": "S-4XL",
+      "original": "Real Madrid 25_26 Away Long Sleeve (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Long sleeve\\Real Madrid 25_26 Away Long Sleeve (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Long sleeve",
+    "original_name": "Real Madrid 25_26 Home Long Sleeve (Size S-4XL)",
+    "new_name": "Real Madrid 25-26 Home Long Sleeve (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Real Madrid",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [
+        "Long Sleeve"
+      ],
+      "size": "S-4XL",
+      "original": "Real Madrid 25_26 Home Long Sleeve (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Long sleeve\\Real Madrid 25_26 Home Long Sleeve (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Long sleeve",
+    "original_name": "Real Madrid Third 25_26 Away Long Sleeve (Size S-4XL)",
+    "new_name": "Real Madrid 25-26 Third Long Sleeve (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Real Madrid",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Third",
+      "extras": [
+        "Long Sleeve"
+      ],
+      "size": "S-4XL",
+      "original": "Real Madrid Third 25_26 Away Long Sleeve (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Long sleeve\\Real Madrid Third 25_26 Away Long Sleeve (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Long sleeve",
+    "original_name": "Tottenham Hotspur 25_26 Home Long Sleeve (Size S-4XL)",
+    "new_name": "Tottenham Hotspur 25-26 Home Long Sleeve (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Tottenham Hotspur",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [
+        "Long Sleeve"
+      ],
+      "size": "S-4XL",
+      "original": "Tottenham Hotspur 25_26 Home Long Sleeve (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Long sleeve\\Tottenham Hotspur 25_26 Home Long Sleeve (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to MLS",
+    "original_name": "Inter Miami 25_26 Away (Size S-4XL)",
+    "new_name": "Inter Miami 25-26 Away (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Inter Miami",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Inter Miami 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to MLS\\Inter Miami 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to MLS",
+    "original_name": "Inter Miami 25_26 Away (Size S-4XL)_1",
+    "new_name": "Inter Miami Away_1 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Inter Miami Away_1",
+      "year": "25-26",
+      "year_format": "short",
+      "type": null,
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Inter Miami 25_26 Away (Size S-4XL)_1"
+    },
+    "path": "Leagues\\Albums belong to MLS\\Inter Miami 25_26 Away (Size S-4XL)_1"
+  },
+  {
+    "league": "Albums belong to MLS",
+    "original_name": "Inter Miami 25_26 Home (Size S-4XL)",
+    "new_name": "Inter Miami 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Inter Miami",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Inter Miami 25_26 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to MLS\\Inter Miami 25_26 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to MLS",
+    "original_name": "LA Galaxy 11_12 Away (Size S-XXL)",
+    "new_name": "LA Galaxy 11-12 Away (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "LA Galaxy",
+      "year": "11-12",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "LA Galaxy 11_12 Away (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to MLS\\LA Galaxy 11_12 Away (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to MLS",
+    "original_name": "LA Galaxy Home (Size S-XXL)",
+    "new_name": "LA Galaxy Home (Size S-XXL)",
+    "needs_change": false,
+    "components": {
+      "team": "LA Galaxy",
+      "year": null,
+      "year_format": null,
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "LA Galaxy Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to MLS\\LA Galaxy Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Premier League",
+    "original_name": "Arsenal 25_26 Away (Size S-XXL)",
+    "new_name": "Arsenal 25-26 Away (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Arsenal",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Arsenal 25_26 Away (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Premier League\\Arsenal 25_26 Away (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Premier League",
+    "original_name": "Arsenal 25_26 Home (Size S-4XL)",
+    "new_name": "Arsenal 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Arsenal",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Arsenal 25_26 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Premier League\\Arsenal 25_26 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Premier League",
+    "original_name": "Arsenal Baseball 25_26 (Size S-4XL)",
+    "new_name": "Arsenal 25-26 Home Baseball (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Arsenal",
+      "year": "25-26",
+      "year_format": "short",
+      "type": null,
+      "extras": [
+        "Baseball"
+      ],
+      "size": "S-4XL",
+      "original": "Arsenal Baseball 25_26 (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Premier League\\Arsenal Baseball 25_26 (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Premier League",
+    "original_name": "Arsenal Third 25_26 Away (Size S-4XL)",
+    "new_name": "Arsenal 25-26 Third (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Arsenal",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Third",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Arsenal Third 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Premier League\\Arsenal Third 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Premier League",
+    "original_name": "Aston Villa 25_26 Away (Size S-4XL)",
+    "new_name": "Aston Villa 25-26 Away (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Aston Villa",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Aston Villa 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Premier League\\Aston Villa 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Premier League",
+    "original_name": "Brighton 25_26 Home (Size S-4XL)",
+    "new_name": "Brighton 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Brighton",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Brighton 25_26 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Premier League\\Brighton 25_26 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Premier League",
+    "original_name": "Chelsea 09_10 Home (Size S-XXL)",
+    "new_name": "Chelsea 09-10 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Chelsea",
+      "year": "09-10",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Chelsea 09_10 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Premier League\\Chelsea 09_10 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Premier League",
+    "original_name": "Chelsea 10_11 Away (Size S-XXL)",
+    "new_name": "Chelsea 10-11 Away (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Chelsea",
+      "year": "10-11",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Chelsea 10_11 Away (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Premier League\\Chelsea 10_11 Away (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Premier League",
+    "original_name": "Chelsea 12_13 Away (Size S-XXL)",
+    "new_name": "Chelsea 12-13 Away (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Chelsea",
+      "year": "12-13",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Chelsea 12_13 Away (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Premier League\\Chelsea 12_13 Away (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Premier League",
+    "original_name": "Chelsea 12_13 Home (Size S-XXL)",
+    "new_name": "Chelsea 12-13 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Chelsea",
+      "year": "12-13",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Chelsea 12_13 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Premier League\\Chelsea 12_13 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Premier League",
+    "original_name": "Chelsea 25_26 Home (Size S-4XL)",
+    "new_name": "Chelsea 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Chelsea",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Chelsea 25_26 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Premier League\\Chelsea 25_26 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Premier League",
+    "original_name": "Chelsea Third 25_26 Away (Size S-4XL)",
+    "new_name": "Chelsea 25-26 Third (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Chelsea",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Third",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Chelsea Third 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Premier League\\Chelsea Third 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Premier League",
+    "original_name": "Everton 25_26 Home (Size S-X4L)",
+    "new_name": "Everton 25-26 Home (Size S-X4L)",
+    "needs_change": true,
+    "components": {
+      "team": "Everton",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-X4L",
+      "original": "Everton 25_26 Home (Size S-X4L)"
+    },
+    "path": "Leagues\\Albums belong to Premier League\\Everton 25_26 Home (Size S-X4L)"
+  },
+  {
+    "league": "Albums belong to Premier League",
+    "original_name": "Everton Adult 25_26 Away (Size S-4XL)",
+    "new_name": "Everton Adult 25-26 Away (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Everton Adult",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Everton Adult 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Premier League\\Everton Adult 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Premier League",
+    "original_name": "Fulham 25_26 Home (Size S-4XL)",
+    "new_name": "Fulham 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Fulham",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Fulham 25_26 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Premier League\\Fulham 25_26 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Premier League",
+    "original_name": "Leeds United 25_26 Away (Size S-4XL)",
+    "new_name": "Leeds United 25-26 Away (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Leeds United",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Leeds United 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Premier League\\Leeds United 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Premier League",
+    "original_name": "Manchester City 11_12 Home (Size S-XXL)",
+    "new_name": "Manchester City 11-12 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Manchester City",
+      "year": "11-12",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Manchester City 11_12 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Premier League\\Manchester City 11_12 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Premier League",
+    "original_name": "Manchester City 12_13 Away (Size S-XXL)",
+    "new_name": "Manchester City 12-13 Away (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Manchester City",
+      "year": "12-13",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Manchester City 12_13 Away (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Premier League\\Manchester City 12_13 Away (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Premier League",
+    "original_name": "Manchester City 13_14 Home (Size S-XXL)",
+    "new_name": "Manchester City 13-14 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Manchester City",
+      "year": "13-14",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Manchester City 13_14 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Premier League\\Manchester City 13_14 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Premier League",
+    "original_name": "Manchester City 15_16 Home (Size S-XXL)",
+    "new_name": "Manchester City 15-16 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Manchester City",
+      "year": "15-16",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Manchester City 15_16 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Premier League\\Manchester City 15_16 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Premier League",
+    "original_name": "Manchester City 19_20 Home (Size S-XXL)",
+    "new_name": "Manchester City 19-20 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Manchester City",
+      "year": "19-20",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Manchester City 19_20 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Premier League\\Manchester City 19_20 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Premier League",
+    "original_name": "Manchester City 25_26 Away (Size S-4XL)",
+    "new_name": "Manchester City 25-26 Away (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Manchester City",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Manchester City 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Premier League\\Manchester City 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Premier League",
+    "original_name": "Manchester City 25_26 Away (Size S-4XL)_1",
+    "new_name": "Manchester City Away_1 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Manchester City Away_1",
+      "year": "25-26",
+      "year_format": "short",
+      "type": null,
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Manchester City 25_26 Away (Size S-4XL)_1"
+    },
+    "path": "Leagues\\Albums belong to Premier League\\Manchester City 25_26 Away (Size S-4XL)_1"
+  },
+  {
+    "league": "Albums belong to Premier League",
+    "original_name": "Manchester City 25_26 Home (Size S-4XL)",
+    "new_name": "Manchester City 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Manchester City",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Manchester City 25_26 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Premier League\\Manchester City 25_26 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Premier League",
+    "original_name": "Manchester City Special Edition 25_26 (Size S-4XL)",
+    "new_name": "Manchester City 25-26 Home Special Edition (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Manchester City",
+      "year": "25-26",
+      "year_format": "short",
+      "type": null,
+      "extras": [
+        "Special Edition"
+      ],
+      "size": "S-4XL",
+      "original": "Manchester City Special Edition 25_26 (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Premier League\\Manchester City Special Edition 25_26 (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Premier League",
+    "original_name": "Manchester City Third 25_26 Away (Size S-4XL)",
+    "new_name": "Manchester City 25-26 Third (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Manchester City",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Third",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Manchester City Third 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Premier League\\Manchester City Third 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Premier League",
+    "original_name": "Manchester United 25_26 (Size S-4XL)",
+    "new_name": "Manchester United 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Manchester United",
+      "year": "25-26",
+      "year_format": "short",
+      "type": null,
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Manchester United 25_26 (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Premier League\\Manchester United 25_26 (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Premier League",
+    "original_name": "Manchester United 25_26 Away (Size S-4XL)",
+    "new_name": "Manchester United 25-26 Away (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Manchester United",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Manchester United 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Premier League\\Manchester United 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Premier League",
+    "original_name": "Manchester United 25_26 Away (Size S-4XL)_1",
+    "new_name": "Manchester United Away_1 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Manchester United Away_1",
+      "year": "25-26",
+      "year_format": "short",
+      "type": null,
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Manchester United 25_26 Away (Size S-4XL)_1"
+    },
+    "path": "Leagues\\Albums belong to Premier League\\Manchester United 25_26 Away (Size S-4XL)_1"
+  },
+  {
+    "league": "Albums belong to Premier League",
+    "original_name": "Manchester United 25_26 Home (Size S-4XL)",
+    "new_name": "Manchester United 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Manchester United",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Manchester United 25_26 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Premier League\\Manchester United 25_26 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Premier League",
+    "original_name": "Manchester United 25_26 Third (Size S-4XL)",
+    "new_name": "Manchester United 25-26 Third (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Manchester United",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Third",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Manchester United 25_26 Third (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Premier League\\Manchester United 25_26 Third (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Premier League",
+    "original_name": "Newcastle United 25_26 Away (Size S-4XL)",
+    "new_name": "Newcastle United 25-26 Away (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Newcastle United",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Newcastle United 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Premier League\\Newcastle United 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Premier League",
+    "original_name": "Newcastle United 25_26 Home (Size S-4XL)",
+    "new_name": "Newcastle United 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Newcastle United",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Newcastle United 25_26 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Premier League\\Newcastle United 25_26 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Premier League",
+    "original_name": "Newcastle United Third Game 25_26 Away (Size S-4XL)",
+    "new_name": "Newcastle United 25-26 Third Game (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Newcastle United",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Third",
+      "extras": [
+        "Game"
+      ],
+      "size": "S-4XL",
+      "original": "Newcastle United Third Game 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Premier League\\Newcastle United Third Game 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Premier League",
+    "original_name": "Nottingham Forest 25_26 Away (Size S-4XL)",
+    "new_name": "Nottingham Forest 25-26 Away (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Nottingham Forest",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Nottingham Forest 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Premier League\\Nottingham Forest 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Premier League",
+    "original_name": "Nottingham Forest 25_26 Home (Size S-4XL)",
+    "new_name": "Nottingham Forest 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Nottingham Forest",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Nottingham Forest 25_26 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Premier League\\Nottingham Forest 25_26 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Premier League",
+    "original_name": "Rangers 25_26 Away (Size S-4XL)",
+    "new_name": "Rangers 25-26 Away (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Rangers",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Rangers 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Premier League\\Rangers 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Premier League",
+    "original_name": "Rangers 25_26 Third (Size S-4XL)",
+    "new_name": "Rangers 25-26 Third (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Rangers",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Third",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Rangers 25_26 Third (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Premier League\\Rangers 25_26 Third (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Premier League",
+    "original_name": "Tottenham 25_26 Away (Size S-4XL)",
+    "new_name": "Tottenham 25-26 Away (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Tottenham",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Tottenham 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Premier League\\Tottenham 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Premier League",
+    "original_name": "Tottenham 25_26 Home (Size S-4XL)",
+    "new_name": "Tottenham 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Tottenham",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Tottenham 25_26 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Premier League\\Tottenham 25_26 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Premier League",
+    "original_name": "West Ham United 25_26 Away (Size S-4XL)",
+    "new_name": "West Ham United 25-26 Away (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "West Ham United",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "West Ham United 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Premier League\\West Ham United 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Premier League",
+    "original_name": "Wolves 25_26 Home (Size S-4XL)",
+    "new_name": "Wolves 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Wolves",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Wolves 25_26 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Premier League\\Wolves 25_26 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Primeira Liga",
+    "original_name": "Benfica 25_26 Away (Size S-4XL)",
+    "new_name": "Benfica 25-26 Away (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Benfica",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Benfica 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Primeira Liga\\Benfica 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Primeira Liga",
+    "original_name": "Benfica 25_26 Home (Size S-4XL)",
+    "new_name": "Benfica 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Benfica",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Benfica 25_26 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Primeira Liga\\Benfica 25_26 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Primeira Liga",
+    "original_name": "Benfica Beige 25_26 Away (Size S-4XL)",
+    "new_name": "Benfica Beige 25-26 Away (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Benfica Beige",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Benfica Beige 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Primeira Liga\\Benfica Beige 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Primeira Liga",
+    "original_name": "Benfica Special Edition 25_26 (Size S-4XL)",
+    "new_name": "Benfica 25-26 Home Special Edition (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Benfica",
+      "year": "25-26",
+      "year_format": "short",
+      "type": null,
+      "extras": [
+        "Special Edition"
+      ],
+      "size": "S-4XL",
+      "original": "Benfica Special Edition 25_26 (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Primeira Liga\\Benfica Special Edition 25_26 (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Primeira Liga",
+    "original_name": "Braga 25_26 Away (Size S-4XL)",
+    "new_name": "Braga 25-26 Away (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Braga",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Braga 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Primeira Liga\\Braga 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Primeira Liga",
+    "original_name": "Porto 25_26 Away (Size S-4XL)",
+    "new_name": "Porto 25-26 Away (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Porto",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Porto 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Primeira Liga\\Porto 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Primeira Liga",
+    "original_name": "Porto 25_26 Home (Size S-4XL)",
+    "new_name": "Porto 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Porto",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Porto 25_26 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Primeira Liga\\Porto 25_26 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Primeira Liga",
+    "original_name": "Sporting Lisbon 25_26 Away (Size S-4XL)",
+    "new_name": "Sporting Lisbon 25-26 Away (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Sporting Lisbon",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Sporting Lisbon 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Primeira Liga\\Sporting Lisbon 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Primeira Liga",
+    "original_name": "Sporting Lisbon 25_26 Home (Size S-4XL)",
+    "new_name": "Sporting Lisbon 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Sporting Lisbon",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Sporting Lisbon 25_26 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Primeira Liga\\Sporting Lisbon 25_26 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Primeira Liga",
+    "original_name": "Sporting Lisbon Black Size_ 25_26 Goalkeeper (Size 16-28)",
+    "new_name": "Sporting Lisbon Size 25-26 Goalkeeper Black (Size 16-28)",
+    "needs_change": true,
+    "components": {
+      "team": "Sporting Lisbon Size",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Goalkeeper",
+      "extras": [
+        "Black"
+      ],
+      "size": "16-28",
+      "original": "Sporting Lisbon Black Size_ 25_26 Goalkeeper (Size 16-28)"
+    },
+    "path": "Leagues\\Albums belong to Primeira Liga\\Sporting Lisbon Black Size_ 25_26 Goalkeeper (Size 16-28)"
+  },
+  {
+    "league": "Albums belong to Primeira Liga",
+    "original_name": "Sporting Lisbon Green Size_ 25_26 Goalkeeper (Size 16-28)",
+    "new_name": "Sporting Lisbon Size 25-26 Goalkeeper Green (Size 16-28)",
+    "needs_change": true,
+    "components": {
+      "team": "Sporting Lisbon Size",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Goalkeeper",
+      "extras": [
+        "Green"
+      ],
+      "size": "16-28",
+      "original": "Sporting Lisbon Green Size_ 25_26 Goalkeeper (Size 16-28)"
+    },
+    "path": "Leagues\\Albums belong to Primeira Liga\\Sporting Lisbon Green Size_ 25_26 Goalkeeper (Size 16-28)"
+  },
+  {
+    "league": "Albums belong to Primeira Liga",
+    "original_name": "Sporting Lisbon Special Edition 25_26 (Size S-4XL)",
+    "new_name": "Sporting Lisbon 25-26 Home Special Edition (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Sporting Lisbon",
+      "year": "25-26",
+      "year_format": "short",
+      "type": null,
+      "extras": [
+        "Special Edition"
+      ],
+      "size": "S-4XL",
+      "original": "Sporting Lisbon Special Edition 25_26 (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Primeira Liga\\Sporting Lisbon Special Edition 25_26 (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Primeira Liga",
+    "original_name": "Sporting Lisbon Third 25_26 Away (Size S-4XL)",
+    "new_name": "Sporting Lisbon 25-26 Third (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Sporting Lisbon",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Third",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Sporting Lisbon Third 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Primeira Liga\\Sporting Lisbon Third 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to SAF",
+    "original_name": "1978 Argentina Home (Size S-XXL)",
+    "new_name": "Argentina 1978 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Argentina",
+      "year": "1978",
+      "year_format": "full",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "1978 Argentina Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to SAF\\1978 Argentina Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to SAF",
+    "original_name": "1981 Boca Juniors Home (Size S-XXL)",
+    "new_name": "Boca Juniors 1981 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Boca Juniors",
+      "year": "1981",
+      "year_format": "full",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "1981 Boca Juniors Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to SAF\\1981 Boca Juniors Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to SAF",
+    "original_name": "1986 Argentina Home (Size S-XXL)",
+    "new_name": "Argentina 1986 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Argentina",
+      "year": "1986",
+      "year_format": "full",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "1986 Argentina Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to SAF\\1986 Argentina Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to SAF",
+    "original_name": "1986 River Plate Home (Size S-XXL)",
+    "new_name": "River Plate 1986 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "River Plate",
+      "year": "1986",
+      "year_format": "full",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "1986 River Plate Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to SAF\\1986 River Plate Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to SAF",
+    "original_name": "2006 Argentina Away (Size S-XXL)",
+    "new_name": "Argentina 2006 Away (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Argentina",
+      "year": "2006",
+      "year_format": "full",
+      "type": "Away",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "2006 Argentina Away (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to SAF\\2006 Argentina Away (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to SAF",
+    "original_name": "2010 Argentina Home (Size S-XXL)",
+    "new_name": "Argentina 2010 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Argentina",
+      "year": "2010",
+      "year_format": "full",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "2010 Argentina Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to SAF\\2010 Argentina Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to SAF",
+    "original_name": "Argentina 1986 Away (Size S-XXL)",
+    "new_name": "Argentina 1986 Away (Size S-XXL)",
+    "needs_change": false,
+    "components": {
+      "team": "Argentina",
+      "year": "1986",
+      "year_format": "full",
+      "type": "Away",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Argentina 1986 Away (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to SAF\\Argentina 1986 Away (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to SAF",
+    "original_name": "Argentina 1994 Away (Size S-XXL)",
+    "new_name": "Argentina 1994 Away (Size S-XXL)",
+    "needs_change": false,
+    "components": {
+      "team": "Argentina",
+      "year": "1994",
+      "year_format": "full",
+      "type": "Away",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Argentina 1994 Away (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to SAF\\Argentina 1994 Away (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to SAF",
+    "original_name": "Argentina 1998 Away (Size S-XXL)",
+    "new_name": "Argentina 1998 Away (Size S-XXL)",
+    "needs_change": false,
+    "components": {
+      "team": "Argentina",
+      "year": "1998",
+      "year_format": "full",
+      "type": "Away",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Argentina 1998 Away (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to SAF\\Argentina 1998 Away (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to SAF",
+    "original_name": "Argentina 1998 Home (Size S-XXL)",
+    "new_name": "Argentina 1998 Home (Size S-XXL)",
+    "needs_change": false,
+    "components": {
+      "team": "Argentina",
+      "year": "1998",
+      "year_format": "full",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Argentina 1998 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to SAF\\Argentina 1998 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to SAF",
+    "original_name": "Argentina 2014 Away (Size S-XXL)",
+    "new_name": "Argentina 2014 Away (Size S-XXL)",
+    "needs_change": false,
+    "components": {
+      "team": "Argentina",
+      "year": "2014",
+      "year_format": "full",
+      "type": "Away",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Argentina 2014 Away (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to SAF\\Argentina 2014 Away (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to SAF",
+    "original_name": "Boca Juniors 03_04 Home (Size S-XXL)",
+    "new_name": "Boca Juniors 03-04 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Boca Juniors",
+      "year": "03-04",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Boca Juniors 03_04 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to SAF\\Boca Juniors 03_04 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to SAF",
+    "original_name": "Boca Juniors 04_05 Home (Size S-XXL)",
+    "new_name": "Boca Juniors 04-05 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Boca Juniors",
+      "year": "04-05",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Boca Juniors 04_05 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to SAF\\Boca Juniors 04_05 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to SAF",
+    "original_name": "Boca Juniors 06_07 Home (Size S-XXL)",
+    "new_name": "Boca Juniors 06-07 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Boca Juniors",
+      "year": "06-07",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Boca Juniors 06_07 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to SAF\\Boca Juniors 06_07 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to SAF",
+    "original_name": "Boca Juniors 09_10 Home (Size S-XXL)",
+    "new_name": "Boca Juniors 09-10 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Boca Juniors",
+      "year": "09-10",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Boca Juniors 09_10 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to SAF\\Boca Juniors 09_10 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to SAF",
+    "original_name": "Boca Juniors 10_11 Home (Size S-XXL)",
+    "new_name": "Boca Juniors 10-11 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Boca Juniors",
+      "year": "10-11",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Boca Juniors 10_11 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to SAF\\Boca Juniors 10_11 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to SAF",
+    "original_name": "Boca Juniors 11_12 Home (Size S-XXL)",
+    "new_name": "Boca Juniors 11-12 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Boca Juniors",
+      "year": "11-12",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Boca Juniors 11_12 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to SAF\\Boca Juniors 11_12 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to SAF",
+    "original_name": "Boca Juniors 1999 Away (Size S-XXL)",
+    "new_name": "Boca Juniors 1999 Away (Size S-XXL)",
+    "needs_change": false,
+    "components": {
+      "team": "Boca Juniors",
+      "year": "1999",
+      "year_format": "full",
+      "type": "Away",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Boca Juniors 1999 Away (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to SAF\\Boca Juniors 1999 Away (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to SAF",
+    "original_name": "Boca Juniors 1999 Home (Size S-XXL)",
+    "new_name": "Boca Juniors 1999 Home (Size S-XXL)",
+    "needs_change": false,
+    "components": {
+      "team": "Boca Juniors",
+      "year": "1999",
+      "year_format": "full",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Boca Juniors 1999 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to SAF\\Boca Juniors 1999 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to SAF",
+    "original_name": "Boca Juniors 2001 Home",
+    "new_name": "Boca Juniors 2001 Home",
+    "needs_change": false,
+    "components": {
+      "team": "Boca Juniors",
+      "year": "2001",
+      "year_format": "full",
+      "type": "Home",
+      "extras": [],
+      "size": null,
+      "original": "Boca Juniors 2001 Home"
+    },
+    "path": "Leagues\\Albums belong to SAF\\Boca Juniors 2001 Home"
+  },
+  {
+    "league": "Albums belong to SAF",
+    "original_name": "Boca Juniors 2005 Home",
+    "new_name": "Boca Juniors 2005 Home",
+    "needs_change": false,
+    "components": {
+      "team": "Boca Juniors",
+      "year": "2005",
+      "year_format": "full",
+      "type": "Home",
+      "extras": [],
+      "size": null,
+      "original": "Boca Juniors 2005 Home"
+    },
+    "path": "Leagues\\Albums belong to SAF\\Boca Juniors 2005 Home"
+  },
+  {
+    "league": "Albums belong to SAF",
+    "original_name": "Boca Juniors 93_95 Home (Size S-XXL)",
+    "new_name": "Boca Juniors 93-95 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Boca Juniors",
+      "year": "93-95",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Boca Juniors 93_95 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to SAF\\Boca Juniors 93_95 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to SAF",
+    "original_name": "Boca Juniors 95_96 Away (Size S-XXL)",
+    "new_name": "Boca Juniors 95-96 Away (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Boca Juniors",
+      "year": "95-96",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Boca Juniors 95_96 Away (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to SAF\\Boca Juniors 95_96 Away (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to SAF",
+    "original_name": "Boca Juniors 96_97 Home (Size S-XXL)",
+    "new_name": "Boca Juniors 96-97 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Boca Juniors",
+      "year": "96-97",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Boca Juniors 96_97 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to SAF\\Boca Juniors 96_97 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to SAF",
+    "original_name": "Boca Juniors 99_00 Home (Size S-XXL)",
+    "new_name": "Boca Juniors 99-00 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Boca Juniors",
+      "year": "99-00",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Boca Juniors 99_00 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to SAF\\Boca Juniors 99_00 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to SAF",
+    "original_name": "Boca Juniors Special Edition 25_26 (Size S-4XL)",
+    "new_name": "Boca Juniors 25-26 Home Special Edition (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Boca Juniors",
+      "year": "25-26",
+      "year_format": "short",
+      "type": null,
+      "extras": [
+        "Special Edition"
+      ],
+      "size": "S-4XL",
+      "original": "Boca Juniors Special Edition 25_26 (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to SAF\\Boca Juniors Special Edition 25_26 (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to SAF",
+    "original_name": "Boca Juniors Special Edition 25_26 (Size S-XXL)",
+    "new_name": "Boca Juniors 25-26 Home Special Edition (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Boca Juniors",
+      "year": "25-26",
+      "year_format": "short",
+      "type": null,
+      "extras": [
+        "Special Edition"
+      ],
+      "size": "S-XXL",
+      "original": "Boca Juniors Special Edition 25_26 (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to SAF\\Boca Juniors Special Edition 25_26 (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to SAF",
+    "original_name": "Boca Juniors Stadium 25_26 Home (Size S-4XL)",
+    "new_name": "Boca Juniors Stadium 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Boca Juniors Stadium",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Boca Juniors Stadium 25_26 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to SAF\\Boca Juniors Stadium 25_26 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to SAF",
+    "original_name": "River Plate 00_01 Home (Size S-XXL)",
+    "new_name": "River Plate 00-01 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "River Plate",
+      "year": "00-01",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "River Plate 00_01 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to SAF\\River Plate 00_01 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to SAF",
+    "original_name": "River Plate 95_96 Away (Size S-XXL)",
+    "new_name": "River Plate 95-96 Away (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "River Plate",
+      "year": "95-96",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "River Plate 95_96 Away (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to SAF\\River Plate 95_96 Away (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to SAF",
+    "original_name": "River Plate 95_96 Home (Size S-XXL)",
+    "new_name": "River Plate 95-96 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "River Plate",
+      "year": "95-96",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "River Plate 95_96 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to SAF\\River Plate 95_96 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to SAF",
+    "original_name": "River Plate 95_96 Home (Size S-XXL)_1",
+    "new_name": "River Plate Home_1 95-96 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "River Plate Home_1",
+      "year": "95-96",
+      "year_format": "short",
+      "type": null,
+      "extras": [],
+      "size": "S-XXL",
+      "original": "River Plate 95_96 Home (Size S-XXL)_1"
+    },
+    "path": "Leagues\\Albums belong to SAF\\River Plate 95_96 Home (Size S-XXL)_1"
+  },
+  {
+    "league": "Albums belong to SAF",
+    "original_name": "River Plate Us Pack Full-Button Baseball White 25_26 (Size S-XXL)",
+    "new_name": "River Plate Us Pack Full-Button 25-26 Home Baseball White (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "River Plate Us Pack Full-Button",
+      "year": "25-26",
+      "year_format": "short",
+      "type": null,
+      "extras": [
+        "Baseball",
+        "White"
+      ],
+      "size": "S-XXL",
+      "original": "River Plate Us Pack Full-Button Baseball White 25_26 (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to SAF\\River Plate Us Pack Full-Button Baseball White 25_26 (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Serie A",
+    "original_name": "Ac Milan 06_07 Home (Size S-XXL)",
+    "new_name": "Ac Milan 06-07 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Ac Milan",
+      "year": "06-07",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Ac Milan 06_07 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Serie A\\Ac Milan 06_07 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Serie A",
+    "original_name": "Ac Milan 07_08 Away (Size S-XXL)",
+    "new_name": "Ac Milan 07-08 Away (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Ac Milan",
+      "year": "07-08",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Ac Milan 07_08 Away (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Serie A\\Ac Milan 07_08 Away (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Serie A",
+    "original_name": "Ac Milan 07_08 Home (Size S-XXL)",
+    "new_name": "Ac Milan 07-08 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Ac Milan",
+      "year": "07-08",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Ac Milan 07_08 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Serie A\\Ac Milan 07_08 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Serie A",
+    "original_name": "Ac Milan 08_09 Home (Size S-XXL)",
+    "new_name": "Ac Milan 08-09 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Ac Milan",
+      "year": "08-09",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Ac Milan 08_09 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Serie A\\Ac Milan 08_09 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Serie A",
+    "original_name": "Ac Milan 09_10 Away (Size S-XXL)",
+    "new_name": "Ac Milan 09-10 Away (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Ac Milan",
+      "year": "09-10",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Ac Milan 09_10 Away (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Serie A\\Ac Milan 09_10 Away (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Serie A",
+    "original_name": "Ac Milan 09_10 Home (Size S-XXL)",
+    "new_name": "Ac Milan 09-10 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Ac Milan",
+      "year": "09-10",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Ac Milan 09_10 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Serie A\\Ac Milan 09_10 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Serie A",
+    "original_name": "Ac Milan 10_11 Home (Size S-XXL)",
+    "new_name": "Ac Milan 10-11 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Ac Milan",
+      "year": "10-11",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Ac Milan 10_11 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Serie A\\Ac Milan 10_11 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Serie A",
+    "original_name": "Ac Milan 11_12 Away (Size S-XXL)",
+    "new_name": "Ac Milan 11-12 Away (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Ac Milan",
+      "year": "11-12",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Ac Milan 11_12 Away (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Serie A\\Ac Milan 11_12 Away (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Serie A",
+    "original_name": "Ac Milan 11_12 Home (Size S-4XL)",
+    "new_name": "Ac Milan 11-12 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Ac Milan",
+      "year": "11-12",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Ac Milan 11_12 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Serie A\\Ac Milan 11_12 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Serie A",
+    "original_name": "Ac Milan 12_13 Home (Size S-XXL)",
+    "new_name": "Ac Milan 12-13 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Ac Milan",
+      "year": "12-13",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Ac Milan 12_13 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Serie A\\Ac Milan 12_13 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Serie A",
+    "original_name": "Ac Milan 13_14 Home (Size S-XXL)",
+    "new_name": "Ac Milan 13-14 Home (Size S-XXL)",
+    "needs_change": true,
+    "components": {
+      "team": "Ac Milan",
+      "year": "13-14",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-XXL",
+      "original": "Ac Milan 13_14 Home (Size S-XXL)"
+    },
+    "path": "Leagues\\Albums belong to Serie A\\Ac Milan 13_14 Home (Size S-XXL)"
+  },
+  {
+    "league": "Albums belong to Serie A",
+    "original_name": "Ac Milan 25_26 Away (Size S-4XL)",
+    "new_name": "Ac Milan 25-26 Away (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Ac Milan",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Ac Milan 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Serie A\\Ac Milan 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Serie A",
+    "original_name": "Ac Milan 25_26 Home (Size S-4XL)",
+    "new_name": "Ac Milan 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Ac Milan",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Ac Milan 25_26 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Serie A\\Ac Milan 25_26 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Serie A",
+    "original_name": "Ac Milan Third 25_26 Away (Size S-4XL)",
+    "new_name": "Ac Milan 25-26 Third (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Ac Milan",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Third",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Ac Milan Third 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Serie A\\Ac Milan Third 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Serie A",
+    "original_name": "Atlanta United 25_26 Home (Size S-4XL)",
+    "new_name": "Atlanta United 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Atlanta United",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Atlanta United 25_26 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Serie A\\Atlanta United 25_26 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Serie A",
+    "original_name": "Bologna 25_26 Home (Size S-4XL)",
+    "new_name": "Bologna 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Bologna",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Bologna 25_26 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Serie A\\Bologna 25_26 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Serie A",
+    "original_name": "Inter Milan (Joint Edition) 24_25 Away (Size S-4XL)",
+    "new_name": "Inter Milan (Joint Edition) 24-25 Away (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Inter Milan (Joint Edition)",
+      "year": "24-25",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Inter Milan (Joint Edition) 24_25 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Serie A\\Inter Milan (Joint Edition) 24_25 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Serie A",
+    "original_name": "Inter Milan 24_25 Home (Size S-4XL)",
+    "new_name": "Inter Milan 24-25 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Inter Milan",
+      "year": "24-25",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Inter Milan 24_25 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Serie A\\Inter Milan 24_25 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Serie A",
+    "original_name": "Inter Milan 25_26 Home (Size S-4XL)",
+    "new_name": "Inter Milan 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Inter Milan",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Inter Milan 25_26 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Serie A\\Inter Milan 25_26 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Serie A",
+    "original_name": "Lazio 25_26 Away (Size S-4XL)",
+    "new_name": "Lazio 25-26 Away (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Lazio",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Lazio 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Serie A\\Lazio 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Serie A",
+    "original_name": "Napoli 25_26 Away (Size S-4XL)",
+    "new_name": "Napoli 25-26 Away (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Napoli",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Away",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Napoli 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Serie A\\Napoli 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Serie A",
+    "original_name": "Napoli 25_26 Home (Size S-4XL)",
+    "new_name": "Napoli 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Napoli",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Napoli 25_26 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Serie A\\Napoli 25_26 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Serie A",
+    "original_name": "Napoli Special Edition 25_26 (Size S-4XL)",
+    "new_name": "Napoli 25-26 Home Special Edition (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Napoli",
+      "year": "25-26",
+      "year_format": "short",
+      "type": null,
+      "extras": [
+        "Special Edition"
+      ],
+      "size": "S-4XL",
+      "original": "Napoli Special Edition 25_26 (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Serie A\\Napoli Special Edition 25_26 (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Serie A",
+    "original_name": "Roma 25_26 Home (Size S-4XL)",
+    "new_name": "Roma 25-26 Home (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Roma",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Home",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Roma 25_26 Home (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Serie A\\Roma 25_26 Home (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Serie A",
+    "original_name": "Roma Pre-Match 25_26 (Size S-4XL)",
+    "new_name": "Roma 25-26 Pre-Match (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Roma",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Pre-Match",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Roma Pre-Match 25_26 (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Serie A\\Roma Pre-Match 25_26 (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Serie A",
+    "original_name": "Roma Third 25_26 Away (Size S-4XL)",
+    "new_name": "Roma 25-26 Third (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Roma",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Third",
+      "extras": [],
+      "size": "S-4XL",
+      "original": "Roma Third 25_26 Away (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Serie A\\Roma Third 25_26 Away (Size S-4XL)"
+  },
+  {
+    "league": "Albums belong to Serie A",
+    "original_name": "Wolves Black 25_26 Goalkeeper (Size S-4XL)",
+    "new_name": "Wolves 25-26 Goalkeeper Black (Size S-4XL)",
+    "needs_change": true,
+    "components": {
+      "team": "Wolves",
+      "year": "25-26",
+      "year_format": "short",
+      "type": "Goalkeeper",
+      "extras": [
+        "Black"
+      ],
+      "size": "S-4XL",
+      "original": "Wolves Black 25_26 Goalkeeper (Size S-4XL)"
+    },
+    "path": "Leagues\\Albums belong to Serie A\\Wolves Black 25_26 Goalkeeper (Size S-4XL)"
+  }
+]

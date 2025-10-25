@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Sink Font */
+@layer base {
+  :root {
+    --font-sink: 'Sink', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-white antialiased;
+    background: linear-gradient(to bottom, #000000 0%, #0a0a0a 50%, #000000 100%);
+    background-attachment: fixed;
+  }
+}
+
+@layer utilities {
+  /* Utility classes customizadas */
+  .gradient-dark-premium {
+    background: linear-gradient(135deg, #0a0a0a 0%, #000000 50%, #0a0a0a 100%);
+  }
+
+  .gradient-dark-card {
+    background: linear-gradient(to bottom right, #18181b 0%, #09090b 100%);
+  }
+
+  .gradient-dark-section {
+    background: linear-gradient(to bottom, #000000 0%, #0f0f10 50%, #000000 100%);
+  }
+
+  /* Animação de gradiente para banner promocional */
+  .animate-gradient-x {
+    background-size: 200% 200%;
+    animation: gradient-shift 8s ease infinite;
+  }
+}
+
+/* Animação de gradiente */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Scrollbar customizado */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(to bottom, #0a0a0a, #000000);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #DAF10D, #c5d60b);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #e0f520, #DAF10D);
+}
+
+/* Swiper Carousel Custom Styles */
+.swiper-pagination {
+  position: relative !important;
+  margin-top: 2rem !important;
+}
+
+.swiper-pagination-bullet {
+  width: 12px !important;
+  height: 12px !important;
+  background: #52525b !important;
+  opacity: 1 !important;
+  transition: all 0.3s ease !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #DAF10D !important;
+  width: 32px !important;
+  border-radius: 6px !important;
+}
+
+/* Hide default swiper navigation arrows */
+.swiper-button-next,
+.swiper-button-prev {
+  display: none !important;
+}

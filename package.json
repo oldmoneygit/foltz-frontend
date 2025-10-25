@@ -1,0 +1,45 @@
+{
+  "name": "foltz-fanwear",
+  "version": "1.0.0",
+  "description": "Foltz Fanwear - Jerseys Importados | Argentina",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "generate-csv": "node scripts/generateShopifyCSV.js",
+    "generate-csv-test": "node scripts/generateShopifyCSV-TEST.js",
+    "test-shopify": "node scripts/test-shopify-connection.mjs",
+    "upload-images-test": "node scripts/uploadProductImages-TEST.mjs",
+    "upload-images-all": "node scripts/uploadProductImages-ALL.mjs",
+    "check-missing-images": "node scripts/checkMissingImages.mjs",
+    "retry-failed-images": "node scripts/retryFailedImages.mjs",
+    "count-images": "node scripts/countImages.js",
+    "update-product": "node scripts/updateProduct.js",
+    "update-price": "node scripts/updatePrice.js",
+    "upload-image": "node scripts/uploadImages.js"
+  },
+  "dependencies": {
+    "@shopify/hydrogen-react": "^2024.1.2",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "dotenv": "^17.2.3",
+    "embla-carousel-autoplay": "^8.6.0",
+    "embla-carousel-react": "^8.6.0",
+    "framer-motion": "^11.0.0",
+    "lucide-react": "^0.378.0",
+    "next": "^14.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "swiper": "^12.0.3",
+    "tailwind-merge": "^3.3.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "3.4.1"
+  }
+}

@@ -1,0 +1,6242 @@
+{
+  "replicate-prediction-0p8arsqebhrm80ct2hjvrh18aw.jpg": [
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 5.68
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 0.82
+    },
+    {
+      "rgb": [
+        2,
+        2,
+        1
+      ],
+      "hex": "#020201",
+      "name": "Preto",
+      "percentage": 0.74
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        3
+      ],
+      "hex": "#010103",
+      "name": "Preto",
+      "percentage": 0.38
+    },
+    {
+      "rgb": [
+        1,
+        2,
+        15
+      ],
+      "hex": "#01020f",
+      "name": "Preto",
+      "percentage": 0.38
+    }
+  ],
+  "replicate-prediction-27znympyk1rma0ct2ht9frf0c4.jpg": [
+    {
+      "rgb": [
+        174,
+        175,
+        177
+      ],
+      "hex": "#aeafb1",
+      "name": "Cinza",
+      "percentage": 2.44
+    },
+    {
+      "rgb": [
+        176,
+        177,
+        179
+      ],
+      "hex": "#b0b1b3",
+      "name": "Cinza",
+      "percentage": 1.72
+    },
+    {
+      "rgb": [
+        172,
+        173,
+        175
+      ],
+      "hex": "#acadaf",
+      "name": "Cinza",
+      "percentage": 1.52
+    },
+    {
+      "rgb": [
+        175,
+        176,
+        178
+      ],
+      "hex": "#afb0b2",
+      "name": "Cinza",
+      "percentage": 1.45
+    },
+    {
+      "rgb": [
+        173,
+        174,
+        176
+      ],
+      "hex": "#adaeb0",
+      "name": "Cinza",
+      "percentage": 1.2
+    }
+  ],
+  "replicate-prediction-2emawmf4vxrmc0ct2cqb41g92c.jpg": [
+    {
+      "rgb": [
+        9,
+        9,
+        1
+      ],
+      "hex": "#090901",
+      "name": "Preto",
+      "percentage": 0.16
+    },
+    {
+      "rgb": [
+        16,
+        14,
+        1
+      ],
+      "hex": "#100e01",
+      "name": "Preto",
+      "percentage": 0.12
+    },
+    {
+      "rgb": [
+        17,
+        15,
+        1
+      ],
+      "hex": "#110f01",
+      "name": "Preto",
+      "percentage": 0.12
+    },
+    {
+      "rgb": [
+        25,
+        20,
+        1
+      ],
+      "hex": "#191401",
+      "name": "Preto",
+      "percentage": 0.12
+    },
+    {
+      "rgb": [
+        26,
+        24,
+        1
+      ],
+      "hex": "#1a1801",
+      "name": "Preto",
+      "percentage": 0.12
+    }
+  ],
+  "replicate-prediction-2s51t1x87nrma0ct2c9aec94b0.jpg": [
+    {
+      "rgb": [
+        6,
+        7,
+        2
+      ],
+      "hex": "#060702",
+      "name": "Preto",
+      "percentage": 0.21
+    },
+    {
+      "rgb": [
+        11,
+        11,
+        1
+      ],
+      "hex": "#0b0b01",
+      "name": "Preto",
+      "percentage": 0.19
+    },
+    {
+      "rgb": [
+        10,
+        10,
+        1
+      ],
+      "hex": "#0a0a01",
+      "name": "Preto",
+      "percentage": 0.16
+    },
+    {
+      "rgb": [
+        5,
+        6,
+        2
+      ],
+      "hex": "#050602",
+      "name": "Preto",
+      "percentage": 0.14
+    },
+    {
+      "rgb": [
+        12,
+        12,
+        1
+      ],
+      "hex": "#0c0c01",
+      "name": "Preto",
+      "percentage": 0.14
+    }
+  ],
+  "replicate-prediction-3265ams0c5rme0ct2hvvmvecrm.jpg": [
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 1.02
+    },
+    {
+      "rgb": [
+        252,
+        252,
+        250
+      ],
+      "hex": "#fcfcfa",
+      "name": "Branco",
+      "percentage": 0.98
+    },
+    {
+      "rgb": [
+        250,
+        250,
+        248
+      ],
+      "hex": "#fafaf8",
+      "name": "Branco",
+      "percentage": 0.89
+    },
+    {
+      "rgb": [
+        251,
+        251,
+        249
+      ],
+      "hex": "#fbfbf9",
+      "name": "Branco",
+      "percentage": 0.56
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        2
+      ],
+      "hex": "#010102",
+      "name": "Preto",
+      "percentage": 0.48
+    }
+  ],
+  "replicate-prediction-3rnhh71nx9rmc0ct2hwaxr2xgm.jpg": [
+    {
+      "rgb": [
+        2,
+        7,
+        26
+      ],
+      "hex": "#02071a",
+      "name": "Preto",
+      "percentage": 0.46
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        2
+      ],
+      "hex": "#010102",
+      "name": "Preto",
+      "percentage": 0.35
+    },
+    {
+      "rgb": [
+        1,
+        5,
+        24
+      ],
+      "hex": "#010518",
+      "name": "Preto",
+      "percentage": 0.35
+    },
+    {
+      "rgb": [
+        1,
+        6,
+        25
+      ],
+      "hex": "#010619",
+      "name": "Preto",
+      "percentage": 0.32
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        3
+      ],
+      "hex": "#010103",
+      "name": "Preto",
+      "percentage": 0.31
+    }
+  ],
+  "replicate-prediction-52y83jdcpdrme0ct2hs9q0wwtg.jpg": [
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 2.08
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        2
+      ],
+      "hex": "#010102",
+      "name": "Preto",
+      "percentage": 0.96
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        3
+      ],
+      "hex": "#010103",
+      "name": "Preto",
+      "percentage": 0.8
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        5
+      ],
+      "hex": "#010105",
+      "name": "Preto",
+      "percentage": 0.72
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        6
+      ],
+      "hex": "#010106",
+      "name": "Preto",
+      "percentage": 0.69
+    }
+  ],
+  "replicate-prediction-594yk515shrma0ct2cpb5pvns4.jpg": [
+    {
+      "rgb": [
+        8,
+        8,
+        1
+      ],
+      "hex": "#080801",
+      "name": "Preto",
+      "percentage": 0.13
+    },
+    {
+      "rgb": [
+        25,
+        18,
+        1
+      ],
+      "hex": "#191201",
+      "name": "Preto",
+      "percentage": 0.13
+    },
+    {
+      "rgb": [
+        16,
+        14,
+        1
+      ],
+      "hex": "#100e01",
+      "name": "Preto",
+      "percentage": 0.11
+    },
+    {
+      "rgb": [
+        28,
+        21,
+        2
+      ],
+      "hex": "#1c1502",
+      "name": "Preto",
+      "percentage": 0.11
+    },
+    {
+      "rgb": [
+        24,
+        17,
+        1
+      ],
+      "hex": "#181101",
+      "name": "Preto",
+      "percentage": 0.1
+    }
+  ],
+  "replicate-prediction-5dy4p9b9thrmc0ct2hg9jca5hm.jpg": [
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 9.78
+    },
+    {
+      "rgb": [
+        3,
+        3,
+        1
+      ],
+      "hex": "#030301",
+      "name": "Preto",
+      "percentage": 2.52
+    },
+    {
+      "rgb": [
+        2,
+        2,
+        1
+      ],
+      "hex": "#020201",
+      "name": "Preto",
+      "percentage": 2.34
+    },
+    {
+      "rgb": [
+        1,
+        2,
+        1
+      ],
+      "hex": "#010201",
+      "name": "Preto",
+      "percentage": 1.88
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        3
+      ],
+      "hex": "#010103",
+      "name": "Preto",
+      "percentage": 1.8
+    }
+  ],
+  "replicate-prediction-5yzn81qvvdrm80ct2hpa5f8sar.jpg": [
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 2.99
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        13
+      ],
+      "hex": "#01010d",
+      "name": "Preto",
+      "percentage": 2.0
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        14
+      ],
+      "hex": "#01010e",
+      "name": "Preto",
+      "percentage": 1.89
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        2
+      ],
+      "hex": "#010102",
+      "name": "Preto",
+      "percentage": 1.83
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        12
+      ],
+      "hex": "#01010c",
+      "name": "Preto",
+      "percentage": 1.73
+    }
+  ],
+  "replicate-prediction-6kk0tt69ysrme0ct2ccvxrt9sc.jpg": [
+    {
+      "rgb": [
+        2,
+        2,
+        1
+      ],
+      "hex": "#020201",
+      "name": "Preto",
+      "percentage": 1.37
+    },
+    {
+      "rgb": [
+        3,
+        3,
+        1
+      ],
+      "hex": "#030301",
+      "name": "Preto",
+      "percentage": 1.28
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 0.96
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 0.64
+    },
+    {
+      "rgb": [
+        4,
+        4,
+        2
+      ],
+      "hex": "#040402",
+      "name": "Preto",
+      "percentage": 0.52
+    }
+  ],
+  "replicate-prediction-7fnw0fcnydrme0ct2cca12xjbw.jpg": [
+    {
+      "rgb": [
+        5,
+        6,
+        1
+      ],
+      "hex": "#050601",
+      "name": "Preto",
+      "percentage": 0.35
+    },
+    {
+      "rgb": [
+        4,
+        5,
+        1
+      ],
+      "hex": "#040501",
+      "name": "Preto",
+      "percentage": 0.2
+    },
+    {
+      "rgb": [
+        8,
+        8,
+        1
+      ],
+      "hex": "#080801",
+      "name": "Preto",
+      "percentage": 0.19
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 0.16
+    },
+    {
+      "rgb": [
+        2,
+        2,
+        1
+      ],
+      "hex": "#020201",
+      "name": "Preto",
+      "percentage": 0.14
+    }
+  ],
+  "replicate-prediction-7pg8ypvrbxrm80ct2hzbh3ve3g.jpg": [
+    {
+      "rgb": [
+        1,
+        1,
+        65
+      ],
+      "hex": "#010141",
+      "name": "Misto",
+      "percentage": 4.4
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        64
+      ],
+      "hex": "#010140",
+      "name": "Misto",
+      "percentage": 4.18
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        63
+      ],
+      "hex": "#01013f",
+      "name": "Misto",
+      "percentage": 3.91
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        66
+      ],
+      "hex": "#010142",
+      "name": "Misto",
+      "percentage": 3.64
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        62
+      ],
+      "hex": "#01013e",
+      "name": "Misto",
+      "percentage": 3.49
+    }
+  ],
+  "replicate-prediction-7tmp3vkgg5rm80ct2hxbqy8dd4.jpg": [
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 5.03
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        2
+      ],
+      "hex": "#010102",
+      "name": "Preto",
+      "percentage": 1.37
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        3
+      ],
+      "hex": "#010103",
+      "name": "Preto",
+      "percentage": 1.01
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        6
+      ],
+      "hex": "#010106",
+      "name": "Preto",
+      "percentage": 0.76
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 0.74
+    }
+  ],
+  "replicate-prediction-7w46sw9y5hrma0ct2cq9t1t7qw.jpg": [
+    {
+      "rgb": [
+        3,
+        3,
+        1
+      ],
+      "hex": "#030301",
+      "name": "Preto",
+      "percentage": 0.8
+    },
+    {
+      "rgb": [
+        4,
+        4,
+        1
+      ],
+      "hex": "#040401",
+      "name": "Preto",
+      "percentage": 0.33
+    },
+    {
+      "rgb": [
+        4,
+        5,
+        1
+      ],
+      "hex": "#040501",
+      "name": "Preto",
+      "percentage": 0.31
+    },
+    {
+      "rgb": [
+        11,
+        11,
+        3
+      ],
+      "hex": "#0b0b03",
+      "name": "Preto",
+      "percentage": 0.26
+    },
+    {
+      "rgb": [
+        3,
+        4,
+        1
+      ],
+      "hex": "#030401",
+      "name": "Preto",
+      "percentage": 0.24
+    }
+  ],
+  "replicate-prediction-8xmr0w0nkhrma0ct2cy888vxvm.jpg": [
+    {
+      "rgb": [
+        6,
+        7,
+        2
+      ],
+      "hex": "#060702",
+      "name": "Preto",
+      "percentage": 0.17
+    },
+    {
+      "rgb": [
+        5,
+        6,
+        1
+      ],
+      "hex": "#050601",
+      "name": "Preto",
+      "percentage": 0.16
+    },
+    {
+      "rgb": [
+        16,
+        14,
+        1
+      ],
+      "hex": "#100e01",
+      "name": "Preto",
+      "percentage": 0.16
+    },
+    {
+      "rgb": [
+        198,
+        199,
+        204
+      ],
+      "hex": "#c6c7cc",
+      "name": "Cinza",
+      "percentage": 0.16
+    },
+    {
+      "rgb": [
+        18,
+        16,
+        1
+      ],
+      "hex": "#121001",
+      "name": "Preto",
+      "percentage": 0.16
+    }
+  ],
+  "replicate-prediction-918eszmd7srm80ct2cdsvmkm34.jpg": [
+    {
+      "rgb": [
+        2,
+        2,
+        1
+      ],
+      "hex": "#020201",
+      "name": "Preto",
+      "percentage": 1.11
+    },
+    {
+      "rgb": [
+        3,
+        3,
+        1
+      ],
+      "hex": "#030301",
+      "name": "Preto",
+      "percentage": 0.58
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 0.53
+    },
+    {
+      "rgb": [
+        4,
+        4,
+        4
+      ],
+      "hex": "#040404",
+      "name": "Preto",
+      "percentage": 0.51
+    },
+    {
+      "rgb": [
+        3,
+        3,
+        2
+      ],
+      "hex": "#030302",
+      "name": "Preto",
+      "percentage": 0.47
+    }
+  ],
+  "replicate-prediction-a8cg0wdb85rma0ct2cft9fa924.jpg": [
+    {
+      "rgb": [
+        6,
+        7,
+        2
+      ],
+      "hex": "#060702",
+      "name": "Preto",
+      "percentage": 0.15
+    },
+    {
+      "rgb": [
+        7,
+        8,
+        3
+      ],
+      "hex": "#070803",
+      "name": "Preto",
+      "percentage": 0.14
+    },
+    {
+      "rgb": [
+        14,
+        15,
+        1
+      ],
+      "hex": "#0e0f01",
+      "name": "Preto",
+      "percentage": 0.14
+    },
+    {
+      "rgb": [
+        20,
+        19,
+        1
+      ],
+      "hex": "#141301",
+      "name": "Preto",
+      "percentage": 0.12
+    },
+    {
+      "rgb": [
+        13,
+        14,
+        1
+      ],
+      "hex": "#0d0e01",
+      "name": "Preto",
+      "percentage": 0.11
+    }
+  ],
+  "replicate-prediction-abdb8qmn61rme0ct2d1skar3z8.jpg": [
+    {
+      "rgb": [
+        15,
+        13,
+        1
+      ],
+      "hex": "#0f0d01",
+      "name": "Preto",
+      "percentage": 0.13
+    },
+    {
+      "rgb": [
+        6,
+        7,
+        2
+      ],
+      "hex": "#060702",
+      "name": "Preto",
+      "percentage": 0.13
+    },
+    {
+      "rgb": [
+        16,
+        14,
+        1
+      ],
+      "hex": "#100e01",
+      "name": "Preto",
+      "percentage": 0.12
+    },
+    {
+      "rgb": [
+        11,
+        11,
+        1
+      ],
+      "hex": "#0b0b01",
+      "name": "Preto",
+      "percentage": 0.1
+    },
+    {
+      "rgb": [
+        10,
+        10,
+        1
+      ],
+      "hex": "#0a0a01",
+      "name": "Preto",
+      "percentage": 0.08
+    }
+  ],
+  "replicate-prediction-avtxvv33j1rmc0ct2gbas5ercr.jpg": [
+    {
+      "rgb": [
+        2,
+        2,
+        41
+      ],
+      "hex": "#020229",
+      "name": "Preto",
+      "percentage": 0.29
+    },
+    {
+      "rgb": [
+        2,
+        2,
+        42
+      ],
+      "hex": "#02022a",
+      "name": "Preto",
+      "percentage": 0.28
+    },
+    {
+      "rgb": [
+        3,
+        3,
+        47
+      ],
+      "hex": "#03032f",
+      "name": "Preto",
+      "percentage": 0.26
+    },
+    {
+      "rgb": [
+        3,
+        3,
+        45
+      ],
+      "hex": "#03032d",
+      "name": "Preto",
+      "percentage": 0.26
+    },
+    {
+      "rgb": [
+        2,
+        3,
+        43
+      ],
+      "hex": "#02032b",
+      "name": "Preto",
+      "percentage": 0.24
+    }
+  ],
+  "replicate-prediction-b07qb3vhqsrma0ct2bjs7e1m6r.jpg": [
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 6.0
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 1.56
+    },
+    {
+      "rgb": [
+        2,
+        2,
+        2
+      ],
+      "hex": "#020202",
+      "name": "Preto",
+      "percentage": 0.64
+    },
+    {
+      "rgb": [
+        2,
+        2,
+        1
+      ],
+      "hex": "#020201",
+      "name": "Preto",
+      "percentage": 0.43
+    },
+    {
+      "rgb": [
+        5,
+        6,
+        1
+      ],
+      "hex": "#050601",
+      "name": "Preto",
+      "percentage": 0.38
+    }
+  ],
+  "replicate-prediction-b2w7z478w5rma0ct2h98hevq9g.jpg": [
+    {
+      "rgb": [
+        1,
+        1,
+        5
+      ],
+      "hex": "#010105",
+      "name": "Preto",
+      "percentage": 0.61
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        4
+      ],
+      "hex": "#010104",
+      "name": "Preto",
+      "percentage": 0.51
+    },
+    {
+      "rgb": [
+        255,
+        255,
+        255
+      ],
+      "hex": "#ffffff",
+      "name": "Branco",
+      "percentage": 0.44
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        3
+      ],
+      "hex": "#010103",
+      "name": "Preto",
+      "percentage": 0.42
+    },
+    {
+      "rgb": [
+        1,
+        2,
+        6
+      ],
+      "hex": "#010206",
+      "name": "Preto",
+      "percentage": 0.42
+    }
+  ],
+  "replicate-prediction-be099w0gehrm80ct2bpak2se34.jpg": [
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 1.44
+    },
+    {
+      "rgb": [
+        6,
+        6,
+        5
+      ],
+      "hex": "#060605",
+      "name": "Preto",
+      "percentage": 0.41
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 0.35
+    },
+    {
+      "rgb": [
+        1,
+        2,
+        1
+      ],
+      "hex": "#010201",
+      "name": "Preto",
+      "percentage": 0.34
+    },
+    {
+      "rgb": [
+        6,
+        6,
+        6
+      ],
+      "hex": "#060606",
+      "name": "Preto",
+      "percentage": 0.33
+    }
+  ],
+  "replicate-prediction-cw3rbrxqahrme0ct2ckteq99vg.jpg": [
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 0.2
+    },
+    {
+      "rgb": [
+        229,
+        237,
+        239
+      ],
+      "hex": "#e5edef",
+      "name": "Branco",
+      "percentage": 0.17
+    },
+    {
+      "rgb": [
+        227,
+        235,
+        237
+      ],
+      "hex": "#e3ebed",
+      "name": "Branco",
+      "percentage": 0.15
+    },
+    {
+      "rgb": [
+        226,
+        234,
+        236
+      ],
+      "hex": "#e2eaec",
+      "name": "Branco",
+      "percentage": 0.13
+    },
+    {
+      "rgb": [
+        29,
+        24,
+        5
+      ],
+      "hex": "#1d1805",
+      "name": "Preto",
+      "percentage": 0.12
+    }
+  ],
+  "replicate-prediction-d1wnp8erp1rma0ct2bx84mcxrc.jpg": [
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 0.51
+    },
+    {
+      "rgb": [
+        237,
+        244,
+        252
+      ],
+      "hex": "#edf4fc",
+      "name": "Branco",
+      "percentage": 0.44
+    },
+    {
+      "rgb": [
+        236,
+        243,
+        251
+      ],
+      "hex": "#ecf3fb",
+      "name": "Branco",
+      "percentage": 0.37
+    },
+    {
+      "rgb": [
+        255,
+        255,
+        255
+      ],
+      "hex": "#ffffff",
+      "name": "Branco",
+      "percentage": 0.32
+    },
+    {
+      "rgb": [
+        242,
+        250,
+        252
+      ],
+      "hex": "#f2fafc",
+      "name": "Branco",
+      "percentage": 0.29
+    }
+  ],
+  "replicate-prediction-dh58th2q61rm80ct2hms9377vr.jpg": [
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 3.06
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        5
+      ],
+      "hex": "#010105",
+      "name": "Preto",
+      "percentage": 1.24
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        6
+      ],
+      "hex": "#010106",
+      "name": "Preto",
+      "percentage": 1.11
+    },
+    {
+      "rgb": [
+        2,
+        1,
+        1
+      ],
+      "hex": "#020101",
+      "name": "Preto",
+      "percentage": 0.88
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        1
+      ],
+      "hex": "#000001",
+      "name": "Preto",
+      "percentage": 0.87
+    }
+  ],
+  "replicate-prediction-dsxmdhng9hrm80ct2ga93cgaz0.jpg": [
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 2.04
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        14
+      ],
+      "hex": "#01010e",
+      "name": "Preto",
+      "percentage": 1.51
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        13
+      ],
+      "hex": "#01010d",
+      "name": "Preto",
+      "percentage": 1.5
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        15
+      ],
+      "hex": "#01010f",
+      "name": "Preto",
+      "percentage": 1.21
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        17
+      ],
+      "hex": "#010111",
+      "name": "Preto",
+      "percentage": 1.16
+    }
+  ],
+  "replicate-prediction-dt0shjeaadrme0ct2bqarfzqm4.jpg": [
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 0.75
+    },
+    {
+      "rgb": [
+        254,
+        254,
+        254
+      ],
+      "hex": "#fefefe",
+      "name": "Branco",
+      "percentage": 0.67
+    },
+    {
+      "rgb": [
+        1,
+        2,
+        1
+      ],
+      "hex": "#010201",
+      "name": "Preto",
+      "percentage": 0.49
+    },
+    {
+      "rgb": [
+        1,
+        2,
+        2
+      ],
+      "hex": "#010202",
+      "name": "Preto",
+      "percentage": 0.34
+    },
+    {
+      "rgb": [
+        255,
+        255,
+        255
+      ],
+      "hex": "#ffffff",
+      "name": "Branco",
+      "percentage": 0.31
+    }
+  ],
+  "replicate-prediction-e18dv0far5rmc0ct2brs1yjvr4.jpg": [
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 0.61
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 0.43
+    },
+    {
+      "rgb": [
+        1,
+        2,
+        1
+      ],
+      "hex": "#010201",
+      "name": "Preto",
+      "percentage": 0.28
+    },
+    {
+      "rgb": [
+        2,
+        2,
+        1
+      ],
+      "hex": "#020201",
+      "name": "Preto",
+      "percentage": 0.28
+    },
+    {
+      "rgb": [
+        2,
+        4,
+        1
+      ],
+      "hex": "#020401",
+      "name": "Preto",
+      "percentage": 0.21
+    }
+  ],
+  "replicate-prediction-f7habkd0cdrme0ct2hhtssbnjg.jpg": [
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 2.84
+    },
+    {
+      "rgb": [
+        1,
+        3,
+        23
+      ],
+      "hex": "#010317",
+      "name": "Preto",
+      "percentage": 2.12
+    },
+    {
+      "rgb": [
+        1,
+        3,
+        24
+      ],
+      "hex": "#010318",
+      "name": "Preto",
+      "percentage": 1.64
+    },
+    {
+      "rgb": [
+        1,
+        3,
+        25
+      ],
+      "hex": "#010319",
+      "name": "Preto",
+      "percentage": 1.1
+    },
+    {
+      "rgb": [
+        1,
+        3,
+        22
+      ],
+      "hex": "#010316",
+      "name": "Preto",
+      "percentage": 1.05
+    }
+  ],
+  "replicate-prediction-fpv6j20k8nrme0ct2d5bmw0qgm.jpg": [
+    {
+      "rgb": [
+        2,
+        2,
+        1
+      ],
+      "hex": "#020201",
+      "name": "Preto",
+      "percentage": 1.36
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 1.22
+    },
+    {
+      "rgb": [
+        3,
+        3,
+        1
+      ],
+      "hex": "#030301",
+      "name": "Preto",
+      "percentage": 0.95
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 0.74
+    },
+    {
+      "rgb": [
+        4,
+        4,
+        2
+      ],
+      "hex": "#040402",
+      "name": "Preto",
+      "percentage": 0.72
+    }
+  ],
+  "replicate-prediction-fzj056zp49rmc0ct2htrhh48x0.jpg": [
+    {
+      "rgb": [
+        4,
+        5,
+        62
+      ],
+      "hex": "#04053e",
+      "name": "Misto",
+      "percentage": 0.76
+    },
+    {
+      "rgb": [
+        3,
+        6,
+        77
+      ],
+      "hex": "#03064d",
+      "name": "Misto",
+      "percentage": 0.67
+    },
+    {
+      "rgb": [
+        3,
+        6,
+        76
+      ],
+      "hex": "#03064c",
+      "name": "Misto",
+      "percentage": 0.67
+    },
+    {
+      "rgb": [
+        4,
+        5,
+        61
+      ],
+      "hex": "#04053d",
+      "name": "Misto",
+      "percentage": 0.63
+    },
+    {
+      "rgb": [
+        3,
+        6,
+        75
+      ],
+      "hex": "#03064b",
+      "name": "Misto",
+      "percentage": 0.45
+    }
+  ],
+  "replicate-prediction-gqa3y8t2cnrmc0ct2cgryv8emg.jpg": [
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 0.53
+    },
+    {
+      "rgb": [
+        8,
+        9,
+        3
+      ],
+      "hex": "#080903",
+      "name": "Preto",
+      "percentage": 0.38
+    },
+    {
+      "rgb": [
+        4,
+        5,
+        1
+      ],
+      "hex": "#040501",
+      "name": "Preto",
+      "percentage": 0.3
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        4
+      ],
+      "hex": "#010104",
+      "name": "Preto",
+      "percentage": 0.29
+    },
+    {
+      "rgb": [
+        6,
+        7,
+        2
+      ],
+      "hex": "#060702",
+      "name": "Preto",
+      "percentage": 0.28
+    }
+  ],
+  "replicate-prediction-h3jd06vez1rme0ct2hh9w4a6tc.jpg": [
+    {
+      "rgb": [
+        1,
+        1,
+        88
+      ],
+      "hex": "#010158",
+      "name": "Misto",
+      "percentage": 3.45
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        89
+      ],
+      "hex": "#010159",
+      "name": "Misto",
+      "percentage": 3.37
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        90
+      ],
+      "hex": "#01015a",
+      "name": "Misto",
+      "percentage": 2.88
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        87
+      ],
+      "hex": "#010157",
+      "name": "Misto",
+      "percentage": 2.83
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        84
+      ],
+      "hex": "#010154",
+      "name": "Misto",
+      "percentage": 2.66
+    }
+  ],
+  "replicate-prediction-h5k0dg0et5rmc0ct2ghvjbq9k0.jpg": [
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 2.18
+    },
+    {
+      "rgb": [
+        3,
+        3,
+        1
+      ],
+      "hex": "#030301",
+      "name": "Preto",
+      "percentage": 1.12
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        2
+      ],
+      "hex": "#010102",
+      "name": "Preto",
+      "percentage": 1.1
+    },
+    {
+      "rgb": [
+        2,
+        2,
+        2
+      ],
+      "hex": "#020202",
+      "name": "Preto",
+      "percentage": 1.04
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        3
+      ],
+      "hex": "#010103",
+      "name": "Preto",
+      "percentage": 1.0
+    }
+  ],
+  "replicate-prediction-htw1m45kf9rmc0ct2d48qzvarr.jpg": [
+    {
+      "rgb": [
+        20,
+        19,
+        1
+      ],
+      "hex": "#141301",
+      "name": "Preto",
+      "percentage": 0.23
+    },
+    {
+      "rgb": [
+        21,
+        20,
+        1
+      ],
+      "hex": "#151401",
+      "name": "Preto",
+      "percentage": 0.18
+    },
+    {
+      "rgb": [
+        7,
+        8,
+        2
+      ],
+      "hex": "#070802",
+      "name": "Preto",
+      "percentage": 0.15
+    },
+    {
+      "rgb": [
+        8,
+        9,
+        3
+      ],
+      "hex": "#080903",
+      "name": "Preto",
+      "percentage": 0.13
+    },
+    {
+      "rgb": [
+        239,
+        247,
+        249
+      ],
+      "hex": "#eff7f9",
+      "name": "Branco",
+      "percentage": 0.13
+    }
+  ],
+  "replicate-prediction-hz1jdb4p2xrme0ct2d4sek883w.jpg": [
+    {
+      "rgb": [
+        6,
+        7,
+        2
+      ],
+      "hex": "#060702",
+      "name": "Preto",
+      "percentage": 0.16
+    },
+    {
+      "rgb": [
+        4,
+        6,
+        1
+      ],
+      "hex": "#040601",
+      "name": "Preto",
+      "percentage": 0.16
+    },
+    {
+      "rgb": [
+        18,
+        16,
+        1
+      ],
+      "hex": "#121001",
+      "name": "Preto",
+      "percentage": 0.15
+    },
+    {
+      "rgb": [
+        16,
+        14,
+        1
+      ],
+      "hex": "#100e01",
+      "name": "Preto",
+      "percentage": 0.15
+    },
+    {
+      "rgb": [
+        7,
+        8,
+        2
+      ],
+      "hex": "#070802",
+      "name": "Preto",
+      "percentage": 0.14
+    }
+  ],
+  "replicate-prediction-hznf9xcpmdrma0ct2dh93r5tbr.jpg": [
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 0.72
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 0.58
+    },
+    {
+      "rgb": [
+        49,
+        50,
+        54
+      ],
+      "hex": "#313236",
+      "name": "Misto",
+      "percentage": 0.32
+    },
+    {
+      "rgb": [
+        50,
+        51,
+        55
+      ],
+      "hex": "#323337",
+      "name": "Misto",
+      "percentage": 0.3
+    },
+    {
+      "rgb": [
+        60,
+        61,
+        65
+      ],
+      "hex": "#3c3d41",
+      "name": "Misto",
+      "percentage": 0.29
+    }
+  ],
+  "replicate-prediction-j8vwhx4495rma0ct2dgsee5qj4.jpg": [
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 0.19
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 0.13
+    },
+    {
+      "rgb": [
+        255,
+        255,
+        255
+      ],
+      "hex": "#ffffff",
+      "name": "Branco",
+      "percentage": 0.08
+    },
+    {
+      "rgb": [
+        3,
+        3,
+        3
+      ],
+      "hex": "#030303",
+      "name": "Preto",
+      "percentage": 0.05
+    },
+    {
+      "rgb": [
+        95,
+        173,
+        247
+      ],
+      "hex": "#5fadf7",
+      "name": "Ciano",
+      "percentage": 0.04
+    }
+  ],
+  "replicate-prediction-jg1m5r2941rma0ct2cv9nhatz4.jpg": [
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 0.83
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 0.42
+    },
+    {
+      "rgb": [
+        1,
+        0,
+        1
+      ],
+      "hex": "#010001",
+      "name": "Preto",
+      "percentage": 0.37
+    },
+    {
+      "rgb": [
+        1,
+        2,
+        1
+      ],
+      "hex": "#010201",
+      "name": "Preto",
+      "percentage": 0.26
+    },
+    {
+      "rgb": [
+        2,
+        3,
+        2
+      ],
+      "hex": "#020302",
+      "name": "Preto",
+      "percentage": 0.2
+    }
+  ],
+  "replicate-prediction-jq10wx1p9srm80ct2c7r0k6pzr.jpg": [
+    {
+      "rgb": [
+        5,
+        6,
+        1
+      ],
+      "hex": "#050601",
+      "name": "Preto",
+      "percentage": 0.23
+    },
+    {
+      "rgb": [
+        6,
+        7,
+        2
+      ],
+      "hex": "#060702",
+      "name": "Preto",
+      "percentage": 0.21
+    },
+    {
+      "rgb": [
+        16,
+        17,
+        1
+      ],
+      "hex": "#101101",
+      "name": "Preto",
+      "percentage": 0.2
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 0.17
+    },
+    {
+      "rgb": [
+        12,
+        12,
+        1
+      ],
+      "hex": "#0c0c01",
+      "name": "Preto",
+      "percentage": 0.16
+    }
+  ],
+  "replicate-prediction-k22rcjsp8xrmc0ct2c8rw4rb7c.jpg": [
+    {
+      "rgb": [
+        12,
+        12,
+        1
+      ],
+      "hex": "#0c0c01",
+      "name": "Preto",
+      "percentage": 0.2
+    },
+    {
+      "rgb": [
+        11,
+        11,
+        1
+      ],
+      "hex": "#0b0b01",
+      "name": "Preto",
+      "percentage": 0.19
+    },
+    {
+      "rgb": [
+        6,
+        7,
+        2
+      ],
+      "hex": "#060702",
+      "name": "Preto",
+      "percentage": 0.18
+    },
+    {
+      "rgb": [
+        5,
+        6,
+        1
+      ],
+      "hex": "#050601",
+      "name": "Preto",
+      "percentage": 0.18
+    },
+    {
+      "rgb": [
+        9,
+        9,
+        1
+      ],
+      "hex": "#090901",
+      "name": "Preto",
+      "percentage": 0.17
+    }
+  ],
+  "replicate-prediction-k93xa20ew1rmc0ct2gn88ejdvg.jpg": [
+    {
+      "rgb": [
+        2,
+        5,
+        47
+      ],
+      "hex": "#02052f",
+      "name": "Preto",
+      "percentage": 0.43
+    },
+    {
+      "rgb": [
+        1,
+        4,
+        23
+      ],
+      "hex": "#010417",
+      "name": "Preto",
+      "percentage": 0.39
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 0.29
+    },
+    {
+      "rgb": [
+        2,
+        9,
+        55
+      ],
+      "hex": "#020937",
+      "name": "Misto",
+      "percentage": 0.28
+    },
+    {
+      "rgb": [
+        2,
+        5,
+        46
+      ],
+      "hex": "#02052e",
+      "name": "Preto",
+      "percentage": 0.28
+    }
+  ],
+  "replicate-prediction-kev7dhqe4nrm80ct2c7rz0a3mg.jpg": [
+    {
+      "rgb": [
+        5,
+        6,
+        1
+      ],
+      "hex": "#050601",
+      "name": "Preto",
+      "percentage": 0.2
+    },
+    {
+      "rgb": [
+        6,
+        7,
+        2
+      ],
+      "hex": "#060702",
+      "name": "Preto",
+      "percentage": 0.19
+    },
+    {
+      "rgb": [
+        7,
+        8,
+        2
+      ],
+      "hex": "#070802",
+      "name": "Preto",
+      "percentage": 0.16
+    },
+    {
+      "rgb": [
+        10,
+        11,
+        1
+      ],
+      "hex": "#0a0b01",
+      "name": "Preto",
+      "percentage": 0.14
+    },
+    {
+      "rgb": [
+        14,
+        15,
+        1
+      ],
+      "hex": "#0e0f01",
+      "name": "Preto",
+      "percentage": 0.14
+    }
+  ],
+  "replicate-prediction-kjarr2fwkdrmc0ct2crr74b6r0.jpg": [
+    {
+      "rgb": [
+        25,
+        20,
+        1
+      ],
+      "hex": "#191401",
+      "name": "Preto",
+      "percentage": 0.18
+    },
+    {
+      "rgb": [
+        26,
+        21,
+        2
+      ],
+      "hex": "#1a1502",
+      "name": "Preto",
+      "percentage": 0.17
+    },
+    {
+      "rgb": [
+        149,
+        1,
+        1
+      ],
+      "hex": "#950101",
+      "name": "Misto",
+      "percentage": 0.15
+    },
+    {
+      "rgb": [
+        21,
+        18,
+        1
+      ],
+      "hex": "#151201",
+      "name": "Preto",
+      "percentage": 0.12
+    },
+    {
+      "rgb": [
+        8,
+        8,
+        1
+      ],
+      "hex": "#080801",
+      "name": "Preto",
+      "percentage": 0.12
+    }
+  ],
+  "replicate-prediction-km4734tnv9rma0ct2j38jhz4vr.jpg": [
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 6.98
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        2
+      ],
+      "hex": "#010102",
+      "name": "Preto",
+      "percentage": 2.2
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        3
+      ],
+      "hex": "#010103",
+      "name": "Preto",
+      "percentage": 1.62
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        5
+      ],
+      "hex": "#010105",
+      "name": "Preto",
+      "percentage": 1.19
+    },
+    {
+      "rgb": [
+        2,
+        2,
+        1
+      ],
+      "hex": "#020201",
+      "name": "Preto",
+      "percentage": 1.09
+    }
+  ],
+  "replicate-prediction-m4mvtg0c0hrme0ct2j2s2e7vp4.jpg": [
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 1.18
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 0.53
+    },
+    {
+      "rgb": [
+        1,
+        2,
+        32
+      ],
+      "hex": "#010220",
+      "name": "Preto",
+      "percentage": 0.36
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        19
+      ],
+      "hex": "#010113",
+      "name": "Preto",
+      "percentage": 0.35
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        6
+      ],
+      "hex": "#010106",
+      "name": "Preto",
+      "percentage": 0.32
+    }
+  ],
+  "replicate-prediction-nmm8eh38z5rma0ct2hc9swryjc.jpg": [
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 4.75
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        92
+      ],
+      "hex": "#01015c",
+      "name": "Misto",
+      "percentage": 0.63
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        91
+      ],
+      "hex": "#01015b",
+      "name": "Misto",
+      "percentage": 0.61
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        89
+      ],
+      "hex": "#010159",
+      "name": "Misto",
+      "percentage": 0.6
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        87
+      ],
+      "hex": "#010157",
+      "name": "Misto",
+      "percentage": 0.55
+    }
+  ],
+  "replicate-prediction-nngs35pbyhrm80ct2dhteab3dw.jpg": [
+    {
+      "rgb": [
+        254,
+        254,
+        254
+      ],
+      "hex": "#fefefe",
+      "name": "Branco",
+      "percentage": 0.34
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 0.31
+    },
+    {
+      "rgb": [
+        254,
+        255,
+        255
+      ],
+      "hex": "#feffff",
+      "name": "Branco",
+      "percentage": 0.12
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 0.12
+    },
+    {
+      "rgb": [
+        254,
+        254,
+        253
+      ],
+      "hex": "#fefefd",
+      "name": "Branco",
+      "percentage": 0.11
+    }
+  ],
+  "replicate-prediction-p3p8pa8ds9rmc0ct2caark6abr.jpg": [
+    {
+      "rgb": [
+        8,
+        8,
+        1
+      ],
+      "hex": "#080801",
+      "name": "Preto",
+      "percentage": 0.32
+    },
+    {
+      "rgb": [
+        5,
+        6,
+        1
+      ],
+      "hex": "#050601",
+      "name": "Preto",
+      "percentage": 0.27
+    },
+    {
+      "rgb": [
+        11,
+        11,
+        1
+      ],
+      "hex": "#0b0b01",
+      "name": "Preto",
+      "percentage": 0.17
+    },
+    {
+      "rgb": [
+        4,
+        5,
+        1
+      ],
+      "hex": "#040501",
+      "name": "Preto",
+      "percentage": 0.17
+    },
+    {
+      "rgb": [
+        12,
+        12,
+        1
+      ],
+      "hex": "#0c0c01",
+      "name": "Preto",
+      "percentage": 0.16
+    }
+  ],
+  "replicate-prediction-p3sb960gbdrme0ct2hfr4d9jyw.jpg": [
+    {
+      "rgb": [
+        1,
+        2,
+        2
+      ],
+      "hex": "#010202",
+      "name": "Preto",
+      "percentage": 1.1
+    },
+    {
+      "rgb": [
+        2,
+        2,
+        2
+      ],
+      "hex": "#020202",
+      "name": "Preto",
+      "percentage": 0.98
+    },
+    {
+      "rgb": [
+        3,
+        3,
+        2
+      ],
+      "hex": "#030302",
+      "name": "Preto",
+      "percentage": 0.52
+    },
+    {
+      "rgb": [
+        3,
+        3,
+        3
+      ],
+      "hex": "#030303",
+      "name": "Preto",
+      "percentage": 0.42
+    },
+    {
+      "rgb": [
+        1,
+        6,
+        25
+      ],
+      "hex": "#010619",
+      "name": "Preto",
+      "percentage": 0.42
+    }
+  ],
+  "replicate-prediction-pbn3fr7j39rm80ct2d3b0jkvdc.jpg": [
+    {
+      "rgb": [
+        25,
+        20,
+        1
+      ],
+      "hex": "#191401",
+      "name": "Preto",
+      "percentage": 0.28
+    },
+    {
+      "rgb": [
+        62,
+        1,
+        8
+      ],
+      "hex": "#3e0108",
+      "name": "Misto",
+      "percentage": 0.23
+    },
+    {
+      "rgb": [
+        63,
+        1,
+        9
+      ],
+      "hex": "#3f0109",
+      "name": "Misto",
+      "percentage": 0.16
+    },
+    {
+      "rgb": [
+        24,
+        19,
+        1
+      ],
+      "hex": "#181301",
+      "name": "Preto",
+      "percentage": 0.15
+    },
+    {
+      "rgb": [
+        26,
+        24,
+        1
+      ],
+      "hex": "#1a1801",
+      "name": "Preto",
+      "percentage": 0.15
+    }
+  ],
+  "replicate-prediction-qbdygzh5d9rmc0ct2bysf36bkm.jpg": [
+    {
+      "rgb": [
+        7,
+        8,
+        2
+      ],
+      "hex": "#070802",
+      "name": "Preto",
+      "percentage": 0.25
+    },
+    {
+      "rgb": [
+        6,
+        7,
+        2
+      ],
+      "hex": "#060702",
+      "name": "Preto",
+      "percentage": 0.17
+    },
+    {
+      "rgb": [
+        5,
+        6,
+        1
+      ],
+      "hex": "#050601",
+      "name": "Preto",
+      "percentage": 0.17
+    },
+    {
+      "rgb": [
+        20,
+        22,
+        1
+      ],
+      "hex": "#141601",
+      "name": "Preto",
+      "percentage": 0.16
+    },
+    {
+      "rgb": [
+        4,
+        5,
+        1
+      ],
+      "hex": "#040501",
+      "name": "Preto",
+      "percentage": 0.16
+    }
+  ],
+  "replicate-prediction-qfkcwjzky9rmc0ct2cssmwtmyw.jpg": [
+    {
+      "rgb": [
+        5,
+        6,
+        1
+      ],
+      "hex": "#050601",
+      "name": "Preto",
+      "percentage": 0.56
+    },
+    {
+      "rgb": [
+        4,
+        5,
+        1
+      ],
+      "hex": "#040501",
+      "name": "Preto",
+      "percentage": 0.48
+    },
+    {
+      "rgb": [
+        3,
+        3,
+        1
+      ],
+      "hex": "#030301",
+      "name": "Preto",
+      "percentage": 0.32
+    },
+    {
+      "rgb": [
+        6,
+        7,
+        1
+      ],
+      "hex": "#060701",
+      "name": "Preto",
+      "percentage": 0.26
+    },
+    {
+      "rgb": [
+        2,
+        2,
+        1
+      ],
+      "hex": "#020201",
+      "name": "Preto",
+      "percentage": 0.26
+    }
+  ],
+  "replicate-prediction-qmzbnxqyh1rme0ct2czs2qrjrg.jpg": [
+    {
+      "rgb": [
+        25,
+        20,
+        1
+      ],
+      "hex": "#191401",
+      "name": "Preto",
+      "percentage": 0.22
+    },
+    {
+      "rgb": [
+        24,
+        19,
+        1
+      ],
+      "hex": "#181301",
+      "name": "Preto",
+      "percentage": 0.18
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 0.18
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 0.17
+    },
+    {
+      "rgb": [
+        25,
+        23,
+        1
+      ],
+      "hex": "#191701",
+      "name": "Preto",
+      "percentage": 0.16
+    }
+  ],
+  "replicate-prediction-qpggxrf2yxrmc0ct2hcsv768cr.jpg": [
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 1.37
+    },
+    {
+      "rgb": [
+        255,
+        255,
+        255
+      ],
+      "hex": "#ffffff",
+      "name": "Branco",
+      "percentage": 0.38
+    },
+    {
+      "rgb": [
+        1,
+        2,
+        1
+      ],
+      "hex": "#010201",
+      "name": "Preto",
+      "percentage": 0.28
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 0.27
+    },
+    {
+      "rgb": [
+        13,
+        24,
+        52
+      ],
+      "hex": "#0d1834",
+      "name": "Misto",
+      "percentage": 0.25
+    }
+  ],
+  "replicate-prediction-r24mssdbt1rmc0ct2bka32jm0g.jpg": [
+    {
+      "rgb": [
+        241,
+        245,
+        247
+      ],
+      "hex": "#f1f5f7",
+      "name": "Branco",
+      "percentage": 0.21
+    },
+    {
+      "rgb": [
+        240,
+        244,
+        247
+      ],
+      "hex": "#f0f4f7",
+      "name": "Branco",
+      "percentage": 0.19
+    },
+    {
+      "rgb": [
+        239,
+        243,
+        246
+      ],
+      "hex": "#eff3f6",
+      "name": "Branco",
+      "percentage": 0.19
+    },
+    {
+      "rgb": [
+        241,
+        245,
+        248
+      ],
+      "hex": "#f1f5f8",
+      "name": "Branco",
+      "percentage": 0.18
+    },
+    {
+      "rgb": [
+        242,
+        246,
+        249
+      ],
+      "hex": "#f2f6f9",
+      "name": "Branco",
+      "percentage": 0.16
+    }
+  ],
+  "replicate-prediction-r5k6wmta29rme0ct2cgb2v6mnm.jpg": [
+    {
+      "rgb": [
+        5,
+        6,
+        1
+      ],
+      "hex": "#050601",
+      "name": "Preto",
+      "percentage": 0.17
+    },
+    {
+      "rgb": [
+        21,
+        20,
+        1
+      ],
+      "hex": "#151401",
+      "name": "Preto",
+      "percentage": 0.16
+    },
+    {
+      "rgb": [
+        4,
+        5,
+        1
+      ],
+      "hex": "#040501",
+      "name": "Preto",
+      "percentage": 0.14
+    },
+    {
+      "rgb": [
+        20,
+        19,
+        1
+      ],
+      "hex": "#141301",
+      "name": "Preto",
+      "percentage": 0.13
+    },
+    {
+      "rgb": [
+        23,
+        22,
+        2
+      ],
+      "hex": "#171602",
+      "name": "Preto",
+      "percentage": 0.13
+    }
+  ],
+  "replicate-prediction-rjn00nrw75rm80ct2cergp5fsr.jpg": [
+    {
+      "rgb": [
+        6,
+        7,
+        2
+      ],
+      "hex": "#060702",
+      "name": "Preto",
+      "percentage": 0.2
+    },
+    {
+      "rgb": [
+        22,
+        21,
+        1
+      ],
+      "hex": "#161501",
+      "name": "Preto",
+      "percentage": 0.17
+    },
+    {
+      "rgb": [
+        21,
+        20,
+        1
+      ],
+      "hex": "#151401",
+      "name": "Preto",
+      "percentage": 0.16
+    },
+    {
+      "rgb": [
+        17,
+        15,
+        1
+      ],
+      "hex": "#110f01",
+      "name": "Preto",
+      "percentage": 0.14
+    },
+    {
+      "rgb": [
+        21,
+        20,
+        2
+      ],
+      "hex": "#151402",
+      "name": "Preto",
+      "percentage": 0.14
+    }
+  ],
+  "replicate-prediction-rpech2z98drme0ct2hzvqb2cxc.jpg": [
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 5.32
+    },
+    {
+      "rgb": [
+        2,
+        2,
+        1
+      ],
+      "hex": "#020201",
+      "name": "Preto",
+      "percentage": 4.25
+    },
+    {
+      "rgb": [
+        4,
+        4,
+        2
+      ],
+      "hex": "#040402",
+      "name": "Preto",
+      "percentage": 4.04
+    },
+    {
+      "rgb": [
+        3,
+        3,
+        1
+      ],
+      "hex": "#030301",
+      "name": "Preto",
+      "percentage": 3.27
+    },
+    {
+      "rgb": [
+        3,
+        3,
+        2
+      ],
+      "hex": "#030302",
+      "name": "Preto",
+      "percentage": 2.53
+    }
+  ],
+  "replicate-prediction-s82zma6jaxrme0ct2d3s8swhb0.jpg": [
+    {
+      "rgb": [
+        23,
+        22,
+        2
+      ],
+      "hex": "#171602",
+      "name": "Preto",
+      "percentage": 0.23
+    },
+    {
+      "rgb": [
+        232,
+        242,
+        243
+      ],
+      "hex": "#e8f2f3",
+      "name": "Branco",
+      "percentage": 0.2
+    },
+    {
+      "rgb": [
+        24,
+        23,
+        3
+      ],
+      "hex": "#181703",
+      "name": "Preto",
+      "percentage": 0.19
+    },
+    {
+      "rgb": [
+        221,
+        230,
+        237
+      ],
+      "hex": "#dde6ed",
+      "name": "Branco",
+      "percentage": 0.19
+    },
+    {
+      "rgb": [
+        224,
+        233,
+        240
+      ],
+      "hex": "#e0e9f0",
+      "name": "Branco",
+      "percentage": 0.19
+    }
+  ],
+  "replicate-prediction-sk6b9b2sx9rme0ct2hwr78rjc0.jpg": [
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 0.76
+    },
+    {
+      "rgb": [
+        2,
+        1,
+        1
+      ],
+      "hex": "#020101",
+      "name": "Preto",
+      "percentage": 0.55
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 0.36
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        3
+      ],
+      "hex": "#010103",
+      "name": "Preto",
+      "percentage": 0.24
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        2
+      ],
+      "hex": "#010102",
+      "name": "Preto",
+      "percentage": 0.22
+    }
+  ],
+  "replicate-prediction-spfd7s32ssrm80ct2crr4wajt8.jpg": [
+    {
+      "rgb": [
+        5,
+        6,
+        1
+      ],
+      "hex": "#050601",
+      "name": "Preto",
+      "percentage": 0.27
+    },
+    {
+      "rgb": [
+        22,
+        23,
+        9
+      ],
+      "hex": "#161709",
+      "name": "Preto",
+      "percentage": 0.27
+    },
+    {
+      "rgb": [
+        4,
+        5,
+        1
+      ],
+      "hex": "#040501",
+      "name": "Preto",
+      "percentage": 0.26
+    },
+    {
+      "rgb": [
+        3,
+        4,
+        1
+      ],
+      "hex": "#030401",
+      "name": "Preto",
+      "percentage": 0.21
+    },
+    {
+      "rgb": [
+        20,
+        21,
+        7
+      ],
+      "hex": "#141507",
+      "name": "Preto",
+      "percentage": 0.2
+    }
+  ],
+  "replicate-prediction-sym9yn02msrma0ct2j29ysbz00.jpg": [
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 13.24
+    },
+    {
+      "rgb": [
+        2,
+        2,
+        1
+      ],
+      "hex": "#020201",
+      "name": "Preto",
+      "percentage": 1.84
+    },
+    {
+      "rgb": [
+        1,
+        2,
+        1
+      ],
+      "hex": "#010201",
+      "name": "Preto",
+      "percentage": 1.28
+    },
+    {
+      "rgb": [
+        1,
+        2,
+        2
+      ],
+      "hex": "#010202",
+      "name": "Preto",
+      "percentage": 1.19
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 1.16
+    }
+  ],
+  "replicate-prediction-syvv3m09rxrmc0ct2gksvatgx0.jpg": [
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 54.1
+    },
+    {
+      "rgb": [
+        1,
+        2,
+        1
+      ],
+      "hex": "#010201",
+      "name": "Preto",
+      "percentage": 4.46
+    },
+    {
+      "rgb": [
+        2,
+        2,
+        1
+      ],
+      "hex": "#020201",
+      "name": "Preto",
+      "percentage": 3.3
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 2.76
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        1
+      ],
+      "hex": "#000001",
+      "name": "Preto",
+      "percentage": 1.27
+    }
+  ],
+  "replicate-prediction-t2c1k7bqx1rme0ct2ctaxvqawg.jpg": [
+    {
+      "rgb": [
+        6,
+        7,
+        1
+      ],
+      "hex": "#060701",
+      "name": "Preto",
+      "percentage": 0.18
+    },
+    {
+      "rgb": [
+        22,
+        21,
+        1
+      ],
+      "hex": "#161501",
+      "name": "Preto",
+      "percentage": 0.17
+    },
+    {
+      "rgb": [
+        23,
+        22,
+        2
+      ],
+      "hex": "#171602",
+      "name": "Preto",
+      "percentage": 0.16
+    },
+    {
+      "rgb": [
+        21,
+        20,
+        1
+      ],
+      "hex": "#151401",
+      "name": "Preto",
+      "percentage": 0.15
+    },
+    {
+      "rgb": [
+        20,
+        19,
+        1
+      ],
+      "hex": "#141301",
+      "name": "Preto",
+      "percentage": 0.14
+    }
+  ],
+  "replicate-prediction-t2vebz5qshrm80ct2hn8ec59e4.jpg": [
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 0.86
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 0.53
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        1
+      ],
+      "hex": "#000001",
+      "name": "Preto",
+      "percentage": 0.27
+    },
+    {
+      "rgb": [
+        1,
+        2,
+        1
+      ],
+      "hex": "#010201",
+      "name": "Preto",
+      "percentage": 0.2
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        2
+      ],
+      "hex": "#010102",
+      "name": "Preto",
+      "percentage": 0.17
+    }
+  ],
+  "replicate-prediction-t706vss01srm80ct2ha8154440.jpg": [
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 2.16
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 1.1
+    },
+    {
+      "rgb": [
+        1,
+        14,
+        67
+      ],
+      "hex": "#010e43",
+      "name": "Misto",
+      "percentage": 0.68
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        20
+      ],
+      "hex": "#010114",
+      "name": "Preto",
+      "percentage": 0.41
+    },
+    {
+      "rgb": [
+        1,
+        14,
+        66
+      ],
+      "hex": "#010e42",
+      "name": "Misto",
+      "percentage": 0.4
+    }
+  ],
+  "replicate-prediction-tckgc0236nrmc0ct2hbtcn41a0.jpg": [
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 3.75
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        2
+      ],
+      "hex": "#010102",
+      "name": "Preto",
+      "percentage": 2.71
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        3
+      ],
+      "hex": "#010103",
+      "name": "Preto",
+      "percentage": 1.44
+    },
+    {
+      "rgb": [
+        1,
+        2,
+        1
+      ],
+      "hex": "#010201",
+      "name": "Preto",
+      "percentage": 0.76
+    },
+    {
+      "rgb": [
+        2,
+        2,
+        2
+      ],
+      "hex": "#020202",
+      "name": "Preto",
+      "percentage": 0.71
+    }
+  ],
+  "replicate-prediction-tm2fcv8hpdrme0ct2he91dm1k4.jpg": [
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 0.31
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        3
+      ],
+      "hex": "#010103",
+      "name": "Preto",
+      "percentage": 0.22
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        2
+      ],
+      "hex": "#010102",
+      "name": "Preto",
+      "percentage": 0.19
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 0.17
+    },
+    {
+      "rgb": [
+        8,
+        14,
+        1
+      ],
+      "hex": "#080e01",
+      "name": "Preto",
+      "percentage": 0.17
+    }
+  ],
+  "replicate-prediction-tw4myttvydrma0ct2c5are1v8w.jpg": [
+    {
+      "rgb": [
+        9,
+        11,
+        1
+      ],
+      "hex": "#090b01",
+      "name": "Preto",
+      "percentage": 0.17
+    },
+    {
+      "rgb": [
+        15,
+        16,
+        1
+      ],
+      "hex": "#0f1001",
+      "name": "Preto",
+      "percentage": 0.12
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 0.12
+    },
+    {
+      "rgb": [
+        14,
+        15,
+        1
+      ],
+      "hex": "#0e0f01",
+      "name": "Preto",
+      "percentage": 0.12
+    },
+    {
+      "rgb": [
+        5,
+        6,
+        1
+      ],
+      "hex": "#050601",
+      "name": "Preto",
+      "percentage": 0.11
+    }
+  ],
+  "replicate-prediction-txm4q0s0j1rmc0ct2hfbndnq38.jpg": [
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 7.49
+    },
+    {
+      "rgb": [
+        2,
+        2,
+        1
+      ],
+      "hex": "#020201",
+      "name": "Preto",
+      "percentage": 5.41
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 4.7
+    },
+    {
+      "rgb": [
+        1,
+        2,
+        1
+      ],
+      "hex": "#010201",
+      "name": "Preto",
+      "percentage": 0.77
+    },
+    {
+      "rgb": [
+        255,
+        255,
+        255
+      ],
+      "hex": "#ffffff",
+      "name": "Branco",
+      "percentage": 0.72
+    }
+  ],
+  "replicate-prediction-v02mfq6nvhrm80ct2cgvahbmrg.jpg": [
+    {
+      "rgb": [
+        3,
+        11,
+        24
+      ],
+      "hex": "#030b18",
+      "name": "Preto",
+      "percentage": 0.17
+    },
+    {
+      "rgb": [
+        6,
+        7,
+        2
+      ],
+      "hex": "#060702",
+      "name": "Preto",
+      "percentage": 0.17
+    },
+    {
+      "rgb": [
+        21,
+        18,
+        1
+      ],
+      "hex": "#151201",
+      "name": "Preto",
+      "percentage": 0.16
+    },
+    {
+      "rgb": [
+        196,
+        210,
+        1
+      ],
+      "hex": "#c4d201",
+      "name": "Misto",
+      "percentage": 0.16
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 0.16
+    }
+  ],
+  "replicate-prediction-v8dgpeq9hdrmc0ct2bprr84fnw.jpg": [
+    {
+      "rgb": [
+        3,
+        11,
+        48
+      ],
+      "hex": "#030b30",
+      "name": "Preto",
+      "percentage": 0.67
+    },
+    {
+      "rgb": [
+        2,
+        10,
+        47
+      ],
+      "hex": "#020a2f",
+      "name": "Preto",
+      "percentage": 0.59
+    },
+    {
+      "rgb": [
+        1,
+        9,
+        46
+      ],
+      "hex": "#01092e",
+      "name": "Preto",
+      "percentage": 0.49
+    },
+    {
+      "rgb": [
+        2,
+        16,
+        52
+      ],
+      "hex": "#021034",
+      "name": "Misto",
+      "percentage": 0.43
+    },
+    {
+      "rgb": [
+        2,
+        14,
+        52
+      ],
+      "hex": "#020e34",
+      "name": "Misto",
+      "percentage": 0.4
+    }
+  ],
+  "replicate-prediction-v8vbw7jvq1rmc0ct2bn9t71s8g.jpg": [
+    {
+      "rgb": [
+        1,
+        2,
+        1
+      ],
+      "hex": "#010201",
+      "name": "Preto",
+      "percentage": 0.5
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 0.4
+    },
+    {
+      "rgb": [
+        1,
+        13,
+        29
+      ],
+      "hex": "#010d1d",
+      "name": "Preto",
+      "percentage": 0.31
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 0.26
+    },
+    {
+      "rgb": [
+        1,
+        21,
+        53
+      ],
+      "hex": "#011535",
+      "name": "Misto",
+      "percentage": 0.2
+    }
+  ],
+  "replicate-prediction-vcqzazk5mnrme0ct2cjbngcnnr.jpg": [
+    {
+      "rgb": [
+        233,
+        241,
+        243
+      ],
+      "hex": "#e9f1f3",
+      "name": "Branco",
+      "percentage": 0.3
+    },
+    {
+      "rgb": [
+        5,
+        6,
+        1
+      ],
+      "hex": "#050601",
+      "name": "Preto",
+      "percentage": 0.21
+    },
+    {
+      "rgb": [
+        6,
+        7,
+        2
+      ],
+      "hex": "#060702",
+      "name": "Preto",
+      "percentage": 0.2
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 0.2
+    },
+    {
+      "rgb": [
+        17,
+        15,
+        1
+      ],
+      "hex": "#110f01",
+      "name": "Preto",
+      "percentage": 0.15
+    }
+  ],
+  "replicate-prediction-vmymc906asrme0ct2dfssdnps0.jpg": [
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 2.49
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 1.07
+    },
+    {
+      "rgb": [
+        2,
+        1,
+        1
+      ],
+      "hex": "#020101",
+      "name": "Preto",
+      "percentage": 0.56
+    },
+    {
+      "rgb": [
+        6,
+        1,
+        1
+      ],
+      "hex": "#060101",
+      "name": "Preto",
+      "percentage": 0.44
+    },
+    {
+      "rgb": [
+        5,
+        1,
+        1
+      ],
+      "hex": "#050101",
+      "name": "Preto",
+      "percentage": 0.42
+    }
+  ],
+  "replicate-prediction-vyjba4xjw5rme0ct2cp8kgykcr.jpg": [
+    {
+      "rgb": [
+        22,
+        21,
+        1
+      ],
+      "hex": "#161501",
+      "name": "Preto",
+      "percentage": 0.17
+    },
+    {
+      "rgb": [
+        24,
+        23,
+        3
+      ],
+      "hex": "#181703",
+      "name": "Preto",
+      "percentage": 0.15
+    },
+    {
+      "rgb": [
+        23,
+        22,
+        2
+      ],
+      "hex": "#171602",
+      "name": "Preto",
+      "percentage": 0.12
+    },
+    {
+      "rgb": [
+        21,
+        20,
+        1
+      ],
+      "hex": "#151401",
+      "name": "Preto",
+      "percentage": 0.12
+    },
+    {
+      "rgb": [
+        1,
+        40,
+        109
+      ],
+      "hex": "#01286d",
+      "name": "Misto",
+      "percentage": 0.12
+    }
+  ],
+  "replicate-prediction-waa49w9jxxrmc0ct2d0rwj1kp8.jpg": [
+    {
+      "rgb": [
+        2,
+        2,
+        0
+      ],
+      "hex": "#020200",
+      "name": "Preto",
+      "percentage": 0.46
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 0.39
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 0.32
+    },
+    {
+      "rgb": [
+        3,
+        3,
+        0
+      ],
+      "hex": "#030300",
+      "name": "Preto",
+      "percentage": 0.28
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        0
+      ],
+      "hex": "#010100",
+      "name": "Preto",
+      "percentage": 0.28
+    }
+  ],
+  "replicate-prediction-wm9n9yz5dhrma0ct2ck88zmf7m.jpg": [
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 0.61
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        3
+      ],
+      "hex": "#010103",
+      "name": "Preto",
+      "percentage": 0.49
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 0.45
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        2
+      ],
+      "hex": "#010102",
+      "name": "Preto",
+      "percentage": 0.35
+    },
+    {
+      "rgb": [
+        1,
+        2,
+        7
+      ],
+      "hex": "#010207",
+      "name": "Preto",
+      "percentage": 0.32
+    }
+  ],
+  "replicate-prediction-wxkt3p1ggxrm80ct2cst6jtyew.jpg": [
+    {
+      "rgb": [
+        20,
+        19,
+        1
+      ],
+      "hex": "#141301",
+      "name": "Preto",
+      "percentage": 0.18
+    },
+    {
+      "rgb": [
+        187,
+        188,
+        192
+      ],
+      "hex": "#bbbcc0",
+      "name": "Cinza",
+      "percentage": 0.18
+    },
+    {
+      "rgb": [
+        231,
+        240,
+        245
+      ],
+      "hex": "#e7f0f5",
+      "name": "Branco",
+      "percentage": 0.15
+    },
+    {
+      "rgb": [
+        186,
+        187,
+        191
+      ],
+      "hex": "#babbbf",
+      "name": "Cinza",
+      "percentage": 0.15
+    },
+    {
+      "rgb": [
+        230,
+        239,
+        244
+      ],
+      "hex": "#e6eff4",
+      "name": "Branco",
+      "percentage": 0.12
+    }
+  ],
+  "replicate-prediction-x501rntj09rme0ct2d1bbzp7cm.jpg": [
+    {
+      "rgb": [
+        18,
+        16,
+        1
+      ],
+      "hex": "#121001",
+      "name": "Preto",
+      "percentage": 0.21
+    },
+    {
+      "rgb": [
+        20,
+        19,
+        1
+      ],
+      "hex": "#141301",
+      "name": "Preto",
+      "percentage": 0.17
+    },
+    {
+      "rgb": [
+        16,
+        14,
+        1
+      ],
+      "hex": "#100e01",
+      "name": "Preto",
+      "percentage": 0.17
+    },
+    {
+      "rgb": [
+        10,
+        11,
+        1
+      ],
+      "hex": "#0a0b01",
+      "name": "Preto",
+      "percentage": 0.15
+    },
+    {
+      "rgb": [
+        11,
+        11,
+        1
+      ],
+      "hex": "#0b0b01",
+      "name": "Preto",
+      "percentage": 0.14
+    }
+  ],
+  "replicate-prediction-x6z8xj91q1rm80ct2g5tved070.jpg": [
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 4.07
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 1.72
+    },
+    {
+      "rgb": [
+        2,
+        2,
+        1
+      ],
+      "hex": "#020201",
+      "name": "Preto",
+      "percentage": 0.99
+    },
+    {
+      "rgb": [
+        255,
+        255,
+        255
+      ],
+      "hex": "#ffffff",
+      "name": "Branco",
+      "percentage": 0.57
+    },
+    {
+      "rgb": [
+        2,
+        2,
+        2
+      ],
+      "hex": "#020202",
+      "name": "Preto",
+      "percentage": 0.47
+    }
+  ],
+  "replicate-prediction-xnjbgbs1wxrmc0ct2d2a4k0fp4.jpg": [
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 1.38
+    },
+    {
+      "rgb": [
+        2,
+        2,
+        1
+      ],
+      "hex": "#020201",
+      "name": "Preto",
+      "percentage": 1.05
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 0.89
+    },
+    {
+      "rgb": [
+        3,
+        3,
+        1
+      ],
+      "hex": "#030301",
+      "name": "Preto",
+      "percentage": 0.74
+    },
+    {
+      "rgb": [
+        6,
+        6,
+        4
+      ],
+      "hex": "#060604",
+      "name": "Preto",
+      "percentage": 0.44
+    }
+  ],
+  "replicate-prediction-xsmgs6ebpxrmc0ct2cavakh45w.jpg": [
+    {
+      "rgb": [
+        4,
+        5,
+        1
+      ],
+      "hex": "#040501",
+      "name": "Preto",
+      "percentage": 0.2
+    },
+    {
+      "rgb": [
+        15,
+        13,
+        1
+      ],
+      "hex": "#0f0d01",
+      "name": "Preto",
+      "percentage": 0.19
+    },
+    {
+      "rgb": [
+        5,
+        6,
+        1
+      ],
+      "hex": "#050601",
+      "name": "Preto",
+      "percentage": 0.13
+    },
+    {
+      "rgb": [
+        8,
+        8,
+        1
+      ],
+      "hex": "#080801",
+      "name": "Preto",
+      "percentage": 0.13
+    },
+    {
+      "rgb": [
+        3,
+        3,
+        1
+      ],
+      "hex": "#030301",
+      "name": "Preto",
+      "percentage": 0.12
+    }
+  ],
+  "replicate-prediction-xvvqzgxx71rma0ct2hq8d988ng.jpg": [
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 8.41
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        1
+      ],
+      "hex": "#000001",
+      "name": "Preto",
+      "percentage": 1.92
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        2
+      ],
+      "hex": "#010102",
+      "name": "Preto",
+      "percentage": 1.15
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 0.84
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        5
+      ],
+      "hex": "#010105",
+      "name": "Preto",
+      "percentage": 0.65
+    }
+  ],
+  "replicate-prediction-y5c4akekf9rmc0ct2cybbrf3kg.jpg": [
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 0.23
+    },
+    {
+      "rgb": [
+        6,
+        2,
+        1
+      ],
+      "hex": "#060201",
+      "name": "Preto",
+      "percentage": 0.18
+    },
+    {
+      "rgb": [
+        5,
+        6,
+        1
+      ],
+      "hex": "#050601",
+      "name": "Preto",
+      "percentage": 0.16
+    },
+    {
+      "rgb": [
+        0,
+        1,
+        1
+      ],
+      "hex": "#000101",
+      "name": "Preto",
+      "percentage": 0.15
+    },
+    {
+      "rgb": [
+        6,
+        1,
+        1
+      ],
+      "hex": "#060101",
+      "name": "Preto",
+      "percentage": 0.13
+    }
+  ],
+  "replicate-prediction-ymzsfs8qzhrm80ct2cjvc517ec.jpg": [
+    {
+      "rgb": [
+        5,
+        6,
+        1
+      ],
+      "hex": "#050601",
+      "name": "Preto",
+      "percentage": 0.11
+    },
+    {
+      "rgb": [
+        7,
+        8,
+        2
+      ],
+      "hex": "#070802",
+      "name": "Preto",
+      "percentage": 0.11
+    },
+    {
+      "rgb": [
+        18,
+        16,
+        1
+      ],
+      "hex": "#121001",
+      "name": "Preto",
+      "percentage": 0.11
+    },
+    {
+      "rgb": [
+        17,
+        15,
+        1
+      ],
+      "hex": "#110f01",
+      "name": "Preto",
+      "percentage": 0.09
+    },
+    {
+      "rgb": [
+        6,
+        7,
+        1
+      ],
+      "hex": "#060701",
+      "name": "Preto",
+      "percentage": 0.09
+    }
+  ],
+  "replicate-prediction-yxhsbpjjjsrmc0ct2bj9r62xh8.jpg": [
+    {
+      "rgb": [
+        2,
+        4,
+        15
+      ],
+      "hex": "#02040f",
+      "name": "Preto",
+      "percentage": 0.68
+    },
+    {
+      "rgb": [
+        2,
+        4,
+        16
+      ],
+      "hex": "#020410",
+      "name": "Preto",
+      "percentage": 0.64
+    },
+    {
+      "rgb": [
+        2,
+        5,
+        15
+      ],
+      "hex": "#02050f",
+      "name": "Preto",
+      "percentage": 0.52
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        5
+      ],
+      "hex": "#010105",
+      "name": "Preto",
+      "percentage": 0.46
+    },
+    {
+      "rgb": [
+        1,
+        3,
+        15
+      ],
+      "hex": "#01030f",
+      "name": "Preto",
+      "percentage": 0.43
+    }
+  ],
+  "replicate-prediction-yz66z5yfkhrma0ct2hss7b8tvm.jpg": [
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 2.46
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        3
+      ],
+      "hex": "#010103",
+      "name": "Preto",
+      "percentage": 1.01
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        4
+      ],
+      "hex": "#010104",
+      "name": "Preto",
+      "percentage": 0.97
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        5
+      ],
+      "hex": "#010105",
+      "name": "Preto",
+      "percentage": 0.83
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 0.71
+    }
+  ],
+  "replicate-prediction-zs0nhncj7xrme0ct2cfb20wqrw.jpg": [
+    {
+      "rgb": [
+        25,
+        23,
+        1
+      ],
+      "hex": "#191701",
+      "name": "Preto",
+      "percentage": 0.14
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 0.13
+    },
+    {
+      "rgb": [
+        18,
+        16,
+        1
+      ],
+      "hex": "#121001",
+      "name": "Preto",
+      "percentage": 0.12
+    },
+    {
+      "rgb": [
+        25,
+        20,
+        1
+      ],
+      "hex": "#191401",
+      "name": "Preto",
+      "percentage": 0.12
+    },
+    {
+      "rgb": [
+        5,
+        6,
+        1
+      ],
+      "hex": "#050601",
+      "name": "Preto",
+      "percentage": 0.12
+    }
+  ],
+  "replicate-prediction-9gs7hftnm1rm80ct2d7ax7g4em.jpg": [
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 21.53
+    },
+    {
+      "rgb": [
+        2,
+        2,
+        2
+      ],
+      "hex": "#020202",
+      "name": "Preto",
+      "percentage": 5.34
+    },
+    {
+      "rgb": [
+        1,
+        2,
+        2
+      ],
+      "hex": "#010202",
+      "name": "Preto",
+      "percentage": 2.28
+    },
+    {
+      "rgb": [
+        1,
+        2,
+        1
+      ],
+      "hex": "#010201",
+      "name": "Preto",
+      "percentage": 1.84
+    },
+    {
+      "rgb": [
+        254,
+        254,
+        254
+      ],
+      "hex": "#fefefe",
+      "name": "Branco",
+      "percentage": 1.53
+    }
+  ],
+  "replicate-prediction-d19dp2ymznrmc0ct2das4t9sam.jpg": [
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 1.05
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        2
+      ],
+      "hex": "#010102",
+      "name": "Preto",
+      "percentage": 0.3
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 0.29
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        14
+      ],
+      "hex": "#01010e",
+      "name": "Preto",
+      "percentage": 0.28
+    },
+    {
+      "rgb": [
+        1,
+        2,
+        24
+      ],
+      "hex": "#010218",
+      "name": "Preto",
+      "percentage": 0.28
+    }
+  ],
+  "replicate-prediction-ehm83jbxyhrm80ct2d7v1newqw.jpg": [
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 3.9
+    },
+    {
+      "rgb": [
+        2,
+        2,
+        1
+      ],
+      "hex": "#020201",
+      "name": "Preto",
+      "percentage": 1.78
+    },
+    {
+      "rgb": [
+        3,
+        3,
+        1
+      ],
+      "hex": "#030301",
+      "name": "Preto",
+      "percentage": 1.44
+    },
+    {
+      "rgb": [
+        4,
+        3,
+        1
+      ],
+      "hex": "#040301",
+      "name": "Preto",
+      "percentage": 1.28
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 0.48
+    }
+  ],
+  "replicate-prediction-hpx6q53fksrme0ct2debanttam.jpg": [
+    {
+      "rgb": [
+        2,
+        2,
+        1
+      ],
+      "hex": "#020201",
+      "name": "Preto",
+      "percentage": 6.6
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 5.17
+    },
+    {
+      "rgb": [
+        3,
+        2,
+        1
+      ],
+      "hex": "#030201",
+      "name": "Preto",
+      "percentage": 2.32
+    },
+    {
+      "rgb": [
+        3,
+        3,
+        1
+      ],
+      "hex": "#030301",
+      "name": "Preto",
+      "percentage": 1.36
+    },
+    {
+      "rgb": [
+        1,
+        8,
+        1
+      ],
+      "hex": "#010801",
+      "name": "Preto",
+      "percentage": 0.56
+    }
+  ],
+  "replicate-prediction-mt1ajybx1nrma0ct2ddrf5z2gm.jpg": [
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 20.89
+    },
+    {
+      "rgb": [
+        2,
+        2,
+        1
+      ],
+      "hex": "#020201",
+      "name": "Preto",
+      "percentage": 9.57
+    },
+    {
+      "rgb": [
+        1,
+        2,
+        1
+      ],
+      "hex": "#010201",
+      "name": "Preto",
+      "percentage": 1.9
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 1.44
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        1
+      ],
+      "hex": "#000001",
+      "name": "Preto",
+      "percentage": 0.93
+    }
+  ],
+  "replicate-prediction-nbrzb4tw5nrma0ct2dbtj11bw4.jpg": [
+    {
+      "rgb": [
+        3,
+        3,
+        4
+      ],
+      "hex": "#030304",
+      "name": "Preto",
+      "percentage": 1.04
+    },
+    {
+      "rgb": [
+        3,
+        3,
+        3
+      ],
+      "hex": "#030303",
+      "name": "Preto",
+      "percentage": 0.64
+    },
+    {
+      "rgb": [
+        241,
+        243,
+        240
+      ],
+      "hex": "#f1f3f0",
+      "name": "Branco",
+      "percentage": 0.56
+    },
+    {
+      "rgb": [
+        3,
+        3,
+        5
+      ],
+      "hex": "#030305",
+      "name": "Preto",
+      "percentage": 0.56
+    },
+    {
+      "rgb": [
+        2,
+        2,
+        2
+      ],
+      "hex": "#020202",
+      "name": "Preto",
+      "percentage": 0.53
+    }
+  ],
+  "replicate-prediction-qj1werh6j1rmc0ct2d6v0eajtg.jpg": [
+    {
+      "rgb": [
+        53,
+        62,
+        79
+      ],
+      "hex": "#353e4f",
+      "name": "Misto",
+      "percentage": 0.2
+    },
+    {
+      "rgb": [
+        2,
+        2,
+        2
+      ],
+      "hex": "#020202",
+      "name": "Preto",
+      "percentage": 0.2
+    },
+    {
+      "rgb": [
+        52,
+        61,
+        78
+      ],
+      "hex": "#343d4e",
+      "name": "Misto",
+      "percentage": 0.16
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 0.15
+    },
+    {
+      "rgb": [
+        229,
+        254,
+        35
+      ],
+      "hex": "#e5fe23",
+      "name": "Amarelo",
+      "percentage": 0.15
+    }
+  ],
+  "replicate-prediction-r5vz95rfr1rma0ct2d69mzhq0c.jpg": [
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 24.76
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 3.11
+    },
+    {
+      "rgb": [
+        2,
+        2,
+        2
+      ],
+      "hex": "#020202",
+      "name": "Preto",
+      "percentage": 2.86
+    },
+    {
+      "rgb": [
+        3,
+        3,
+        3
+      ],
+      "hex": "#030303",
+      "name": "Preto",
+      "percentage": 1.25
+    },
+    {
+      "rgb": [
+        1,
+        2,
+        1
+      ],
+      "hex": "#010201",
+      "name": "Preto",
+      "percentage": 1.01
+    }
+  ],
+  "replicate-prediction-vs65eexzhhrm80ct2detbcqxym.jpg": [
+    {
+      "rgb": [
+        1,
+        1,
+        55
+      ],
+      "hex": "#010137",
+      "name": "Misto",
+      "percentage": 3.52
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        50
+      ],
+      "hex": "#010132",
+      "name": "Misto",
+      "percentage": 3.42
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        51
+      ],
+      "hex": "#010133",
+      "name": "Misto",
+      "percentage": 3.36
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        54
+      ],
+      "hex": "#010136",
+      "name": "Misto",
+      "percentage": 3.15
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        52
+      ],
+      "hex": "#010134",
+      "name": "Misto",
+      "percentage": 3.14
+    }
+  ],
+  "replicate-prediction-xx8tcpfgxsrma0ct2d8v6x43nc.jpg": [
+    {
+      "rgb": [
+        1,
+        1,
+        3
+      ],
+      "hex": "#010103",
+      "name": "Preto",
+      "percentage": 0.97
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 0.89
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        4
+      ],
+      "hex": "#010104",
+      "name": "Preto",
+      "percentage": 0.77
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        50
+      ],
+      "hex": "#010132",
+      "name": "Misto",
+      "percentage": 0.73
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        5
+      ],
+      "hex": "#010105",
+      "name": "Preto",
+      "percentage": 0.68
+    }
+  ],
+  "replicate-prediction-z5tn1temmnrm80ct2d88bc0nz8.jpg": [
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 1.12
+    },
+    {
+      "rgb": [
+        2,
+        2,
+        2
+      ],
+      "hex": "#020202",
+      "name": "Preto",
+      "percentage": 0.56
+    },
+    {
+      "rgb": [
+        3,
+        3,
+        2
+      ],
+      "hex": "#030302",
+      "name": "Preto",
+      "percentage": 0.51
+    },
+    {
+      "rgb": [
+        1,
+        2,
+        1
+      ],
+      "hex": "#010201",
+      "name": "Preto",
+      "percentage": 0.46
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 0.43
+    }
+  ],
+  "Adobe Express - file (1).png": [
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 96.77
+    },
+    {
+      "rgb": [
+        1,
+        6,
+        96
+      ],
+      "hex": "#010660",
+      "name": "Misto",
+      "percentage": 1.11
+    },
+    {
+      "rgb": [
+        1,
+        6,
+        97
+      ],
+      "hex": "#010661",
+      "name": "Misto",
+      "percentage": 0.12
+    },
+    {
+      "rgb": [
+        2,
+        2,
+        0
+      ],
+      "hex": "#020200",
+      "name": "Preto",
+      "percentage": 0.11
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        0
+      ],
+      "hex": "#010100",
+      "name": "Preto",
+      "percentage": 0.1
+    }
+  ],
+  "Adobe Express - file.png": [
+    {
+      "rgb": [
+        224,
+        247,
+        23
+      ],
+      "hex": "#e0f717",
+      "name": "Amarelo",
+      "percentage": 96.18
+    },
+    {
+      "rgb": [
+        1,
+        6,
+        96
+      ],
+      "hex": "#010660",
+      "name": "Misto",
+      "percentage": 1.1
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        98
+      ],
+      "hex": "#000062",
+      "name": "Misto",
+      "percentage": 0.11
+    },
+    {
+      "rgb": [
+        1,
+        6,
+        97
+      ],
+      "hex": "#010661",
+      "name": "Misto",
+      "percentage": 0.1
+    },
+    {
+      "rgb": [
+        229,
+        252,
+        24
+      ],
+      "hex": "#e5fc18",
+      "name": "Amarelo",
+      "percentage": 0.09
+    }
+  ],
+  "logo.png": [
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 54.86
+    },
+    {
+      "rgb": [
+        1,
+        6,
+        96
+      ],
+      "hex": "#010660",
+      "name": "Misto",
+      "percentage": 24.95
+    },
+    {
+      "rgb": [
+        1,
+        6,
+        95
+      ],
+      "hex": "#01065f",
+      "name": "Misto",
+      "percentage": 0.87
+    },
+    {
+      "rgb": [
+        1,
+        6,
+        94
+      ],
+      "hex": "#01065e",
+      "name": "Misto",
+      "percentage": 0.68
+    },
+    {
+      "rgb": [
+        2,
+        6,
+        94
+      ],
+      "hex": "#02065e",
+      "name": "Misto",
+      "percentage": 0.55
+    }
+  ],
+  "03f518211002695.671c7bb524dca.webp": [
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 95.47
+    },
+    {
+      "rgb": [
+        14,
+        14,
+        14
+      ],
+      "hex": "#0e0e0e",
+      "name": "Preto",
+      "percentage": 0.52
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 0.3
+    },
+    {
+      "rgb": [
+        13,
+        13,
+        13
+      ],
+      "hex": "#0d0d0d",
+      "name": "Preto",
+      "percentage": 0.27
+    },
+    {
+      "rgb": [
+        2,
+        2,
+        2
+      ],
+      "hex": "#020202",
+      "name": "Preto",
+      "percentage": 0.22
+    }
+  ],
+  "39917b211002695.671b174e44703.webp": [
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 80.86
+    },
+    {
+      "rgb": [
+        68,
+        68,
+        68
+      ],
+      "hex": "#444444",
+      "name": "Misto",
+      "percentage": 7.95
+    },
+    {
+      "rgb": [
+        1,
+        1,
+        1
+      ],
+      "hex": "#010101",
+      "name": "Preto",
+      "percentage": 0.99
+    },
+    {
+      "rgb": [
+        2,
+        2,
+        2
+      ],
+      "hex": "#020202",
+      "name": "Preto",
+      "percentage": 0.41
+    },
+    {
+      "rgb": [
+        3,
+        3,
+        3
+      ],
+      "hex": "#030303",
+      "name": "Preto",
+      "percentage": 0.37
+    }
+  ],
+  "4e3597211002695.671b174e42e06.webp": [
+    {
+      "rgb": [
+        215,
+        241,
+        12
+      ],
+      "hex": "#d7f10c",
+      "name": "Amarelo",
+      "percentage": 1.68
+    },
+    {
+      "rgb": [
+        13,
+        13,
+        13
+      ],
+      "hex": "#0d0d0d",
+      "name": "Preto",
+      "percentage": 0.09
+    },
+    {
+      "rgb": [
+        22,
+        23,
+        23
+      ],
+      "hex": "#161717",
+      "name": "Preto",
+      "percentage": 0.08
+    },
+    {
+      "rgb": [
+        16,
+        16,
+        16
+      ],
+      "hex": "#101010",
+      "name": "Preto",
+      "percentage": 0.08
+    },
+    {
+      "rgb": [
+        13,
+        14,
+        14
+      ],
+      "hex": "#0d0e0e",
+      "name": "Preto",
+      "percentage": 0.08
+    }
+  ],
+  "84d99b211002695.671c7bb523da3.webp": [
+    {
+      "rgb": [
+        255,
+        255,
+        255
+      ],
+      "hex": "#ffffff",
+      "name": "Branco",
+      "percentage": 59.02
+    },
+    {
+      "rgb": [
+        1,
+        7,
+        96
+      ],
+      "hex": "#010760",
+      "name": "Misto",
+      "percentage": 5.15
+    },
+    {
+      "rgb": [
+        215,
+        241,
+        12
+      ],
+      "hex": "#d7f10c",
+      "name": "Amarelo",
+      "percentage": 3.79
+    },
+    {
+      "rgb": [
+        0,
+        6,
+        96
+      ],
+      "hex": "#000660",
+      "name": "Misto",
+      "percentage": 0.58
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        89
+      ],
+      "hex": "#000059",
+      "name": "Misto",
+      "percentage": 0.45
+    }
+  ],
+  "97a00d211002695.671b174a673df.webp": [
+    {
+      "rgb": [
+        239,
+        239,
+        239
+      ],
+      "hex": "#efefef",
+      "name": "Branco",
+      "percentage": 65.72
+    },
+    {
+      "rgb": [
+        235,
+        235,
+        235
+      ],
+      "hex": "#ebebeb",
+      "name": "Branco",
+      "percentage": 2.06
+    },
+    {
+      "rgb": [
+        238,
+        238,
+        238
+      ],
+      "hex": "#eeeeee",
+      "name": "Branco",
+      "percentage": 1.15
+    },
+    {
+      "rgb": [
+        236,
+        236,
+        236
+      ],
+      "hex": "#ececec",
+      "name": "Branco",
+      "percentage": 0.84
+    },
+    {
+      "rgb": [
+        229,
+        229,
+        229
+      ],
+      "hex": "#e5e5e5",
+      "name": "Branco",
+      "percentage": 0.45
+    }
+  ],
+  "a70d37211002695.671c7bb52558a.webp": [
+    {
+      "rgb": [
+        203,
+        203,
+        203
+      ],
+      "hex": "#cbcbcb",
+      "name": "Branco",
+      "percentage": 19.21
+    },
+    {
+      "rgb": [
+        215,
+        241,
+        12
+      ],
+      "hex": "#d7f10c",
+      "name": "Amarelo",
+      "percentage": 12.95
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 3.0
+    },
+    {
+      "rgb": [
+        1,
+        7,
+        96
+      ],
+      "hex": "#010760",
+      "name": "Misto",
+      "percentage": 2.38
+    },
+    {
+      "rgb": [
+        243,
+        244,
+        244
+      ],
+      "hex": "#f3f4f4",
+      "name": "Branco",
+      "percentage": 1.53
+    }
+  ],
+  "aac8d7211002695.671b174a66e1a.webp": [
+    {
+      "rgb": [
+        199,
+        198,
+        203
+      ],
+      "hex": "#c7c6cb",
+      "name": "Cinza",
+      "percentage": 8.69
+    },
+    {
+      "rgb": [
+        200,
+        199,
+        204
+      ],
+      "hex": "#c8c7cc",
+      "name": "Cinza",
+      "percentage": 7.57
+    },
+    {
+      "rgb": [
+        203,
+        202,
+        208
+      ],
+      "hex": "#cbcad0",
+      "name": "Branco",
+      "percentage": 4.66
+    },
+    {
+      "rgb": [
+        201,
+        200,
+        206
+      ],
+      "hex": "#c9c8ce",
+      "name": "Cinza",
+      "percentage": 4.29
+    },
+    {
+      "rgb": [
+        200,
+        199,
+        205
+      ],
+      "hex": "#c8c7cd",
+      "name": "Cinza",
+      "percentage": 3.31
+    }
+  ],
+  "b03c48211002695.671b174a665ac.webp": [
+    {
+      "rgb": [
+        226,
+        226,
+        226
+      ],
+      "hex": "#e2e2e2",
+      "name": "Branco",
+      "percentage": 9.37
+    },
+    {
+      "rgb": [
+        190,
+        214,
+        12
+      ],
+      "hex": "#bed60c",
+      "name": "Misto",
+      "percentage": 7.64
+    },
+    {
+      "rgb": [
+        225,
+        225,
+        225
+      ],
+      "hex": "#e1e1e1",
+      "name": "Branco",
+      "percentage": 7.3
+    },
+    {
+      "rgb": [
+        191,
+        215,
+        12
+      ],
+      "hex": "#bfd70c",
+      "name": "Misto",
+      "percentage": 5.56
+    },
+    {
+      "rgb": [
+        227,
+        227,
+        227
+      ],
+      "hex": "#e3e3e3",
+      "name": "Branco",
+      "percentage": 5.1
+    }
+  ],
+  "c56e17211002695.671b174e40fc8.webp": [
+    {
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "name": "Preto",
+      "percentage": 20.0
+    },
+    {
+      "rgb": [
+        218,
+        217,
+        220
+      ],
+      "hex": "#dad9dc",
+      "name": "Branco",
+      "percentage": 9.0
+    },
+    {
+      "rgb": [
+        215,
+        241,
+        14
+      ],
+      "hex": "#d7f10e",
+      "name": "Amarelo",
+      "percentage": 5.88
+    },
+    {
+      "rgb": [
+        2,
+        6,
+        94
+      ],
+      "hex": "#02065e",
+      "name": "Misto",
+      "percentage": 5.68
+    },
+    {
+      "rgb": [
+        216,
+        242,
+        13
+      ],
+      "hex": "#d8f20d",
+      "name": "Amarelo",
+      "percentage": 1.45
+    }
+  ],
+  "c86334211002695.671c7efe78491.webp": [
+    {
+      "rgb": [
+        1,
+        7,
+        94
+      ],
+      "hex": "#01075e",
+      "name": "Misto",
+      "percentage": 94.44
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        96
+      ],
+      "hex": "#000060",
+      "name": "Misto",
+      "percentage": 0.24
+    },
+    {
+      "rgb": [
+        0,
+        4,
+        95
+      ],
+      "hex": "#00045f",
+      "name": "Misto",
+      "percentage": 0.12
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        97
+      ],
+      "hex": "#000061",
+      "name": "Misto",
+      "percentage": 0.12
+    },
+    {
+      "rgb": [
+        0,
+        5,
+        95
+      ],
+      "hex": "#00055f",
+      "name": "Misto",
+      "percentage": 0.12
+    }
+  ],
+  "db2f5a211002695.671b174a65fb4.webp": [
+    {
+      "rgb": [
+        174,
+        201,
+        7
+      ],
+      "hex": "#aec907",
+      "name": "Misto",
+      "percentage": 2.12
+    },
+    {
+      "rgb": [
+        177,
+        204,
+        8
+      ],
+      "hex": "#b1cc08",
+      "name": "Misto",
+      "percentage": 1.69
+    },
+    {
+      "rgb": [
+        173,
+        200,
+        7
+      ],
+      "hex": "#adc807",
+      "name": "Misto",
+      "percentage": 1.65
+    },
+    {
+      "rgb": [
+        176,
+        203,
+        8
+      ],
+      "hex": "#b0cb08",
+      "name": "Misto",
+      "percentage": 1.53
+    },
+    {
+      "rgb": [
+        175,
+        202,
+        8
+      ],
+      "hex": "#afca08",
+      "name": "Misto",
+      "percentage": 1.24
+    }
+  ],
+  "e9bc9a211002695.671b174e44f80.webp": [
+    {
+      "rgb": [
+        255,
+        255,
+        255
+      ],
+      "hex": "#ffffff",
+      "name": "Branco",
+      "percentage": 4.52
+    },
+    {
+      "rgb": [
+        19,
+        19,
+        15
+      ],
+      "hex": "#13130f",
+      "name": "Preto",
+      "percentage": 0.27
+    },
+    {
+      "rgb": [
+        25,
+        23,
+        19
+      ],
+      "hex": "#191713",
+      "name": "Preto",
+      "percentage": 0.23
+    },
+    {
+      "rgb": [
+        254,
+        254,
+        254
+      ],
+      "hex": "#fefefe",
+      "name": "Branco",
+      "percentage": 0.22
+    },
+    {
+      "rgb": [
+        21,
+        20,
+        16
+      ],
+      "hex": "#151410",
+      "name": "Preto",
+      "percentage": 0.2
+    }
+  ],
+  "f01a0c211002695.671b174a67993.webp": [
+    {
+      "rgb": [
+        239,
+        238,
+        241
+      ],
+      "hex": "#efeef1",
+      "name": "Branco",
+      "percentage": 1.55
+    },
+    {
+      "rgb": [
+        222,
+        222,
+        224
+      ],
+      "hex": "#dedee0",
+      "name": "Branco",
+      "percentage": 1.48
+    },
+    {
+      "rgb": [
+        223,
+        223,
+        225
+      ],
+      "hex": "#dfdfe1",
+      "name": "Branco",
+      "percentage": 1.12
+    },
+    {
+      "rgb": [
+        221,
+        221,
+        223
+      ],
+      "hex": "#dddddf",
+      "name": "Branco",
+      "percentage": 1.09
+    },
+    {
+      "rgb": [
+        220,
+        220,
+        222
+      ],
+      "hex": "#dcdcde",
+      "name": "Branco",
+      "percentage": 1.04
+    }
+  ],
+  "f1bcda211002695.671b174e42355.webp": [
+    {
+      "rgb": [
+        224,
+        247,
+        23
+      ],
+      "hex": "#e0f717",
+      "name": "Amarelo",
+      "percentage": 96.2
+    },
+    {
+      "rgb": [
+        1,
+        7,
+        96
+      ],
+      "hex": "#010760",
+      "name": "Misto",
+      "percentage": 1.19
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        98
+      ],
+      "hex": "#000062",
+      "name": "Misto",
+      "percentage": 0.15
+    },
+    {
+      "rgb": [
+        232,
+        255,
+        22
+      ],
+      "hex": "#e8ff16",
+      "name": "Amarelo",
+      "percentage": 0.09
+    },
+    {
+      "rgb": [
+        0,
+        0,
+        94
+      ],
+      "hex": "#00005e",
+      "name": "Misto",
+      "percentage": 0.09
+    }
+  ],
+  "f4e990211002695.671c7efe78d33.webp": [
+    {
+      "rgb": [
+        255,
+        255,
+        255
+      ],
+      "hex": "#ffffff",
+      "name": "Branco",
+      "percentage": 0.21
+    },
+    {
+      "rgb": [
+        52,
+        52,
+        52
+      ],
+      "hex": "#343434",
+      "name": "Misto",
+      "percentage": 0.12
+    },
+    {
+      "rgb": [
+        59,
+        59,
+        59
+      ],
+      "hex": "#3b3b3b",
+      "name": "Misto",
+      "percentage": 0.12
+    },
+    {
+      "rgb": [
+        82,
+        82,
+        82
+      ],
+      "hex": "#525252",
+      "name": "Misto",
+      "percentage": 0.11
+    },
+    {
+      "rgb": [
+        53,
+        53,
+        53
+      ],
+      "hex": "#353535",
+      "name": "Misto",
+      "percentage": 0.1
+    }
+  ]
+}
