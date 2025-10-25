@@ -59,21 +59,28 @@ export default function LeagueCards({ leagues = [] }) {
                   whileTap={{ scale: 0.98 }}
                   className="group relative h-[300px] md:h-[350px] rounded-2xl overflow-hidden cursor-pointer"
                 >
-                  {/* Gradient Background */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${league.gradient} transition-all duration-700`} />
+                  {/* Background Image or Gradient */}
+                  {league.image ? (
+                    <div
+                      className="absolute inset-0 bg-cover bg-center transition-all duration-700 group-hover:scale-110"
+                      style={{ backgroundImage: `url('${league.image}')` }}
+                    />
+                  ) : (
+                    <div className={`absolute inset-0 bg-gradient-to-br ${league.gradient} transition-all duration-700`} />
+                  )}
+
+                  {/* Dark Overlay for better text readability */}
+                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500" />
 
                   {/* Title Overlay */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <h3 className="text-3xl md:text-4xl font-black text-white text-center px-4 uppercase tracking-tight">
+                  <div className="absolute inset-0 flex items-center justify-center z-10">
+                    <h3 className="text-3xl md:text-4xl font-black text-white text-center px-4 uppercase tracking-tight drop-shadow-2xl">
                       {league.name}
                     </h3>
                   </div>
 
-                  {/* Glassmorphic Overlay */}
-                  <div className="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition-all duration-500" />
-
                   {/* Gradient Glow on Hover */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${league.gradient} opacity-0 group-hover:opacity-40 transition-opacity duration-500 mix-blend-overlay`} />
+                  <div className={`absolute inset-0 bg-gradient-to-br ${league.gradient} opacity-0 group-hover:opacity-30 transition-opacity duration-500 mix-blend-overlay`} />
 
                   {/* Border Glow */}
                   <div className={`absolute inset-0 rounded-2xl border-2 border-white/20 group-hover:border-brand-yellow/70 transition-all duration-500 shadow-2xl ${league.glow}`} />

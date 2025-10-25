@@ -8,6 +8,21 @@ export default async function LeagueCards() {
   // Fetch all unique leagues from Shopify
   const shopifyLeagues = await getAllLeagues()
 
+  // Map league images
+  const leagueImageMap = {
+    'Serie A': '/images/leagues/replicate-prediction-21q4zb6bx1rm80ct304tg0gpyc.jpeg',
+    'La Liga': '/images/leagues/replicate-prediction-3gmhza452srma0ct31n9g8w1w8.jpeg',
+    'Premier League': '/images/leagues/replicate-prediction-6f1fa3n909rme0ct30st4pfk5r.jpeg',
+    'Bundesliga': '/images/leagues/replicate-prediction-8ep34ktvnnrma0ct30nb3pwn14.jpeg',
+    'Ligue 1': '/images/leagues/replicate-prediction-9d0ac73d99rme0ct308as6raz8.jpeg',
+    'Eredivisie': '/images/leagues/replicate-prediction-fhg8t7vzesrme0ct30japhna94.jpeg',
+    'Primeira Liga': '/images/leagues/replicate-prediction-g3kvswhvhnrmc0ct30h833c67r.jpeg',
+    'Liga MX': '/images/leagues/replicate-prediction-ht9wfsvbb5rm80ct30vtxbdm7m.jpeg',
+    'Sul-Americana': '/images/leagues/replicate-prediction-mn3m7q1jh9rma0ct30ebpv1wvc.jpeg',
+    'MLS': '/images/leagues/replicate-prediction-mtawn898asrmc0ct30ct2mxgkc.jpeg',
+    'Manga Longa': '/images/leagues/replicate-prediction-ne6kdck271rm80ct30m8cj9jac.jpeg',
+  }
+
   // Map leagues with gradients and styling
   const leaguesWithStyling = shopifyLeagues.map((league, index) => {
     // Define gradients for each league
@@ -32,7 +47,8 @@ export default async function LeagueCards() {
 
     return {
       ...league,
-      ...styling
+      ...styling,
+      image: leagueImageMap[league.name] || null
     }
   })
 

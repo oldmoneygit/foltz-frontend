@@ -42,7 +42,13 @@
       "Bash(git init:*)",
       "Bash(git remote add:*)",
       "Bash(git add:*)",
-      "Bash(cmd.exe /c \"rmdir /s /q inspiration\\SNKHOUSE_SHOWROOM\\.git\")"
+      "Bash(cmd.exe /c \"rmdir /s /q inspiration\\SNKHOUSE_SHOWROOM\\.git\")",
+      "Bash(git commit -m \"$(cat <<''EOF''\nMigração completa para Shopify Storefront API\n\n- Implementado integração com Shopify Storefront API v2024-10\n- Criado serviço Shopify moderno com GraphQL (src/lib/shopify.js)\n- Criado adapter de dados para transformar resposta da Shopify (src/utils/shopifyData.js)\n- Migrados componentes para padrão Server/Client Components:\n  * BestSellers → BestSellersServer.jsx + BestSellersClient.jsx\n  * FeaturedProducts → FeaturedProductsServer.jsx + FeaturedProductsClient.jsx\n  * CollectionCarousel → CollectionCarouselServer.jsx + CollectionCarouselClient.jsx\n  * LeagueCards → LeagueCardsServer.jsx + LeagueCardsClient.jsx\n- Atualizadas páginas de produtos e ligas para buscar dados da Shopify\n- Configurado .gitignore para excluir pasta /Leagues (2-3GB de imagens)\n- Imagens agora servidas pelo Shopify CDN\n- Build de produção testado com sucesso (255 páginas geradas)\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git config:*)",
+      "Bash(git push:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nAtualizar guia de deploy - projeto pronto para Vercel\n\n- Atualizado DEPLOY-VERCEL.md para refletir migração completa\n- Adicionado checklist de itens já concluídos\n- Instruções passo-a-passo para deploy na Vercel\n- Troubleshooting e dicas de performance\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(node scripts/test-product-images.mjs:*)",
+      "Bash(cmd.exe /c \"taskkill /F /IM node.exe\")"
     ],
     "deny": [],
     "ask": []
