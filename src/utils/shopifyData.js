@@ -173,14 +173,19 @@ export async function getAllLeagues() {
 }
 
 /**
- * Parse sizes string to array
- * Example: "Size S-XXL" => ["S", "M", "L", "XL", "XXL"]
+ * Parse sizes - now handles both arrays and strings for backward compatibility
+ * If array is passed: returns it directly
+ * If string is passed: parses "Size S-XXL" => ["S", "M", "L", "XL", "XXL"]
  */
-export function parseSizes(sizesString) {
-  if (!sizesString) return []
+export function parseSizes(sizes) {
+  // If already an array, return it
+  if (Array.isArray(sizes)) return sizes
+
+  // If not a string, return empty array
+  if (!sizes || typeof sizes !== 'string') return []
 
   // Extract size range from string like "Size S-XXL" or "Size S-4XL"
-  const match = sizesString.match(/Size\s+([A-Z0-9]+)-([A-Z0-9]+)/i)
+  const match = sizes.match(/Size\s+([A-Z0-9]+)-([A-Z0-9]+)/i)
   if (!match) return []
 
   const [, start, end] = match
