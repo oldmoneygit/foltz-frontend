@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import SizeSelector from './SizeSelector'
 import QuantitySelector from './QuantitySelector'
+import AddToCartToast from './AddToCartToast'
 import { ShoppingCart, Package, Shield, Truck, Check, Heart } from 'lucide-react'
 
 const ProductInfo = ({ product }) => {
@@ -10,6 +11,7 @@ const ProductInfo = ({ product }) => {
   const [quantity, setQuantity] = useState(1)
   const [addedToCart, setAddedToCart] = useState(false)
   const [isWishlisted, setIsWishlisted] = useState(false)
+  const [toastOpen, setToastOpen] = useState(false)
 
   const {
     name,
@@ -48,6 +50,9 @@ const ProductInfo = ({ product }) => {
 
     // Show success feedback - button turns green
     setAddedToCart(true)
+
+    // Show toast notification
+    setToastOpen(true)
 
     // Reset button after 2 seconds
     setTimeout(() => {
@@ -213,6 +218,15 @@ const ProductInfo = ({ product }) => {
           </div>
         </div>
       </div>
+
+      {/* Add to Cart Toast Notification */}
+      <AddToCartToast
+        isOpen={toastOpen}
+        onClose={() => setToastOpen(false)}
+        product={product}
+        size={selectedSize}
+        quantity={quantity}
+      />
     </div>
   )
 }
