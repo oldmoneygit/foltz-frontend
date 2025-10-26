@@ -82,7 +82,7 @@ export default function CareersPage() {
         {/* Hero Section */}
         <div className="container mx-auto px-4 pt-12 pb-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 uppercase">
               Trabaja con <span className="text-brand-yellow">Nosotros</span>
             </h1>
             <p className="text-xl text-white/80 leading-relaxed">

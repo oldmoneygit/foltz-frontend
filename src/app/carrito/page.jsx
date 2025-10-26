@@ -44,7 +44,7 @@ export default function CarrinhoPage() {
         <div className="max-w-6xl mx-auto">
           {/* Page Title */}
           <div className="mb-8 md:mb-12">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-2">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-2 uppercase">
               Carrito de Compras
             </h1>
             <p className="text-white/60 text-sm md:text-base">

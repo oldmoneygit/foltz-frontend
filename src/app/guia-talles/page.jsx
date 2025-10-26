@@ -28,7 +28,7 @@ export default function GuiaTamanhosPage() {
           <div className="mb-8 md:mb-12">
             <div className="flex items-center gap-3 mb-4">
               <Ruler className="w-8 h-8 md:w-10 md:h-10 text-brand-yellow" />
-              <h1 className="text-3xl md:text-5xl font-black text-white">
+              <h1 className="text-3xl md:text-5xl font-black text-white uppercase">
                 Guía de Talles
               </h1>
             </div>
