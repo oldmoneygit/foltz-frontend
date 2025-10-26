@@ -7,22 +7,22 @@ import { Truck, Clock, MapPin, Package, CheckCircle, Info } from 'lucide-react'
 export default function PrazoEntregaPage() {
   const deliveryTimes = [
     {
-      region: 'Buenos Aires e CABA',
-      days: '3-5 dias úteis',
+      region: 'Buenos Aires y CABA',
+      days: '3-5 días hábiles',
       icon: '🏙️',
       color: 'from-green-500/10 to-green-500/0',
       iconColor: 'text-green-400',
     },
     {
-      region: 'Província de Buenos Aires',
-      days: '5-7 dias úteis',
+      region: 'Provincia de Buenos Aires',
+      days: '5-7 días hábiles',
       icon: '🌆',
       color: 'from-blue-500/10 to-blue-500/0',
       iconColor: 'text-blue-400',
     },
     {
-      region: 'Interior da Argentina',
-      days: '7-12 dias úteis',
+      region: 'Interior de Argentina',
+      days: '7-12 días hábiles',
       icon: '🏞️',
       color: 'from-orange-500/10 to-orange-500/0',
       iconColor: 'text-orange-400',
@@ -39,11 +39,11 @@ export default function PrazoEntregaPage() {
             <div className="flex items-center gap-3 mb-4">
               <Truck className="w-8 h-8 md:w-10 md:h-10 text-brand-yellow" />
               <h1 className="text-3xl md:text-5xl font-black text-white">
-                Prazos de Entrega
+                Plazos de Entrega
               </h1>
             </div>
             <p className="text-white/60 text-base md:text-lg">
-              Conheça os prazos de entrega para sua região
+              Conocé los plazos de entrega para tu región
             </p>
           </div>
 
@@ -55,10 +55,10 @@ export default function PrazoEntregaPage() {
               </div>
               <div>
                 <h2 className="text-2xl md:text-3xl font-black text-white mb-2">
-                  Envio GRÁTIS para toda Argentina
+                  Envío GRATIS para toda Argentina
                 </h2>
                 <p className="text-white/80">
-                  Em compras acima de ARS 50.000. Abaixo desse valor, calculamos o frete no checkout.
+                  En compras superiores a ARS 50.000. Por debajo de ese valor, calculamos el envío en el checkout.
                 </p>
               </div>
             </div>
@@ -67,7 +67,7 @@ export default function PrazoEntregaPage() {
           {/* Delivery Times by Region */}
           <div className="mb-12">
             <h2 className="text-2xl font-bold text-white mb-6">
-              Prazos de entrega por região
+              Plazos de entrega por región
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {deliveryTimes.map((item, index) => (
@@ -86,39 +86,39 @@ export default function PrazoEntregaPage() {
           {/* Processo de envio */}
           <div className="mb-12">
             <h2 className="text-2xl font-bold text-white mb-6">
-              Como funciona o envio?
+              ¿Cómo funciona el envío?
             </h2>
             <div className="bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-xl p-6 md:p-8 border border-white/10">
               <div className="space-y-6">
                 {[
                   {
                     step: '1',
-                    title: 'Confirmação do pedido',
-                    desc: 'Você recebe um email de confirmação assim que finalizar sua compra',
-                    time: 'Imediato',
+                    title: 'Confirmación del pedido',
+                    desc: 'Recibís un email de confirmación apenas finalices tu compra',
+                    time: 'Inmediato',
                   },
                   {
                     step: '2',
-                    title: 'Preparação do pedido',
-                    desc: 'Separamos e embalamos seu produto com cuidado',
+                    title: 'Preparación del pedido',
+                    desc: 'Separamos y embalamos tu producto con cuidado',
                     time: '24-48h',
                   },
                   {
                     step: '3',
                     title: 'Despacho',
-                    desc: 'Seu pedido é enviado e você recebe o código de rastreamento',
-                    time: '2-3 dias',
+                    desc: 'Tu pedido es enviado y recibís el código de seguimiento',
+                    time: '2-3 días',
                   },
                   {
                     step: '4',
-                    title: 'Em trânsito',
-                    desc: 'Acompanhe seu pedido em tempo real pelo código de rastreamento',
-                    time: 'Conforme localização',
+                    title: 'En tránsito',
+                    desc: 'Seguí tu pedido en tiempo real con el código de seguimiento',
+                    time: 'Según ubicación',
                   },
                   {
                     step: '5',
-                    title: 'Entregue',
-                    desc: 'Seu produto chega no endereço indicado!',
+                    title: 'Entregado',
+                    desc: '¡Tu producto llega a la dirección indicada!',
                     time: '🎉',
                   },
                 ].map((item, index) => (
@@ -149,29 +149,29 @@ export default function PrazoEntregaPage() {
           {/* Informação importante */}
           <div className="mb-12">
             <h2 className="text-2xl font-bold text-white mb-6">
-              Informações importantes sobre entrega
+              Información importante sobre entrega
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {[
                 {
                   icon: <Clock className="w-6 h-6 text-brand-yellow" />,
-                  title: 'Dias úteis',
-                  desc: 'Os prazos são em dias úteis, não contam sábados, domingos e feriados',
+                  title: 'Días hábiles',
+                  desc: 'Los plazos son en días hábiles, no cuentan sábados, domingos y feriados',
                 },
                 {
                   icon: <Package className="w-6 h-6 text-brand-yellow" />,
-                  title: 'Embalagem segura',
-                  desc: 'Todos os produtos são embalados com proteção adequada',
+                  title: 'Embalaje seguro',
+                  desc: 'Todos los productos son embalados con protección adecuada',
                 },
                 {
                   icon: <MapPin className="w-6 h-6 text-brand-yellow" />,
-                  title: 'Endereço correto',
-                  desc: 'Certifique-se de fornecer o endereço completo e correto',
+                  title: 'Dirección correcta',
+                  desc: 'Asegurate de proporcionar la dirección completa y correcta',
                 },
                 {
                   icon: <CheckCircle className="w-6 h-6 text-brand-yellow" />,
-                  title: 'Rastreamento incluído',
-                  desc: 'Todos os envios incluem código de rastreamento gratuito',
+                  title: 'Seguimiento incluido',
+                  desc: 'Todos los envíos incluyen código de seguimiento gratuito',
                 },
               ].map((item, index) => (
                 <div
@@ -194,15 +194,15 @@ export default function PrazoEntregaPage() {
               <Info className="w-8 h-8 text-orange-500 flex-shrink-0" />
               <div>
                 <h3 className="text-2xl font-bold text-white mb-3">
-                  E se houver atrasos?
+                  ¿Y si hay retrasos?
                 </h3>
                 <p className="text-white/80 mb-4">
-                  Embora seja raro, podem ocorrer atrasos devido a:
+                  Aunque es raro, pueden ocurrir retrasos debido a:
                 </p>
                 <ul className="space-y-2 text-white/80 text-sm mb-4">
                   <li className="flex gap-2">
                     <span className="text-orange-500">•</span>
-                    <span>Condições climáticas adversas</span>
+                    <span>Condiciones climáticas adversas</span>
                   </li>
                   <li className="flex gap-2">
                     <span className="text-orange-500">•</span>
@@ -210,15 +210,15 @@ export default function PrazoEntregaPage() {
                   </li>
                   <li className="flex gap-2">
                     <span className="text-orange-500">•</span>
-                    <span>Alta demanda sazonal</span>
+                    <span>Alta demanda estacional</span>
                   </li>
                   <li className="flex gap-2">
                     <span className="text-orange-500">•</span>
-                    <span>Problemas no endereço de entrega</span>
+                    <span>Problemas en la dirección de entrega</span>
                   </li>
                 </ul>
                 <p className="text-white/80">
-                  Se seu pedido estiver atrasado, <strong className="text-brand-yellow">entre em contato imediatamente</strong> e resolveremos o problema.
+                  Si tu pedido está retrasado, <strong className="text-brand-yellow">contactanos inmediatamente</strong> y resolveremos el problema.
                 </p>
               </div>
             </div>
@@ -227,10 +227,10 @@ export default function PrazoEntregaPage() {
           {/* CTA */}
           <div className="bg-gradient-to-r from-brand-yellow/10 to-yellow-500/10 border border-brand-yellow/30 rounded-xl p-6 md:p-8">
             <h3 className="text-2xl font-bold text-white mb-4">
-              Dúvidas sobre envio?
+              ¿Dudas sobre envío?
             </h3>
             <p className="text-white/80 mb-6">
-              Nossa equipe está disponível para ajudar você!
+              ¡Nuestro equipo está disponible para ayudarte!
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
@@ -246,7 +246,7 @@ export default function PrazoEntregaPage() {
                 href="/contato"
                 className="inline-flex items-center justify-center gap-2 bg-white/10 text-white font-bold px-6 py-3 rounded-lg hover:bg-white/20 transition-colors"
               >
-                Contatar suporte
+                Contactar soporte
               </a>
             </div>
           </div>

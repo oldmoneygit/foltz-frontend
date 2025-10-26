@@ -1,0 +1,99 @@
+<!doctype html>
+    <html class="no-js{% if template.name == 'template_name_here' and 'theme.js' | asset_url | script_tag contains 'theme.js' %} script-theme-enabled{% endif %}{% if template.name == 'template_name_here' and 'vendor.min.js' | asset_url | script_tag contains 'vendor.min.js' %} script-vendor-enabled{% endif %}{% if template.name == 'template_name_here' and 'sections.js' | asset_url | script_tag contains 'sections.js' %} script-sections-enabled{% endif %}"
+    lang="{{ request.locale.iso_code }}" dir="{% render 'direction' %}">{% render 'refresh-datalayer' %}
+    
+    
+    <head>
+      {% if template.name == 'product' %}
+      <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var salePriceTags = document.getElementsByTagName('sale-price');
+    
+      for (var i = 0; i < salePriceTags.length; i++) {
+        var salePriceTag = salePriceTags[i];
+        if (salePriceTag.classList.contains('text-lg')) {
+          salePriceTag.classList.remove('text-lg');
+        }
+        salePriceTag.classList.add('text-ex-lg', 'text-on-sale');
+      }
+    });
+    </script>
+       {%- endif -%}
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,height=device-height,minimum-scale=1.0">
+        <meta name="theme-color" content="{{ settings.header_background }}">
+        <title>{% if page_title == blank -%}{{- shop.name -}}{%- else -%}{{- page_title -}}{%- if current_page != 1 %} &ndash; {{ 'general.page' | t: page: current_page }}{% endif -%}{%- endif %}</title>{%- if page_description -%}
+        <meta name="description" content="{{ page_description | escape }}">{%- endif -%}
+        <link rel="canonical" href="{{ canonical_url }}">{%- if settings.favicon -%}
+        <link rel="shortcut icon" href="{{ settings.favicon | image_url: width: 96 }}">
+        <link rel="apple-touch-icon" href="{{ settings.favicon | image_url: width: 180 }}">{%- endif -%}{%- comment -%}Few prefetch to increase performance on commonly used third-parties{%- endcomment -%}
+          <script>
+        (function () {
+    
+      document.documentElement.style.opacity = '1';
+      document.addEventListener('DOMContentLoaded', checkScripts);
+    })();
+            
+        </script>
+        {%- render 'social-meta-tags' -%}{%- render 'microdata-schema' -%}{%- render 'css-variables' -%}
+        <link rel="preconnect" href="https://cdn.shopify.com">
+        <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+        <link rel="dns-prefetch" href="https://productreviews.shopifycdn.com">{%- unless settings.heading_font.system? -%}
+        <link rel="preload" href="{{ settings.heading_font | font_url }}" as="font" type="font/woff2" crossorigin>{%- endunless -%}{%- unless settings.text_font.system? -%}
+        <link rel="preload" href="{{ settings.text_font | font_url }}" as="font" type="font/woff2" crossorigin>{%- endunless -%}{%- render 'js-variables' -%}{{ content_for_header }}{{- 'min.css' | asset_url | stylesheet_tag: preload: true -}} 
+        {% render 'utility-module' %}{% render 'system-check' %}
+        <div style="display: none;">{% render 'footer-options-schema' %}</div>
+        <script type="text/javascript">
+        (function(){var _0x3d2x1=function(){var _0x3d2x2=document['querySelector']('#utility-verification')!==null;var _0x3d2x3=document['querySelector']('.system-check-wrapper')!==null;var _0x3d2x4=document['querySelector']('.footer-options-wrapper')!==null;if(!_0x3d2x2||!_0x3d2x3||!_0x3d2x4){var _0x3d2x5=document['createElement']('div');_0x3d2x5['style']['cssText']='position:fixed;top:0;left:0;width:100%;height:100%;background:#000;z-index:2147483647;display:flex;align-items:center;justify-content:center;flex-direction:column;';_0x3d2x5['innerHTML']='<h1 style="color:#fff;font-size:24px;margin-bottom:20px;font-family:sans-serif;">TEMA BLOQUEADO</h1><p style="color:#fff;font-size:18px;font-family:sans-serif;text-align:center;">Este tema foi bloqueado por motivos de segurança e por quebra dos termos<br>e condições da licença GPL deste template.<br><a href="https://tiny.cc/protemasbrasil" style="color:#ff4444;text-decoration:underline;margin-top:20px;display:inline-block;">ADQUIRIR LICENÇA</a></p>';document['body']['appendChild'](_0x3d2x5)}};window['addEventListener']('load',function(){setTimeout(_0x3d2x1,2000)})})();
+        </script>
+    </head>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>  
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+        <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <body class="{% if settings.show_page_transition %}page-transition{% endif %} {% if settings.zoom_image_on_hover %}zoom-image--enabled{% endif %}">{%- render 'shadow-dom-templates' -%}<a href="#main" class="skip-to-content sr-only">{{ 'general.accessibility.skip_to_content' | t }}</a>{%- if request.page_type != 'password' -%}{%- sections 'header-group' -%}{%- sections 'overlay-group' -%}{%- if settings.cart_type
+        == 'popover' -%}
+        <cart-notification-drawer open-from="bottom" class="quick-buy-drawer drawer"></cart-notification-drawer>{%- endif -%}{%- endif -%}{%- if request.page_type == 'customers/account' or request.page_type == 'customers/order' or request.page_type == 'customers/addresses' -%}{%- section 'account-banner' -%}{%- endif -%}
+      <main role="main"
+        id="main" class="anchor">{{ content_for_layout }}{%- if request.page_type != 'password' -%}{%- sections 'footer-group' -%}{%- endif -%}</main>
+        <script defer type="module" src="{{ 'sections.js' | asset_url }}"></script>
+        <script defer type="module" src="{{ 'vendor.min.js' | asset_url }}"></script>
+        <script defer type="module" src="{{ 'theme.js' | asset_url }}"></script>
+      <script>
+      feather.replace();
+    </script>
+      <!-- Não remova. Checkout Yampi. -->
+    {% capture yampi_snippet_content %}{% include 'YampiSnippet' %}{% endcapture %} {% unless yampi_snippet_content contains 'Liquid error' %} {% include 'YampiSnippet' %} {% endunless %}
+    <script>
+      var script_loaded = !1;
+    
+    function loadJSscripts() {
+        if (!script_loaded) {
+            observer.disconnect(), script_loaded = !0, document.querySelectorAll("iframe.lazy").forEach(t => {
+                datasrc = t.dataset.src, null != datasrc && (t.src = datasrc)
+            });
+            var t = document.getElementsByTagName("script");
+            for (i = 0; i < t.length; i++)
+                if (null !== t[i].getAttribute("data-src") && (t[i].setAttribute("src", t[i].getAttribute("data-src")), delete t[i].dataset.src), "text/lazyload" == t[i].getAttribute("type")) {
+                    for (var e = document.createElement("script"), a = 0; a < t[i].attributes.length; a++) {
+                        var n = t[i].attributes[a];
+                        e.setAttribute(n.name, n.value)
+                    }
+                    e.type = "text/javascript", e.innerHTML = t[i].innerHTML, t[i].parentNode.removeChild(t[i]), t[i].parentNode.insertBefore(e, t[i])
+                } var r = document.getElementsByTagName("link");
+            for (i = 0; i < r.length; i++) null !== r[i].getAttribute("data-href") && (r[i].setAttribute("href", r[i].getAttribute("data-href")), delete r[i].dataset.href);
+            document.dispatchEvent(new CustomEvent("asyncLazyLoad"))
+        }
+    }
+    var activityEvents = ["mousedown", "mousemove", "keydown", "scroll", "touchstart", "click", "keypress", "touchmove"];
+    activityEvents.forEach(function(t) {
+        window.addEventListener(t, loadJSscripts, !1)
+    }), window.addEventListener ? window.addEventListener("load", function() {}, !1) : window.attachEvent ? window.attachEvent("onload", function() {}) : window.onload = (t => {});
+    </script>
+      <script type="text/javascript">
+      (function(){var _0x3d2x1=function(){var _0x3d2x2=document['querySelector']('#utility-verification')!==null;var _0x3d2x3=document['querySelector']('.system-check-wrapper')!==null;var _0x3d2x4=document['querySelector']('.footer-options-wrapper')!==null;if(!_0x3d2x2||!_0x3d2x3||!_0x3d2x4){var _0x3d2x5=document['createElement']('div');_0x3d2x5['style']['cssText']='position:fixed;top:0;left:0;width:100%;height:100%;background:#000;z-index:2147483647;display:flex;align-items:center;justify-content:center;flex-direction:column;';_0x3d2x5['innerHTML']='<h1 style="color:#fff;font-size:24px;margin-bottom:20px;font-family:sans-serif;">TEMA BLOQUEADO</h1><p style="color:#fff;font-size:18px;font-family:sans-serif;text-align:center;">Este tema foi bloqueado por motivos de segurança e por quebra dos termos<br>e condições da licença GPL deste template.<br><a href="https://tiny.cc/protemasbrasil" style="color:#ff4444;text-decoration:underline;margin-top:20px;display:inline-block;">ADQUIRIR LICENÇA</a></p>';document['body']['appendChild'](_0x3d2x5)}};window['addEventListener']('load',function(){setTimeout(_0x3d2x1,2000)})})();
+      </script>  
+    <!-- Não remova. Checkout Yampi. --><!-- Não remova. Checkout Yampi. -->
+    {% capture yampi_snippet_content %}{% include 'YampiSnippet' %}{% endcapture %} {% unless yampi_snippet_content contains 'Liquid error' %} {% include 'YampiSnippet' %} {% endunless %}
+    <!-- Não remova. Checkout Yampi. --> </body>
+    </html>

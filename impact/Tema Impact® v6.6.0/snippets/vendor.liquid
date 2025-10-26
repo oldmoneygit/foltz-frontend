@@ -1,0 +1,11 @@
+
+{%- if vendor != blank -%}
+  {%- assign collection_handle = vendor | handle -%}
+  {%- assign collection_for_vendor = collections[collection_handle] -%}
+  {%- if collection_for_vendor != blank -%}
+    {%- assign url = collection_for_vendor.url -%}
+  {%- else -%}
+    {%- assign url = vendor | url_for_vendor -%}
+  {%- endif -%}
+  <a href="{{ url }}" class="{{ class }} link-faded">{{- vendor -}}</a>
+{%- endif -%}

@@ -4,9 +4,11 @@ import { useState } from 'react'
 import SizeSelector from './SizeSelector'
 import QuantitySelector from './QuantitySelector'
 import AddToCartToast from './AddToCartToast'
+import { useCart } from '@/contexts/CartContext'
 import { ShoppingCart, Package, Shield, Truck, Check, Heart } from 'lucide-react'
 
 const ProductInfo = ({ product }) => {
+  const { addToCart } = useCart()
   const [selectedSize, setSelectedSize] = useState(null)
   const [quantity, setQuantity] = useState(1)
   const [addedToCart, setAddedToCart] = useState(false)
@@ -47,6 +49,9 @@ const ProductInfo = ({ product }) => {
       alert('Por favor selecciona una talla')
       return
     }
+
+    // Add product to cart using CartContext
+    addToCart(product, selectedSize, quantity)
 
     // Show success feedback - button turns green
     setAddedToCart(true)

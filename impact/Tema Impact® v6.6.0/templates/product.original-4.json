@@ -1,0 +1,377 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "spectators_rFmUCU": {
+          "type": "spectators",
+          "settings": {
+            "spectator_count_color": "#272727"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h2"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "heading_price": "h3",
+            "show_pix_discount": true,
+            "percent_pix_discount": 8
+          }
+        },
+        "rating": {
+          "type": "rating",
+          "settings": {}
+        },
+        "payment_terms": {
+          "type": "payment_terms",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "stack_blocks": true,
+            "selector_mode": "block",
+            "color_mode": "variant",
+            "size_chart_page": "tabela-de-tamanhos"
+          }
+        },
+        "offer_q4bfAf": {
+          "type": "offer",
+          "settings": {
+            "text_alignment": "start",
+            "icon_position": "aligned",
+            "icon": "picto-truck",
+            "icon_width": 24,
+            "title": "FRETE GRÁTIS",
+            "content": "<p>Receba gratuitamente em qualquer lugar do Brasil fazendo seu pedido hoje</p>",
+            "background": "#e5f2ef",
+            "text_color": "#006c67"
+          }
+        },
+        "offer_8zhjpK": {
+          "type": "offer",
+          "settings": {
+            "text_alignment": "start",
+            "icon_position": "aligned",
+            "icon": "picto-award-gift",
+            "icon_width": 24,
+            "title": "SUA 1° COMPRA",
+            "content": "<p>Desconto exclusivo de <strong>10% OFF</strong> usando o cupom <strong>DESCONTO10</strong></p>",
+            "background": "#e5f2ef",
+            "text_color": "#006c67"
+          }
+        },
+        "barra_de_escassez_nx87bg": {
+          "type": "barra_de_escassez",
+          "disabled": true,
+          "settings": {
+            "count_main_color": "#b98c41",
+            "alt_progress": 6
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "buy_button_text": "Comprar agora",
+            "atc_button_background": "#272727",
+            "atc_button_text_color": "#f1f1f1",
+            "habilitar_1clique": true,
+            "show_checkout_button": true,
+            "atc_button_text": "Adicionar ao carrinho",
+            "payment_button_background": "#ececec",
+            "payment_button_text_color": "#272727"
+          }
+        },
+        "payment_meths_zhMEn4": {
+          "type": "payment_meths",
+          "settings": {}
+        },
+        "simulator_shipping_GP8HDe": {
+          "type": "simulator-shipping",
+          "disabled": true,
+          "settings": {
+            "title_simulator_ship": "Calcule o frete",
+            "mostrarboxmelhorloja": true,
+            "prazoenvio": "Envio em 24hrs da loja",
+            "infoadicional": "após aprovação do pagamento",
+            "nomeloja": "Online Store",
+            "enderecoloja": "Nome da Rua, 000 - Bairro - SP, 00000-000",
+            "margin_top": "18",
+            "fundobotaoconsultar": "#000000",
+            "corlocalizacao": "#ff6606",
+            "cordescricao": "#51a559"
+          }
+        },
+        "associated_products_FViyr4": {
+          "type": "associated_products",
+          "settings": {
+            "title": "Compre junto",
+            "products_count": 4
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "collapse_content": true
+          }
+        }
+      },
+      "block_order": [
+        "spectators_rFmUCU",
+        "title",
+        "price",
+        "rating",
+        "payment_terms",
+        "variant_picker",
+        "offer_q4bfAf",
+        "offer_8zhjpK",
+        "barra_de_escassez_nx87bg",
+        "buy_buttons",
+        "payment_meths_zhMEn4",
+        "simulator_shipping_GP8HDe",
+        "associated_products_FViyr4",
+        "description"
+      ],
+      "settings": {
+        "full_width": true,
+        "show_fixed_add_to_cart": true,
+        "desktop_media_width": 50,
+        "desktop_media_layout": "carousel_thumbnails_bottom",
+        "mobile_media_size": "expanded",
+        "mobile_carousel_control": "floating_dots",
+        "enable_video_looping": true,
+        "enable_image_zoom": true,
+        "max_image_zoom_level": 3,
+        "input_background": "rgba(0,0,0,0)"
+      }
+    },
+    "slideshow_rzUJgV": {
+      "type": "slideshow",
+      "blocks": {
+        "image_RCMEWH": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Banner_5b66839b-ac54-4b47-840a-fbf44232b8c5.png",
+            "mobile_image": "shopify://shop_images/Banner_mob_fc1e7172-bf70-4ea5-babe-bb46d98dd542.png",
+            "content_max_width": 480,
+            "mobile_text_position": "place-self-start-center text-center",
+            "desktop_text_position": "sm:place-self-center-start sm:text-start",
+            "subheading": "BRILHO QUE ROUBA A CENA",
+            "title": "Glamour e sofisticação em cada passo",
+            "heading_tag": "h1",
+            "text_color": "#272727",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "overlay_color": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "image_RCMEWH"
+      ],
+      "settings": {
+        "margin_top": true,
+        "allow_transparent_header": true,
+        "image_size": "auto",
+        "controls_type": "dots",
+        "transition_type": "fade_with_text",
+        "cycle_speed": 6,
+        "background": "rgba(0,0,0,0)"
+      }
+    },
+    "scrolling_text_4Tmcrd": {
+      "type": "scrolling-text",
+      "settings": {
+        "full_width": true,
+        "text": "PANTALONA PAETÊ BRILHOSA",
+        "text_size": "large",
+        "text_style": "fill",
+        "scrolling_mode": "auto",
+        "scrolling_speed": 10
+      }
+    },
+    "media_with_text_bkXinb": {
+      "type": "media-with-text",
+      "blocks": {
+        "image_KgjQYg": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/4.jpg",
+            "media_width": 45,
+            "media_position": "start",
+            "text_position": "place-self-center-start text-start",
+            "icon": "none",
+            "icon_width": 48,
+            "subheading": "PAETÊS DE ALTO BRILHO",
+            "title": "Brilho que destaca sua presença",
+            "content": "<p>A calça pantalona com brilho prata é a escolha perfeita para momentos que pedem glamour e sofisticação, com paetês que refletem elegância.</p>",
+            "background": "rgba(0,0,0,0)",
+            "text_color": "#272727"
+          }
+        },
+        "image_PVX7by": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/5.jpg",
+            "media_width": 45,
+            "media_position": "end",
+            "text_position": "place-self-center-start text-start",
+            "icon": "none",
+            "icon_width": 48,
+            "subheading": "PARA EVENTOS NOTURNOS",
+            "title": "Design sofisticado e impactante",
+            "content": "<p>A tonalidade bege palmeira combina facilmente com diversos estilos, sendo uma escolha perfeita para transitar entre o casual e o sofisticado.</p>",
+            "background": "rgba(0,0,0,0)",
+            "text_color": "#272727"
+          }
+        },
+        "image_i7ARFT": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/2.jpg",
+            "media_width": 45,
+            "media_position": "start",
+            "text_position": "place-self-center-start text-start",
+            "icon": "none",
+            "icon_width": 48,
+            "subheading": "ESTILO SEM ABRIR MÃO",
+            "title": "Conforto aliado ao luxo",
+            "content": "<p>Apesar de seu visual luxuoso, a calça é projetada para proporcionar conforto, permitindo que você brilhe com liberdade e estilo.</p>",
+            "background": "rgba(0,0,0,0)",
+            "text_color": "#272727"
+          }
+        }
+      },
+      "block_order": [
+        "image_KgjQYg",
+        "image_PVX7by",
+        "image_i7ARFT"
+      ],
+      "custom_css": [
+        "@media screen and (max-width: 1000px) {.media-with-text__content {padding: var(--spacing-4) var(--spacing-4) var(--spacing-10) var(--spacing-4); }}"
+      ],
+      "settings": {
+        "spacing": "small"
+      }
+    },
+    "press_WBwCda": {
+      "type": "press",
+      "blocks": {
+        "quote_mq4bfY": {
+          "type": "quote",
+          "settings": {
+            "logo_width": 100,
+            "author": "Daniela F.",
+            "content": "Essa calça é um show à parte. Elegante, confortável e cheia de brilho, fez toda a diferença no meu evento.",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "quote_4pMrxh": {
+          "type": "quote",
+          "settings": {
+            "logo_width": 100,
+            "author": "Mariana L.",
+            "content": "Amei o caimento e o brilho intenso. Uma peça que transforma qualquer look em algo inesquecível.",
+            "show_rating": true,
+            "rating": 5
+          }
+        }
+      },
+      "block_order": [
+        "quote_mq4bfY",
+        "quote_4pMrxh"
+      ],
+      "settings": {
+        "full_width": true,
+        "content_size": "small",
+        "background": "#ececec"
+      }
+    },
+    "faq_pJUFLB": {
+      "type": "faq",
+      "blocks": {
+        "item_HNjrPx": {
+          "type": "item",
+          "settings": {
+            "title": "Os paetês soltam com o uso?",
+            "content": "<p>Os paetês são costurados com alta qualidade, garantindo durabilidade mesmo com uso frequente.</p>"
+          }
+        },
+        "item_rRcgjb": {
+          "type": "item",
+          "settings": {
+            "title": "A calça é confortável para usar por longos períodos?",
+            "content": "<p>Sim, apesar do brilho e do glamour, o design é feito para proporcionar conforto em qualquer ocasião.</p>"
+          }
+        },
+        "item_PJFiEg": {
+          "type": "item",
+          "settings": {
+            "title": "Essa calça é indicada para eventos formais?",
+            "content": "<p>Sim, é perfeita para eventos formais ou festas que pedem um look impactante e elegante.</p>"
+          }
+        },
+        "item_Y9Uy7T": {
+          "type": "item",
+          "settings": {
+            "title": "Como devo lavar a peça?",
+            "content": "<p>Recomenda-se lavagem à mão com cuidado, evitando torções, para preservar o brilho dos paetês.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_HNjrPx",
+        "item_rRcgjb",
+        "item_PJFiEg",
+        "item_Y9Uy7T"
+      ],
+      "settings": {
+        "full_width": true,
+        "title": "Perguntas frequentes",
+        "content": "<p>Aqui estão as perguntas mais frequentes entre todas as nossas clientes</p>",
+        "team_avatar_width": 160,
+        "support_hours": "Nosso suporte ao cliente está disponível de segunda a sexta-feira: das 8h às 20h30.",
+        "answer_time": "Tempo médio de resposta: 20min",
+        "text_position": "center"
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "recommendations_count": 7,
+        "products_per_row_mobile": "1",
+        "products_per_row_desktop": 3,
+        "title": "Você pode gostar"
+      }
+    },
+    "1629746450643786911": {
+      "type": "areviews-section",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "slideshow_rzUJgV",
+    "scrolling_text_4Tmcrd",
+    "media_with_text_bkXinb",
+    "press_WBwCda",
+    "faq_pJUFLB",
+    "related-products",
+    "1629746450643786911"
+  ]
+}

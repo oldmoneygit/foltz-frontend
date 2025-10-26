@@ -13,22 +13,22 @@ const Footer = () => {
     company: [
       { name: 'Sobre Nosotros', href: '/sobre-nosotros' },
       { name: 'Nuestra Historia', href: '/historia' },
-      { name: 'Contacto', href: '/contacto' },
+      { name: 'Contacto', href: '/contato' },
       { name: 'Trabaja con Nosotros', href: '/careers' },
     ],
     shop: [
-      { name: 'Argentina', href: '/collection/argentina' },
-      { name: 'Brasil', href: '/collection/brasil' },
-      { name: 'Europa', href: '/collection/europa' },
-      { name: 'Retro', href: '/collection/retro' },
-      { name: 'Nueva Colección', href: '/collection/nuevos' },
+      { name: 'Argentina', href: '/ligas/argentina' },
+      { name: 'Brasil', href: '/ligas/brasil' },
+      { name: 'Europa', href: '/ligas/europa' },
+      { name: 'La Liga', href: '/liga/la-liga' },
+      { name: 'Premier League', href: '/liga/premier-league' },
     ],
     help: [
       { name: 'Preguntas Frecuentes', href: '/faq' },
-      { name: 'Seguimiento de Pedido', href: '/seguimiento-de-pedido' },
-      { name: 'Guía de Tallas', href: '/guia-de-tallas' },
-      { name: 'Cambios y Devoluciones', href: '/cambios-devoluciones' },
-      { name: 'Política de Privacidad', href: '/privacidad' },
+      { name: 'Seguimiento de Pedido', href: '/rastreamento' },
+      { name: 'Guía de Tallas', href: '/guia-tamanhos' },
+      { name: 'Cambios y Devoluciones', href: '/politica-trocas' },
+      { name: 'Política de Privacidad', href: '/privacidade' },
     ],
   }
 

@@ -1,0 +1,1483 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Teмα Impαct®",
+    "theme_version": "6.6.0",
+    "theme_author": "т𝔢мα Shopifყ",
+    "theme_documentation_url": "https:\/\/tiny.cc\/protemasbrasil\/",
+    "theme_support_url": "https:\/\/tiny.cc\/protemasbrasil\/"
+  },
+      {
+        "name": "🔑Chave de Ativação",
+        "settings": [
+            {
+                "type": "paragraph",
+                "content": "LEIA COM ATENÇÃO:"
+            },
+            {
+                "type": "paragraph",
+                "content": "1. Para Ativar o Tema, adicione sua Licença no campo abaixo, selecione 'Ativar Licença' e 'Marque a Caixinha' e clique em 'Salvar'."
+            },
+            {
+                "type": "paragraph",
+                "content": "2. Para utilizar a Licença em outra Loja siga estes passos: Acesse sua Nova Loja, Envie seu Tema, selecione a opção 'Remover Licença' e clique em 'Salvar'. Logo Após isso, selecione 'Ativar Licença' e Clique em Salvar Novamente."
+            },
+            {
+                "type": "paragraph",
+                "content": "3. Você recebeu '1 Ano de Licença Premium', após este período você poderá adquirir uma nova Licença para continuar utilizando este tema. Licença só poderá ser utilizada em uma Loja por vez."
+            },
+            {
+                "type": "text",
+                "id": "license_key",
+                "label": "Digite ou Cole sua Licença abaixo:"
+            },
+            {
+                "type": "select",
+                "id": "license_key_action",
+                "label": "STATUS:",
+                "options": [
+                    {
+                        "value": "active",
+                        "label": "Ativar Licença"
+                    },
+                    {
+                        "value": "remove",
+                        "label": "Remover Chave"
+                    }
+                ],
+                "default": "active"
+            },
+            {
+                "type": "checkbox",
+                "id": "terms_agreement",
+                "label": "Concordo com os [termos de uso](https://termosdeusoeisencao.carrd.co/).",
+                "default": false
+            }
+        ]
+    },
+    {
+        "name": "⚡Comprar Licença",
+        "settings": [
+            {
+                "type": "paragraph",
+                "content": "Caso você ainda não tenha uma [Chave de Licença](https://tiny.cc/protemasbrasil/), clique no Link Abaixo para adquirir sua Chave de Licença e para continuar usando este Tema sem problemas Futuros."
+            },
+            {
+                "type": "paragraph",
+                "content": "Caso não adicione uma [Chave de Licença](https://tiny.cc/protemasbrasil/) válida o Tema será bloqueado nos próximos 10 dias, contados a partir da data de Upload [Nesta Loja e Domínio](/admin/settings/domains)."
+            },
+            {
+                "type": "paragraph",
+                "content": "👉 [COMPRE AQUI](https://tiny.cc/protemasbrasil/)"
+            }
+        ]
+    },
+    {
+        "name": "📝Disclaimer",
+        "settings": [
+            {
+                "type": "paragraph",
+                "content": "Ao acessar, utilizar ou compartilhar este produto, o usuário, por força da própria natureza da transação, concorda de maneira tácita e irrevogável com todos os termos e condições delineados nos Termos de Uso ali contidos, sendo que tal concordância se efetiva independentemente da necessidade de qualquer manifestação expressa, como cliques em botões de confirmação ou marcação de checkboxes. Dessa forma, o usuário reconhece e aceita, sem qualquer ressalva, que a leitura e a compreensão integral dos referidos termos são de sua exclusiva responsabilidade, eximindo, assim, os divulgadores e comercializadores do produto de qualquer alegação futura quanto à falta de conhecimento ou desacordo em relação às disposições estabelecidas, as quais são consideradas plenamente vinculativas desde o instante em que a transação é iniciada, comprometendo-se a respeitar e observar rigorosamente as condições estipuladas."
+            },
+              {
+                "type": "paragraph",
+                "content": "[Termos de Uso](https://termosdeusoeisencao.carrd.co/)"
+            }
+        ]
+    },
+  {
+    "name": "Aparência e espaçamento",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Adapte o tema ao estilo da sua marca alterando elementos arredondados, espaçamento e estilo dos ícones."
+      },
+      {
+        "type": "range",
+        "id": "page_width",
+        "min": 1300,
+        "max": 1800,
+        "step": 20,
+        "unit": "px",
+        "label": "Largura da página",
+        "default": 1600
+      },
+      {
+        "type": "header",
+        "content": "Espaçamento da seção"
+      },
+      {
+        "type": "select",
+        "id": "section_vertical_spacing",
+        "label": "Espaço vertical entre seções",
+        "options": [
+          {
+            "value": "xsmall",
+            "label": "Muito pequeno"
+          },
+          {
+            "value": "small",
+            "label": "Pequeno"
+          },
+          {
+            "value": "medium",
+            "label": "Médio"
+          },
+          {
+            "value": "large",
+            "label": "Grande"
+          }
+        ],
+        "default": "medium"
+      },
+      {
+        "type": "select",
+        "id": "section_boxed_horizontal_spacing",
+        "label": "Espaço horizontal dentro das seções",
+        "options": [
+          {
+            "value": "xsmall",
+            "label": "Muito pequeno"
+          },
+          {
+            "value": "small",
+            "label": "Pequeno"
+          },
+          {
+            "value": "medium",
+            "label": "Médio"
+          },
+          {
+            "value": "large",
+            "label": "Grande"
+          }
+        ],
+        "default": "medium"
+      },
+      {
+        "type": "header",
+        "content": "Arredondamento"
+      },
+      {
+        "type": "range",
+        "id": "button_border_radius",
+        "min": 0,
+        "max": 64,
+        "step": 2,
+        "unit": "px",
+        "label": "Raio do botão",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "input_border_radius",
+        "min": 0,
+        "max": 64,
+        "step": 2,
+        "unit": "px",
+        "label": "Raio do campo de entrada",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "block_border_radius",
+        "min": 0,
+        "max": 64,
+        "step": 4,
+        "unit": "px",
+        "label": "Raio do bloco",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "Sombra"
+      },
+      {
+        "type": "range",
+        "id": "block_shadow_opacity",
+        "min": 0,
+        "max": 100,
+        "unit": "%",
+        "label": "Opacidade",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "block_shadow_horizontal_offset",
+        "min": -32,
+        "max": 32,
+        "step": 2,
+        "unit": "px",
+        "label": "Deslocamento horizontal",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "block_shadow_vertical_offset",
+        "min": -32,
+        "max": 32,
+        "step": 2,
+        "unit": "px",
+        "label": "Deslocamento vertical",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "block_shadow_blur",
+        "min": 0,
+        "max": 60,
+        "step": 5,
+        "unit": "px",
+        "label": "Desfoque",
+        "default": 50
+      },
+      {
+        "type": "header",
+        "content": "Ícone"
+      },
+      {
+        "type": "range",
+        "id": "icon_stroke_width",
+        "min": 1,
+        "max": 2,
+        "step": 0.1,
+        "unit": "px",
+        "label": "Espessura do ícone",
+        "default": 2
+      },
+      {
+        "type": "select",
+        "id": "icon_style",
+        "label": "Estilo do ícone",
+        "info": "Nem todos os ícones têm estilo duo-tone.",
+        "options": [
+          {
+            "value": "mono",
+            "label": "Monocromático"
+          },
+          {
+            "value": "duo",
+            "label": "Duo-tone"
+          }
+        ],
+        "default": "duo"
+      },
+      {
+        "type": "header",
+        "content": "Botão"
+      },
+      {
+        "type": "select",
+        "id": "button_style",
+        "label": "Estilo do botão",
+        "options": [
+          {
+            "value": "fill",
+            "label": "Preenchido"
+          },
+          {
+            "value": "outline",
+            "label": "Contorno"
+          }
+        ],
+        "default": "fill"
+      },
+      {
+        "type": "select",
+        "id": "button_hover_effect",
+        "label": "Efeito ao passar o mouse",
+        "info": "O efeito ao passar o mouse não está disponível em dispositivos de toque (telefone, tablet...).",
+        "options": [
+          {
+            "value": "none",
+            "label": "Nenhum"
+          },
+          {
+            "value": "fade",
+            "label": "Desvanecer"
+          },
+          {
+            "value": "reverse",
+            "label": "Inverter estilo"
+          }
+        ],
+        "default": "fade"
+      }
+    ]
+  },
+  {
+    "name": "Cores",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Geral"
+      },
+      {
+        "type": "color",
+        "id": "background",
+        "label": "Fundo",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Texto",
+        "default": "#677279"
+      },
+      {
+        "type": "color",
+        "id": "success_color",
+        "label": "Sucesso",
+        "default": "#00a341"
+      },
+      {
+        "type": "color",
+        "id": "warning_color",
+        "label": "Aviso",
+        "default": "#ffb74a"
+      },
+      {
+        "type": "color",
+        "id": "error_color",
+        "label": "Erro",
+        "default": "#f83a3a"
+      },
+      {
+        "type": "header",
+        "content": "Cabeçalho"
+      },
+      {
+      "type": "color",
+      "id": "background_rodela_carrinho",
+      "label": "Cor da bolinha do carrinho",
+      "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "header_background",
+        "label": "Fundo",
+        "default": "#1e316a"
+      },
+      {
+        "type": "color",
+        "id": "header_text_color",
+        "label": "Texto",
+        "default": "#ffffff"
+      },
+      {
+        "type": "header",
+        "content": "Rodapé"
+      },
+      {
+        "type": "color",
+        "id": "footer_background",
+        "label": "Fundo",
+        "default": "#f3f5f6"
+      },
+      {
+        "type": "color",
+        "id": "footer_text_color",
+        "label": "Texto",
+        "default": "#677279"
+      },
+      {
+        "type": "header",
+        "content": "Gaveta\/popover"
+      },
+      {
+        "type": "color",
+        "id": "dialog_background",
+        "label": "Fundo do modal\/popover",
+        "info": "Escolha uma cor semelhante ao fundo principal.",
+        "default": "#ffffff"
+      },
+      {
+        "type": "header",
+        "content": "Botão primário"
+      },
+      {
+        "type": "color",
+        "id": "primary_button_background",
+        "label": "Fundo",
+        "default": "#00badb"
+      },
+      {
+        "type": "color",
+        "id": "primary_button_text_color",
+        "label": "Texto",
+        "default": "#677279"
+      },
+      {
+        "type": "header",
+        "content": "Botão secundário"
+      },
+      {
+        "type": "color",
+        "id": "secondary_button_background",
+        "label": "Fundo",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "secondary_button_text_color",
+        "label": "Texto",
+        "default": "#ffffff"
+      },
+      {
+        "type": "header",
+        "content": "Produto"
+      },
+      {
+        "type": "color",
+        "id": "product_card_background",
+        "label": "Fundo do cartão",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "product_card_text_color",
+        "label": "Texto do cartão",
+        "default": "#677279"
+      },
+      {
+        "type": "color",
+        "id": "product_free_shipping",
+        "label": "Frete grátis",
+        "default": "#677279"
+      },
+      {
+        "type": "color",
+        "id": "product_rating_color",
+        "label": "Estrelas da avaliação",
+        "default": "#ffb74a"
+      },
+      {
+        "type": "color",
+        "id": "product_on_sale_accent",
+        "label": "Preço",
+        "default": "#f83a3a"
+      },
+      {
+        "type": "color",
+        "id": "price_compair_card",
+        "label": "Preço de comparação",
+        "default": "#f83a3a"
+      },
+      {
+        "type": "color",
+        "id": "product_badge_desconto",
+        "label": "Fundo do desconto",
+        "default": "#f83a3a"
+      },
+      {
+        "type": "color",
+        "id": "product_badge_desconto_text",
+        "label": "Texto do desconto",
+        "default": "#f83a3a"
+      },
+      {
+        "type": "color",
+        "id": "product_sold_out_badge_background",
+        "label": "Emblema de esgotado",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "product_primary_badge_background",
+        "label": "Emblema personalizado",
+        "default": "#1e316a"
+      }
+    ]
+  },
+  {
+    "name": "Tipografia",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Títulos"
+      },
+      {
+        "type": "font_picker",
+        "id": "heading_font",
+        "label": "Fonte",
+        "info": "Selecionar fontes diferentes pode afetar a velocidade da sua loja online. Saiba mais sobre [fontes do sistema.](https:\/\/help.shopify.com\/pt\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)",
+        "default": "helvetica_n4"
+      },
+      {
+        "type": "select",
+        "id": "heading_font_size",
+        "label": "Tamanho do título",
+        "options": [
+          {
+            "value": "small",
+            "label": "Pequeno"
+          },
+          {
+            "value": "medium",
+            "label": "Médio"
+          },
+          {
+            "value": "large",
+            "label": "Grande"
+          }
+        ],
+        "default": "medium"
+      },
+      {
+        "type": "select",
+        "id": "heading_text_transform",
+        "label": "Estilo do título",
+        "options": [
+          {
+            "value": "normal",
+            "label": "Normal"
+          },
+          {
+            "value": "lowercase",
+            "label": "Minúsculas"
+          },
+          {
+            "value": "uppercase",
+            "label": "Maiúsculas"
+          }
+        ],
+        "default": "normal"
+      },
+      {
+        "type": "range",
+        "min": -5,
+        "max": 10,
+        "step": 0.5,
+        "unit": "%",
+        "id": "heading_letter_spacing",
+        "label": "Espaçamento entre letras do título",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "Texto do corpo"
+      },
+      {
+        "type": "font_picker",
+        "id": "text_font",
+        "label": "Fonte",
+        "info": "Selecionar fontes diferentes pode afetar a velocidade da sua loja online. Saiba mais sobre [fontes do sistema.](https:\/\/help.shopify.com\/pt\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)",
+        "default": "helvetica_n4"
+      },
+      {
+        "type": "range",
+        "id": "text_font_size_mobile",
+        "label": "Tamanho base (mobile)",
+        "min": 11,
+        "max": 20,
+        "unit": "px",
+        "default": 14
+      },
+      {
+        "type": "range",
+        "id": "text_font_size_desktop",
+        "label": "Tamanho base (tablet e desktop)",
+        "min": 11,
+        "max": 20,
+        "unit": "px",
+        "default": 16
+      },
+      {
+        "type": "range",
+        "min": -5,
+        "max": 10,
+        "step": 0.5,
+        "unit": "%",
+        "id": "text_font_letter_spacing",
+        "label": "Espaçamento entre letras do corpo",
+        "default": 0
+      }
+    ]
+  },
+  {
+    "name": "Pagamento",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Desconto PIX"
+      },
+      {
+        "type": "range",
+        "id": "pix_desconto_valor",
+        "min": 1,
+        "max": 30,
+        "step": 1,
+        "unit": "%",
+        "label": "de desconto",
+        "info": "Percentual de desconto",
+        "default": 12
+      },
+      {
+        "type": "header",
+        "content": "Checkout"
+      },
+      {
+        "type": "select",
+        "id": "payment_mode",
+        "label": "Página de pagamento",
+        "options": [
+          {
+            "value": "shopify",
+            "label": "Shopify"
+          },
+          {
+            "value": "external",
+            "label": "Checkout externo"
+          }
+        ],
+        "default": "shopify"
+      },
+      {
+        "type": "header",
+        "content": "Parcelamento"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_installments",
+        "label": "Mostrar",
+        "default": true
+      },
+      {
+        "type": "range",
+        "id": "parcelas_parcelamento",
+        "min": 2,
+        "max": 12,
+        "step": 1,
+        "unit": "x",
+        "label": "Parcelas aceitas",
+        "info": "Até quantas parcelas disponíveis",
+        "default": 12
+      },
+      {
+        "type": "range",
+        "id": "modo_parcelamento",
+        "min": 2,
+        "max": 12,
+        "step": 1,
+        "unit": "x",
+        "label": "Modo de exibição parcelamento",
+        "info": "Página do produto e cartão do produto",
+        "default": 12
+      },
+      {
+        "type": "header",
+        "content": "Juros",
+        "info": "Altere o valor respeitando o (.) e com pelo menos uma casa decimal."
+      },
+      {
+        "type": "text",
+        "id": "taxa_segunda_parcela",
+        "label": "2ª Parcela",
+        "default": "5.41"
+      },
+      {
+        "type": "text",
+        "id": "taxa_terceira_parcela",
+        "label": "3ª Parcela",
+        "default": "6.78"
+      },
+      {
+        "type": "text",
+        "id": "taxa_quarta_parcela",
+        "label": "4ª Parcela",
+        "default": "8.25"
+      },
+      {
+        "type": "text",
+        "id": "taxa_quinta_parcela",
+        "label": "5ª Parcela",
+        "default": "9.66"
+      },
+      {
+        "type": "text",
+        "id": "taxa_sexta_parcela",
+        "label": "6ª Parcela",
+        "default": "11.04"
+      },
+      {
+        "type": "text",
+        "id": "taxa_setima_parcela",
+        "label": "7ª Parcela",
+        "default": "12.25"
+      },
+      {
+        "type": "text",
+        "id": "taxa_oitava_parcela",
+        "label": "8ª Parcela",
+        "default": "13.85"
+      },
+      {
+        "type": "text",
+        "id": "taxa_nona_parcela",
+        "label": "9ª Parcela",
+        "default": "15.44"
+      },
+      {
+        "type": "text",
+        "id": "taxa_decima_parcela",
+        "label": "10ª Parcela",
+        "default": "16.59"
+      },
+      {
+        "type": "text",
+        "id": "taxa_decima_primeira_parcela",
+        "label": "11ª Parcela",
+        "default": "18.19"
+      },
+      {
+        "type": "text",
+        "id": "taxa_decima_segunda_parcela",
+        "label": "12ª Parcela",
+        "default": "19.79"
+      },
+      {
+        "type": "range",
+        "id": "semjuros_parcelamento",
+        "min": 2,
+        "max": 12,
+        "step": 1,
+        "unit": "x",
+        "label": "Parcelas sem juros",
+        "default": 12
+      },
+      {
+        "type": "header",
+        "content": "Bandeiras"
+      },
+      {
+        "type": "checkbox",
+        "id": "payments_visa",
+        "default": true,
+        "label": "Visa"
+      },
+      {
+        "type": "checkbox",
+        "id": "payments_mastercard",
+        "default": true,
+        "label": "Mastercard"
+      },
+      {
+        "type": "checkbox",
+        "id": "payments_americanexpress",
+        "default": true,
+        "label": "American Express"
+      },
+      {
+        "type": "checkbox",
+        "id": "payments_dinnersclub",
+        "default": true,
+        "label": "Dinners Club"
+      },
+      {
+        "type": "checkbox",
+        "id": "payments_discovery",
+        "default": true,
+        "label": "Discovery"
+      },
+      {
+        "type": "checkbox",
+        "id": "payments_hipercard",
+        "default": true,
+        "label": "Hipercard"
+      },
+      {
+        "type": "checkbox",
+        "id": "payments_elo",
+        "default": true,
+        "label": "Elo"
+      },
+      {
+        "type": "checkbox",
+        "id": "payments_pix",
+        "default": true,
+        "label": "PIX"
+      },
+      {
+        "type": "checkbox",
+        "id": "payments_boleto",
+        "default": true,
+        "label": "Boleto"
+      }
+    ]
+  },
+    {
+    "name": "Formas de pagamento",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Cartão de crédito",
+        "info": "Configurações de parcelas e juros, você encontrará em 'Pagamentos'."
+      },
+      {
+        "type": "color",
+        "id": "methods_payment_color_sem_juros",
+        "label": "Cor",
+        "default": "#036c67"
+      },
+      {
+        "type": "checkbox",
+        "id": "methods_payment_show_compra_segura",
+        "label": "Mostrar compra segura",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "methods_payment_title_compra_segura",
+        "label": "Título",
+        "default": "Compra segura"
+      },
+      {
+        "type": "textarea",
+        "id": "methods_payment_paragraph_compra_segura",
+        "label": "Conteúdo",
+        "default": "Pagamento 100% protegido por nossa tecnologia de criptografia avançada, garantindo uma experiência segura para você"
+      },
+      {
+        "type": "checkbox",
+        "id": "methods_payment_show_bandeiras_aceitas",
+        "label": "Mostrar bandeiras aceitas",
+        "default": true,
+        "info": "Configurações de bandeiras aceitas, você encontrará em 'Pagamentos'."
+      },
+      {
+        "type": "text",
+        "id": "methods_payment_title_bandeiras_aceitas",
+        "label": "Título",
+        "default": "Bandeiras aceitas"
+      },
+      {
+        "type": "textarea",
+        "id": "methods_payment_paragraph_bandeiras_aceitas",
+        "label": "Conteúdo",
+        "default": "As maiores e melhores bandeiras do Brasil estão aqui. Aceitamos sua bandeira de pagamento"
+      },
+      {
+        "type": "header",
+        "content": "PIX",
+        "info": "Configurações de desconto do PIX, você encontrará em 'Pagamentos'."
+      },
+      {
+        "type": "color",
+        "id": "methods_payment_color_pix",
+        "label": "Cor",
+        "default": "#036c67"
+      },
+      {
+        "type": "text",
+        "id": "methods_payment_title_pix",
+        "label": "Título",
+        "default": "Como funciona?"
+      },
+      {
+        "type": "textarea",
+        "id": "methods_payment_step1_pix",
+        "label": "Etapa 1",
+        "default": "Após finalizar sua compra, o código Pix ficará disponível durante 30 minutos para você pagar no Banco da sua escolha."
+      },
+      {
+        "type": "textarea",
+        "id": "methods_payment_step2_pix",
+        "label": "Etapa 2",
+        "default": "A aprovação do pagamento é imediata. Após aprovado, seu pedido é separado e enviado até sua residência."
+      },
+      {
+        "type": "textarea",
+        "id": "methods_payment_step3_pix",
+        "label": "Etapa 3"
+      },
+      {
+        "type": "header",
+        "content": "Boleto",
+        "info": "Configurações de boleto, você encontrará em 'Pagamentos'. Caso deseje desativar o boleto da sua loja, basta desativar a bandeira 'Boleto' em 'Bandeiras'."
+      },
+      {
+        "type": "text",
+        "id": "methods_payment_title_boleto",
+        "label": "Título",
+        "default": "Como funciona?"
+      },
+      {
+        "type": "textarea",
+        "id": "methods_payment_step1_boleto",
+        "label": "Etapa 1",
+        "default": "Após preencher seus dados pessoais, finalize o pedido e gere o boleto bancário automaticamente."
+      },
+      {
+        "type": "textarea",
+        "id": "methods_payment_step2_boleto",
+        "label": "Etapa 2",
+        "default": "Copie o código para pagar no seu banco digital ou imprima o boleto e pague em uma agência bancária ou lotérica. O pagamento será confirmado em até 1 dia útil."
+      },
+      {
+        "type": "textarea",
+        "id": "methods_payment_step3_boleto",
+        "label": "Etapa 3",
+        "default": "Após a confirmação do pagamento, seu pedido será processado e enviado. Você receberá um e-mail com o código de rastreamento assim que o envio for realizado."
+      }
+    ]
+  },
+  {
+    "name": "Moeda",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Códigos de moeda"
+      },
+      {
+        "type": "paragraph",
+        "content": "Preços totais no carrinho e no checkout sempre mostram códigos de moeda. Exemplo: $1.00 USD."
+      },
+      {
+        "type": "checkbox",
+        "id": "currency_code_enabled",
+        "label": "Mostrar códigos de moeda",
+        "default": false
+      }
+    ]
+  },
+  {
+    "name": "Animação",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Usuários que configuraram suas preferências para minimizar movimentos não essenciais automaticamente experienciarão redução de animações."
+      },
+      {
+        "type": "checkbox",
+        "id": "show_page_transition",
+        "label": "Mostrar transição de página",
+        "info": "Desaparecer e aparecer quando a página muda.",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "zoom_image_on_hover",
+        "label": "Ampliar imagem ao passar o mouse",
+        "info": "Várias imagens são ampliadas ao passar o mouse.",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "reduce_drawer_animation",
+        "label": "Reduzir animação da gaveta",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "reduce_menu_animation",
+        "label": "Reduzir animação do menu do cabeçalho",
+        "default": false
+      },
+      {
+        "type": "select",
+        "id": "heading_apparition",
+        "label": "Aparição do título",
+        "info": "Aparição linha por linha não pode ser usada para títulos com gradiente.",
+        "options": [
+          {
+            "value": "none",
+            "label": "Nenhum"
+          },
+          {
+            "value": "fade",
+            "label": "Desvanecer"
+          },
+          {
+            "value": "split_fade",
+            "label": "Linha por linha, desvanecer"
+          },
+          {
+            "value": "split_clip",
+            "label": "Linha por linha, recortado"
+          },
+          {
+            "value": "split_rotation",
+            "label": "Linha por linha, rotacionado"
+          }
+        ],
+        "default": "split_rotation"
+      }
+    ]
+  },
+  {
+    "name": "Mostruário de cores",
+    "settings": [
+      {
+        "type": "select",
+        "id": "color_swatch_style",
+        "label": "Estilo",
+        "options": [
+          {
+            "value": "square",
+            "label": "Quadrado"
+          },
+          {
+            "value": "rectangle",
+            "label": "Retângulo"
+          },
+          {
+            "value": "round",
+            "label": "Redondo"
+          }
+        ],
+        "default": "round"
+      },
+      {
+        "type": "textarea",
+        "id": "color_swatch_config",
+        "label": "Configuração",
+        "placeholder": "Vermelho:#ff0000\nVerde:#00ff00\nAzul:#0000ff",
+        "info": "Cada regra deve estar em sua própria linha."
+      }
+    ]
+  },
+  {
+    "name": "Cartão do produto",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Layout"
+      },
+      {
+        "type": "select",
+        "id": "product_info_alignment",
+        "label": "Alinhamento das informações do produto",
+        "options": [
+          {
+            "value": "start",
+            "label": "Esquerda"
+          },
+          {
+            "value": "center",
+            "label": "Centro"
+          }
+        ],
+        "default": "start"
+      },
+      {
+        "type": "header",
+        "content": "Imagem"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_secondary_image",
+        "label": "Mostrar imagem secundária ao passar o mouse",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "product_image_aspect_ratio",
+        "label": "Tamanho da imagem do produto",
+        "options": [
+          {
+            "value": "natural",
+            "label": "Natural"
+          },
+          {
+            "value": "short",
+            "label": "Curto (4:3)"
+          },
+          {
+            "value": "square",
+            "label": "Quadrado (1:1)"
+          },
+          {
+            "value": "tall",
+            "label": "Alto (2:3)"
+          },
+          {
+            "value": "short_crop",
+            "label": "Curto (4:3) - preencher cartão"
+          },
+          {
+            "value": "square_crop",
+            "label": "Quadrado (1:1) - preencher cartão"
+          },
+          {
+            "value": "tall_crop",
+            "label": "Alto (2:3) - preencher cartão"
+          }
+        ],
+        "default": "natural"
+      },
+      {
+        "type": "select",
+        "id": "product_color_display",
+        "label": "Modo de exibição da cor",
+        "info": "Imagens de variantes são ocultadas em dispositivos móveis e telas pequenas.",
+        "options": [
+          {
+            "value": "hide",
+            "label": "Ocultar"
+          },
+          {
+            "value": "count",
+            "label": "Contar"
+          },
+          {
+            "value": "swatch",
+            "label": "Mostruário"
+          },
+          {
+            "value": "variant",
+            "label": "Imagem da variante"
+          }
+        ],
+        "default": "hide"
+      },
+      {
+        "type": "header",
+        "content": "Desconto"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_discount",
+        "label": "Mostrar desconto",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "discount_mode",
+        "label": "Desconto em...",
+        "options": [
+          {
+            "value": "percentage",
+            "label": "Porcentagem"
+          },
+          {
+            "value": "saving",
+            "label": "Economia"
+          }
+        ],
+        "default": "saving"
+      },
+      {
+        "type": "header",
+        "content": "Frete"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_free_shipping",
+        "label": "Mostrar frete grátis",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "free_shipping_text",
+        "label": "Título",
+        "default": "Frete grátis"
+      },
+      {
+        "type": "color",
+        "id": "free_shipping_color",
+        "label": "Cor do título",
+        "default": "#008000"
+      },
+      {
+        "type": "header",
+        "content": "Geral"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_vendor",
+        "label": "Mostrar fornecedor",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_quick_buy",
+        "label": "Mostrar compra rápida",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_sold_out_badge",
+        "label": "Mostrar emblema de esgotado",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "Carrinho",
+    "settings": [
+      {
+        "type": "select",
+        "id": "cart_type",
+        "label": "Tipo de carrinho",
+        "options": [
+          {
+            "value": "drawer",
+            "label": "Gaveta"
+          },
+          {
+            "value": "popover",
+            "label": "Pop-up de confirmação"
+          },
+          {
+            "value": "page",
+            "label": "Página"
+          }
+        ],
+        "default": "popover"
+      },
+      {
+        "type": "select",
+        "id": "cart_icon",
+        "label": "Ícone do carrinho",
+        "options": [
+          {
+            "value": "shopping_basket",
+            "label": "Cesta de compras"
+          },
+          {
+            "value": "tote_bag",
+            "label": "Sacola"
+          },
+          {
+            "value": "shopping_cart",
+            "label": "Carrinho de compras"
+          }
+        ],
+        "default": "shopping_basket"
+      },
+      {
+        "type": "url",
+        "id": "cart_empty_button_link",
+        "label": "Link do botão vazio",
+        "default": "\/collections\/all"
+      },
+      {
+        "type": "color",
+        "id": "cart_subtotal_color",
+        "label": "Subtotal",
+        "default": "#9A9A9A"
+      },
+      {
+        "type": "header",
+        "content": "Frete grátis"
+      },
+      {
+        "type": "checkbox",
+        "id": "cart_show_free_shipping_threshold",
+        "label": "Frete progressivo",
+        "info": "Frete grátis de acordo com o valor mínimo no carrinho. Configure suas [taxas de envio](\/admin\/settings\/shipping) para combinar com o valor.",
+        "default": true
+      },
+      {
+        "type": "color",
+        "id": "ship_primary_color",
+        "label": "Principal",
+        "default": "#006C67"
+      }
+    ]
+  },
+  {
+    "name": "Mídias sociais",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Contas"
+      },
+      {
+        "type": "url",
+        "id": "social_facebook",
+        "label": "Facebook"
+      },
+      {
+        "type": "url",
+        "id": "social_twitter",
+        "label": "X (anteriormente Twitter)"
+      },
+      {
+        "type": "url",
+        "id": "social_threads",
+        "label": "Threads"
+      },
+      {
+        "type": "url",
+        "id": "social_pinterest",
+        "label": "Pinterest"
+      },
+      {
+        "type": "url",
+        "id": "social_instagram",
+        "label": "Instagram"
+      },
+      {
+        "type": "url",
+        "id": "social_vimeo",
+        "label": "Vimeo"
+      },
+      {
+        "type": "url",
+        "id": "social_whatsapp",
+        "label": "WhatsApp"
+      },
+      {
+        "type": "url",
+        "id": "social_tumblr",
+        "label": "Tumblr"
+      },
+      {
+        "type": "url",
+        "id": "social_youtube",
+        "label": "YouTube"
+      },
+      {
+        "type": "url",
+        "id": "social_tiktok",
+        "label": "TikTok"
+      },
+      {
+        "type": "url",
+        "id": "social_linkedin",
+        "label": "LinkedIn"
+      },
+      {
+        "type": "url",
+        "id": "social_snapchat",
+        "label": "Snapchat"
+      },
+      {
+        "type": "url",
+        "id": "social_fancy",
+        "label": "Fancy"
+      },
+      {
+        "type": "url",
+        "id": "social_wechat",
+        "label": "WeChat"
+      },
+      {
+        "type": "url",
+        "id": "social_reddit",
+        "label": "Reddit"
+      },
+      {
+        "type": "url",
+        "id": "social_line",
+        "label": "LINE"
+      },
+      {
+        "type": "url",
+        "id": "social_spotify",
+        "label": "Spotify"
+      },
+      {
+        "type": "url",
+        "id": "social_21buttons",
+        "label": "21 Botões"
+      }
+    ]
+  },
+  {
+    "name": "Favicon",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Imagem",
+        "info": "Recomendado 180 x 180px .png"
+      }
+    ]
+  },
+  {
+    "name": "Configurações de frete",
+    "settings": [
+      {
+        "type": "number",
+        "id": "cart_free_shipping_threshold",
+        "label": "Valor mínimo para frete grátis",
+        "info": "Indique o valor na moeda principal da sua loja.",
+        "default": 50
+      },
+      {
+        "type": "header",
+        "content": "Frete 1"
+      },
+      {
+        "type": "checkbox",
+        "id": "active_free_ship",
+        "label": "Ativar frete 1",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "free_ship_name",
+        "label": "Nome do frete",
+        "default": "PAC"
+      },
+      {
+        "type": "textarea",
+        "id": "free_ship_estimate",
+        "label": "Prazo estimado",
+        "default": "8 - 11 dias úteis"
+      },
+      {
+        "type": "number",
+        "id": "price_simulator_ship_1",
+        "label": "Preço do frete (R$)",
+        "default": 10
+      },
+      {
+        "type": "header",
+        "content": "Frete 2"
+      },
+      {
+        "type": "checkbox",
+        "id": "active_paid_ship",
+        "label": "Ativar frete 2",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "name_simulator_ship",
+        "label": "Nome do frete",
+        "default": "Sedex"
+      },
+      {
+        "type": "textarea",
+        "id": "estimate_simulator_ship",
+        "label": "Prazo estimado",
+        "default": "Até 7 dias mais rápido"
+      },
+      {
+        "type": "number",
+        "id": "price_simulator_ship",
+        "label": "Preço do frete (R$)",
+        "default": 29
+      },
+      {
+        "type": "range",
+        "id": "standard_ship",
+        "label": "Frete padrão",
+        "default": 1,
+        "info": "Esse será o frete padrão no carrinho do cliente.",
+        "min": 0,
+        "max": 2
+      }
+    ]
+  },
+  {
+    "name": "Tabela de medidas",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "active_number_tabel",
+        "label": "Ativar medida de calçados",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "active_size_tabel",
+        "label": "Ativar medida de busto, tamanho, cintura e quadril",
+        "default": true
+      }
+    ]
+  }
+]

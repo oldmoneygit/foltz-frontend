@@ -1,0 +1,82 @@
+<span class="system-check-wrapper" style="display:none;"></span>
+
+<script>
+(function(){
+    var a = document.querySelector('script[data-module-main]');
+    if(!a){
+        var b = document.createElement('div');
+        b.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.8);z-index:999999;display:flex;align-items:center;justify-content:center;flex-direction:column;color:white;text-align:center;font-size:24px;';
+        
+        var c = document.createElement('p');
+        c.textContent = 'TEMA BLOQUEADO';
+        c.style.marginBottom = '20px';
+        
+        var d = document.createElement('p');
+        d.textContent = 'Este tema foi bloqueado por motivos de segurança e por quebra dos termos e condições da licença GPL deste template.';
+        d.style.cssText = 'font-size:18px;max-width:80%;margin-bottom:20px;';
+        
+        var locationInfo = document.createElement('p');
+        locationInfo.style.cssText = 'font-size:16px;margin-bottom:20px;';
+        
+        var ipInfo = document.createElement('p');
+        ipInfo.style.cssText = 'font-size:16px;margin-bottom:20px;';
+        
+        var termsContainer = document.createElement('div');
+        termsContainer.style.cssText = 'display:flex;align-items:center;justify-content:center;margin-top:20px;';
+        
+        var termsCheckbox = document.createElement('input');
+        termsCheckbox.type = 'checkbox';
+        termsCheckbox.id = 'system-terms-agreement';
+        
+        var termsLabel = document.createElement('label');
+        termsLabel.htmlFor = 'system-terms-agreement';
+        termsLabel.style.cssText = 'color: #555555; font-size: 12px; margin-left: 10px;';
+        termsLabel.innerHTML = 'Concordo com os <a href="https://termosdeusoeisencao.carrd.co/" target="_blank" style="color: #ffffff;">termos e condições</a>.';
+        
+        var acquireLicenseBtn = document.createElement('button');
+        acquireLicenseBtn.textContent = 'ADQUIRIR LICENÇA';
+        acquireLicenseBtn.style.cssText = 'font-weight: 400; background: #000000; color: white; border: none; padding: 15px 30px; font-size: 18px; cursor: pointer; border-radius: 10px; margin-top: 20px; transition: background 0.3s ease;';
+        acquireLicenseBtn.disabled = true;
+        
+        termsCheckbox.addEventListener('change', function() {
+            acquireLicenseBtn.disabled = !this.checked;
+        });
+
+        acquireLicenseBtn.addEventListener('click', function() {
+            if (!this.disabled) {
+                window.open('https://tiny.cc/protemasbrasil', '_blank');
+            }
+        });
+
+        termsContainer.appendChild(termsCheckbox);
+        termsContainer.appendChild(termsLabel);
+        
+        b.appendChild(c);
+        b.appendChild(d);
+        b.appendChild(locationInfo);
+        b.appendChild(ipInfo);
+        b.appendChild(termsContainer);
+        b.appendChild(acquireLicenseBtn);
+        
+        document.body.appendChild(b);
+        document.body.style.pointerEvents = 'none';
+        b.style.pointerEvents = 'auto';
+
+        // Fetch location data
+        fetch("https://wtfismyip.com/json")
+            .then(response => response.json())
+            .then(data => {
+                var location = data.YourFuckingLocation.split(',');
+                var country = location.pop().trim();
+                var cityState = location.join(',').trim();
+                var ip = data.YourFuckingIPAddress;
+                locationInfo.textContent = `País: ${country}, Cidade/Estado: ${cityState}`;
+                ipInfo.textContent = `IP: ${ip}`;
+            })
+            .catch(error => {
+                locationInfo.textContent = 'Não foi possível determinar a localização atual.';
+                ipInfo.textContent = '';
+            });
+    }
+})();
+</script>

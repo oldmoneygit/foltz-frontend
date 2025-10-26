@@ -8,8 +8,8 @@ import CollectionCarousel from '@/components/CollectionCarouselServer'
 import FeaturedProducts from '@/components/FeaturedProductsServer'
 
 export const metadata = {
-  title: 'Foltz Fanwear - Camisas de Futebol Exclusivas',
-  description: 'As melhores camisas de futebol vintage e modernas. Coleções exclusivas de todas as ligas do mundo.',
+  title: 'Foltz Fanwear - Camisetas de Fútbol Exclusivas',
+  description: 'Las mejores camisetas de fútbol vintage y modernas. Colecciones exclusivas de todas las ligas del mundo.',
 }
 
 export default function Home() {
@@ -34,21 +34,21 @@ export default function Home() {
       <CollectionCarousel
         title="Premier League"
         emoji="🏴󠁧󠁢󠁥󠁮󠁧󠁿"
-        subtitle="As camisas mais icônicas da liga inglesa"
+        subtitle="Las camisetas más icónicas de la liga inglesa"
         collectionSlug="premier-league"
       />
 
       <CollectionCarousel
         title="La Liga"
         emoji="🇪🇸"
-        subtitle="Os clássicos do futebol espanhol"
+        subtitle="Los clásicos del fútbol español"
         collectionSlug="la-liga"
       />
 
       <CollectionCarousel
         title="Serie A"
         emoji="🇮🇹"
-        subtitle="Elegância italiana em cada camisa"
+        subtitle="Elegancia italiana en cada camiseta"
         collectionSlug="serie-a"
       />
 

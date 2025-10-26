@@ -1,0 +1,16 @@
+
+<div class="scrollbar peer-not-scrollable:hidden">
+  <scroll-progress observes="{{ observes }}" class="scrollbar__progress" style="--scroll-progress: {{ default_progress }}"></scroll-progress>
+  {%- if show_buttons -%}
+    <div aria-controls="{{ observes }}" class="scrollbar__buttons">
+      <button is="prev-button" class="circle-button ring group" aria-controls="{{ observes }}" disabled>
+        <span class="sr-only">{{ 'general.accessibility.previous' | t }}</span>
+        <span class="animated-arrow animated-arrow--reverse"></span>
+      </button>
+      <button is="next-button" class="circle-button ring group" aria-controls="{{ observes }}">
+        <span class="sr-only">{{ 'general.accessibility.next' | t }}</span>
+        <span class="animated-arrow"></span>
+      </button>
+    </div>
+  {%- endif -%}
+</div>

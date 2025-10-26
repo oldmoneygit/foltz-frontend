@@ -7,8 +7,8 @@ const steps = [
   {
     number: '1',
     icon: ShoppingCart,
-    title: 'Adiciona 2 Productos',
-    description: 'Elige tus 2 jerseys favoritos y agrégalos al carrito',
+    title: 'Agregá 2 Productos',
+    description: 'Elegí tus 2 camisetas favoritas y agregalas al carrito',
     iconColor: 'bg-blue-500',
   },
   {
@@ -21,14 +21,14 @@ const steps = [
   {
     number: '3',
     icon: Shield,
-    title: 'Sin Pegadinhas',
-    description: 'No hay trucos, no hay condiciones ocultas. Es así de simple',
+    title: 'Sin Trampas',
+    description: 'No hay trucos, no hay condiciones ocultas. Así de simple',
     iconColor: 'bg-pink-500',
   },
   {
     number: '4',
     icon: CheckCircle,
-    title: 'Desconto Automático',
+    title: 'Descuento Automático',
     description: 'El descuento se aplica automáticamente en el checkout',
     iconColor: 'bg-green-500',
   },
@@ -119,7 +119,7 @@ const HowItWorks = () => {
             </div>
             <div className="flex items-center gap-2 bg-green-950/50 border border-green-700/50 px-4 py-2 rounded-full text-sm font-semibold text-green-400">
               <CheckCircle size={16} />
-              Sin Pegadinhas
+              Sin Trampas
             </div>
             <div className="flex items-center gap-2 bg-green-950/50 border border-green-700/50 px-4 py-2 rounded-full text-sm font-semibold text-green-400">
               <CheckCircle size={16} />

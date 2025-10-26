@@ -32,7 +32,7 @@ export default function Hero() {
           className="mb-6"
         >
           <span className="inline-block px-4 py-2 bg-brand-yellow/10 border border-brand-yellow/30 rounded-full text-brand-yellow text-sm font-bold uppercase tracking-wider">
-            Camisas Exclusivas
+            Camisetas Exclusivas
           </span>
         </motion.div>
 
@@ -42,7 +42,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-4xl md:text-6xl lg:text-7xl font-black text-white uppercase mb-6 max-w-4xl"
         >
-          CAMISAS DE FUTEBOL EXCLUSIVAS
+          CAMISETAS DE FÚTBOL EXCLUSIVAS
         </motion.h1>
 
         <motion.div

@@ -1,6 +1,7 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/contexts/ThemeContext'
+import { CartProvider } from '@/contexts/CartContext'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -42,7 +43,9 @@ export default function RootLayout({ children }) {
       </head>
       <body className="min-h-screen">
         <ThemeProvider>
-          {children}
+          <CartProvider>
+            {children}
+          </CartProvider>
         </ThemeProvider>
       </body>
     </html>

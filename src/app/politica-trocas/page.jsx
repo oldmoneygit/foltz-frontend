@@ -15,11 +15,11 @@ export default function PoliticaTrocasPage() {
             <div className="flex items-center gap-3 mb-4">
               <RefreshCw className="w-8 h-8 md:w-10 md:h-10 text-brand-yellow" />
               <h1 className="text-3xl md:text-5xl font-black text-white">
-                Política de Trocas e Devoluções
+                Política de Cambios y Devoluciones
               </h1>
             </div>
             <p className="text-white/60 text-base md:text-lg">
-              Sua satisfação é nossa prioridade. Confira nossas políticas de troca e devolução.
+              Tu satisfacción es nuestra prioridad. Conocé nuestras políticas de cambio y devolución.
             </p>
           </div>
 
@@ -29,10 +29,10 @@ export default function PoliticaTrocasPage() {
               <Clock className="w-8 h-8 text-brand-yellow flex-shrink-0" />
               <div>
                 <h2 className="text-2xl font-bold text-white mb-2">
-                  30 dias para trocas e devoluções
+                  30 días para cambios y devoluciones
                 </h2>
                 <p className="text-white/80">
-                  Você tem 30 dias corridos desde o recebimento do pedido para solicitar uma troca ou devolução.
+                  Tenés 30 días corridos desde la recepción del pedido para solicitar un cambio o devolución.
                 </p>
               </div>
             </div>
@@ -41,29 +41,29 @@ export default function PoliticaTrocasPage() {
           {/* Condições para trocas/devoluções */}
           <div className="mb-8">
             <h2 className="text-2xl font-bold text-white mb-6">
-              Condições para trocas e devoluções
+              Condiciones para cambios y devoluciones
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {[
                 {
                   icon: <CheckCircle className="w-6 h-6 text-green-500" />,
-                  title: 'Produto sem uso',
-                  desc: 'O artigo não deve ter sido usado nem apresentar sinais de desgaste',
+                  title: 'Producto sin uso',
+                  desc: 'El artículo no debe haber sido usado ni presentar signos de desgaste',
                 },
                 {
                   icon: <CheckCircle className="w-6 h-6 text-green-500" />,
-                  title: 'Etiquetas originais',
-                  desc: 'Deve conservar todas as etiquetas e adesivos originais',
+                  title: 'Etiquetas originales',
+                  desc: 'Debe conservar todas las etiquetas y adhesivos originales',
                 },
                 {
                   icon: <CheckCircle className="w-6 h-6 text-green-500" />,
-                  title: 'Embalagem original',
-                  desc: 'A caixa deve estar em perfeito estado, sem danos ou escritos',
+                  title: 'Embalaje original',
+                  desc: 'La caja debe estar en perfecto estado, sin daños o escrituras',
                 },
                 {
                   icon: <CheckCircle className="w-6 h-6 text-green-500" />,
-                  title: 'Acessórios completos',
-                  desc: 'Deve incluir todos os acessórios e documentação original',
+                  title: 'Accesorios completos',
+                  desc: 'Debe incluir todos los accesorios y documentación original',
                 },
               ].map((item, index) => (
                 <div
@@ -85,35 +85,35 @@ export default function PoliticaTrocasPage() {
           {/* Processo de troca */}
           <div className="mb-8">
             <h2 className="text-2xl font-bold text-white mb-6">
-              Como solicitar uma troca?
+              ¿Cómo solicitar un cambio?
             </h2>
             <div className="bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-xl p-6 md:p-8 border border-white/10">
               <ol className="space-y-6">
                 {[
                   {
                     step: '1',
-                    title: 'Entre em contato',
-                    desc: 'Escreva-nos por WhatsApp ou email informando seu número de pedido e o motivo da troca',
+                    title: 'Contactanos',
+                    desc: 'Escribinos por WhatsApp o email indicando tu número de pedido y el motivo del cambio',
                   },
                   {
                     step: '2',
-                    title: 'Confirmação',
-                    desc: 'Nossa equipe verificará sua solicitação e enviará as instruções de devolução',
+                    title: 'Confirmación',
+                    desc: 'Nuestro equipo verificará tu solicitud y enviará las instrucciones de devolución',
                   },
                   {
                     step: '3',
-                    title: 'Envio do produto',
-                    desc: 'Embale o produto na caixa original e envie para o endereço que indicaremos',
+                    title: 'Envío del producto',
+                    desc: 'Embalá el producto en la caja original y envialo a la dirección que te indicaremos',
                   },
                   {
                     step: '4',
-                    title: 'Inspeção',
-                    desc: 'Após receber, inspecionamos o produto para verificar se cumpre as condições',
+                    title: 'Inspección',
+                    desc: 'Al recibirlo, inspeccionamos el producto para verificar que cumple las condiciones',
                   },
                   {
                     step: '5',
-                    title: 'Troca ou reembolso',
-                    desc: 'Enviamos o novo produto ou processamos seu reembolso em 5-7 dias úteis',
+                    title: 'Cambio o reembolso',
+                    desc: 'Enviamos el nuevo producto o procesamos tu reembolso en 5-7 días hábiles',
                   },
                 ].map((item, index) => (
                   <li key={index} className="flex gap-4">
@@ -133,32 +133,32 @@ export default function PoliticaTrocasPage() {
           {/* Custos de envio */}
           <div className="mb-8">
             <h2 className="text-2xl font-bold text-white mb-6">
-              Custos de envio
+              Costos de envío
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="bg-gradient-to-br from-green-500/10 to-green-500/0 backdrop-blur-sm rounded-xl p-6 border border-green-500/30">
                 <div className="flex items-start gap-3 mb-4">
                   <Package className="w-6 h-6 text-green-500 flex-shrink-0" />
-                  <h3 className="text-white font-bold">Troca por erro de tamanho</h3>
+                  <h3 className="text-white font-bold">Cambio por error de talle</h3>
                 </div>
                 <p className="text-white/80 text-sm mb-2">
-                  Se a troca for por erro de tamanho, <strong className="text-green-400">assumimos o custo</strong> do envio do novo produto.
+                  Si el cambio es por error de talle, <strong className="text-green-400">asumimos el costo</strong> del envío del nuevo producto.
                 </p>
                 <p className="text-white/60 text-xs">
-                  O envio de devolução é por conta do cliente.
+                  El envío de devolución corre por cuenta del cliente.
                 </p>
               </div>
 
               <div className="bg-gradient-to-br from-orange-500/10 to-orange-500/0 backdrop-blur-sm rounded-xl p-6 border border-orange-500/30">
                 <div className="flex items-start gap-3 mb-4">
                   <Package className="w-6 h-6 text-orange-500 flex-shrink-0" />
-                  <h3 className="text-white font-bold">Troca por preferência</h3>
+                  <h3 className="text-white font-bold">Cambio por preferencia</h3>
                 </div>
                 <p className="text-white/80 text-sm mb-2">
-                  Se a troca for por preferência pessoal (troca de modelo), <strong className="text-orange-400">os custos são compartilhados</strong>.
+                  Si el cambio es por preferencia personal (cambio de modelo), <strong className="text-orange-400">los costos son compartidos</strong>.
                 </p>
                 <p className="text-white/60 text-xs">
-                  Tanto o envio de devolução quanto o do novo produto.
+                  Tanto el envío de devolución como el del nuevo producto.
                 </p>
               </div>
             </div>
@@ -167,15 +167,15 @@ export default function PoliticaTrocasPage() {
           {/* Exceções */}
           <div className="mb-8">
             <h2 className="text-2xl font-bold text-white mb-6">
-              Casos que NÃO se aplicam para troca/devolução
+              Casos que NO aplican para cambio/devolución
             </h2>
             <div className="space-y-3">
               {[
-                'Produtos usados ou com sinais de desgaste',
-                'Artigos sem etiquetas originais ou com caixa danificada',
-                'Produtos modificados ou alterados de alguma forma',
-                'Solicitações fora do prazo de 30 dias',
-                'Produtos em promoções especiais (exceto defeito de fábrica)',
+                'Productos usados o con signos de desgaste',
+                'Artículos sin etiquetas originales o con caja dañada',
+                'Productos modificados o alterados de alguna forma',
+                'Solicitudes fuera del plazo de 30 días',
+                'Productos en promociones especiales (excepto defecto de fábrica)',
               ].map((item, index) => (
                 <div
                   key={index}
@@ -194,23 +194,23 @@ export default function PoliticaTrocasPage() {
               <AlertTriangle className="w-8 h-8 text-brand-yellow flex-shrink-0" />
               <div>
                 <h2 className="text-2xl font-bold text-white mb-3">
-                  Produtos com defeitos de fábrica
+                  Productos con defectos de fábrica
                 </h2>
                 <p className="text-white/80 mb-4">
-                  Se seu produto chegar com algum defeito de fabricação, trocamos imediatamente sem nenhum custo para você. Nestes casos:
+                  Si tu producto llega con algún defecto de fabricación, lo cambiamos inmediatamente sin ningún costo para vos. En estos casos:
                 </p>
                 <ul className="space-y-2 text-white/80 text-sm">
                   <li className="flex gap-2">
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                    <span>O prazo se estende para 60 dias</span>
+                    <span>El plazo se extiende a 60 días</span>
                   </li>
                   <li className="flex gap-2">
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                    <span>Todos os custos de envio são por nossa conta</span>
+                    <span>Todos los costos de envío corren por nuestra cuenta</span>
                   </li>
                   <li className="flex gap-2">
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                    <span>Prioridade no envio da substituição</span>
+                    <span>Prioridad en el envío del reemplazo</span>
                   </li>
                 </ul>
               </div>
@@ -220,10 +220,10 @@ export default function PoliticaTrocasPage() {
           {/* Contato */}
           <div className="bg-gradient-to-r from-brand-yellow/10 to-yellow-500/10 border border-brand-yellow/30 rounded-xl p-6 md:p-8">
             <h3 className="text-2xl font-bold text-white mb-4">
-              Precisa fazer uma troca ou devolução?
+              ¿Necesitás hacer un cambio o devolución?
             </h3>
             <p className="text-white/80 mb-6">
-              Nossa equipe está pronta para ajudar. Entre em contato e te guiaremos em todo o processo.
+              Nuestro equipo está listo para ayudarte. Contactanos y te guiaremos en todo el proceso.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a

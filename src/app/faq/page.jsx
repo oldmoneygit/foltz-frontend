@@ -11,112 +11,112 @@ export default function FAQPage() {
 
   const faqs = [
     {
-      category: 'Produtos',
+      category: 'Productos',
       questions: [
         {
-          q: 'Os produtos são originais?',
-          a: 'Sim! Todos os nossos produtos são 100% originais e autênticos. Trabalhamos apenas com fornecedores oficiais e garantimos a autenticidade de cada item.',
+          q: '¿Los productos son originales?',
+          a: '¡Sí! Todos nuestros productos son 100% originales y auténticos. Trabajamos únicamente con proveedores oficiales y garantizamos la autenticidad de cada artículo.',
         },
         {
-          q: 'Vocês têm garantia nos produtos?',
-          a: 'Sim, todos os produtos têm garantia contra defeitos de fabricação. Se seu produto chegar com algum defeito, fazemos a troca sem custo adicional.',
+          q: '¿Tienen garantía los productos?',
+          a: 'Sí, todos los productos tienen garantía contra defectos de fabricación. Si tu producto llega con algún defecto, hacemos el cambio sin costo adicional.',
         },
         {
-          q: 'Todas as medidas estão disponíveis?',
-          a: 'Trabalhamos com tamanhos do 36 ao 44. Se não encontrar seu tamanho, entre em contato conosco para verificar disponibilidade.',
+          q: '¿Todos los talles están disponibles?',
+          a: 'Trabajamos con talles del 36 al 44. Si no encontrás tu talle, contactanos para verificar disponibilidad.',
         },
       ],
     },
     {
-      category: 'Envios e Entregas',
+      category: 'Envíos y Entregas',
       questions: [
         {
-          q: 'Fazem envios para toda Argentina?',
-          a: 'Sim, realizamos envios para todo o território argentino. O prazo de entrega varia: Buenos Aires (3-5 dias), Interior (7-12 dias).',
+          q: '¿Hacen envíos a toda Argentina?',
+          a: 'Sí, realizamos envíos a todo el territorio argentino. El plazo de entrega varía: Buenos Aires (3-5 días), Interior (7-12 días).',
         },
         {
-          q: 'Quanto tempo demora o envio?',
-          a: 'Os prazos de entrega são: Buenos Aires e CABA: 3-5 dias úteis, Província de Buenos Aires: 5-7 dias úteis, Interior: 7-12 dias úteis.',
+          q: '¿Cuánto demora el envío?',
+          a: 'Los plazos de entrega son: Buenos Aires y CABA: 3-5 días hábiles, Provincia de Buenos Aires: 5-7 días hábiles, Interior: 7-12 días hábiles.',
         },
         {
-          q: 'Posso rastrear meu pedido?',
-          a: 'Sim! Assim que seu pedido for despachado, você receberá um código de rastreamento para acompanhar em tempo real.',
+          q: '¿Puedo rastrear mi pedido?',
+          a: '¡Sí! Apenas tu pedido sea despachado, recibirás un código de seguimiento para seguir en tiempo real.',
         },
         {
-          q: 'O envio tem custo?',
-          a: 'Envios GRÁTIS para compras acima de ARS 50.000. Abaixo desse valor, o frete é calculado no checkout.',
+          q: '¿El envío tiene costo?',
+          a: 'Envíos GRATIS para compras superiores a ARS 50.000. Por debajo de ese valor, el flete se calcula en el checkout.',
         },
       ],
     },
     {
-      category: 'Pagamentos',
+      category: 'Pagos',
       questions: [
         {
-          q: 'Quais formas de pagamento aceitam?',
-          a: 'Aceitamos cartões de crédito e débito (Visa, Mastercard, American Express), Mercado Pago, transferência bancária e PIX.',
+          q: '¿Qué formas de pago aceptan?',
+          a: 'Aceptamos tarjetas de crédito y débito (Visa, Mastercard, American Express), Mercado Pago, transferencia bancaria y PIX.',
         },
         {
-          q: 'Posso parcelar?',
-          a: 'Sim! Aceitamos parcelamento em até 12x sem juros através do Mercado Pago e cartões de crédito.',
+          q: '¿Puedo pagar en cuotas?',
+          a: '¡Sí! Aceptamos pagos en hasta 12 cuotas sin interés a través de Mercado Pago y tarjetas de crédito.',
         },
         {
-          q: 'É seguro comprar na Foltz?',
-          a: 'Totalmente seguro! Utilizamos criptografia SSL e processadores de pagamento certificados. Seus dados estão protegidos.',
+          q: '¿Es seguro comprar en Foltz?',
+          a: '¡Totalmente seguro! Utilizamos encriptación SSL y procesadores de pago certificados. Tus datos están protegidos.',
         },
       ],
     },
     {
-      category: 'Trocas e Devoluções',
+      category: 'Cambios y Devoluciones',
       questions: [
         {
-          q: 'Posso trocar ou devolver meu pedido?',
-          a: 'Sim! Aceitamos trocas e devoluções em até 30 dias após o recebimento. O produto deve estar sem uso, com etiquetas e na embalagem original.',
+          q: '¿Puedo cambiar o devolver mi pedido?',
+          a: '¡Sí! Aceptamos cambios y devoluciones hasta 30 días después de la recepción. El producto debe estar sin uso, con etiquetas y en el embalaje original.',
         },
         {
-          q: 'Como fazer uma troca de tamanho?',
-          a: 'Entre em contato por WhatsApp ou email com seu número de pedido. Coordenamos a retirada e envio do novo tamanho sem custo.',
+          q: '¿Cómo hacer un cambio de talle?',
+          a: 'Contactanos por WhatsApp o email con tu número de pedido. Coordinamos el retiro y envío del nuevo talle sin costo.',
         },
         {
-          q: 'Quem paga o frete da devolução?',
-          a: 'Se a troca for por erro de tamanho, assumimos o frete. Para troca de modelo ou devolução, o custo é compartilhado.',
+          q: '¿Quién paga el flete de la devolución?',
+          a: 'Si el cambio es por error de talle, asumimos el flete. Para cambio de modelo o devolución, el costo es compartido.',
         },
         {
-          q: 'Quando recebo meu reembolso?',
-          a: 'Após recebermos e verificarmos o produto, o reembolso é processado em 5-7 dias úteis na mesma forma de pagamento.',
+          q: '¿Cuándo recibo mi reembolso?',
+          a: 'Después de recibir y verificar el producto, el reembolso se procesa en 5-7 días hábiles en la misma forma de pago.',
         },
       ],
     },
     {
-      category: 'Conta e Pedidos',
+      category: 'Cuenta y Pedidos',
       questions: [
         {
-          q: 'Preciso criar uma conta para comprar?',
-          a: 'Não é obrigatório, mas recomendamos criar uma conta para rastrear pedidos facilmente e receber ofertas exclusivas.',
+          q: '¿Necesito crear una cuenta para comprar?',
+          a: 'No es obligatorio, pero recomendamos crear una cuenta para rastrear pedidos fácilmente y recibir ofertas exclusivas.',
         },
         {
-          q: 'Como posso modificar meu pedido?',
-          a: 'Se seu pedido ainda não foi despachado, entre em contato imediatamente por WhatsApp e faremos a modificação.',
+          q: '¿Cómo puedo modificar mi pedido?',
+          a: 'Si tu pedido aún no fue despachado, contactanos inmediatamente por WhatsApp y haremos la modificación.',
         },
         {
-          q: 'Posso cancelar meu pedido?',
-          a: 'Sim! Você pode cancelar sem custo se ainda não foi despachado. Após o despacho, aplicam-se as políticas de devolução.',
+          q: '¿Puedo cancelar mi pedido?',
+          a: '¡Sí! Podés cancelar sin costo si aún no fue despachado. Después del despacho, aplican las políticas de devolución.',
         },
       ],
     },
     {
-      category: 'Outros',
+      category: 'Otros',
       questions: [
         {
-          q: 'Têm loja física?',
-          a: 'Atualmente operamos 100% online para oferecer os melhores preços. Fazemos entregas em toda Argentina.',
+          q: '¿Tienen tienda física?',
+          a: 'Actualmente operamos 100% online para ofrecer los mejores precios. Hacemos entregas en toda Argentina.',
         },
         {
-          q: 'Fazem atacado?',
-          a: 'Sim! Oferecemos preços especiais para compras em grande quantidade. Entre em contato por WhatsApp para mais informações.',
+          q: '¿Hacen venta mayorista?',
+          a: '¡Sí! Ofrecemos precios especiales para compras en gran cantidad. Contactanos por WhatsApp para más información.',
         },
         {
-          q: 'Como posso entrar em contato?',
-          a: 'Pode nos contatar por WhatsApp, email (contato@foltz.com.br) ou redes sociais. Respondemos todos os dias das 9h às 21h.',
+          q: '¿Cómo puedo contactarme?',
+          a: 'Podés contactarnos por WhatsApp, email (contato@foltz.com.br) o redes sociales. Respondemos todos los días de 9h a 21h.',
         },
       ],
     },
@@ -146,11 +146,11 @@ export default function FAQPage() {
             <div className="flex items-center gap-3 mb-4">
               <HelpCircle className="w-8 h-8 md:w-10 md:h-10 text-brand-yellow" />
               <h1 className="text-3xl md:text-5xl font-black text-white">
-                Perguntas Frequentes
+                Preguntas Frecuentes
               </h1>
             </div>
             <p className="text-white/60 text-base md:text-lg">
-              Encontre respostas para as dúvidas mais comuns
+              Encontrá respuestas a las dudas más comunes
             </p>
           </div>
 
@@ -162,7 +162,7 @@ export default function FAQPage() {
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Buscar pergunta..."
+                placeholder="Buscar pregunta..."
                 className="w-full bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl pl-12 pr-4 py-4 text-white placeholder:text-white/40 focus:border-brand-yellow focus:outline-none transition-colors"
               />
             </div>
@@ -217,16 +217,16 @@ export default function FAQPage() {
             <div className="text-center py-20">
               <HelpCircle className="w-20 h-20 text-white/20 mx-auto mb-4" />
               <h3 className="text-2xl font-bold text-white mb-2">
-                Nenhum resultado encontrado
+                Ningún resultado encontrado
               </h3>
               <p className="text-white/60 mb-6">
-                Tente outros termos de busca
+                Intentá con otros términos de búsqueda
               </p>
               <button
                 onClick={() => setSearchQuery('')}
                 className="bg-brand-yellow text-black px-6 py-3 rounded-lg font-bold hover:bg-yellow-500 transition-colors"
               >
-                Ver todas as perguntas
+                Ver todas las preguntas
               </button>
             </div>
           )}
@@ -234,10 +234,10 @@ export default function FAQPage() {
           {/* Ajuda adicional */}
           <div className="mt-12 bg-gradient-to-r from-brand-yellow/10 to-yellow-500/10 border border-brand-yellow/30 rounded-xl p-6 md:p-8">
             <h3 className="text-2xl font-bold text-white mb-4">
-              Não encontrou o que procurava?
+              ¿No encontraste lo que buscabas?
             </h3>
             <p className="text-white/80 mb-6">
-              Nossa equipe está disponível para ajudar você!
+              ¡Nuestro equipo está disponible para ayudarte!
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a

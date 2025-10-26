@@ -29,7 +29,7 @@ const Header = () => {
   const menuItems = [
     { name: 'PREMIER LEAGUE', href: '/liga/premier-league' },
     { name: 'LA LIGA', href: '/liga/la-liga' },
-    { name: 'TODAS AS LIGAS', href: '/ligas', hasSubmenu: true },
+    { name: 'TODAS LAS LIGAS', href: '/ligas', hasSubmenu: true },
     { name: 'SERIE A', href: '/liga/serie-a' },
     { name: 'BUNDESLIGA', href: '/liga/bundesliga' },
     { name: 'COMPRA 1 LLEVA 2', href: '/#bestsellers' },
@@ -44,8 +44,8 @@ const Header = () => {
     { name: 'Serie A', href: '/liga/serie-a' },
     { name: 'Bundesliga', href: '/liga/bundesliga' },
     { name: 'Ligue 1', href: '/liga/ligue-1' },
-    { name: 'Sul-Americana', href: '/liga/sul-americana' },
-    { name: 'Primeira Liga', href: '/liga/primeira-liga' },
+    { name: 'Sudamericana', href: '/liga/sul-americana' },
+    { name: 'Primera Liga', href: '/liga/primeira-liga' },
     { name: 'Eredivisie', href: '/liga/eredivisie' },
   ]
 
@@ -146,7 +146,7 @@ const Header = () => {
               className="lg:hidden p-2 transition-colors duration-200 order-1
                          dark:text-white dark:hover:text-brand-yellow
                          text-black hover:text-brand-navy"
-              aria-label="Toggle Menu"
+              aria-label="Abrir Menú"
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -183,7 +183,7 @@ const Header = () => {
                   className="absolute right-0 top-0 h-full px-4 rounded-r-lg transition-colors duration-200
                              dark:bg-brand-yellow dark:text-black dark:hover:bg-brand-yellow/80
                              bg-black text-brand-yellow hover:bg-brand-navy"
-                  aria-label="Search"
+                  aria-label="Buscar"
                 >
                   <Search size={20} />
                 </button>
@@ -274,7 +274,7 @@ const Header = () => {
                 className="relative p-2 transition-colors duration-200
                            dark:text-white dark:hover:text-brand-yellow
                            text-black hover:text-brand-navy"
-                aria-label="Shopping Cart"
+                aria-label="Carrito de Compras"
               >
                 <ShoppingCart size={24} />
                 {cartItemCount > 0 && (
@@ -458,7 +458,7 @@ const Header = () => {
                         className="absolute right-0 top-0 h-full px-4 rounded-r-lg transition-colors duration-200
                                    dark:bg-brand-yellow dark:text-black dark:hover:bg-brand-yellow/80
                                    bg-black text-brand-yellow hover:bg-brand-navy"
-                        aria-label="Search"
+                        aria-label="Buscar"
                       >
                         <Search size={20} />
                       </button>

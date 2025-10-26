@@ -54,11 +54,11 @@ export default function ContatoPage() {
             <div className="flex items-center gap-3 mb-4">
               <MessageCircle className="w-8 h-8 md:w-10 md:h-10 text-brand-yellow" />
               <h1 className="text-3xl md:text-5xl font-black text-white">
-                Fale Conosco
+                Contactanos
               </h1>
             </div>
             <p className="text-white/60 text-base md:text-lg">
-              Estamos aqui para ajudar! Entre em contato conosco.
+              ¡Estamos aquí para ayudarte! Contáctanos.
             </p>
           </div>
 
@@ -80,9 +80,9 @@ export default function ContatoPage() {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-white font-bold text-lg mb-1">WhatsApp</h3>
-                    <p className="text-white/60 text-sm mb-2">A forma mais rápida de nos contatar</p>
+                    <p className="text-white/60 text-sm mb-2">La forma más rápida de contactarnos</p>
                     <p className="text-green-400 font-bold">+55 11 99999-9999</p>
-                    <p className="text-white/40 text-xs mt-2">Resposta imediata • 9:00 - 21:00hs</p>
+                    <p className="text-white/40 text-xs mt-2">Respuesta inmediata • 9:00 - 21:00hs</p>
                   </div>
                 </div>
               </a>
@@ -98,9 +98,9 @@ export default function ContatoPage() {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-white font-bold text-lg mb-1">Email</h3>
-                    <p className="text-white/60 text-sm mb-2">Para dúvidas detalhadas</p>
+                    <p className="text-white/60 text-sm mb-2">Para consultas detalladas</p>
                     <p className="text-brand-yellow font-bold">contato@foltz.com.br</p>
-                    <p className="text-white/40 text-xs mt-2">Resposta em 24-48h</p>
+                    <p className="text-white/40 text-xs mt-2">Respuesta en 24-48h</p>
                   </div>
                 </div>
               </a>
@@ -120,9 +120,9 @@ export default function ContatoPage() {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-white font-bold text-lg mb-1">Instagram</h3>
-                    <p className="text-white/60 text-sm mb-2">Siga-nos para ofertas exclusivas</p>
+                    <p className="text-white/60 text-sm mb-2">Seguinos para ofertas exclusivas</p>
                     <p className="text-pink-400 font-bold">@foltz.oficial</p>
-                    <p className="text-white/40 text-xs mt-2">Novidades diárias</p>
+                    <p className="text-white/40 text-xs mt-2">Novedades diarias</p>
                   </div>
                 </div>
               </a>
@@ -134,10 +134,10 @@ export default function ContatoPage() {
                     <Clock className="w-6 h-6 text-brand-yellow" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-white font-bold text-lg mb-3">Horário de Atendimento</h3>
+                    <h3 className="text-white font-bold text-lg mb-3">Horario de Atención</h3>
                     <div className="space-y-2 text-sm">
                       <div className="flex justify-between">
-                        <span className="text-white/60">Segunda a Sexta</span>
+                        <span className="text-white/60">Lunes a Viernes</span>
                         <span className="text-white font-bold">9:00 - 21:00h</span>
                       </div>
                       <div className="flex justify-between">
@@ -174,14 +174,14 @@ export default function ContatoPage() {
             <div>
               <div className="bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-xl p-6 md:p-8 border border-white/10 sticky top-8">
                 <h2 className="text-2xl font-bold text-white mb-6">
-                  Envie uma Mensagem
+                  Enviá un Mensaje
                 </h2>
 
                 {sent && (
                   <div className="mb-6 bg-green-500/10 border border-green-500/50 rounded-lg p-4 flex items-start gap-3">
                     <MessageCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
                     <p className="text-green-400 text-sm">
-                      Mensagem enviada com sucesso! Entraremos em contato em breve.
+                      ¡Mensaje enviado exitosamente! Nos pondremos en contacto pronto.
                     </p>
                   </div>
                 )}
@@ -189,14 +189,14 @@ export default function ContatoPage() {
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div>
                     <label className="block text-white text-sm font-bold mb-2">
-                      Nome Completo *
+                      Nombre Completo *
                     </label>
                     <input
                       type="text"
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      placeholder="Seu nome"
+                      placeholder="Tu nombre"
                       required
                       className="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-3 text-white placeholder:text-white/40 focus:border-brand-yellow focus:outline-none transition-colors"
                     />
@@ -211,7 +211,7 @@ export default function ContatoPage() {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder="seuemail@exemplo.com"
+                      placeholder="tuemail@ejemplo.com"
                       required
                       className="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-3 text-white placeholder:text-white/40 focus:border-brand-yellow focus:outline-none transition-colors"
                     />
@@ -219,7 +219,7 @@ export default function ContatoPage() {
 
                   <div>
                     <label className="block text-white text-sm font-bold mb-2">
-                      Telefone
+                      Teléfono
                     </label>
                     <input
                       type="tel"
@@ -233,7 +233,7 @@ export default function ContatoPage() {
 
                   <div>
                     <label className="block text-white text-sm font-bold mb-2">
-                      Assunto *
+                      Asunto *
                     </label>
                     <select
                       name="subject"
@@ -242,25 +242,25 @@ export default function ContatoPage() {
                       required
                       className="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-3 text-white focus:border-brand-yellow focus:outline-none transition-colors"
                     >
-                      <option value="">Selecione o assunto</option>
-                      <option value="consulta">Dúvida sobre produto</option>
-                      <option value="pedido">Status do pedido</option>
-                      <option value="cambio">Troca ou devolução</option>
-                      <option value="tallas">Dúvida sobre tamanhos</option>
-                      <option value="mayoreo">Atacado</option>
-                      <option value="otro">Outro</option>
+                      <option value="">Seleccioná el asunto</option>
+                      <option value="consulta">Consulta sobre producto</option>
+                      <option value="pedido">Estado del pedido</option>
+                      <option value="cambio">Cambio o devolución</option>
+                      <option value="tallas">Consulta sobre talles</option>
+                      <option value="mayoreo">Mayorista</option>
+                      <option value="otro">Otro</option>
                     </select>
                   </div>
 
                   <div>
                     <label className="block text-white text-sm font-bold mb-2">
-                      Mensagem *
+                      Mensaje *
                     </label>
                     <textarea
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      placeholder="Escreva sua mensagem aqui..."
+                      placeholder="Escribí tu mensaje aquí..."
                       rows="5"
                       required
                       className="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-3 text-white placeholder:text-white/40 focus:border-brand-yellow focus:outline-none transition-colors resize-none"
@@ -280,7 +280,7 @@ export default function ContatoPage() {
                     ) : (
                       <>
                         <Send className="w-5 h-5" />
-                        Enviar Mensagem
+                        Enviar Mensaje
                       </>
                     )}
                   </button>

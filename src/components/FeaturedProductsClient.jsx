@@ -30,10 +30,10 @@ export default function FeaturedProducts({ products = [] }) {
             </span>
           </div>
           <h2 className="text-3xl md:text-5xl font-black text-white mb-4 uppercase">
-            Productos en <span className="text-brand-yellow">Destaque</span>
+            Productos <span className="text-brand-yellow">Destacados</span>
           </h2>
           <p className="text-gray-400 text-base md:text-lg max-w-3xl mx-auto">
-            Las camisas más codiciadas del momento. Ediciones limitadas y coleções exclusivas.
+            Las camisetas más codiciadas del momento. Ediciones limitadas y colecciones exclusivas.
           </p>
         </motion.div>
 
