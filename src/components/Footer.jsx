@@ -13,7 +13,7 @@ const Footer = () => {
     company: [
       { name: 'Sobre Nosotros', href: '/sobre-nosotros' },
       { name: 'Nuestra Historia', href: '/historia' },
-      { name: 'Contacto', href: '/contato' },
+      { name: 'Contacto', href: '/contacto' },
       { name: 'Trabaja con Nosotros', href: '/careers' },
     ],
     shop: [
@@ -25,9 +25,9 @@ const Footer = () => {
     ],
     help: [
       { name: 'Preguntas Frecuentes', href: '/faq' },
-      { name: 'Seguimiento de Pedido', href: '/rastreamento' },
-      { name: 'Guía de Tallas', href: '/guia-tamanhos' },
-      { name: 'Cambios y Devoluciones', href: '/politica-trocas' },
+      { name: 'Seguimiento de Pedido', href: '/seguimiento' },
+      { name: 'Guía de Tallas', href: '/guia-talles' },
+      { name: 'Cambios y Devoluciones', href: '/politica-cambios' },
       { name: 'Política de Privacidad', href: '/privacidade' },
     ],
   }
