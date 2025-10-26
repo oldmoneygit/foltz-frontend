@@ -288,7 +288,7 @@ export default function RastreamentoPage() {
                       Si tienes alguna pregunta sobre tu pedido, no dudes en contactarnos.
                     </p>
                     <a
-                      href="/contato"
+                      href="/contacto"
                       className="inline-flex items-center gap-2 bg-brand-yellow text-black px-6 py-3 rounded-lg font-bold hover:bg-yellow-400 transition-colors"
                     >
                       Contactar Soporte

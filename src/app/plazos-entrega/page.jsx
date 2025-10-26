@@ -243,7 +243,7 @@ export default function PrazoEntregaPage() {
                 Rastrear pedido
               </a>
               <a
-                href="/contato"
+                href="/contacto"
                 className="inline-flex items-center justify-center gap-2 bg-white/10 text-white font-bold px-6 py-3 rounded-lg hover:bg-white/20 transition-colors"
               >
                 Contactar soporte

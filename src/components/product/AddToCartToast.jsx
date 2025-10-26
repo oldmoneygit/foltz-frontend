@@ -99,7 +99,7 @@ const AddToCartToast = ({ isOpen, onClose, product, size, quantity }) => {
                       Seguir Comprando
                     </button>
                     <Link
-                      href="/carrinho"
+                      href="/carrito"
                       className="flex-1 px-5 py-3 bg-brand-yellow hover:bg-yellow-400 text-black text-sm md:text-base font-bold rounded-lg transition-all duration-200 flex items-center justify-center gap-2 group whitespace-nowrap"
                     >
                       <ShoppingCart className="w-4 h-4 md:w-5 md:h-5" />

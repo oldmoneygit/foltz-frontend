@@ -270,7 +270,7 @@ const Header = () => {
 
               {/* Cart Icon */}
               <Link
-                href="/carrinho"
+                href="/carrito"
                 className="relative p-2 transition-colors duration-200
                            dark:text-white dark:hover:text-brand-yellow
                            text-black hover:text-brand-navy"
