@@ -26,7 +26,7 @@ const Footer = () => {
     help: [
       { name: 'Preguntas Frecuentes', href: '/faq' },
       { name: 'Seguimiento de Pedido', href: '/seguimiento' },
-      { name: 'Guía de Tallas', href: '/guia-talles' },
+      { name: 'Guía de Tallas', href: '/guia-de-tallas' },
       { name: 'Cambios y Devoluciones', href: '/politica-cambios' },
       { name: 'Política de Privacidad', href: '/privacidade' },
     ],

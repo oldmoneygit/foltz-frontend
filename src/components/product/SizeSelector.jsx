@@ -47,12 +47,15 @@ const SizeSelector = ({ sizes = [], selectedSize, onSizeChange }) => {
       </div>
 
       {/* Size Guide Link */}
-      <button
+      <a
+        href="/guia-de-tallas"
+        target="_blank"
+        rel="noopener noreferrer"
         className="inline-flex items-center gap-1.5 text-brand-yellow/80 hover:text-brand-yellow text-xs font-semibold transition-colors duration-200 mt-2 group"
       >
         <Ruler className="w-3.5 h-3.5 group-hover:scale-110 transition-transform" />
         <span className="underline">Guía de tallas</span>
-      </button>
+      </a>
     </div>
   )
 }
