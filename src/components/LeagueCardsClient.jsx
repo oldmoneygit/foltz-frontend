@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function LeagueCards({ leagues = [] }) {
   // Don't render if no leagues
@@ -18,21 +19,17 @@ export default function LeagueCards({ leagues = [] }) {
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px 0px -100px 0px" }}
+          transition={{ duration: 0.3 }}
           className="text-center mb-12 md:mb-16"
         >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="inline-block mb-4"
-          >
+          <div className="inline-block mb-4">
             <span className="text-brand-yellow text-xs md:text-sm font-black uppercase tracking-[0.3em]">
               🌍 NUESTRAS LIGAS
             </span>
-          </motion.div>
+          </div>
           <h2 className="text-3xl md:text-5xl font-black uppercase mb-4">
             <span className="dark:text-white text-white">COLECCIONES </span>
             <span className="text-brand-yellow">OFICIALES</span>
@@ -48,10 +45,10 @@ export default function LeagueCards({ leagues = [] }) {
           {leagues.map((league, index) => (
             <motion.div
               key={league.id}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.05 }}
+              viewport={{ once: true, margin: "0px 0px -50px 0px" }}
+              transition={{ duration: 0.2, delay: index * 0.02 }}
             >
               <Link href={`/liga/${league.slug}`}>
                 <motion.div
@@ -61,16 +58,36 @@ export default function LeagueCards({ leagues = [] }) {
                 >
                   {/* Background Image or Gradient */}
                   {league.image ? (
-                    <div
-                      className="absolute inset-0 bg-cover bg-center transition-all duration-700 group-hover:scale-110"
-                      style={{ backgroundImage: `url('${league.image}')` }}
-                    />
+                    <>
+                      {/* Mobile: Image fills card */}
+                      <div className="absolute inset-0 md:hidden">
+                        <Image
+                          src={league.image}
+                          alt={league.name}
+                          fill
+                          className="object-cover object-top"
+                          sizes="100vw"
+                          loading="lazy"
+                        />
+                      </div>
+                      {/* Desktop: Full cover image with hover effect */}
+                      <div className="hidden md:block absolute inset-0">
+                        <Image
+                          src={league.image}
+                          alt={league.name}
+                          fill
+                          className="object-cover object-center transition-all duration-700 group-hover:scale-110"
+                          sizes="(max-width: 1024px) 50vw, 25vw"
+                          loading="lazy"
+                        />
+                      </div>
+                    </>
                   ) : (
                     <div className={`absolute inset-0 bg-gradient-to-br ${league.gradient} transition-all duration-700`} />
                   )}
 
                   {/* Subtle Dark Overlay */}
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-500" />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-500 pointer-events-none" />
 
                   {/* Gradient Glow on Hover */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${league.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500 mix-blend-overlay`} />

@@ -2,6 +2,7 @@ import {
   getAllProducts as shopifyGetAllProducts,
   getProduct as shopifyGetProduct,
   getProductsByTag,
+  getProductsByTypeOrTag,
   getAllLeagues as shopifyGetAllLeagues,
   getLeagueFromProduct
 } from '@/lib/shopify'
@@ -40,7 +41,7 @@ function transformShopifyProduct(shopifyProduct) {
     images: allImages,
     image_count: allImages.length,
     price: price,
-    regularPrice: compareAtPrice || price * 1.4, // Fallback if no compareAt price
+    regularPrice: compareAtPrice > 0 ? compareAtPrice : null, // Usar compareAtPrice da Shopify (atualizado)
     stock: 'available',
     sizes: sizes, // Now returns array directly: ['S', 'M', 'L', 'XL', 'XXL']
     tags: node.tags || [],
@@ -146,7 +147,101 @@ export async function getRelatedProducts(currentSlug, leagueName, limit = 8) {
  */
 export async function getProductsByLeague(leagueName, limit = 100) {
   try {
-    const response = await getProductsByTag(leagueName, limit)
+    console.log('🔍 getProductsByLeague chamado com:', leagueName)
+    
+    // Lógica especial para coleções customizadas
+    if (leagueName === 'National Teams') {
+      console.log('✅ Usando filtro especial para National Teams (baseado em lista específica)')
+      // Buscar APENAS seleções nacionais - lista específica da pasta
+      const allProducts = await getAllProducts()
+      
+      // Lista exata de seleções permitidas (baseada na pasta do usuário)
+      const allowedNationalTeams = [
+        'argentina', 'brazil', 'brasil', 'germany', 'alemanha', 'england', 'inglaterra',
+        'france', 'frança', 'netherlands', 'holanda', 'holland', 'italy', 'italia',
+        'spain', 'españa', 'espanha', 'portugal', 'mexico', 'méxico', 'usa', 'united states',
+        'japan', 'japão', 'cameroon', 'camarões', 'colombia', 'greece', 'grecia', 'grécia',
+        'iceland', 'islandia', 'islândia', 'ireland', 'irlanda', 'jamaica', 'norway',
+        'noruega', 'panama', 'panamá', 'poland', 'polonia', 'polônia', 'scotland',
+        'escocia', 'escócia', 'south africa', 'africa do sul', 'venezuela', 'wales',
+        'gales', 'yugoslavia', 'iugoslávia'
+      ]
+      
+      // EXCLUIR clubes (lista completa de todos os clubes mencionados)
+      const clubsToExclude = [
+        'hamburger sv', 'köln', 'koln', 'cologne', 'manchester united', 'southampton',
+        'barcelona', 'real madrid', 'atletico', 'sevilla', 'valencia', 'betis',
+        'manchester city', 'liverpool', 'chelsea', 'arsenal', 'tottenham',
+        'bayern', 'borussia', 'dortmund', 'leipzig', 'leverkusen',
+        'juventus', 'milan', 'inter', 'napoli', 'roma', 'lazio', 'atalanta',
+        'psg', 'marseille', 'lyon', 'monaco', 'lille',
+        'ajax', 'psv', 'feyenoord', 'benfica', 'porto', 'sporting',
+        'boca', 'river', 'racing', 'independiente', 'san lorenzo',
+        'flamengo', 'palmeiras', 'santos', 'corinthians', 'sao paulo'
+      ]
+      
+      const filtered = allProducts.filter(p => {
+        const title = (p.title || p.name || '').toLowerCase()
+        const tags = (p.tags || []).map(t => t.toLowerCase()).join(' ')
+        const productType = (p.productType || '').toLowerCase()
+        const searchText = `${title} ${tags} ${productType}`
+        
+        // Deve ter pelo menos uma seleção permitida
+        const hasNationalTeam = allowedNationalTeams.some(team => searchText.includes(team))
+        
+        // NÃO deve ter NENHUM clube
+        const hasClub = clubsToExclude.some(club => searchText.includes(club))
+        
+        return hasNationalTeam && !hasClub
+      })
+      
+      console.log('✅ National Teams encontrados:', filtered.length)
+      return filtered.slice(0, limit)
+    }
+    
+    if (leagueName === 'Argentina Legends') {
+      console.log('✅ Usando filtro especial para Argentina Legends')
+      // Buscar TODAS as camisas da Argentina disponíveis
+      const allProducts = await getAllProducts()
+      const filtered = allProducts.filter(p => {
+        const title = (p.title || p.name || '').toLowerCase()
+        const tags = (p.tags || []).map(t => t.toLowerCase()).join(' ')
+        const productType = (p.productType || '').toLowerCase()
+        const searchText = `${title} ${tags} ${productType}`
+        
+        // Qualquer produto que tenha Argentina
+        return searchText.includes('argentina') || searchText.includes('albiceleste')
+      })
+      console.log('✅ Argentina Legends encontrados:', filtered.length)
+      return filtered.slice(0, limit)
+    }
+    
+    if (leagueName === 'Retro Collection') {
+      console.log('✅ Usando filtro especial para Retro Collection')
+      // Buscar produtos retro/vintage de qualquer time
+      const allProducts = await getAllProducts()
+      const filtered = allProducts.filter(p => {
+        const title = (p.title || p.name || '').toLowerCase()
+        const tags = (p.tags || []).map(t => t.toLowerCase()).join(' ')
+        const searchText = `${title} ${tags}`
+        
+        // Anos retro ou keywords retro
+        const hasRetroYear = /19[7-9]\d|20[0-1]\d/.test(title) // 1970-2019
+        const hasRetroKeyword = searchText.includes('retro') ||
+                               searchText.includes('vintage') ||
+                               searchText.includes('classic') ||
+                               searchText.includes('throwback') ||
+                               searchText.includes('legends')
+        
+        return hasRetroYear || hasRetroKeyword
+      })
+      console.log('✅ Retro Collection encontrados:', filtered.length)
+      return filtered.slice(0, limit)
+    }
+
+    // Busca normal para outras ligas
+    console.log('➡️ Usando busca normal (productType/tag)')
+    const response = await getProductsByTypeOrTag(leagueName, limit)
 
     if (!response || response.length === 0) {
       return []

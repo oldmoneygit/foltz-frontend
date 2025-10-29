@@ -21,9 +21,22 @@ export function CartProvider({ children }) {
     const savedCart = localStorage.getItem('foltz_cart')
     if (savedCart) {
       try {
-        setCartItems(JSON.parse(savedCart))
+        const parsed = JSON.parse(savedCart)
+
+        // Suportar formato novo {items, timestamp, version} e antigo (array direto)
+        if (Array.isArray(parsed)) {
+          // Formato antigo - array direto
+          setCartItems(parsed)
+        } else if (parsed.items && Array.isArray(parsed.items)) {
+          // Formato novo - objeto com items, timestamp, version
+          setCartItems(parsed.items)
+        } else {
+          console.warn('Invalid cart format in localStorage, clearing cart')
+          localStorage.removeItem('foltz_cart')
+        }
       } catch (error) {
         console.error('Error loading cart from localStorage:', error)
+        localStorage.removeItem('foltz_cart')
       }
     }
     setIsLoaded(true)
@@ -32,16 +45,24 @@ export function CartProvider({ children }) {
   // Save cart to localStorage whenever it changes
   useEffect(() => {
     if (isLoaded) {
-      localStorage.setItem('foltz_cart', JSON.stringify(cartItems))
+      const cartData = {
+        items: cartItems,
+        timestamp: new Date().toISOString(),
+        version: '1.0'
+      }
+      localStorage.setItem('foltz_cart', JSON.stringify(cartData))
     }
   }, [cartItems, isLoaded])
 
   // Add item to cart or update quantity if already exists
-  const addToCart = (product, size, quantity = 1) => {
+  const addToCart = (product, size, quantity = 1, customization = null) => {
     setCartItems((prevItems) => {
-      // Check if item with same product and size already exists
+      // Check if item with same product, size AND customization already exists
       const existingItemIndex = prevItems.findIndex(
-        (item) => item.id === product.id && item.size == size
+        (item) => 
+          item.id === product.id && 
+          item.size == size &&
+          JSON.stringify(item.customization) === JSON.stringify(customization)
       )
 
       if (existingItemIndex > -1) {
@@ -62,6 +83,11 @@ export function CartProvider({ children }) {
             size: size,
             quantity: quantity,
             league: product.league,
+            customization: customization, // Personalização opcional
+            // Shopify data for checkout
+            shopifyId: product.shopifyId,
+            variants: product.variants,
+            handle: product.handle,
           },
         ]
       }
@@ -91,9 +117,21 @@ export function CartProvider({ children }) {
     )
   }
 
+  // Força salvamento imediato no localStorage (útil antes de redirecionamento)
+  const saveCart = () => {
+    const cartData = {
+      items: cartItems,
+      timestamp: new Date().toISOString(),
+      version: '1.0'
+    }
+    localStorage.setItem('foltz_cart', JSON.stringify(cartData))
+    return true
+  }
+
   // Clear all items from cart
   const clearCart = () => {
     setCartItems([])
+    localStorage.removeItem('foltz_cart')
   }
 
   // Get total number of items in cart
@@ -106,17 +144,18 @@ export function CartProvider({ children }) {
     return cartItems.reduce((total, item) => total + item.price * item.quantity, 0)
   }
 
-  // Calculate promotion discount (Buy 2 Get 1 Free)
+  // Calculate promotion discount (Buy 1 Get 2 Free - 3x1 Promotion)
   const getPromoDiscount = () => {
-    if (cartItems.length < 2) return 0
+    if (cartItems.length < 3) return 0
 
-    // Sort items by price (ascending) to get cheapest item free
+    // Sort items by price (ascending) to get the 2 cheapest items free
     const sortedItems = [...cartItems]
       .map(item => ({ ...item, totalPrice: item.price * item.quantity }))
       .sort((a, b) => a.price - b.price)
 
-    // The cheapest item is free
-    return sortedItems[0].price
+    // The 2 cheapest items are free
+    const discount = sortedItems[0].price + sortedItems[1].price
+    return discount
   }
 
   // Get total with discount
@@ -132,6 +171,7 @@ export function CartProvider({ children }) {
     updateQuantity,
     removeFromCart,
     clearCart,
+    saveCart,
     getItemCount,
     getSubtotal,
     getPromoDiscount,

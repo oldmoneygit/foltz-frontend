@@ -3,14 +3,19 @@ import Footer from '@/components/Footer'
 import Hero from '@/components/Hero'
 import BestSellers from '@/components/BestSellersServer'
 import HowItWorks from '@/components/HowItWorks'
+import Testimonials from '@/components/Testimonials'
 import LeagueCards from '@/components/LeagueCardsServer'
-import CollectionCarousel from '@/components/CollectionCarouselServer'
+import CollectionGrid from '@/components/CollectionGridServer'
 import FeaturedProducts from '@/components/FeaturedProductsServer'
+import FAQ from '@/components/FAQ'
 
 export const metadata = {
   title: 'Foltz Fanwear - Camisetas de Fútbol Exclusivas',
   description: 'Las mejores camisetas de fútbol vintage y modernas. Colecciones exclusivas de todas las ligas del mundo.',
 }
+
+// Revalidar a cada 1 hora para pegar atualizações de preços
+export const revalidate = 3600;
 
 export default function Home() {
   return (
@@ -24,36 +29,56 @@ export default function Home() {
       {/* Best Sellers Carousel */}
       <BestSellers />
 
-      {/* How It Works - COMPRA 1 LLEVA 2 */}
+      {/* How It Works - COMPRA 1 LLEVA 3 */}
       <HowItWorks />
 
       {/* League Cards - Glassmorphic Design */}
       <LeagueCards />
 
-      {/* Collection Carousels - One per league/category */}
-      <CollectionCarousel
-        title="Premier League"
-        emoji="🏴󠁧󠁢󠁥󠁮󠁧󠁿"
-        subtitle="Las camisetas más icónicas de la liga inglesa"
+      {/* Collection Grids - One per league/category with image */}
+      <CollectionGrid
+        collectionSlug="argentina-legends"
+        collectionImage="argentina legends.jpg"
+      />
+
+      <CollectionGrid
         collectionSlug="premier-league"
+        collectionImage="premier league.jpg"
       />
 
-      <CollectionCarousel
-        title="La Liga"
-        emoji="🇪🇸"
-        subtitle="Los clásicos del fútbol español"
+      <CollectionGrid
         collectionSlug="la-liga"
+        collectionImage="la liga.jpg"
       />
 
-      <CollectionCarousel
-        title="Serie A"
-        emoji="🇮🇹"
-        subtitle="Elegancia italiana en cada camiseta"
+      <CollectionGrid
         collectionSlug="serie-a"
+        collectionImage="serie A.jpg"
+      />
+
+      <CollectionGrid
+        collectionSlug="bundesliga"
+        collectionImage="bundesliga.jpg"
+      />
+
+      <CollectionGrid
+        collectionSlug="ligue-1"
+        collectionImage="Ligue 1.jpg"
+      />
+
+      <CollectionGrid
+        collectionSlug="national-teams"
+        collectionImage="national teams.jpg"
       />
 
       {/* Featured Products Grid */}
       <FeaturedProducts />
+
+      {/* Testimonials - Customer Reviews */}
+      <Testimonials />
+
+      {/* FAQ Section */}
+      <FAQ />
 
       {/* Footer */}
       <Footer />

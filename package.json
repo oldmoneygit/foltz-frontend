@@ -5,7 +5,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:fresh": "rimraf .next && next dev",
     "build": "next build",
+    "build:fresh": "rimraf .next && next build",
     "start": "next start",
     "lint": "next lint",
     "generate-csv": "node scripts/generateShopifyCSV.js",
@@ -18,6 +20,13 @@
     "count-images": "node scripts/countImages.js",
     "update-product": "node scripts/updateProduct.js",
     "update-price": "node scripts/updatePrice.js",
+    "update-compare-prices": "python scripts/python/update_compare_prices.py",
+    "update-compare-prices-shopify": "node scripts/update-compare-prices-shopify.js",
+    "update-prices-by-type": "python scripts/python/update_prices_by_type.py",
+    "update-prices-by-type-shopify": "node scripts/update-prices-by-type-shopify.js",
+    "update-shopify-prices": "node scripts/update-shopify-prices-now.mjs",
+    "test-checkout": "node scripts/test-checkout.mjs",
+    "test-prices": "node scripts/test-product-prices.mjs",
     "upload-image": "node scripts/uploadImages.js"
   },
   "dependencies": {
@@ -40,6 +49,7 @@
     "eslint": "^8.57.0",
     "eslint-config-next": "^14.2.0",
     "postcss": "^8.5.6",
+    "rimraf": "^6.0.1",
     "tailwindcss": "3.4.1"
   }
 }

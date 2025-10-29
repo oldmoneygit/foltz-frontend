@@ -20,8 +20,26 @@ export default function ContatoPage() {
     e.preventDefault()
     setSending(true)
 
-    // Simulação de envio (conectar com backend/API depois)
-    setTimeout(() => {
+    try {
+      // Enviar via WhatsApp (método confiável)
+      const whatsappMessage = `
+*Nuevo Mensaje de Contacto*
+
+*Nombre:* ${formData.name}
+*Email:* ${formData.email}
+*Teléfono:* ${formData.phone || 'No proporcionado'}
+*Asunto:* ${formData.subject}
+
+*Mensaje:*
+${formData.message}
+      `.trim()
+
+      const whatsappURL = `https://wa.me/5592991620674?text=${encodeURIComponent(whatsappMessage)}`
+
+      // Abrir WhatsApp em nova aba
+      window.open(whatsappURL, '_blank')
+
+      // Marcar como enviado
       setSending(false)
       setSent(true)
       setFormData({
@@ -34,7 +52,11 @@ export default function ContatoPage() {
 
       // Reset success message after 5 seconds
       setTimeout(() => setSent(false), 5000)
-    }, 1500)
+    } catch (error) {
+      console.error('Error sending message:', error)
+      setSending(false)
+      alert('Hubo un error. Por favor intenta de nuevo.')
+    }
   }
 
   const handleChange = (e) => {
@@ -67,7 +89,7 @@ export default function ContatoPage() {
             <div className="space-y-6">
               {/* WhatsApp */}
               <a
-                href="https://wa.me/5511999999999?text=Olá!%20Tenho%20uma%20dúvida"
+                href="https://wa.me/5592991620674?text=¡Hola!%20Tengo%20una%20consulta"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block bg-gradient-to-br from-green-500/20 to-green-500/0 backdrop-blur-sm rounded-xl p-6 border border-green-500/30 hover:border-green-500/50 transition-all duration-300 hover:scale-105"
@@ -81,7 +103,7 @@ export default function ContatoPage() {
                   <div className="flex-1">
                     <h3 className="text-white font-bold text-lg mb-1">WhatsApp</h3>
                     <p className="text-white/60 text-sm mb-2">La forma más rápida de contactarnos</p>
-                    <p className="text-green-400 font-bold">+55 11 99999-9999</p>
+                    <p className="text-green-400 font-bold">+55 92 99162-0674</p>
                     <p className="text-white/40 text-xs mt-2">Respuesta inmediata • 9:00 - 21:00hs</p>
                   </div>
                 </div>
@@ -89,7 +111,7 @@ export default function ContatoPage() {
 
               {/* Email */}
               <a
-                href="mailto:contato@foltz.com.br"
+                href="mailto:contacto@foltzoficial.com"
                 className="block bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-brand-yellow/50 transition-all duration-300 hover:scale-105"
               >
                 <div className="flex items-start gap-4">
@@ -99,7 +121,7 @@ export default function ContatoPage() {
                   <div className="flex-1">
                     <h3 className="text-white font-bold text-lg mb-1">Email</h3>
                     <p className="text-white/60 text-sm mb-2">Para consultas detalladas</p>
-                    <p className="text-brand-yellow font-bold">contato@foltz.com.br</p>
+                    <p className="text-brand-yellow font-bold">contacto@foltzoficial.com</p>
                     <p className="text-white/40 text-xs mt-2">Respuesta en 24-48h</p>
                   </div>
                 </div>

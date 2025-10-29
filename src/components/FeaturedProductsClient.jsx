@@ -19,9 +19,10 @@ export default function FeaturedProducts({ products = [] }) {
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px 0px -100px 0px" }}
+          transition={{ duration: 0.3 }}
           className="text-center mb-12 md:mb-16"
         >
           <div className="inline-block mb-4">
@@ -38,14 +39,14 @@ export default function FeaturedProducts({ products = [] }) {
         </motion.div>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mb-12">
           {featuredProducts.map((product, index) => (
             <motion.div
               key={product.id}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.05 }}
+              viewport={{ once: true, margin: "0px 0px -50px 0px" }}
+              transition={{ duration: 0.2, delay: index * 0.02 }}
             >
               <ProductCard product={product} />
             </motion.div>
@@ -56,7 +57,8 @@ export default function FeaturedProducts({ products = [] }) {
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px 0px -100px 0px" }}
+          transition={{ duration: 0.3 }}
           className="text-center"
         >
           <Link href="/collection/featured">
@@ -66,45 +68,6 @@ export default function FeaturedProducts({ products = [] }) {
           </Link>
         </motion.div>
 
-        {/* Stats Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-20 md:mt-32"
-        >
-          <div className="text-center mb-12">
-            <span className="text-brand-yellow text-xs md:text-sm font-black uppercase tracking-[0.3em] bg-brand-yellow/10 px-4 py-2 rounded-full border border-brand-yellow/30">
-              +1 CLIENTE SATISFECHO
-            </span>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
-            {[
-              { value: '4.8', label: 'Calificación promedio', icon: '⭐' },
-              { value: '+3492', label: 'clientes satisfechos', icon: '👥' },
-              { value: '+4000', label: 'Pedidos enviados', icon: '📦' },
-              { value: '98%', label: 'Tasa de recomendación', icon: '💯' },
-            ].map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="text-center"
-              >
-                <div className="text-4xl mb-2">{stat.icon}</div>
-                <div className="text-3xl md:text-4xl font-black text-brand-yellow mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-sm md:text-base text-gray-400 font-medium">
-                  {stat.label}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   )

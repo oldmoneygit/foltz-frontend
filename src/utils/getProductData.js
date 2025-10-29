@@ -19,8 +19,8 @@ export function getAllProducts() {
             color: league.color,
           },
           // Add default values
-          price: 82713.38, // Preço padrão
-          regularPrice: 115798.73, // Preço regular
+          price: 35900, // Preço padrão atualizado
+          regularPrice: 53850, // Preço de comparação (50% a mais)
           stock: 'available',
           tags: [leagueId],
         })

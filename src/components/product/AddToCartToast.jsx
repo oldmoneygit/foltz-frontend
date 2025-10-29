@@ -20,12 +20,15 @@ const AddToCartToast = ({ isOpen, onClose, product, size, quantity }) => {
 
   if (!product) return null
 
-  // Format price
-  const formattedPrice = new Intl.NumberFormat('es-AR', {
-    style: 'currency',
-    currency: 'ARS',
-    minimumFractionDigits: 0,
-  }).format(product.price)
+  // Formata o preço como "AR$ XX.XXX,XX"
+  const formatPrice = (value) => {
+    const formatted = value.toFixed(2).replace('.', ',')
+    const parts = formatted.split(',')
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.')
+    return `AR$ ${parts.join(',')}`
+  }
+
+  const formattedPrice = formatPrice(product.price)
 
   return (
     <AnimatePresence>

@@ -50,12 +50,14 @@ const QuantitySelector = ({ quantity, onQuantityChange, min = 1, max = 10 }) => 
 
         {/* Quantity Display */}
         <input
-          type="number"
+          type="text"
+          inputMode="numeric"
+          pattern="[0-9]*"
           value={quantity}
           onChange={handleInputChange}
           min={min}
           max={max}
-          className="w-16 h-10 bg-white/5 text-white text-center font-bold rounded-lg border-2 border-white/10 focus:border-brand-yellow focus:outline-none"
+          className="w-16 h-10 md:w-20 bg-white/5 text-white text-center font-bold rounded-lg border-2 border-white/10 focus:border-brand-yellow focus:outline-none text-base min-h-[44px]"
         />
 
         {/* Increase Button */}

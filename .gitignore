@@ -108,3 +108,42 @@ missing-images.json
 
 # Large media files (se não estiver usando)
 # /public/images/seedream/
+
+# Documentation files (development only)
+*RESUMO*.md
+*DEBUG*.md
+*ANALISE*.md
+*IMPLEMENTACOES*.md
+*MUDANCAS*.md
+*OTIMIZACOES*.md
+*PLANO*.md
+*STATUS*.md
+*SESSAO*.md
+*GUIA*.md
+*COMANDOS*.txt
+*TEMPLATES*.md
+*CORRECAO*.md
+*SOLUCAO*.md
+*TESTE*.md
+*ATUALIZACAO*.md
+*EXECUTAR*.md
+*CHECKOUT*.md
+*PERSONALIZACAO*.md
+*GRID*.md
+*COLECOES*.md
+*MENU*.md
+*BEST-SELLERS*.md
+*INICIO*.md
+*REVIEWS*.md
+*PERFORMANCE*.md
+*SISTEMA*.md
+COMECE_AQUI.txt
+
+# Development folders
+/archive/
+/data/
+/seedream/
+/impact/
+/shopify-theme-foltz/
+shopify-theme-foltz.zip
+/inspiration/SNKHOUSE_SHOWROOM/

@@ -1,26 +1,28 @@
 'use client'
 
-import { useState } from 'react'
+import { memo, useMemo } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Heart } from 'lucide-react'
+import { useFavorites } from '@/contexts/FavoritesContext'
 
-export default function ProductCard({ product }) {
-  const [isWishlisted, setIsWishlisted] = useState(false)
+function ProductCard({ product }) {
+  const { toggleFavorite, isFavorite } = useFavorites()
+  const isWishlisted = isFavorite(product.id)
 
-  const formattedPrice = new Intl.NumberFormat('es-AR', {
-    style: 'currency',
-    currency: 'ARS',
-    minimumFractionDigits: 0,
-  }).format(product.price)
+  // Formata o preço como "AR$ XX.XXX,XX" - Memoizado para performance
+  const formatPrice = useMemo(() => (value) => {
+    const formatted = value.toFixed(2).replace('.', ',')
+    const parts = formatted.split(',')
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.')
+    return `AR$ ${parts.join(',')}`
+  }, [])
 
-  const formattedRegularPrice = product.regularPrice
-    ? new Intl.NumberFormat('es-AR', {
-        style: 'currency',
-        currency: 'ARS',
-        minimumFractionDigits: 0,
-      }).format(product.regularPrice)
-    : null
+  const formattedPrice = useMemo(() => formatPrice(product.price), [product.price, formatPrice])
+  const formattedRegularPrice = useMemo(() => 
+    product.regularPrice ? formatPrice(product.regularPrice) : null,
+    [product.regularPrice, formatPrice]
+  )
 
   const getStockBadge = () => {
     switch (product.stock) {
@@ -51,13 +53,14 @@ export default function ProductCard({ product }) {
         <button
           onClick={(e) => {
             e.preventDefault()
-            setIsWishlisted(!isWishlisted)
+            toggleFavorite(product)
           }}
-          className="absolute top-2 right-2 z-10 p-2 bg-black/60 backdrop-blur-md rounded-full
-                   hover:bg-brand-yellow transition-all"
+          className="absolute top-2 right-2 z-10 p-2.5 bg-black/60 backdrop-blur-md rounded-full
+                   hover:bg-brand-yellow transition-all duration-200 active:scale-95"
+          aria-label={isWishlisted ? 'Remover de favoritos' : 'Agregar a favoritos'}
         >
           <Heart
-            size={18}
+            size={20}
             className={`${
               isWishlisted ? 'fill-brand-yellow text-brand-yellow' : 'text-white'
             } transition-colors`}
@@ -65,42 +68,43 @@ export default function ProductCard({ product }) {
         </button>
 
         {/* Image Container */}
-        <div className="relative aspect-[3/4] bg-zinc-900 overflow-hidden">
+        <div className="relative aspect-[3/4] overflow-hidden bg-zinc-900">
           <Image
             src={product.main_image || product.image}
             alt={product.name}
             fill
-            className="object-cover group-hover:scale-105 transition-transform duration-500"
-            sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-            quality={75}
+            className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+            sizes="(max-width: 640px) 45vw, (max-width: 768px) 30vw, (max-width: 1024px) 23vw, 18vw"
+            quality={50}
             loading="lazy"
-            unoptimized
+            placeholder="blur"
+            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
           />
         </div>
 
         {/* Content */}
-        <div className="p-3 flex flex-col flex-grow space-y-2">
+        <div className="p-3 flex flex-col flex-grow space-y-2 items-center text-center">
           {/* Product Name */}
-          <h3 className="text-base font-bold text-white leading-tight line-clamp-2 group-hover:text-brand-yellow transition-colors min-h-[2.5rem]">
+          <h3 className="text-sm font-bold text-white leading-tight line-clamp-2 group-hover:text-brand-yellow transition-colors min-h-[2.5rem] uppercase">
             {product.name}
           </h3>
 
           {/* Prices and Badge */}
-          <div className="space-y-1.5 mt-auto">
+          <div className="space-y-1.5 mt-auto flex flex-col items-center">
             {/* Prices */}
             {formattedRegularPrice && (
-              <p className="text-gray-400 text-base line-through">
+              <p className="text-gray-400 text-xs line-through">
                 {formattedRegularPrice}
               </p>
             )}
-            <p className="text-brand-yellow font-bold text-xl">
+            <p className="text-brand-yellow font-bold text-base">
               {formattedPrice}
             </p>
 
-            {/* COMPRA 1 LLEVA 2 Badge - Compacto */}
+            {/* COMPRA 1 LLEVA 3 Badge - Compacto */}
             {product.stock !== 'soldout' && (
               <div className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-brand-yellow rounded-full">
-                <span className="text-black text-[10px] md:text-xs font-black uppercase tracking-tight md:tracking-wide whitespace-nowrap">COMPRA 1 LLEVA 2</span>
+                <span className="text-black text-[10px] md:text-xs font-black uppercase tracking-tight md:tracking-wide whitespace-nowrap">COMPRA 1 LLEVA 3</span>
               </div>
             )}
           </div>
@@ -109,3 +113,6 @@ export default function ProductCard({ product }) {
     </Link>
   )
 }
+
+// Memo previne re-renders desnecessários (PERFORMANCE!)
+export default memo(ProductCard)

@@ -4,43 +4,37 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Heart } from 'lucide-react';
 import { useState } from 'react';
-import Footer from '@/components/Footer';
 
 const ProductCard = ({ product, index }) => {
   const [isWishlisted, setIsWishlisted] = useState(false);
 
-  const formattedPrice = new Intl.NumberFormat('es-AR', {
-    style: 'currency',
-    currency: 'ARS',
-    minimumFractionDigits: 0,
-  }).format(product.price || 82713.38);
+  // Formata o preço como "AR$ XX.XXX,XX"
+  const formatPrice = (value) => {
+    const formatted = value.toFixed(2).replace('.', ',');
+    const parts = formatted.split(',');
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    return `AR$ ${parts.join(',')}`;
+  };
+
+  const formattedPrice = formatPrice(product.price || 35900);
+  const formattedRegularPrice = product.regularPrice ? formatPrice(product.regularPrice) : null;
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.05 }}
-      className="group relative bg-black/40 backdrop-blur-sm rounded-lg overflow-hidden
-                 transition-all duration-300 ease-out
-                 hover:bg-black/50 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/50"
-    >
-      {/* Image Container */}
-      <Link href={`/product/${product.id}`} className="block relative aspect-square bg-zinc-900/50">
-        {/* Badge Promocional - Top Left */}
-        {product.image_count && (
-          <div className="absolute top-2 left-2 z-10 bg-brand-yellow text-black px-2.5 py-1 rounded-md text-[10px] font-black uppercase tracking-wider shadow-xl">
-            📸 {product.image_count} fotos
-          </div>
-        )}
-
+    <Link href={`/product/${product.slug || product.id}`}>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: index * 0.05 }}
+        className="group relative bg-gradient-to-br from-zinc-900 to-black rounded-2xl overflow-hidden border border-zinc-800 hover:border-brand-yellow/50 transition-all duration-300 hover:-translate-y-2 cursor-pointer h-full flex flex-col"
+      >
         {/* Wishlist Button */}
         <button
           onClick={(e) => {
             e.preventDefault();
             setIsWishlisted(!isWishlisted);
           }}
-          className="absolute top-2 right-2 z-10 p-1.5 bg-black/60 backdrop-blur-md rounded-full
-                     hover:bg-brand-navy transition-all opacity-80 hover:opacity-100"
+          className="absolute top-2 right-2 z-10 p-2 bg-black/60 backdrop-blur-md rounded-full
+                     hover:bg-brand-yellow transition-all"
         >
           <Heart
             size={18}
@@ -48,46 +42,50 @@ const ProductCard = ({ product, index }) => {
           />
         </button>
 
-        {product.main_image ? (
-          <Image
-            src={product.main_image}
-            alt={product.name}
-            fill
-            className="object-cover transition-transform duration-300 ease-out group-hover:scale-105"
-            loading={index < 8 ? 'eager' : 'lazy'}
-            quality={75}
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
-            unoptimized
-          />
-        ) : (
-          <div className="w-full h-full flex items-center justify-center text-gray-600">
-            Sin imagen
-          </div>
-        )}
-      </Link>
+        {/* Image Container */}
+        <div className="relative aspect-[3/4] overflow-hidden">
+          {product.main_image ? (
+            <Image
+              src={product.main_image}
+              alt={product.name}
+              fill
+              className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+              loading={index < 8 ? 'eager' : 'lazy'}
+              quality={75}
+              sizes="(max-width: 640px) 50vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+            />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center text-gray-600">
+              Sin imagen
+            </div>
+          )}
+        </div>
 
-      {/* Content Area */}
-      <div className="p-3 space-y-2 flex flex-col">
-        {/* Product Name */}
-        <Link href={`/product/${product.id}`}>
-          <h3 className="font-bold text-white text-base leading-tight line-clamp-2 min-h-[2.5rem]">
+        {/* Content */}
+        <div className="p-3 flex flex-col flex-grow space-y-2 items-center text-center">
+          {/* Product Name */}
+          <h3 className="text-sm font-bold text-white leading-tight line-clamp-2 group-hover:text-brand-yellow transition-colors min-h-[2.5rem] uppercase">
             {product.name}
           </h3>
-        </Link>
 
-        {/* Prices and Badge */}
-        <div className="space-y-1.5 mt-auto">
-          {/* Prices */}
-          <p className="text-gray-400 line-through text-base">AR$ 115.798</p>
-          <p className="text-brand-yellow font-bold text-xl">{formattedPrice}</p>
+          {/* Prices and Badge */}
+          <div className="space-y-1.5 mt-auto flex flex-col items-center">
+            {/* Prices */}
+            <p className="text-gray-400 text-xs line-through">
+              {formattedRegularPrice}
+            </p>
+            <p className="text-brand-yellow font-bold text-base">
+              {formattedPrice}
+            </p>
 
-          {/* Badge COMPRA 1 LLEVA 2 - Compacto */}
-          <div className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-brand-yellow rounded-full">
-            <span className="text-black text-[10px] md:text-xs font-black uppercase tracking-tight md:tracking-wide whitespace-nowrap">COMPRA 1 LLEVA 2</span>
+            {/* Badge COMPRA 1 LLEVA 3 - Compacto */}
+            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-brand-yellow rounded-full">
+              <span className="text-black text-[10px] md:text-xs font-black uppercase tracking-tight md:tracking-wide whitespace-nowrap">COMPRA 1 LLEVA 3</span>
+            </div>
           </div>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </Link>
   );
 };
 
@@ -161,7 +159,7 @@ export default function LeagueContent({ league, products = [] }) {
             {/* Product Count */}
             <div>
               <span className="text-5xl md:text-6xl font-black text-brand-yellow">
-                {league.productCount}
+                {products.length}
               </span>
               <span className="text-white text-xl ml-2">productos</span>
             </div>
@@ -209,8 +207,8 @@ export default function LeagueContent({ league, products = [] }) {
                 </p>
               </motion.div>
 
-              {/* Products Grid - 4 columns like SNKHOUSE */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 mb-12">
+              {/* Products Grid - 2 columns mobile, 4 desktop */}
+              <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mb-12">
                 {products.map((product, index) => (
                   <ProductCard key={product.id} product={product} index={index} />
                 ))}
@@ -222,11 +220,7 @@ export default function LeagueContent({ league, products = [] }) {
             </div>
           )}
         </div>
-
       </div>
-
-      {/* Footer */}
-      <Footer />
     </div>
   );
 }

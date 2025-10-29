@@ -1,6 +1,9 @@
 import { getLeagueBySlug, getProductsByLeague } from '@/utils/shopifyData';
 import LeagueContent from './LeagueContent';
 
+// Revalidar a cada 1 hora para pegar atualizações de preços
+export const revalidate = 3600;
+
 export default async function LeaguePage({ params }) {
   // Await params in Server Component
   const { slug } = await params;

@@ -3,6 +3,9 @@ import Footer from '@/components/Footer'
 import ProductGallery from '@/components/product/ProductGallery'
 import ProductInfo from '@/components/product/ProductInfo'
 import BackButton from '@/components/product/BackButton'
+import ProductInfoTabs from '@/components/ProductInfoTabs'
+import ProductDescription from '@/components/product/ProductDescription'
+import Testimonials from '@/components/Testimonials'
 import { getProductBySlug, getAllProductSlugs } from '@/utils/shopifyData'
 
 // Generate static params for all products
@@ -22,7 +25,7 @@ export async function generateMetadata({ params }) {
 
   return {
     title: `${product.name} - Foltz Fanwear`,
-    description: `Compra ${product.name} en Foltz Fanwear. Jerseys exclusivos y auténticos.`,
+    description: `Compra ${product.name} en Foltz Fanwear. Réplicas 1:1 Premium de alta calidad.`,
     openGraph: {
       title: product.name,
       description: `AR$${product.price.toLocaleString()}`,
@@ -114,18 +117,16 @@ export default async function ProductPage({ params }) {
           </div>
         </div>
 
-        {/* Description Section */}
-        {enhancedProduct.description && (
-          <div className="container mx-auto px-4 pb-8 md:pb-12">
-            <div className="bg-white/5 rounded-lg p-6 md:p-8">
-              <h2 className="text-2xl font-bold text-white mb-4">Descripción</h2>
-              <div
-                className="text-white/80 prose prose-invert max-w-none"
-                dangerouslySetInnerHTML={{ __html: enhancedProduct.description }}
-              />
-            </div>
-          </div>
-        )}
+        {/* Product Description with Technical Specs */}
+        <div className="container mx-auto px-4 pb-8 md:pb-12">
+          <ProductDescription product={enhancedProduct} />
+        </div>
+
+        {/* Product Info Tabs - Shipping, Warranty, Care */}
+        <ProductInfoTabs />
+
+        {/* Customer Testimonials - Real Reviews */}
+        <Testimonials />
       </main>
       <Footer />
     </>

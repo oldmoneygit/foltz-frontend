@@ -195,6 +195,98 @@ export async function getProductsByTag(tag, limit = 100) {
 }
 
 /**
+ * Get products by productType OR tag (flexible search)
+ * @param {string} searchTerm - Term to search by (will try both productType and tag)
+ * @param {number} limit - Number of products to fetch
+ */
+export async function getProductsByTypeOrTag(searchTerm, limit = 100) {
+  const query = `
+    query getProducts($query: String!, $first: Int!) {
+      products(first: $first, query: $query) {
+        edges {
+          node {
+            id
+            title
+            handle
+            description
+            productType
+            tags
+            priceRange {
+              minVariantPrice {
+                amount
+                currencyCode
+              }
+            }
+            compareAtPriceRange {
+              minVariantPrice {
+                amount
+                currencyCode
+              }
+            }
+            images(first: 1) {
+              edges {
+                node {
+                  url
+                  altText
+                  width
+                  height
+                }
+              }
+            }
+            options {
+              id
+              name
+              values
+            }
+            variants(first: 25) {
+              edges {
+                node {
+                  id
+                  title
+                  availableForSale
+                  price {
+                    amount
+                    currencyCode
+                  }
+                  compareAtPrice {
+                    amount
+                    currencyCode
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `
+
+  // Try productType first, then tag, then title
+  let response = await ShopifyData(query, {
+    query: `product_type:${searchTerm}`,
+    first: limit
+  })
+
+  // If no results, try by tag
+  if (!response.data.products.edges || response.data.products.edges.length === 0) {
+    response = await ShopifyData(query, {
+      query: `tag:${searchTerm}`,
+      first: limit
+    })
+  }
+
+  // If still no results, try by title (for cases like "Argentina Legends")
+  if (!response.data.products.edges || response.data.products.edges.length === 0) {
+    response = await ShopifyData(query, {
+      query: `title:${searchTerm}`,
+      first: limit
+    })
+  }
+
+  return response.data.products.edges
+}
+
+/**
  * Get single product by handle with all images
  * @param {string} handle - Product handle (slug)
  */
@@ -360,76 +452,46 @@ export async function searchProducts(searchQuery, limit = 20) {
 }
 
 /**
- * Create a checkout
- * @param {string} variantId - Variant GID
- * @param {number} quantity - Quantity
- */
-export async function createCheckout(variantId, quantity = 1) {
-  const query = `
-    mutation checkoutCreate($input: CheckoutCreateInput!) {
-      checkoutCreate(input: $input) {
-        checkout {
-          id
-          webUrl
-          lineItems(first: 5) {
-            edges {
-              node {
-                title
-                quantity
-              }
-            }
-          }
-        }
-        checkoutUserErrors {
-          message
-          field
-        }
-      }
-    }
-  `
-
-  const response = await ShopifyData(query, {
-    input: {
-      lineItems: [{ variantId, quantity }]
-    }
-  })
-
-  if (response.data.checkoutCreate.checkoutUserErrors.length > 0) {
-    throw new Error(response.data.checkoutCreate.checkoutUserErrors[0].message)
-  }
-
-  return response.data.checkoutCreate.checkout
-}
-
-/**
- * Update checkout line items
- * @param {string} checkoutId - Checkout GID
+ * Create a cart with multiple items (Nova Cart API - substituiu Checkout API)
  * @param {Array} lineItems - Array of {variantId, quantity}
+ * @returns {Promise<Object>} Cart object with checkoutUrl
  */
-export async function updateCheckout(checkoutId, lineItems) {
-  const formattedLineItems = lineItems.map(item => ({
-    variantId: item.variantId,
-    quantity: item.quantity
-  }))
-
+export async function createCheckoutWithItems(lineItems) {
   const query = `
-    mutation checkoutLineItemsReplace($checkoutId: ID!, $lineItems: [CheckoutLineItemInput!]!) {
-      checkoutLineItemsReplace(checkoutId: $checkoutId, lineItems: $lineItems) {
-        checkout {
+    mutation cartCreate($input: CartInput!) {
+      cartCreate(input: $input) {
+        cart {
           id
-          webUrl
-          lineItems(first: 25) {
+          checkoutUrl
+          lines(first: 50) {
             edges {
               node {
                 id
-                title
                 quantity
-                variant {
-                  price {
-                    amount
+                merchandise {
+                  ... on ProductVariant {
+                    id
+                    title
+                    price {
+                      amount
+                      currencyCode
+                    }
+                    product {
+                      title
+                    }
                   }
                 }
               }
+            }
+          }
+          cost {
+            subtotalAmount {
+              amount
+              currencyCode
+            }
+            totalAmount {
+              amount
+              currencyCode
             }
           }
         }
@@ -442,15 +504,107 @@ export async function updateCheckout(checkoutId, lineItems) {
   `
 
   const response = await ShopifyData(query, {
-    checkoutId,
-    lineItems: formattedLineItems
+    input: {
+      lines: lineItems.map(item => ({
+        merchandiseId: item.variantId,
+        quantity: item.quantity
+      }))
+    }
   })
 
-  if (response.data.checkoutLineItemsReplace.userErrors.length > 0) {
-    throw new Error(response.data.checkoutLineItemsReplace.userErrors[0].message)
+  if (response.data.cartCreate.userErrors.length > 0) {
+    throw new Error(response.data.cartCreate.userErrors[0].message)
   }
 
-  return response.data.checkoutLineItemsReplace.checkout
+  // Adaptar resposta para manter compatibilidade com código existente
+  const cart = response.data.cartCreate.cart
+  return {
+    id: cart.id,
+    webUrl: cart.checkoutUrl, // Mapear checkoutUrl para webUrl
+    lineItems: cart.lines, // Mapear lines para lineItems
+    subtotalPrice: cart.cost.subtotalAmount,
+    totalPrice: cart.cost.totalAmount
+  }
+}
+
+/**
+ * Create a cart (legacy - single item)
+ * @param {string} variantId - Variant GID
+ * @param {number} quantity - Quantity
+ */
+export async function createCheckout(variantId, quantity = 1) {
+  return createCheckoutWithItems([{ variantId, quantity }])
+}
+
+/**
+ * Update cart line items (Nova Cart API)
+ * @param {string} cartId - Cart GID
+ * @param {Array} lineItems - Array of {variantId, quantity}
+ */
+export async function updateCheckout(cartId, lineItems) {
+  const query = `
+    mutation cartLinesUpdate($cartId: ID!, $lines: [CartLineUpdateInput!]!) {
+      cartLinesUpdate(cartId: $cartId, lines: $lines) {
+        cart {
+          id
+          checkoutUrl
+          lines(first: 50) {
+            edges {
+              node {
+                id
+                quantity
+                merchandise {
+                  ... on ProductVariant {
+                    id
+                    title
+                    price {
+                      amount
+                      currencyCode
+                    }
+                  }
+                }
+              }
+            }
+          }
+          cost {
+            subtotalAmount {
+              amount
+              currencyCode
+            }
+            totalAmount {
+              amount
+              currencyCode
+            }
+          }
+        }
+        userErrors {
+          message
+          field
+        }
+      }
+    }
+  `
+
+  const response = await ShopifyData(query, {
+    cartId,
+    lines: lineItems.map(item => ({
+      merchandiseId: item.variantId,
+      quantity: item.quantity
+    }))
+  })
+
+  if (response.data.cartLinesUpdate.userErrors.length > 0) {
+    throw new Error(response.data.cartLinesUpdate.userErrors[0].message)
+  }
+
+  const cart = response.data.cartLinesUpdate.cart
+  return {
+    id: cart.id,
+    webUrl: cart.checkoutUrl,
+    lineItems: cart.lines,
+    subtotalPrice: cart.cost.subtotalAmount,
+    totalPrice: cart.cost.totalAmount
+  }
 }
 
 /**
@@ -461,22 +615,82 @@ export function getLeagueFromProduct(product) {
   // The productType in Shopify contains the league name
   const leagueName = product.productType || 'Other'
 
-  // Map league names to colors and countries (based on your leagues_data.json)
+  // Map league names to colors, countries, flags and images
   const leagueMap = {
-    'Bundesliga': { color: '#D20515', country: 'Alemanha' },
-    'Eredivisie': { color: '#FF6C00', country: 'Holanda' },
-    'La Liga': { color: '#FF0000', country: 'Espanha' },
-    'Liga MX': { color: '#006847', country: 'México' },
-    'Ligue 1': { color: '#0055A4', country: 'França' },
-    'Manga Longa': { color: '#1a1a1a', country: 'Internacional' },
-    'MLS': { color: '#C8102E', country: 'EUA' },
-    'Premier League': { color: '#3D195B', country: 'Inglaterra' },
-    'Primeira Liga': { color: '#00843D', country: 'Portugal' },
-    'Sul-Americana': { color: '#009639', country: 'América do Sul' },
-    'Serie A': { color: '#008FD7', country: 'Itália' },
+    'Bundesliga': {
+      color: '#D20515',
+      country: 'Alemanha',
+      flag: '🇩🇪',
+      image: '/images/leagues/bundesliga.jpg'
+    },
+    'Eredivisie': {
+      color: '#FF6C00',
+      country: 'Holanda',
+      flag: '🇳🇱',
+      image: '/images/leagues/eredivisie.jpg'
+    },
+    'La Liga': {
+      color: '#FF0000',
+      country: 'Espanha',
+      flag: '🇪🇸',
+      image: '/images/leagues/la liga.jpg'
+    },
+    'Liga MX': {
+      color: '#006847',
+      country: 'México',
+      flag: '🇲🇽',
+      image: '/images/leagues/liga mx.jpg'
+    },
+    'Ligue 1': {
+      color: '#0055A4',
+      country: 'França',
+      flag: '🇫🇷',
+      image: '/images/leagues/Ligue 1.jpg'
+    },
+    'Manga Longa': {
+      color: '#1a1a1a',
+      country: 'Internacional',
+      flag: '🌍',
+      image: '/images/leagues/manga longa.jpg'
+    },
+    'MLS': {
+      color: '#C8102E',
+      country: 'EUA',
+      flag: '🇺🇸',
+      image: '/images/leagues/mls.jpg'
+    },
+    'Premier League': {
+      color: '#3D195B',
+      country: 'Inglaterra',
+      flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿',
+      image: '/images/leagues/premier league.jpg'
+    },
+    'Primeira Liga': {
+      color: '#00843D',
+      country: 'Portugal',
+      flag: '🇵🇹',
+      image: '/images/leagues/primeira liga.jpg'
+    },
+    'Sul-Americana': {
+      color: '#009639',
+      country: 'América do Sul',
+      flag: '🌎',
+      image: '/images/leagues/sul-americana.jpg'
+    },
+    'Serie A': {
+      color: '#008FD7',
+      country: 'Itália',
+      flag: '🇮🇹',
+      image: '/images/leagues/serie A.jpg'
+    },
   }
 
-  const leagueInfo = leagueMap[leagueName] || { color: '#000000', country: 'Internacional' }
+  const leagueInfo = leagueMap[leagueName] || {
+    color: '#000000',
+    country: 'Internacional',
+    flag: '🌍',
+    image: '/images/leagues/default.jpg'
+  }
 
   return {
     name: leagueName,
@@ -489,20 +703,74 @@ export function getLeagueFromProduct(product) {
  */
 export async function getAllLeagues() {
   const allProducts = await getAllProducts(250)
-  const leagues = new Set()
+  const leagues = new Map() // Changed to Map to store count
 
   allProducts.edges.forEach(({ node: product }) => {
     if (product.productType) {
-      leagues.add(product.productType)
+      const currentCount = leagues.get(product.productType) || 0
+      leagues.set(product.productType, currentCount + 1)
     }
   })
 
-  return Array.from(leagues).map(name => {
+  const dynamicLeagues = Array.from(leagues.entries()).map(([name, count]) => {
     const leagueInfo = getLeagueFromProduct({ productType: name })
+    const slug = name.toLowerCase().replace(/\s+/g, '-')
     return {
-      id: name.toLowerCase().replace(/\s+/g, '-'),
+      id: slug,
+      slug: slug,
       name,
+      productCount: count, // Add product count
       ...leagueInfo
     }
   })
+
+  // Adicionar coleções especiais manualmente
+  const specialCollections = [
+    {
+      id: 'national-teams',
+      slug: 'national-teams',
+      name: 'National Teams',
+      productCount: 0, // Será calculado dinamicamente na página
+      country: 'Internacional',
+      color: '#DAF10D',
+      image: '/images/leagues/national teams.jpg'
+    },
+    {
+      id: 'argentina-legends',
+      slug: 'argentina-legends',
+      name: 'Argentina Legends',
+      productCount: 0,
+      country: 'Argentina',
+      color: '#75AADB',
+      image: '/images/leagues/argentina legends.jpg'
+    },
+    {
+      id: 'retro',
+      slug: 'retro',
+      name: 'Retro Collection',
+      productCount: 0,
+      country: 'Clássicos',
+      color: '#8B7355',
+      image: '/images/leagues/retro.jpg'
+    }
+  ]
+
+  return [...dynamicLeagues, ...specialCollections]
+}
+
+/**
+ * Helper function to find variant ID by size
+ * @param {Array} variants - Product variants from Shopify
+ * @param {string} size - Size to search for (e.g., 'M', 'L', 'XL')
+ * @returns {string|null} Variant GID or null if not found
+ */
+export function findVariantBySize(variants, size) {
+  if (!variants || !variants.edges) return null
+
+  const variant = variants.edges.find(({ node }) => {
+    // Match exact size or check if variant title contains the size
+    return node.title === size || node.title.includes(size)
+  })
+
+  return variant ? variant.node.id : null
 }

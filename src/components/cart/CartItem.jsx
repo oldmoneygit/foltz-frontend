@@ -6,16 +6,16 @@ import Link from 'next/link'
 import { Minus, Plus, X } from 'lucide-react'
 
 const CartItem = ({ item, onUpdateQuantity, onRemove }) => {
-  const { id, name, slug, image, price, size, quantity, league } = item
+  const { id, name, slug, image, price, size, quantity, league, customization } = item
 
   const itemTotal = price * quantity
 
-  const formatPrice = (price) => {
-    return new Intl.NumberFormat('es-AR', {
-      style: 'currency',
-      currency: 'ARS',
-      minimumFractionDigits: 0,
-    }).format(price)
+  // Formata o preço como "AR$ XX.XXX,XX"
+  const formatPrice = (value) => {
+    const formatted = value.toFixed(2).replace('.', ',')
+    const parts = formatted.split(',')
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.')
+    return `AR$ ${parts.join(',')}`
   }
 
   const formattedPrice = formatPrice(price)
@@ -66,9 +66,27 @@ const CartItem = ({ item, onUpdateQuantity, onRemove }) => {
             </Link>
 
             {/* Size */}
-            <p className="text-white/60 text-sm mb-3">
+            <p className="text-white/60 text-sm mb-1">
               Talla: <span className="text-white font-semibold">{size}</span>
             </p>
+
+            {/* Personalización (si existe) */}
+            {customization && (customization.name || customization.number) && (
+              <div className="mb-3 flex items-center gap-2">
+                <span className="inline-flex items-center px-2 py-0.5 bg-brand-yellow/20 border border-brand-yellow/40 rounded text-brand-yellow text-xs font-bold">
+                  PERSONALIZADO
+                </span>
+                <span className="text-white text-sm">
+                  {customization.name && <span className="font-semibold">{customization.name}</span>}
+                  {customization.name && customization.number && <span className="text-white/60"> • </span>}
+                  {customization.number && <span className="font-bold text-brand-yellow">#{customization.number}</span>}
+                </span>
+              </div>
+            )}
+
+            {!customization && (
+              <p className="text-white/40 text-xs mb-3 italic">Espalda lisa</p>
+            )}
 
             {/* Price */}
             <p className="text-brand-yellow text-xl md:text-2xl font-bold">

@@ -2,7 +2,7 @@
 
 import { Ruler } from 'lucide-react'
 
-const SizeSelector = ({ sizes = [], selectedSize, onSizeChange }) => {
+const SizeSelector = ({ sizes = [], selectedSize, onSizeChange, onOpenSizeGuide }) => {
   return (
     <div className="space-y-3">
       {/* Label */}
@@ -18,7 +18,7 @@ const SizeSelector = ({ sizes = [], selectedSize, onSizeChange }) => {
       </div>
 
       {/* Size Grid */}
-      <div className="grid grid-cols-6 gap-2">
+      <div className="grid grid-cols-4 sm:grid-cols-6 gap-2 md:gap-3">
         {sizes.map((sizeItem) => {
           // Handle both old format (number) and new format (object with size property)
           const sizeValue = typeof sizeItem === 'object' ? sizeItem.size : sizeItem
@@ -46,16 +46,15 @@ const SizeSelector = ({ sizes = [], selectedSize, onSizeChange }) => {
         })}
       </div>
 
-      {/* Size Guide Link */}
-      <a
-        href="/guia-de-tallas"
-        target="_blank"
-        rel="noopener noreferrer"
+      {/* Size Guide Button */}
+      <button
+        type="button"
+        onClick={onOpenSizeGuide}
         className="inline-flex items-center gap-1.5 text-brand-yellow/80 hover:text-brand-yellow text-xs font-semibold transition-colors duration-200 mt-2 group"
       >
         <Ruler className="w-3.5 h-3.5 group-hover:scale-110 transition-transform" />
         <span className="underline">Guía de tallas</span>
-      </a>
+      </button>
     </div>
   )
 }

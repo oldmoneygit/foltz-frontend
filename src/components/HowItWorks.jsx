@@ -7,15 +7,15 @@ const steps = [
   {
     number: '1',
     icon: ShoppingCart,
-    title: 'Agregá 2 Productos',
-    description: 'Elegí tus 2 camisetas favoritas y agregalas al carrito',
+    title: 'Agregá 3 Productos',
+    description: 'Elegí tus 3 camisetas favoritas y agregalas al carrito',
     iconColor: 'bg-blue-500',
   },
   {
     number: '2',
     icon: Gift,
-    title: '1 Sale GRATIS',
-    description: 'El producto de menor valor sale completamente gratis',
+    title: '2 Salen GRATIS',
+    description: 'Los 2 productos de menor valor salen completamente gratis',
     iconColor: 'bg-yellow-500',
   },
   {
@@ -52,12 +52,12 @@ const HowItWorks = () => {
 
           {/* Title */}
           <h2 className="text-3xl md:text-5xl font-black text-white mb-4">
-            ¿Cómo Funciona el <span className="text-brand-yellow">COMPRA 1 LLEVA 2</span>?
+            ¿Cómo Funciona el <span className="text-brand-yellow">COMPRA 1 LLEVA 3</span>?
           </h2>
 
           {/* Subtitle */}
           <p className="text-gray-300 text-base md:text-lg max-w-3xl mx-auto">
-            Es simple: comprá 2 productos y 1 sale completamente GRATIS.{' '}
+            Es simple: comprá 3 productos y 2 salen completamente GRATIS.{' '}
             <span className="text-brand-yellow font-bold">¡Sin pegadinhas, sin trucos!</span>
           </p>
         </motion.div>

@@ -17,11 +17,11 @@ const Footer = () => {
       { name: 'Trabaja con Nosotros', href: '/careers' },
     ],
     shop: [
-      { name: 'Argentina', href: '/ligas/argentina' },
-      { name: 'Brasil', href: '/ligas/brasil' },
-      { name: 'Europa', href: '/ligas/europa' },
-      { name: 'La Liga', href: '/liga/la-liga' },
       { name: 'Premier League', href: '/liga/premier-league' },
+      { name: 'La Liga', href: '/liga/la-liga' },
+      { name: 'Serie A', href: '/liga/serie-a' },
+      { name: 'Ligue 1', href: '/liga/ligue-1' },
+      { name: 'Bundesliga', href: '/liga/bundesliga' },
     ],
     help: [
       { name: 'Preguntas Frecuentes', href: '/faq' },
@@ -50,12 +50,12 @@ const Footer = () => {
               />
             </div>
             <p className="text-sm text-gray-300 leading-relaxed">
-              Los mejores jerseys de fútbol importados. Autenticidad garantizada, envío a toda Argentina.
+              Los mejores jerseys de fútbol importados. Réplicas 1:1 Premium, envío a toda Argentina.
             </p>
             {/* Social Media */}
             <div className="flex gap-4">
               <a
-                href="https://instagram.com/foltzfanwear"
+                href="https://instagram.com/foltz.oficial"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-brand-yellow text-black rounded-full hover:bg-white transition-colors"
@@ -147,14 +147,14 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
             <div className="flex items-center gap-3 text-gray-300">
               <Mail className="text-brand-yellow flex-shrink-0" size={20} />
-              <a href="mailto:contacto@foltzfanwear.com" className="hover:text-brand-yellow transition-colors">
-                contacto@foltzfanwear.com
+              <a href="mailto:contacto@foltzoficial.com" className="hover:text-brand-yellow transition-colors">
+                contacto@foltzoficial.com
               </a>
             </div>
             <div className="flex items-center gap-3 text-gray-300">
               <Phone className="text-brand-yellow flex-shrink-0" size={20} />
-              <a href="tel:+5491112345678" className="hover:text-brand-yellow transition-colors">
-                +54 9 11 1234-5678
+              <a href="tel:+5592991620674" className="hover:text-brand-yellow transition-colors">
+                +55 92 99162-0674
               </a>
             </div>
             <div className="flex items-center gap-3 text-gray-300">
@@ -167,11 +167,15 @@ const Footer = () => {
         {/* Payment Methods */}
         <div className="mt-8 pt-8 border-t border-brand-yellow/30">
           <p className="text-center text-sm text-gray-400 mb-4">Métodos de pago aceptados</p>
-          <div className="flex justify-center items-center gap-4 flex-wrap">
-            <div className="bg-white px-4 py-2 rounded text-black font-bold text-xs">VISA</div>
-            <div className="bg-white px-4 py-2 rounded text-black font-bold text-xs">MASTERCARD</div>
-            <div className="bg-white px-4 py-2 rounded text-black font-bold text-xs">AMEX</div>
-            <div className="bg-white px-4 py-2 rounded text-black font-bold text-xs">MERCADO PAGO</div>
+          <div className="flex justify-center items-center">
+            <div className="relative w-full max-w-2xl h-16">
+              <Image
+                src="/images/payment-methods/bandeira-de-cartoes-11.webp"
+                alt="Métodos de pago"
+                fill
+                className="object-contain"
+              />
+            </div>
           </div>
         </div>
       </div>

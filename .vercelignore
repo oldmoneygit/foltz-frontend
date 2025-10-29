@@ -1,0 +1,63 @@
+# ==========================================
+# VERCEL DEPLOY - Arquivos a Ignorar
+# ==========================================
+
+# Documentação de desenvolvimento (não necessária em produção)
+*.md
+!README.md
+docs/
+
+# Scripts de desenvolvimento (apenas para admin local)
+scripts/
+*.sh
+*.py
+requirements.txt
+
+# Pastas de desenvolvimento/inspiração
+inspiration/
+archive/
+data/
+seedream/
+impact/
+shopify-theme-foltz/
+shopify-theme-foltz.zip
+leagues/
+id_visual/
+
+# Arquivos temporários e de debug
+*.tmp
+*.temp
+*.bak
+*.backup
+*.old
+*.log
+
+# Git
+.git/
+.gitignore
+
+# Node modules (Vercel instala automaticamente)
+node_modules/
+
+# Cache e build local
+.next/
+.cache/
+.parcel-cache/
+
+# Variáveis de ambiente (Vercel usa as próprias)
+.env
+.env*.local
+
+# IDE
+.vscode/
+.idea/
+.claude/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Outputs de scripts
+shopify-products-import.csv
+shopify-products-TEST.csv
+missing-images.json

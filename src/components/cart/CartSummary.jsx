@@ -1,14 +1,19 @@
 'use client'
 
-import { ShoppingCart, Truck, Tag, CreditCard } from 'lucide-react'
+import { useState } from 'react'
+import { ShoppingCart, Truck, Tag, CreditCard, Loader2 } from 'lucide-react'
+import { createCheckoutWithItems, findVariantBySize } from '@/lib/shopify'
 
-const CartSummary = ({ subtotal, cartItems }) => {
-  const formatPrice = (price) => {
-    return new Intl.NumberFormat('es-AR', {
-      style: 'currency',
-      currency: 'ARS',
-      minimumFractionDigits: 0,
-    }).format(price)
+const CartSummary = ({ subtotal, cartItems, saveCart }) => {
+  const [isCheckingOut, setIsCheckingOut] = useState(false)
+  const [checkoutError, setCheckoutError] = useState(null)
+
+  // Formata o preço como "AR$ XX.XXX,XX"
+  const formatPrice = (value) => {
+    const formatted = value.toFixed(2).replace('.', ',')
+    const parts = formatted.split(',')
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.')
+    return `AR$ ${parts.join(',')}`
   }
 
   // Calcular quantidade TOTAL de produtos (soma de todas as quantities)
@@ -16,18 +21,19 @@ const CartSummary = ({ subtotal, cartItems }) => {
     ? cartItems.reduce((total, item) => total + item.quantity, 0)
     : 0
 
-  // Cálculo da promoção 2x1 (produto de menor valor GRÁTIS) - APENAS com 2+ produtos (quantidade total)
+  // Cálculo da promoção 3x1 (2 produtos de menor valor GRÁTIS) - APENAS com 3+ produtos (quantidade total)
   let discount = 0
-  let cheapestProduct = null
+  let cheapestProducts = []
 
-  if (totalQuantity >= 2 && cartItems && cartItems.length > 0) {
-    // Encontrar o produto de menor valor (preço unitário)
-    cheapestProduct = cartItems.reduce((min, item) => {
-      return item.price < min.price ? item : min
-    }, cartItems[0])
+  if (totalQuantity >= 3 && cartItems && cartItems.length > 0) {
+    // Ordenar produtos por preço (do menor para o maior)
+    const sortedByPrice = [...cartItems].sort((a, b) => a.price - b.price)
 
-    // Desconto é o valor do produto mais barato (fica grátis)
-    discount = cheapestProduct.price
+    // Pegar os 2 produtos de menor valor
+    cheapestProducts = sortedByPrice.slice(0, 2)
+
+    // Desconto é a soma dos 2 produtos mais baratos (ficam grátis)
+    discount = cheapestProducts.reduce((sum, item) => sum + item.price, 0)
   }
 
   const shipping = 0 // Envío gratis
@@ -39,7 +45,72 @@ const CartSummary = ({ subtotal, cartItems }) => {
   const formattedTotal = formatPrice(total)
 
   // Verificar se promoção está ativa (baseado na quantidade total)
-  const hasPromotion = totalQuantity >= 2
+  const hasPromotion = totalQuantity >= 3
+
+  // Handle Shopify Checkout
+  const handleCheckout = async () => {
+    if (!cartItems || cartItems.length === 0) {
+      setCheckoutError('Tu carrito está vacío')
+      return
+    }
+
+    setIsCheckingOut(true)
+    setCheckoutError(null)
+
+    try {
+      // Map cart items to Shopify line items
+      const lineItems = []
+
+      for (const item of cartItems) {
+        // Find the correct variant ID based on size
+        if (!item.variants || item.variants.length === 0) {
+          console.error(`Product ${item.name} doesn't have variants data`)
+          continue
+        }
+
+        // Adaptar estrutura: variants pode ser array direto ou objeto com edges
+        const variantsData = Array.isArray(item.variants)
+          ? { edges: item.variants }
+          : item.variants
+
+        const variantId = findVariantBySize(variantsData, item.size)
+
+        if (!variantId) {
+          console.error(`Variant not found for ${item.name} - Size: ${item.size}`)
+          console.log('Available variants:', variantsData)
+          throw new Error(`No se encontró la talla ${item.size} para ${item.name}`)
+        }
+
+        lineItems.push({
+          variantId: variantId,
+          quantity: item.quantity
+        })
+      }
+
+      if (lineItems.length === 0) {
+        throw new Error('No se pudieron procesar los productos del carrito')
+      }
+
+      // Create Shopify checkout
+      const checkout = await createCheckoutWithItems(lineItems)
+
+      // Salvar carrinho ANTES de redirecionar (para persistir quando o usuário voltar)
+      if (saveCart) {
+        saveCart()
+      }
+
+      // Redirect to Shopify checkout
+      if (checkout && checkout.webUrl) {
+        window.location.href = checkout.webUrl
+      } else {
+        throw new Error('No se recibió URL de checkout')
+      }
+    } catch (error) {
+      console.error('Checkout error:', error)
+      setCheckoutError(error.message || 'Error al crear el checkout. Por favor intenta de nuevo.')
+      setIsCheckingOut(false)
+    }
+  }
 
   return (
     <div className="sticky top-24">
@@ -60,19 +131,19 @@ const CartSummary = ({ subtotal, cartItems }) => {
             </span>
           </div>
 
-          {/* Discount 2x1 - APENAS se tiver 2+ produtos */}
+          {/* Discount 3x1 - APENAS se tiver 3+ produtos */}
           {hasPromotion ? (
             <div className="flex items-start gap-2 bg-green-500/10 border border-green-500/30 rounded-lg p-3">
               <Tag className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
               <div className="flex-1 min-w-0">
                 <div className="flex items-center justify-between mb-1">
-                  <span className="text-green-500 text-sm font-bold">Promo 2x1</span>
+                  <span className="text-green-500 text-sm font-bold">Promo 3x1</span>
                   <span className="text-green-500 font-bold">
                     -{formattedDiscount}
                   </span>
                 </div>
                 <p className="text-green-500/80 text-xs">
-                  ¡Producto de menor valor GRATIS!
+                  ¡Los 2 productos de menor valor GRATIS!
                 </p>
               </div>
             </div>
@@ -81,10 +152,18 @@ const CartSummary = ({ subtotal, cartItems }) => {
               <Tag className="w-5 h-5 text-brand-yellow flex-shrink-0 mt-0.5" />
               <div className="flex-1 min-w-0">
                 <p className="text-brand-yellow text-xs font-semibold">
-                  {totalQuantity === 0
-                    ? '¡Agrega productos para activar la promo 2x1!'
-                    : `¡Agrega ${2 - totalQuantity} producto${2 - totalQuantity > 1 ? 's' : ''} más para activar la promo 2x1!`
-                  }
+                  <span className="md:hidden">
+                    {totalQuantity === 0
+                      ? 'Agrega productos para 3x1'
+                      : `Agrega ${3 - totalQuantity} más para 3x1`
+                    }
+                  </span>
+                  <span className="hidden md:inline">
+                    {totalQuantity === 0
+                      ? '¡Agrega productos para activar la promo 3x1!'
+                      : `¡Agrega ${3 - totalQuantity} producto${3 - totalQuantity > 1 ? 's' : ''} más para activar la promo 3x1!`
+                    }
+                  </span>
                 </p>
               </div>
             </div>
@@ -116,12 +195,30 @@ const CartSummary = ({ subtotal, cartItems }) => {
           </div>
         </div>
 
+        {/* Error Message */}
+        {checkoutError && (
+          <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-3">
+            <p className="text-red-500 text-sm">{checkoutError}</p>
+          </div>
+        )}
+
         {/* Checkout Button */}
         <button
-          className="w-full bg-brand-yellow text-black py-4 rounded-lg font-bold text-lg uppercase tracking-wide hover:bg-yellow-400 active:scale-95 transition-all duration-300 shadow-lg shadow-brand-yellow/20 flex items-center justify-center gap-2"
+          onClick={handleCheckout}
+          disabled={isCheckingOut || totalQuantity === 0}
+          className="w-full bg-brand-yellow text-black py-4 rounded-lg font-bold text-lg uppercase tracking-wide hover:bg-yellow-400 active:scale-95 transition-all duration-300 shadow-lg shadow-brand-yellow/20 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          <CreditCard className="w-5 h-5" />
-          Finalizar Compra
+          {isCheckingOut ? (
+            <>
+              <Loader2 className="w-5 h-5 animate-spin" />
+              Procesando...
+            </>
+          ) : (
+            <>
+              <CreditCard className="w-5 h-5" />
+              Finalizar Compra
+            </>
+          )}
         </button>
 
         {/* Security Badge */}
@@ -157,6 +254,30 @@ const CartSummary = ({ subtotal, cartItems }) => {
           </div>
         </div>
       </div>
+
+      {/* Botão Fixo Mobile - Sempre visível ao rolar */}
+      <div className="fixed bottom-0 left-0 right-0 lg:hidden bg-black border-t-2 border-brand-yellow p-4 z-[60] shadow-2xl">
+        <button
+          onClick={handleCheckout}
+          disabled={isCheckingOut || totalQuantity === 0}
+          className="w-full bg-brand-yellow text-black py-4 rounded-lg font-bold text-lg uppercase tracking-wide hover:bg-yellow-400 active:scale-95 transition-all flex items-center justify-center gap-2 shadow-lg min-h-[56px] disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          {isCheckingOut ? (
+            <>
+              <Loader2 className="w-5 h-5 animate-spin" />
+              Procesando...
+            </>
+          ) : (
+            <>
+              <CreditCard className="w-5 h-5" />
+              Finalizar - {formattedTotal}
+            </>
+          )}
+        </button>
+      </div>
+
+      {/* Espaçador para não sobrepor conteúdo em mobile */}
+      <div className="h-24 lg:h-0" />
     </div>
   )
 }

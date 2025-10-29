@@ -11,7 +11,7 @@ module.exports = {
       colors: {
         brand: {
           yellow: '#DAF10D',  // Amarelo Limão
-          navy: '#02075E',    // Azul Marinho Profundo (usar apenas em acentos)
+          navy: '#000000',    // Preto
           black: '#000000',
           white: '#FFFFFF',
           dark: '#0a0a0a',    // Cinza muito escuro para backgrounds

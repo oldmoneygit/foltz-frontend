@@ -20,7 +20,7 @@ const PromotionalBanner = () => {
           <div className="flex items-center gap-2 md:gap-3">
             <span className="text-2xl md:text-3xl">🔥</span>
             <span className="text-black font-black text-base md:text-xl uppercase tracking-wider">
-              COMPRA 1 LLEVA 2
+              COMPRA 1 LLEVA 3
             </span>
             <span className="text-black font-bold text-sm md:text-base">
               • Oferta Exclusiva •

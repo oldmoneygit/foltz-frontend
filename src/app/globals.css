@@ -12,7 +12,7 @@
   :root {
     /* Colors - Brand */
     --color-brand-yellow: #DAF10D;
-    --color-brand-navy: #02075E;
+    --color-brand-navy: #000000;
     --color-brand-black: #000000;
     --color-brand-white: #FFFFFF;
     --color-brand-dark: #0a0a0a;
@@ -214,6 +214,25 @@
 /* Smooth Scrolling & Performance */
 html {
   -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* Remove 300ms tap delay em mobile (CRÍTICO!) */
+* {
+  touch-action: manipulation;
+}
+
+/* Better text rendering */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Prevent text selection on buttons */
+button {
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* GPU Acceleration */
@@ -221,4 +240,20 @@ html {
   will-change: transform;
   transform: translateZ(0);
   backface-visibility: hidden;
+}
+
+/* Focus visible para acessibilidade */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-brand-yellow);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Remove outline em mouse/touch */
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
+  outline: none;
 }

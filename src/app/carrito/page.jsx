@@ -9,7 +9,7 @@ import CartSummary from '@/components/cart/CartSummary'
 import { useCart } from '@/contexts/CartContext'
 
 export default function CarrinhoPage() {
-  const { cartItems, updateQuantity, removeFromCart, getSubtotal } = useCart()
+  const { cartItems, updateQuantity, removeFromCart, getSubtotal, saveCart } = useCart()
 
   const handleUpdateQuantity = (id, size, newQuantity) => {
     updateQuantity(id, size, newQuantity)
@@ -92,44 +92,44 @@ export default function CarrinhoPage() {
 
               {/* Right Column - Summary */}
               <div className="lg:col-span-1">
-                <CartSummary subtotal={subtotal} cartItems={cartItems} />
+                <CartSummary subtotal={subtotal} cartItems={cartItems} saveCart={saveCart} />
               </div>
             </div>
           )}
 
-          {/* Promotional Banner - Compra 1 Lleva 2 - APENAS com 2+ produtos (quantidade total) */}
-          {totalQuantity >= 2 ? (
+          {/* Promotional Banner - Compra 1 Lleva 3 - APENAS com 3+ produtos (quantidade total) */}
+          {totalQuantity >= 3 ? (
             <div className="mt-8 md:mt-12 bg-gradient-to-r from-green-500/10 to-green-500/5 border-2 border-green-500/30 rounded-xl p-6 md:p-8">
               <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
                 <div className="flex-shrink-0">
                   <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center">
-                    <span className="text-white text-2xl font-black">2x1</span>
+                    <span className="text-white text-2xl font-black">3x1</span>
                   </div>
                 </div>
                 <div className="text-center md:text-left">
                   <h3 className="text-xl md:text-2xl font-bold text-white mb-1">
-                    ¡Promoción 2x1 Activada! 🎉
+                    ¡Promoción 3x1 Activada! 🎉
                   </h3>
                   <p className="text-white/80 text-sm md:text-base">
-                    ¡El producto de menor valor es GRATIS! Descuento aplicado automáticamente.
+                    ¡Los 2 productos de menor valor son GRATIS! Descuento aplicado automáticamente.
                   </p>
                 </div>
               </div>
             </div>
-          ) : totalQuantity === 1 ? (
+          ) : totalQuantity >= 1 ? (
             <div className="mt-8 md:mt-12 bg-gradient-to-r from-brand-yellow/10 to-brand-yellow/5 border-2 border-brand-yellow/30 rounded-xl p-6 md:p-8">
               <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
                 <div className="flex-shrink-0">
                   <div className="w-16 h-16 bg-brand-yellow rounded-full flex items-center justify-center">
-                    <span className="text-black text-2xl font-black">2x1</span>
+                    <span className="text-black text-2xl font-black">3x1</span>
                   </div>
                 </div>
                 <div className="text-center md:text-left">
                   <h3 className="text-xl md:text-2xl font-bold text-white mb-1">
-                    ¡Agrega 1 Producto Más!
+                    ¡Agrega {3 - totalQuantity} Producto{3 - totalQuantity > 1 ? 's' : ''} Más!
                   </h3>
                   <p className="text-white/80 text-sm md:text-base">
-                    Activa la promoción 2x1 y el producto de menor valor será GRATIS!
+                    Activa la promoción 3x1 y los 2 productos de menor valor serán GRATIS!
                   </p>
                 </div>
               </div>

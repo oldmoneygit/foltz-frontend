@@ -6,17 +6,13 @@ import { Ruler, Info, CheckCircle } from 'lucide-react'
 
 export default function GuiaTamanhosPage() {
   const sizeTable = [
-    { br: '35', us: '5', uk: '2.5', cm: '22' },
-    { br: '36', us: '5.5', uk: '3', cm: '22.5' },
-    { br: '37', us: '6', uk: '3.5', cm: '23' },
-    { br: '38', us: '6.5-7', uk: '4-4.5', cm: '24' },
-    { br: '39', us: '7.5', uk: '5', cm: '24.5' },
-    { br: '40', us: '8', uk: '5.5', cm: '25' },
-    { br: '41', us: '8.5-9', uk: '6-6.5', cm: '26' },
-    { br: '42', us: '9.5-10', uk: '7-7.5', cm: '27' },
-    { br: '43', us: '10.5', uk: '8', cm: '27.5' },
-    { br: '44', us: '11', uk: '9', cm: '28' },
-    { br: '45', us: '11.5-12', uk: '9.5-10', cm: '29' },
+    { talle: 'S', pecho: '88-96', ancho: '49', largo: '68' },
+    { talle: 'M', pecho: '96-104', ancho: '52', largo: '70' },
+    { talle: 'L', pecho: '104-112', ancho: '55', largo: '72' },
+    { talle: 'XL', pecho: '112-120', ancho: '58', largo: '74' },
+    { talle: 'XXL', pecho: '120-128', ancho: '61', largo: '76' },
+    { talle: '3XL', pecho: '128-136', ancho: '64', largo: '78' },
+    { talle: '4XL', pecho: '136-144', ancho: '67', largo: '80' },
   ]
 
   return (
@@ -45,16 +41,16 @@ export default function GuiaTamanhosPage() {
                   <thead>
                     <tr className="bg-brand-yellow/20 border-b border-brand-yellow/30">
                       <th className="px-4 py-4 text-left text-brand-yellow font-black text-sm md:text-base">
-                        ARG/BR
+                        TALLE
                       </th>
                       <th className="px-4 py-4 text-left text-brand-yellow font-black text-sm md:text-base">
-                        US
+                        PECHO (CM)
                       </th>
                       <th className="px-4 py-4 text-left text-brand-yellow font-black text-sm md:text-base">
-                        UK
+                        ANCHO (CM)
                       </th>
                       <th className="px-4 py-4 text-left text-brand-yellow font-black text-sm md:text-base">
-                        CM
+                        LARGO (CM)
                       </th>
                     </tr>
                   </thead>
@@ -65,16 +61,16 @@ export default function GuiaTamanhosPage() {
                         className="border-b border-white/5 hover:bg-white/5 transition-colors"
                       >
                         <td className="px-4 py-3 text-white font-bold text-sm md:text-base">
-                          {size.br}
+                          {size.talle}
                         </td>
                         <td className="px-4 py-3 text-white/80 text-sm md:text-base">
-                          {size.us}
+                          {size.pecho}
                         </td>
                         <td className="px-4 py-3 text-white/80 text-sm md:text-base">
-                          {size.uk}
+                          {size.ancho}
                         </td>
                         <td className="px-4 py-3 text-white/80 text-sm md:text-base">
-                          {size.cm}
+                          {size.largo}
                         </td>
                       </tr>
                     ))}
@@ -89,14 +85,14 @@ export default function GuiaTamanhosPage() {
             <div className="bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-xl p-6 md:p-8 border border-white/10">
               <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
                 <Ruler className="w-6 h-6 text-brand-yellow" />
-                Cómo medir tu pie
+                Cómo tomar tus medidas
               </h2>
               <ol className="space-y-4">
                 {[
-                  'Colocá una hoja de papel en el piso contra la pared',
-                  'Parate sobre el papel con el talón contra la pared',
-                  'Marcá el punto más distante de tu pie (dedos)',
-                  'Medí la distancia del talón hasta la marca en centímetros',
+                  'PECHO: Medí el contorno del pecho en la parte más ancha',
+                  'ANCHO: Medí de hombro a hombro en línea recta',
+                  'LARGO: Medí desde el punto más alto del hombro hasta el borde inferior',
+                  'Tomá las medidas con una cinta métrica sobre ropa interior',
                   'Usá la tabla de arriba para encontrar tu talle',
                 ].map((step, index) => (
                   <li key={index} className="flex gap-3">
@@ -116,10 +112,10 @@ export default function GuiaTamanhosPage() {
               </h2>
               <ul className="space-y-4">
                 {[
-                  'Medí tus pies por la tarde/noche cuando están más hinchados',
-                  'Usá las medias que normalmente usás con zapatillas',
-                  'Medí ambos pies y usá la medida mayor',
-                  'Si estás entre dos talles, elegí el mayor',
+                  'Las medidas están en centímetros y son estándar internacionales',
+                  'Nuestras camisetas tienen corte regular fit (no slim ni oversize)',
+                  'Si estás entre dos talles, elegí el mayor para mayor comodidad',
+                  'Las camisetas pueden encoger 1-2cm después del primer lavado',
                   '¡En caso de duda, contactanos!',
                 ].map((tip, index) => (
                   <li key={index} className="flex gap-3">

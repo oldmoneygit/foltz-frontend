@@ -1,17 +1,24 @@
 'use client'
 
 import { motion, AnimatePresence } from 'framer-motion'
-import { ShoppingCart, Search, Menu, X, ChevronDown, Heart } from 'lucide-react'
+import { ShoppingCart, Search, Menu, X, ChevronDown, Heart, Loader2 } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState, useEffect, useRef } from 'react'
 import PromotionalBanner from './PromotionalBanner'
 import ThemeToggle from './ThemeToggle'
 import { useTheme } from '@/contexts/ThemeContext'
+import { useCart } from '@/contexts/CartContext'
+import { useFavorites } from '@/contexts/FavoritesContext'
+import { getAllProducts } from '@/utils/shopifyData'
 
 const Header = () => {
   // Theme hook
   const { isDark } = useTheme()
+
+  // Cart and Favorites context
+  const { cartItems } = useCart()
+  const { favorites } = useFavorites()
 
   // Estados locais
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -19,67 +26,130 @@ const Header = () => {
   const [searchQuery, setSearchQuery] = useState('')
   const [searchResults, setSearchResults] = useState([])
   const [showSearchResults, setShowSearchResults] = useState(false)
+  const [isSearching, setIsSearching] = useState(false)
+  const [allProducts, setAllProducts] = useState([])
   const searchRef = useRef(null)
 
-  // Mock de contadores (substituir por contextos reais depois)
-  const cartItemCount = 0
-  const wishlistItemCount = 0
+  // Calculate item counts
+  const cartItemCount = cartItems?.reduce((total, item) => total + item.quantity, 0) || 0
+  const wishlistItemCount = favorites?.length || 0
 
-  // Itens do menu adaptados para futebol
+  // Menu reorganizado - Coleções em destaque
   const menuItems = [
-    { name: 'PREMIER LEAGUE', href: '/liga/premier-league' },
-    { name: 'LA LIGA', href: '/liga/la-liga' },
+    { name: 'INICIO', href: '/' },
+    { name: 'MÁS VENDIDOS', href: '/#bestsellers' },
     { name: 'TODAS LAS LIGAS', href: '/ligas', hasSubmenu: true },
-    { name: 'SERIE A', href: '/liga/serie-a' },
-    { name: 'BUNDESLIGA', href: '/liga/bundesliga' },
-    { name: 'COMPRA 1 LLEVA 2', href: '/#bestsellers' },
+    { name: 'NATIONAL TEAMS', href: '/liga/national-teams' },
+    { name: 'ARGENTINA LEGENDS', href: '/liga/argentina-legends' },
+    { name: 'RETRO', href: '/collection/retro' },
     { name: 'SEGUIMIENTO', href: '/seguimiento' },
     { name: 'CONTACTO', href: '/contacto' },
   ]
 
-  // Submenu de ligas
+  // Submenu de TODAS LAS LIGAS (agora com todas as ligas)
   const ligasSubMenu = [
     { name: 'Premier League', href: '/liga/premier-league' },
     { name: 'La Liga', href: '/liga/la-liga' },
     { name: 'Serie A', href: '/liga/serie-a' },
     { name: 'Bundesliga', href: '/liga/bundesliga' },
     { name: 'Ligue 1', href: '/liga/ligue-1' },
+    { name: 'Liga MX', href: '/liga/liga-mx' },
     { name: 'Sudamericana', href: '/liga/sul-americana' },
     { name: 'Primera Liga', href: '/liga/primeira-liga' },
     { name: 'Eredivisie', href: '/liga/eredivisie' },
+    { name: 'MLS', href: '/liga/mls' },
   ]
 
-  // Busca dinâmica
+  // Carregar produtos com cache inteligente
   useEffect(() => {
-    if (searchQuery.trim().length > 2) {
-      // Simulação de busca - substituir por busca real depois
-      const mockResults = [
-        {
-          id: 1,
-          name: 'Argentina 1986 Home',
-          slug: 'argentina-1986-home',
-          image: '/images/seedream/replicate-prediction-a8cg0wdb85rma0ct2cft9fa924.jpg',
-          price: 89900,
-        },
-        {
-          id: 2,
-          name: 'Real Madrid Visitante 2024',
-          slug: 'real-madrid-visitante-2024',
-          image: '/images/seedream/replicate-prediction-cw3rbrxqahrme0ct2ckteq99vg.jpg',
-          price: 94900,
-        },
-      ]
+    const loadProducts = async () => {
+      try {
+        // Importa dinamicamente para não bloquear
+        const { getCachedOrFetchProducts } = await import('@/lib/cache')
+        
+        const products = await getCachedOrFetchProducts(async () => {
+          return await getAllProducts()
+        })
+        
+        setAllProducts(products)
+        console.log('✅ Produtos carregados para busca:', products.length)
+      } catch (error) {
+        console.error('Erro ao carregar produtos:', error)
+        // Fallback: tenta carregar direto
+        try {
+          const products = await getAllProducts()
+          setAllProducts(products)
+        } catch (err) {
+          console.error('Fallback falhou:', err)
+        }
+      }
+    }
+    loadProducts()
+  }, [])
 
-      const filtered = mockResults.filter(product =>
-        product.name.toLowerCase().includes(searchQuery.toLowerCase())
-      )
-      setSearchResults(filtered)
-      setShowSearchResults(true)
+  // Função para normalizar texto (remove acentos e caracteres especiais)
+  const normalizeText = (text) => {
+    return text
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '') // Remove acentos
+      .replace(/[^a-z0-9\s]/g, '') // Remove caracteres especiais
+      .trim()
+  }
+
+  // Busca dinâmica com produtos reais - MELHORADA
+  useEffect(() => {
+    if (searchQuery.trim().length > 1) {
+      setIsSearching(true)
+
+      // Debounce para não fazer busca a cada tecla
+      const timeoutId = setTimeout(() => {
+        const normalizedQuery = normalizeText(searchQuery)
+        const queryWords = normalizedQuery.split(/\s+/).filter(word => word.length > 1)
+
+        const filtered = allProducts.filter(product => {
+          // Normalizar campos do produto
+          const name = normalizeText(product.name || '')
+          const leagueName = normalizeText(product.league?.name || '')
+          const tags = normalizeText(product.tags?.join(' ') || '')
+          const productType = normalizeText(product.productType || '')
+          
+          // Concatenar todos os campos para busca
+          const searchableText = `${name} ${leagueName} ${tags} ${productType}`
+
+          // Busca por palavras individuais (match parcial)
+          const matchesWords = queryWords.some(word => searchableText.includes(word))
+          
+          // Busca pela query completa
+          const matchesFullQuery = searchableText.includes(normalizedQuery)
+
+          return matchesWords || matchesFullQuery
+        })
+
+        // Ordenar resultados: matches exatos primeiro
+        const sorted = filtered.sort((a, b) => {
+          const nameA = normalizeText(a.name || '')
+          const nameB = normalizeText(b.name || '')
+          
+          const exactMatchA = nameA.includes(normalizedQuery) ? 1 : 0
+          const exactMatchB = nameB.includes(normalizedQuery) ? 1 : 0
+          
+          return exactMatchB - exactMatchA
+        })
+
+        // Limitar a 6 resultados
+        setSearchResults(sorted.slice(0, 6))
+        setShowSearchResults(true)
+        setIsSearching(false)
+      }, 300)
+
+      return () => clearTimeout(timeoutId)
     } else {
       setSearchResults([])
       setShowSearchResults(false)
+      setIsSearching(false)
     }
-  }, [searchQuery])
+  }, [searchQuery, allProducts])
 
   // Click outside para fechar dropdown de busca
   useEffect(() => {
@@ -132,7 +202,7 @@ const Header = () => {
       <motion.header
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className="sticky top-0 z-50 backdrop-blur-xl border-b-2 shadow-lg transition-colors duration-300
+        className="sticky top-0 z-40 backdrop-blur-xl border-b-2 shadow-lg transition-colors duration-300
                    dark:bg-[#0A0A0A] dark:border-white/10 dark:shadow-white/5
                    bg-brand-yellow border-black/30 shadow-black/10"
       >
@@ -153,9 +223,9 @@ const Header = () => {
 
             {/* Logo - Center */}
             <Link href="/" className="flex items-center group flex-shrink-0 order-2 lg:order-1">
-              <div className="relative w-32 h-10 md:w-40 md:h-12 transition-all duration-300 group-hover:scale-105">
+              <div className="relative w-36 h-11 md:w-40 md:h-12 transition-all duration-300 group-hover:scale-105">
                 <Image
-                  src={isDark ? "/images/logo/logo-white.png" : "/images/logo/logo.png"}
+                  src={isDark ? "/images/logo/logo-white.png" : "/images/logo/logo-black.png"}
                   alt="Foltz Fanwear Logo"
                   fill
                   className="object-contain transition-opacity duration-300"
@@ -190,7 +260,25 @@ const Header = () => {
 
                 {/* Search Results Dropdown */}
                 <AnimatePresence>
-                  {showSearchResults && searchResults.length > 0 && (
+                  {/* Loading State */}
+                  {isSearching && searchQuery.trim().length > 1 && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      className="absolute top-full left-0 right-0 mt-2 rounded-lg shadow-xl z-50
+                                 dark:bg-zinc-900 dark:border-2 dark:border-white/20
+                                 bg-white border-2 border-black/30"
+                    >
+                      <div className="flex items-center justify-center py-8">
+                        <Loader2 className="w-5 h-5 text-brand-yellow animate-spin" />
+                        <span className="ml-2 text-white/70 text-sm dark:text-white/70">Buscando...</span>
+                      </div>
+                    </motion.div>
+                  )}
+
+                  {/* Results */}
+                  {showSearchResults && !isSearching && (
                     <motion.div
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -199,48 +287,67 @@ const Header = () => {
                                  dark:bg-zinc-900 dark:border-2 dark:border-white/20
                                  bg-white border-2 border-black/30 shadow-black/10"
                     >
-                      {searchResults.map((product) => (
-                        <Link
-                          key={product.id}
-                          href={`/product/${product.slug}`}
-                          onClick={() => {
-                            setShowSearchResults(false)
-                            setSearchQuery('')
-                          }}
-                          className="flex items-center gap-3 px-4 py-3 transition-colors border-b last:border-0
-                                     dark:hover:bg-brand-yellow/20 dark:border-white/10
-                                     hover:bg-brand-yellow/20 border-zinc-200"
-                        >
-                          <div className="relative w-12 h-12 rounded flex-shrink-0
-                                          dark:bg-zinc-800
-                                          bg-zinc-100">
-                            <Image
-                              src={product.image}
-                              alt={product.name}
-                              fill
-                              className="object-contain p-1"
-                            />
-                          </div>
-                          <div className="flex-1 min-w-0">
-                            <p className="text-sm font-semibold truncate
-                                          dark:text-white
-                                          text-black">{product.name}</p>
-                            <p className="text-sm font-bold
-                                          dark:text-brand-yellow
-                                          text-brand-navy">
-                              {formatPrice(product.price)}
-                            </p>
-                          </div>
-                        </Link>
-                      ))}
-                      <button
-                        onClick={handleSearch}
-                        className="w-full px-4 py-3 font-semibold text-sm transition-colors
-                                   dark:bg-white/5 dark:hover:bg-white/10 dark:text-white
-                                   bg-black/5 hover:bg-black/10 text-black"
-                      >
-                        Ver todos los resultados para &ldquo;{searchQuery}&rdquo;
-                      </button>
+                      {searchResults.length > 0 ? (
+                        <>
+                          {searchResults.map((product) => (
+                            <Link
+                              key={product.id}
+                              href={`/product/${product.slug || product.id}`}
+                              onClick={() => {
+                                setShowSearchResults(false)
+                                setSearchQuery('')
+                              }}
+                              className="flex items-center gap-3 px-4 py-3 transition-colors border-b last:border-0
+                                         dark:hover:bg-brand-yellow/20 dark:border-white/10
+                                         hover:bg-brand-yellow/20 border-zinc-200"
+                            >
+                              <div className="relative w-12 h-12 rounded flex-shrink-0
+                                              dark:bg-zinc-800
+                                              bg-zinc-100">
+                                <Image
+                                  src={product.main_image || product.image || product.images?.[0] || '/images/placeholder-product.jpg'}
+                                  alt={product.name}
+                                  fill
+                                  className="object-contain p-1"
+                                  sizes="48px"
+                                  quality={50}
+                                  loading="lazy"
+                                />
+                              </div>
+                              <div className="flex-1 min-w-0">
+                                <p className="text-sm font-semibold truncate
+                                              dark:text-white
+                                              text-black">{product.name}</p>
+                                <p className="text-xs text-brand-yellow/80 truncate mb-1">
+                                  {product.league?.name}
+                                </p>
+                                <p className="text-sm font-bold
+                                              dark:text-brand-yellow
+                                              text-brand-navy">
+                                  {formatPrice(product.price)}
+                                </p>
+                              </div>
+                            </Link>
+                          ))}
+                          <button
+                            onClick={handleSearch}
+                            className="w-full px-4 py-3 font-semibold text-sm transition-colors
+                                       dark:bg-white/5 dark:hover:bg-white/10 dark:text-white
+                                       bg-black/5 hover:bg-black/10 text-black"
+                          >
+                            Ver todos los resultados para &ldquo;{searchQuery}&rdquo;
+                          </button>
+                        </>
+                      ) : (
+                        <div className="text-center py-8 px-4">
+                          <p className="dark:text-white/70 text-zinc-600 text-sm mb-2">
+                            Ningún resultado encontrado
+                          </p>
+                          <p className="dark:text-white/50 text-zinc-500 text-xs">
+                            Intenta con otro término de búsqueda
+                          </p>
+                        </div>
+                      )}
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -278,7 +385,7 @@ const Header = () => {
               >
                 <ShoppingCart size={24} />
                 {cartItemCount > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-black text-brand-yellow text-[10px] font-black w-5 h-5 flex items-center justify-center rounded-full dark:bg-brand-yellow dark:text-black">
+                  <span className="absolute -top-1 -right-1 bg-black text-brand-yellow text-[11px] font-bold w-6 h-6 flex items-center justify-center rounded-full shadow-lg dark:bg-brand-yellow dark:text-black">
                     {cartItemCount}
                   </span>
                 )}
@@ -349,170 +456,244 @@ const Header = () => {
             ))}
           </ul>
         </nav>
+      </motion.header>
 
-        {/* Mobile Menu Overlay */}
-        <AnimatePresence>
-          {mobileMenuOpen && (
-            <>
-              {/* Backdrop */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                onClick={() => setMobileMenuOpen(false)}
-                className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 lg:hidden"
-              />
+      {/* Mobile Menu Overlay - Outside Header */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setMobileMenuOpen(false)}
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] lg:hidden"
+            />
 
-              {/* Mobile Menu */}
-              <motion.div
-                initial={{ x: '100%' }}
-                animate={{ x: 0 }}
-                exit={{ x: '100%' }}
-                transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-                className="fixed top-0 right-0 bottom-0 w-[85%] max-w-sm border-l-2 z-50 lg:hidden overflow-y-auto
-                           dark:bg-gradient-to-b dark:from-zinc-900 dark:to-[#0A0A0A] dark:border-brand-yellow/30
-                           bg-gradient-to-b from-zinc-900 to-black border-brand-yellow/30"
-              >
-                <div className="flex flex-col h-full">
-                  {/* Mobile Menu Header */}
-                  <div className="flex items-center justify-between p-4 border-b border-brand-yellow/20">
-                    <span className="text-brand-yellow font-black text-lg uppercase tracking-wider">Menu</span>
-                    <button
+            {/* Mobile Menu */}
+            <motion.div
+              initial={{ x: '-100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '-100%' }}
+              transition={{ type: 'spring', damping: 30, stiffness: 300 }}
+              className="fixed top-0 left-0 bottom-0 w-full max-w-sm border-r-2 z-[70] lg:hidden overflow-y-auto
+                         bg-black border-brand-yellow/30"
+            >
+              <div className="flex flex-col h-full">
+                {/* Mobile Menu Header - Igual ao da imagem */}
+                <div className="flex items-center justify-between p-4 pb-3">
+                  {/* Close Button - Esquerda */}
+                  <button
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="p-2 text-white hover:text-brand-yellow transition-colors -ml-2"
+                    aria-label="Cerrar menú"
+                  >
+                    <X size={24} />
+                  </button>
+
+                  {/* Logo - Centro */}
+                  <Link href="/" onClick={() => setMobileMenuOpen(false)} className="flex-1 flex justify-center">
+                    <div className="relative w-32 h-10">
+                      <Image
+                        src={isDark ? "/images/logo/logo-white.png" : "/images/logo/logo-white.png"}
+                        alt="Foltz Fanwear"
+                        fill
+                        className="object-contain"
+                        priority
+                      />
+                    </div>
+                  </Link>
+
+                  {/* Icons - Direita */}
+                  <div className="flex items-center gap-2">
+                    {/* Wishlist Icon */}
+                    <Link
+                      href="/favoritos"
                       onClick={() => setMobileMenuOpen(false)}
-                      className="p-2 text-white hover:text-brand-yellow transition-colors"
+                      className="relative p-2 text-white hover:text-brand-yellow transition-colors"
+                      aria-label="Favoritos"
                     >
-                      <X size={24} />
+                      <Heart size={20} className={wishlistItemCount > 0 ? 'fill-red-500 text-red-500' : ''} />
+                      {wishlistItemCount > 0 && (
+                        <span className="absolute -top-1 -right-1 bg-brand-yellow text-black text-[10px] font-black w-4 h-4 flex items-center justify-center rounded-full">
+                          {wishlistItemCount}
+                        </span>
+                      )}
+                    </Link>
+
+                    {/* Cart Icon */}
+                    <Link
+                      href="/carrito"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="relative p-2 text-white hover:text-brand-yellow transition-colors"
+                      aria-label="Carrito"
+                    >
+                      <ShoppingCart size={20} />
+                      {cartItemCount > 0 && (
+                        <span className="absolute -top-1 -right-1 bg-brand-yellow text-black text-[10px] font-black w-4 h-4 flex items-center justify-center rounded-full">
+                          {cartItemCount}
+                        </span>
+                      )}
+                    </Link>
+                  </div>
+                </div>
+
+                {/* Linha Separadora Amarela */}
+                <div className="h-[2px] bg-brand-yellow/80 mx-4" />
+
+                {/* Mobile Menu Items */}
+                <div className="flex-1 px-4 py-6 space-y-2">
+                  {menuItems.map((item, index) => (
+                    <motion.div
+                      key={item.name}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.05 }}
+                      className="w-full"
+                    >
+                      {item.hasSubmenu ? (
+                        <div className="w-full">
+                          <button
+                            onClick={() => setLigasMenuOpen(!ligasMenuOpen)}
+                            className="flex items-center justify-between w-full px-4 py-3 text-white hover:text-brand-yellow text-base font-bold uppercase tracking-wide transition-colors duration-200 hover:bg-brand-yellow/5 rounded-lg"
+                          >
+                            {item.name}
+                            <ChevronDown size={18} className={`transition-transform duration-200 ${ligasMenuOpen ? 'rotate-180' : ''}`} />
+                          </button>
+                          <AnimatePresence>
+                            {ligasMenuOpen && (
+                              <motion.div
+                                initial={{ height: 0, opacity: 0 }}
+                                animate={{ height: 'auto', opacity: 1 }}
+                                exit={{ height: 0, opacity: 0 }}
+                                transition={{ duration: 0.2 }}
+                                className="overflow-hidden ml-4 mt-2 space-y-1"
+                              >
+                                {ligasSubMenu.map((subItem) => (
+                                  <Link
+                                    key={subItem.name}
+                                    href={subItem.href}
+                                    onClick={() => setMobileMenuOpen(false)}
+                                    className="block px-4 py-2 text-white/80 hover:text-brand-yellow text-sm font-medium transition-colors duration-200 hover:bg-brand-yellow/5 rounded-lg"
+                                  >
+                                    {subItem.name}
+                                  </Link>
+                                ))}
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
+                        </div>
+                      ) : (
+                        <Link
+                          href={item.href}
+                          onClick={() => setMobileMenuOpen(false)}
+                          className="flex items-center px-4 py-3 text-white hover:text-brand-yellow text-base font-bold uppercase tracking-wide transition-colors duration-200 hover:bg-brand-yellow/5 rounded-lg"
+                        >
+                          {item.name}
+                        </Link>
+                      )}
+                    </motion.div>
+                  ))}
+                </div>
+
+                {/* Mobile Search Bar */}
+                <div className="p-4 border-t border-white/20">
+                  <div className="relative w-full">
+                    <input
+                      type="text"
+                      placeholder="Buscar camisas..."
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      onKeyPress={handleKeyPress}
+                      className="w-full px-4 py-3 pr-12 rounded-lg transition-colors duration-200
+                                 dark:bg-white/10 dark:border-white/20 dark:text-white dark:placeholder-gray-400 dark:focus:border-brand-yellow
+                                 bg-white border-2 border-black/20 text-black placeholder-zinc-500 focus:outline-none focus:border-black"
+                    />
+                    <button
+                      onClick={handleSearch}
+                      className="absolute right-0 top-0 h-full px-4 rounded-r-lg transition-colors duration-200
+                                 dark:bg-brand-yellow dark:text-black dark:hover:bg-brand-yellow/80
+                                 bg-black text-brand-yellow hover:bg-brand-navy"
+                      aria-label="Buscar"
+                    >
+                      <Search size={20} />
                     </button>
                   </div>
 
-                  {/* Mobile Menu Items */}
-                  <div className="flex-1 px-4 py-6 space-y-2">
-                    {menuItems.map((item, index) => (
-                      <motion.div
-                        key={item.name}
-                        initial={{ opacity: 0, x: 20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: index * 0.05 }}
-                        className="w-full"
-                      >
-                        {item.hasSubmenu ? (
-                          <div className="w-full">
-                            <button
-                              onClick={() => setLigasMenuOpen(!ligasMenuOpen)}
-                              className="flex items-center justify-between w-full px-4 py-3 text-white hover:text-brand-yellow text-base font-bold uppercase tracking-wide transition-colors duration-200 hover:bg-brand-yellow/5 rounded-lg"
-                            >
-                              {item.name}
-                              <ChevronDown size={18} className={`transition-transform duration-200 ${ligasMenuOpen ? 'rotate-180' : ''}`} />
-                            </button>
-                            <AnimatePresence>
-                              {ligasMenuOpen && (
-                                <motion.div
-                                  initial={{ height: 0, opacity: 0 }}
-                                  animate={{ height: 'auto', opacity: 1 }}
-                                  exit={{ height: 0, opacity: 0 }}
-                                  transition={{ duration: 0.2 }}
-                                  className="overflow-hidden ml-4 mt-2 space-y-1"
-                                >
-                                  {ligasSubMenu.map((subItem) => (
-                                    <Link
-                                      key={subItem.name}
-                                      href={subItem.href}
-                                      onClick={() => setMobileMenuOpen(false)}
-                                      className="block px-4 py-2 text-white/80 hover:text-brand-yellow text-sm font-medium transition-colors duration-200 hover:bg-brand-yellow/5 rounded-lg"
-                                    >
-                                      {subItem.name}
-                                    </Link>
-                                  ))}
-                                </motion.div>
-                              )}
-                            </AnimatePresence>
-                          </div>
-                        ) : (
-                          <Link
-                            href={item.href}
-                            onClick={() => setMobileMenuOpen(false)}
-                            className="flex items-center px-4 py-3 text-white hover:text-brand-yellow text-base font-bold uppercase tracking-wide transition-colors duration-200 hover:bg-brand-yellow/5 rounded-lg"
-                          >
-                            {item.name}
-                          </Link>
-                        )}
-                      </motion.div>
-                    ))}
-                  </div>
-
-                  {/* Mobile Search Bar */}
-                  <div className="p-4 border-t border-white/20">
-                    <div className="relative w-full">
-                      <input
-                        type="text"
-                        placeholder="Buscar camisas..."
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                        onKeyPress={handleKeyPress}
-                        className="w-full px-4 py-3 pr-12 rounded-lg transition-colors duration-200
-                                   dark:bg-white/10 dark:border-white/20 dark:text-white dark:placeholder-gray-400 dark:focus:border-brand-yellow
-                                   bg-white border-2 border-black/20 text-black placeholder-zinc-500 focus:outline-none focus:border-black"
-                      />
-                      <button
-                        onClick={handleSearch}
-                        className="absolute right-0 top-0 h-full px-4 rounded-r-lg transition-colors duration-200
-                                   dark:bg-brand-yellow dark:text-black dark:hover:bg-brand-yellow/80
-                                   bg-black text-brand-yellow hover:bg-brand-navy"
-                        aria-label="Buscar"
-                      >
-                        <Search size={20} />
-                      </button>
+                  {/* Mobile Search Loading */}
+                  {isSearching && searchQuery.trim().length > 1 && (
+                    <div className="mt-3 flex items-center justify-center py-8">
+                      <Loader2 className="w-6 h-6 text-brand-yellow animate-spin" />
+                      <span className="ml-2 text-white/70 text-sm">Buscando...</span>
                     </div>
+                  )}
 
-                    {/* Mobile Search Results */}
-                    {showSearchResults && searchResults.length > 0 && (
-                      <div className="mt-3 border-2 rounded-lg overflow-hidden
-                                      dark:bg-zinc-900 dark:border-white/20
-                                      bg-white border-black/30">
-                        {searchResults.map((product) => (
-                          <Link
-                            key={product.id}
-                            href={`/product/${product.slug}`}
-                            onClick={() => {
-                              setShowSearchResults(false)
-                              setSearchQuery('')
-                              setMobileMenuOpen(false)
-                            }}
-                            className="flex items-center gap-3 px-4 py-3 transition-colors border-b last:border-0
-                                       dark:hover:bg-brand-yellow/20 dark:border-white/10
-                                       hover:bg-brand-yellow/20 border-zinc-200"
-                          >
-                            <div className="relative w-12 h-12 rounded flex-shrink-0
-                                            dark:bg-zinc-800
-                                            bg-zinc-100">
-                              <Image
-                                src={product.image}
-                                alt={product.name}
-                                fill
-                                className="object-contain p-1"
-                              />
-                            </div>
-                            <div className="flex-1 min-w-0">
-                              <p className="text-sm font-semibold truncate
-                                            dark:text-white
-                                            text-black">{product.name}</p>
-                              <p className="text-sm font-bold
-                                            dark:text-brand-yellow
-                                            text-brand-navy">
-                                {formatPrice(product.price)}
-                              </p>
-                            </div>
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
+                  {/* Mobile Search Results */}
+                  {showSearchResults && !isSearching && (
+                    <div className="mt-3">
+                      {searchResults.length > 0 ? (
+                        <div className="border-2 rounded-lg overflow-hidden
+                                        dark:bg-zinc-900 dark:border-white/20
+                                        bg-white border-black/30">
+                          {searchResults.map((product) => (
+                            <Link
+                              key={product.id}
+                              href={`/product/${product.slug || product.id}`}
+                              onClick={() => {
+                                setShowSearchResults(false)
+                                setSearchQuery('')
+                                setMobileMenuOpen(false)
+                              }}
+                              className="flex items-center gap-3 px-4 py-3 transition-colors border-b last:border-0
+                                         dark:hover:bg-brand-yellow/20 dark:border-white/10
+                                         hover:bg-brand-yellow/20 border-zinc-200"
+                            >
+                              <div className="relative w-12 h-12 rounded flex-shrink-0
+                                              dark:bg-zinc-800
+                                              bg-zinc-100">
+                                <Image
+                                  src={product.main_image || product.image || product.images?.[0] || '/images/placeholder-product.jpg'}
+                                  alt={product.name}
+                                  fill
+                                  className="object-contain p-1"
+                                  sizes="48px"
+                                  quality={50}
+                                  loading="lazy"
+                                />
+                              </div>
+                              <div className="flex-1 min-w-0">
+                                <p className="text-sm font-semibold truncate
+                                              dark:text-white
+                                              text-black">{product.name}</p>
+                                <p className="text-xs text-brand-yellow/80 truncate mb-1">
+                                  {product.league?.name}
+                                </p>
+                                <p className="text-sm font-bold
+                                              dark:text-brand-yellow
+                                              text-brand-navy">
+                                  {formatPrice(product.price)}
+                                </p>
+                              </div>
+                            </Link>
+                          ))}
+                        </div>
+                      ) : (
+                        <div className="text-center py-8 px-4">
+                          <p className="text-white/70 text-sm mb-2">Ningún resultado encontrado</p>
+                          <p className="text-white/50 text-xs">
+                            Intenta con otro término de búsqueda
+                          </p>
+                        </div>
+                      )}
+                    </div>
+                  )}
                 </div>
-              </motion.div>
-            </>
-          )}
-        </AnimatePresence>
-      </motion.header>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </>
   )
 }
