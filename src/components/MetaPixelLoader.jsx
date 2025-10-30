@@ -4,6 +4,7 @@ import { useEffect, Suspense } from 'react'
 import { usePathname, useSearchParams } from 'next/navigation'
 import MetaPixelScript from './MetaPixelScript'
 import { initializeFacebookParams, trackPixelEvent } from '@/utils/metaPixelUtils'
+import { initializeUTMTracking } from '@/utils/utmTracking'
 
 /**
  * Tracker de PageView (rastreia mudanças de rota)
@@ -12,9 +13,10 @@ function PageViewTracker() {
   const pathname = usePathname()
   const searchParams = useSearchParams()
 
-  // Inicializar parâmetros do Facebook uma vez
+  // Inicializar parâmetros de tracking uma vez
   useEffect(() => {
-    initializeFacebookParams()
+    initializeFacebookParams() // Captura fbc/fbp
+    initializeUTMTracking()    // Captura UTMs
   }, [])
 
   // Track PageView em toda mudança de rota

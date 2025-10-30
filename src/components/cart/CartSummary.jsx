@@ -3,7 +3,8 @@
 import { useState } from 'react'
 import { ShoppingCart, Truck, Tag, CreditCard, Loader2 } from 'lucide-react'
 import { createCheckoutWithItems, findVariantBySize } from '@/lib/shopify'
-import { trackInitiateCheckout } from '@/components/MetaPixel'
+import { triggerInitiateCheckout } from '@/components/MetaPixelEvents'
+import { addUTMsToURL } from '@/utils/utmTracking'
 
 const CartSummary = ({ subtotal, cartItems, saveCart }) => {
   const [isCheckingOut, setIsCheckingOut] = useState(false)
@@ -103,9 +104,12 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
         saveCart()
       }
 
-      // Redirect to Shopify checkout
+      // Redirect to Shopify checkout (com UTMs)
       if (checkout && checkout.webUrl) {
-        window.location.href = checkout.webUrl
+        // Adicionar parâmetros UTM à URL do checkout
+        const checkoutUrlWithUTMs = addUTMsToURL(checkout.webUrl)
+        console.log('[Checkout] Redirecting with UTMs:', checkoutUrlWithUTMs)
+        window.location.href = checkoutUrlWithUTMs
       } else {
         throw new Error('No se recibió URL de checkout')
       }

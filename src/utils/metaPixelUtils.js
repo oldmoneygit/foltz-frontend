@@ -275,17 +275,22 @@ export async function trackPixelEvent(eventName, eventData = {}, userData = {}) 
     const fbc = getFacebookClickId()
     const fbp = getFacebookBrowserId()
 
-    // 3. Hashear dados do usuário
+    // 3. Capturar parâmetros UTM
+    const { getUTMsForTracking } = await import('./utmTracking')
+    const utmParams = getUTMsForTracking()
+
+    // 4. Hashear dados do usuário
     const hashedUserData = await prepareUserData(userData)
 
-    // 4. Montar objeto completo de dados
+    // 5. Montar objeto completo de dados (incluindo UTMs)
     const fullEventData = {
       ...eventData,
       ...(fbc && { fbc }),
       ...(fbp && { fbp }),
+      ...utmParams, // Adicionar UTMs aos event data
     }
 
-    // 5. Enviar para Meta Pixel (CLIENT-SIDE)
+    // 6. Enviar para Meta Pixel (CLIENT-SIDE)
     if (Object.keys(hashedUserData).length > 0) {
       // Com Advanced Matching
       window.fbq('track', eventName, fullEventData, {
@@ -303,10 +308,11 @@ export async function trackPixelEvent(eventName, eventData = {}, userData = {}) 
       eventId,
       fbc: fbc ? 'present' : 'missing',
       fbp: fbp ? 'present' : 'missing',
+      utm: Object.keys(utmParams).length > 0 ? 'present' : 'missing',
       advancedMatching: Object.keys(hashedUserData).length > 0,
     })
 
-    // 6. Enviar para Conversions API (SERVER-SIDE)
+    // 7. Enviar para Conversions API (SERVER-SIDE)
     sendToConversionsAPI(eventName, fullEventData, eventId, { fbc, fbp }, hashedUserData)
 
     return eventId
