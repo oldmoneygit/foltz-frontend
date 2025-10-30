@@ -81,6 +81,8 @@ desktop.ini
 # Product Images (MUITAS imagens - hospedadas na Shopify CDN)
 # ✅ Migração completa - imagens na Shopify
 Leagues/
+# BUT: Allow league images in public folder for UI
+!public/images/leagues/
 
 # Temporary files
 /public/temp/
