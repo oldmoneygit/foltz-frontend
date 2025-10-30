@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { ShoppingCart, Truck, Tag, CreditCard, Loader2 } from 'lucide-react'
 import { createCheckoutWithItems, findVariantBySize } from '@/lib/shopify'
+import { trackInitiateCheckout } from '@/components/MetaPixel'
 
 const CartSummary = ({ subtotal, cartItems, saveCart }) => {
   const [isCheckingOut, setIsCheckingOut] = useState(false)
@@ -90,6 +91,9 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
       if (lineItems.length === 0) {
         throw new Error('No se pudieron procesar los productos del carrito')
       }
+
+      // Track InitiateCheckout event ANTES de redirecionar
+      trackInitiateCheckout(cartItems, total)
 
       // Create Shopify checkout
       const checkout = await createCheckoutWithItems(lineItems)

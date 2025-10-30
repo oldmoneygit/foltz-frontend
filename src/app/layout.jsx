@@ -6,6 +6,7 @@ import { FavoritesProvider } from '@/contexts/FavoritesContext'
 import ScrollToTop from '@/components/ScrollToTop'
 import CacheInitializer from '@/components/CacheInitializer'
 import FoltzWidget from '@/components/FoltzWidget'
+import MetaPixel from '@/components/MetaPixel'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -69,6 +70,7 @@ export default function RootLayout({ children }) {
           <CartProvider>
             <FavoritesProvider>
               <CacheInitializer />
+              <MetaPixel />
               {children}
               <ScrollToTop />
               <FoltzWidget />

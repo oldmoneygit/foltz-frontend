@@ -1,6 +1,7 @@
 'use client'
 
 import { createContext, useContext, useState, useEffect } from 'react'
+import { trackAddToCart, trackInitiateCheckout } from '@/components/MetaPixel'
 
 const CartContext = createContext()
 
@@ -59,8 +60,8 @@ export function CartProvider({ children }) {
     setCartItems((prevItems) => {
       // Check if item with same product, size AND customization already exists
       const existingItemIndex = prevItems.findIndex(
-        (item) => 
-          item.id === product.id && 
+        (item) =>
+          item.id === product.id &&
           item.size == size &&
           JSON.stringify(item.customization) === JSON.stringify(customization)
       )
@@ -92,6 +93,9 @@ export function CartProvider({ children }) {
         ]
       }
     })
+
+    // Track AddToCart event no Meta Pixel
+    trackAddToCart(product, quantity)
   }
 
   // Update quantity of an item
