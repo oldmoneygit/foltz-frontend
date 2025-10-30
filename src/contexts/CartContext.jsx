@@ -95,7 +95,7 @@ export function CartProvider({ children }) {
     })
 
     // Track AddToCart event no Meta Pixel
-    trackAddToCart(product, quantity)
+    triggerAddToCart(product, quantity)
   }
 
   // Update quantity of an item
