@@ -110,6 +110,13 @@ export default function LeagueCards({ leagues = [] }) {
                       repeatDelay: 2,
                     }}
                   />
+
+                  {/* League Name */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tight drop-shadow-2xl">
+                      {league.name}
+                    </h3>
+                  </div>
                 </motion.div>
               </Link>
             </motion.div>
