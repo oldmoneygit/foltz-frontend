@@ -56,50 +56,28 @@ export default function LeagueCards({ leagues = [] }) {
                   whileTap={{ scale: 0.98 }}
                   className="group relative h-[300px] md:h-[350px] rounded-2xl overflow-hidden cursor-pointer"
                 >
-                  {/* Gradient Background (always visible as fallback) */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${league.gradient} transition-all duration-700`} />
-
-                  {/* Background Image (on top of gradient) */}
-                  {league.image && (
+                  {/* Background Image OR Gradient Fallback */}
+                  {league.image ? (
                     <>
-                      {/* Mobile: Image fills card */}
-                      <div className="absolute inset-0 md:hidden">
-                        <Image
-                          src={league.image}
-                          alt={league.name}
-                          fill
-                          className="object-cover object-top"
-                          sizes="100vw"
-                          priority={index < 4}
-                          quality={90}
-                          onError={(e) => {
-                            e.currentTarget.style.display = 'none'
-                          }}
-                        />
-                      </div>
-                      {/* Desktop: Full cover image with hover effect */}
-                      <div className="hidden md:block absolute inset-0">
+                      {/* Mobile & Desktop: Image fills card */}
+                      <div className="absolute inset-0">
                         <Image
                           src={league.image}
                           alt={league.name}
                           fill
                           className="object-cover object-center transition-all duration-700 group-hover:scale-110"
-                          sizes="(max-width: 1024px) 50vw, 25vw"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                           priority={index < 4}
-                          quality={90}
-                          onError={(e) => {
-                            e.currentTarget.style.display = 'none'
-                          }}
+                          quality={95}
                         />
                       </div>
+                      {/* Very subtle dark overlay only for text readability */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent pointer-events-none" />
                     </>
+                  ) : (
+                    /* Gradient Fallback (only if no image) */
+                    <div className={`absolute inset-0 bg-gradient-to-br ${league.gradient}`} />
                   )}
-
-                  {/* Subtle Dark Overlay */}
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-500 pointer-events-none" />
-
-                  {/* Gradient Glow on Hover */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${league.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500 mix-blend-overlay`} />
 
                   {/* Border Glow */}
                   <div className={`absolute inset-0 rounded-2xl border-2 border-white/20 group-hover:border-brand-yellow/70 transition-all duration-500 shadow-2xl ${league.glow}`} />
@@ -121,8 +99,9 @@ export default function LeagueCards({ leagues = [] }) {
                   />
 
                   {/* League Name */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tight drop-shadow-2xl">
+                  <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                    <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tight"
+                        style={{ textShadow: '0 4px 12px rgba(0,0,0,0.8), 0 2px 4px rgba(0,0,0,0.9)' }}>
                       {league.name}
                     </h3>
                   </div>
