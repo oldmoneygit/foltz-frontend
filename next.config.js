@@ -11,14 +11,11 @@ const nextConfig = {
         hostname: 'images.unsplash.com',
       },
     ],
-    formats: ['image/avif', 'image/webp'], // AVIF first (melhor compressão), fallback WebP
+    formats: ['image/webp'], // WebP para compatibilidade
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    minimumCacheTTL: 31536000, // Cache por 1 ano
+    minimumCacheTTL: 60, // Cache por 60 segundos para debug
     dangerouslyAllowSVG: true,
-    contentDispositionType: 'attachment',
-    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    unoptimized: false,
   },
   // Cache headers para performance extrema
   async headers() {

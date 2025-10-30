@@ -41,9 +41,14 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="icon" href="/images/logo/favicon.ico" />
         
-        {/* Preconnect to external domains */}
-        <link rel="preconnect" href="https://cdn.shopify.com" />
+        {/* Preconnect to external domains - Performance Optimization */}
+        <link rel="preconnect" href="https://cdn.shopify.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://wz7q3b-4h.myshopify.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://snkhouse-bot-foltz-widget.vercel.app" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://connect.facebook.net" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://cdn.shopify.com" />
+        <link rel="dns-prefetch" href="https://wz7q3b-4h.myshopify.com" />
+        <link rel="dns-prefetch" href="https://connect.facebook.net" />
         
         {/* Preload critical images */}
         <link

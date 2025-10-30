@@ -56,8 +56,11 @@ export default function LeagueCards({ leagues = [] }) {
                   whileTap={{ scale: 0.98 }}
                   className="group relative h-[300px] md:h-[350px] rounded-2xl overflow-hidden cursor-pointer"
                 >
-                  {/* Background Image or Gradient */}
-                  {league.image ? (
+                  {/* Gradient Background (always visible as fallback) */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${league.gradient} transition-all duration-700`} />
+
+                  {/* Background Image (on top of gradient) */}
+                  {league.image && (
                     <>
                       {/* Mobile: Image fills card */}
                       <div className="absolute inset-0 md:hidden">
@@ -67,7 +70,11 @@ export default function LeagueCards({ leagues = [] }) {
                           fill
                           className="object-cover object-top"
                           sizes="100vw"
-                          loading="lazy"
+                          priority={index < 4}
+                          quality={90}
+                          onError={(e) => {
+                            e.currentTarget.style.display = 'none'
+                          }}
                         />
                       </div>
                       {/* Desktop: Full cover image with hover effect */}
@@ -78,12 +85,14 @@ export default function LeagueCards({ leagues = [] }) {
                           fill
                           className="object-cover object-center transition-all duration-700 group-hover:scale-110"
                           sizes="(max-width: 1024px) 50vw, 25vw"
-                          loading="lazy"
+                          priority={index < 4}
+                          quality={90}
+                          onError={(e) => {
+                            e.currentTarget.style.display = 'none'
+                          }}
                         />
                       </div>
                     </>
-                  ) : (
-                    <div className={`absolute inset-0 bg-gradient-to-br ${league.gradient} transition-all duration-700`} />
                   )}
 
                   {/* Subtle Dark Overlay */}
