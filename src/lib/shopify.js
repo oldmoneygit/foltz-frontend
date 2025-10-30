@@ -505,10 +505,19 @@ export async function createCheckoutWithItems(lineItems) {
 
   const response = await ShopifyData(query, {
     input: {
-      lines: lineItems.map(item => ({
-        merchandiseId: item.variantId,
-        quantity: item.quantity
-      }))
+      lines: lineItems.map(item => {
+        const line = {
+          merchandiseId: item.variantId,
+          quantity: item.quantity
+        }
+
+        // Adicionar custom attributes se existirem (personalização)
+        if (item.attributes && item.attributes.length > 0) {
+          line.attributes = item.attributes
+        }
+
+        return line
+      })
     }
   })
 

@@ -83,10 +83,32 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
           throw new Error(`No se encontró la talla ${item.size} para ${item.name}`)
         }
 
-        lineItems.push({
+        // Preparar line item
+        const lineItem = {
           variantId: variantId,
           quantity: item.quantity
-        })
+        }
+
+        // Adicionar personalização como custom attributes
+        if (item.customization) {
+          lineItem.attributes = []
+
+          if (item.customization.playerName) {
+            lineItem.attributes.push({
+              key: 'Nome',
+              value: item.customization.playerName
+            })
+          }
+
+          if (item.customization.playerNumber) {
+            lineItem.attributes.push({
+              key: 'Número',
+              value: item.customization.playerNumber.toString()
+            })
+          }
+        }
+
+        lineItems.push(lineItem)
       }
 
       if (lineItems.length === 0) {
