@@ -4,6 +4,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Heart, Star } from 'lucide-react'
 import { useState } from 'react'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 const ProductCard = ({ product, index }) => {
   const [isWishlisted, setIsWishlisted] = useState(false)
@@ -97,8 +99,10 @@ const ProductCard = ({ product, index }) => {
 
 export default function FeaturedContent({ products = [] }) {
   return (
-    <div className="pb-16">
-      <div className="container mx-auto px-4 md:px-6 py-8">
+    <>
+      <Header />
+      <div className="pb-16">
+        <div className="container mx-auto px-4 md:px-6 py-8">
         {/* Hero Section */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -186,6 +190,8 @@ export default function FeaturedContent({ products = [] }) {
           )}
         </div>
       </div>
-    </div>
+      </div>
+      <Footer />
+    </>
   )
 }

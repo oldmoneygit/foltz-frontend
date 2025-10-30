@@ -17,28 +17,6 @@ export default function LeagueCards({ leagues = [] }) {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] dark:from-brand-yellow/5 from-brand-yellow/10 via-transparent to-transparent pointer-events-none" />
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "0px 0px -100px 0px" }}
-          transition={{ duration: 0.3 }}
-          className="text-center mb-12 md:mb-16"
-        >
-          <div className="inline-block mb-4">
-            <span className="text-brand-yellow text-xs md:text-sm font-black uppercase tracking-[0.3em]">
-              🌍 NUESTRAS LIGAS
-            </span>
-          </div>
-          <h2 className="text-3xl md:text-5xl font-black uppercase mb-4">
-            <span className="dark:text-white text-white">COLECCIONES </span>
-            <span className="text-brand-yellow">OFICIALES</span>
-          </h2>
-          <p className="text-base md:text-lg max-w-2xl mx-auto
-                        dark:text-gray-400 text-gray-300">
-            Las mejores ligas de fútbol del mundo
-          </p>
-        </motion.div>
 
         {/* League Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
@@ -71,8 +49,6 @@ export default function LeagueCards({ leagues = [] }) {
                           quality={95}
                         />
                       </div>
-                      {/* Very subtle dark overlay only for text readability */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent pointer-events-none" />
                     </>
                   ) : (
                     /* Gradient Fallback (only if no image) */
@@ -97,14 +73,6 @@ export default function LeagueCards({ leagues = [] }) {
                       repeatDelay: 2,
                     }}
                   />
-
-                  {/* League Name */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
-                    <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tight"
-                        style={{ textShadow: '0 4px 12px rgba(0,0,0,0.8), 0 2px 4px rgba(0,0,0,0.9)' }}>
-                      {league.name}
-                    </h3>
-                  </div>
                 </motion.div>
               </Link>
             </motion.div>
