@@ -1,7 +1,7 @@
 'use client'
 
 import { createContext, useContext, useState, useEffect } from 'react'
-import { trackAddToCart, trackInitiateCheckout } from '@/components/MetaPixel'
+import { triggerAddToCart } from '@/components/MetaPixelEvents'
 
 const CartContext = createContext()
 

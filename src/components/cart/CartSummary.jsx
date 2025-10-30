@@ -94,7 +94,7 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
       }
 
       // Track InitiateCheckout event ANTES de redirecionar
-      trackInitiateCheckout(cartItems, total)
+      triggerInitiateCheckout(cartItems)
 
       // Create Shopify checkout
       const checkout = await createCheckoutWithItems(lineItems)
