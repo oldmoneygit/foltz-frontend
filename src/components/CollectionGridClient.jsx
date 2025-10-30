@@ -22,7 +22,7 @@ export default function CollectionGridClient({ collectionSlug, collectionImage, 
     'argentina-legends': 'argentina legends.jpg',
   }
 
-  const imagePath = `/images/leagues/${imageMap[collectionSlug] || collectionImage}`
+  const imagePath = `/images/collections/${imageMap[collectionSlug] || collectionImage}`
 
   return (
     <section className="py-12 md:py-20 bg-gradient-to-b from-black via-zinc-950 to-black relative overflow-hidden">

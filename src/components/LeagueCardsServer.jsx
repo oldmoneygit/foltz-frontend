@@ -60,18 +60,18 @@ export default async function LeagueCards() {
 
   // Map league images (all leagues now have correct images)
   const leagueImageMap = {
-    'Premier League': '/images/leagues/premier-league.jpeg',
-    'La Liga': '/images/leagues/la-liga.jpeg',
-    'Serie A': '/images/leagues/serie-a.jpeg',
-    'Ligue 1': '/images/leagues/ligue-1.jpeg',
-    'Bundesliga': '/images/leagues/bundesliga.jpeg',
-    'Eredivisie': '/images/leagues/eredivisie.jpeg',
-    'Primeira Liga': '/images/leagues/primeira-liga.jpeg',
-    'Liga MX': '/images/leagues/liga-mx.jpeg',
-    'MLS': '/images/leagues/mls.jpeg',
-    'Sul-Americana': '/images/leagues/sul-americana.jpeg',
-    'Brasileirão': '/images/leagues/brasileirao.jpeg',
-    'National Teams': '/images/leagues/national-teams.jpeg',
+    'Premier League': '/images/premier league.jpeg',
+    'La Liga': '/images/la liga.jpeg',
+    'Serie A': '/images/serie a.jpeg',
+    'Ligue 1': '/images/ligue 1.jpeg',
+    'Bundesliga': '/images/bundesliga.jpeg',
+    'Eredivisie': '/images/eredivisie.jpeg',
+    'Primeira Liga': '/images/liga portugal.jpeg',
+    'Liga MX': '/images/liga mx.jpeg',
+    'MLS': '/images/mls.jpeg',
+    'Sul-Americana': '/images/liga SAF.jpeg',
+    'Brasileirão': '/images/brasileirao.jpeg',
+    'National Teams': '/images/national teams.jpeg',
   }
 
   // Map leagues with gradients and styling

@@ -15,7 +15,7 @@ export const leagues = [
     productCount: 42,
     imageCount: 328,
     featured: true,
-    image: "/images/leagues/premier-league.jpg"
+    image: "/images/premier league.jpeg"
   },
   {
     id: "la-liga",
@@ -28,7 +28,7 @@ export const leagues = [
     productCount: 57,
     imageCount: 457,
     featured: true,
-    image: "/images/leagues/la-liga.jpg"
+    image: "/images/la liga.jpeg"
   },
   {
     id: "serie-a",
@@ -41,7 +41,7 @@ export const leagues = [
     productCount: 27,
     imageCount: 208,
     featured: true,
-    image: "/images/leagues/serie-a.jpg"
+    image: "/images/serie a.jpeg"
   },
   {
     id: "bundesliga",
@@ -54,7 +54,7 @@ export const leagues = [
     productCount: 22,
     imageCount: 161,
     featured: true,
-    image: "/images/leagues/bundesliga.jpg"
+    image: "/images/bundesliga.jpeg"
   },
   {
     id: "ligue-1",
@@ -67,7 +67,7 @@ export const leagues = [
     productCount: 12,
     imageCount: 95,
     featured: false,
-    image: "/images/leagues/ligue-1.jpg"
+    image: "/images/ligue 1.jpeg"
   },
   {
     id: "saf",
@@ -80,7 +80,7 @@ export const leagues = [
     productCount: 33,
     imageCount: 244,
     featured: true,
-    image: "/images/leagues/saf.jpg"
+    image: "/images/liga SAF.jpeg"
   },
   {
     id: "liga-portugal",
@@ -93,7 +93,7 @@ export const leagues = [
     productCount: 13,
     imageCount: 105,
     featured: false,
-    image: "/images/leagues/liga-portugal.jpg"
+    image: "/images/liga portugal.jpeg"
   },
   {
     id: "brasileirao",
@@ -106,7 +106,7 @@ export const leagues = [
     productCount: 28,
     imageCount: 215,
     featured: true,
-    image: "/images/leagues/brasileirao.jpg"
+    image: "/images/brasileirao.jpeg"
   },
   {
     id: "eredivisie",
@@ -119,7 +119,7 @@ export const leagues = [
     productCount: 5,
     imageCount: 36,
     featured: false,
-    image: "/images/leagues/eredivisie.jpg"
+    image: "/images/eredivisie.jpeg"
   },
   {
     id: "liga-mx",
@@ -132,7 +132,7 @@ export const leagues = [
     productCount: 12,
     imageCount: 76,
     featured: false,
-    image: "/images/leagues/liga-mx.jpg"
+    image: "/images/liga mx.jpeg"
   },
   {
     id: "mls",
@@ -145,7 +145,7 @@ export const leagues = [
     productCount: 5,
     imageCount: 29,
     featured: false,
-    image: "/images/leagues/mls.jpg"
+    image: "/images/mls.jpeg"
   },
   {
     id: "national-teams",
@@ -158,7 +158,7 @@ export const leagues = [
     productCount: 35,
     imageCount: 280,
     featured: true,
-    image: "/images/leagues/national-teams.jpg"
+    image: "/images/national teams.jpeg"
   },
   {
     id: "long-sleeve",
