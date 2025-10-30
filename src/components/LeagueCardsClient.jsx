@@ -46,7 +46,8 @@ export default function LeagueCards({ leagues = [] }) {
                           className="object-cover object-center transition-all duration-700 group-hover:scale-110"
                           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                           priority={index < 4}
-                          quality={95}
+                          loading={index < 4 ? 'eager' : 'lazy'}
+                          quality={75}
                         />
                       </div>
                     </>

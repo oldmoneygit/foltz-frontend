@@ -11,10 +11,10 @@ const nextConfig = {
         hostname: 'images.unsplash.com',
       },
     ],
-    formats: ['image/webp'], // WebP para compatibilidade
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
+    formats: ['image/avif', 'image/webp'], // AVIF primeiro (melhor compressão), fallback para WebP
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    minimumCacheTTL: 60, // Cache por 60 segundos para debug
+    minimumCacheTTL: 31536000, // 1 ano de cache para performance
     dangerouslyAllowSVG: true,
   },
   // Cache headers para performance extrema
