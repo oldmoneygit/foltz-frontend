@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, AnimatePresence } from 'framer-motion'
-import { CreditCard, Truck, AlertTriangle, Check, X } from 'lucide-react'
+import { CreditCard, Truck, AlertTriangle, Check, X, ShoppingBag } from 'lucide-react'
 import { usePayOnDelivery } from '@/contexts/PayOnDeliveryContext'
 import { useCart } from '@/contexts/CartContext'
 
@@ -21,6 +21,9 @@ export default function PayOnDeliveryCartOption({ items: itemsProp, subtotal: su
   // Calculate pay on delivery totals
   const podTotals = calculatePayOnDeliveryTotals(items, subtotal)
 
+  // Calculate total quantity
+  const totalQuantity = items.reduce((sum, item) => sum + item.quantity, 0)
+
   const handleToggle = () => {
     if (podTotals.maxItemsReached) {
       alert('⚠️ ¡Máximo 6 jerseys para pago al recibir!')
@@ -39,6 +42,35 @@ export default function PayOnDeliveryCartOption({ items: itemsProp, subtotal: su
     return `AR$ ${value.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
   }
 
+  // Se tiver menos de 3 produtos, mostrar apenas aviso
+  if (totalQuantity < 3) {
+    const productsNeeded = 3 - totalQuantity
+    return (
+      <div className="bg-gradient-to-br from-zinc-900 to-black border-2 border-orange-500/30 rounded-2xl p-4 md:p-6">
+        <div className="flex items-start gap-3">
+          <ShoppingBag className="w-6 h-6 text-orange-500 flex-shrink-0" />
+          <div className="flex-1">
+            <h3 className="text-white font-black text-base md:text-lg mb-1">
+              🔥 PROMOCIÓN BLACK FRIDAY
+            </h3>
+            <p className="text-orange-400 font-bold text-sm mb-2">
+              PAGÁ AL RECIBIR
+            </p>
+            <div className="p-3 bg-orange-500/10 border border-orange-500/30 rounded-lg">
+              <p className="text-orange-300 text-sm font-bold">
+                ¡Agregá {productsNeeded} {productsNeeded === 1 ? 'producto más' : 'productos más'} para activar esta promoción!
+              </p>
+              <p className="text-orange-300/80 text-xs mt-1">
+                Con 3+ productos, pagá solo el envío ahora y el resto al recibir.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  // Se tiver 3+ produtos, mostrar componente completo
   return (
     <div className="bg-gradient-to-br from-zinc-900 to-black border-2 border-orange-500/30 rounded-2xl p-4 md:p-6">
       {/* Header with Checkbox */}
