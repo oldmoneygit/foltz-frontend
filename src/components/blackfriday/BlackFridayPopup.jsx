@@ -51,13 +51,14 @@ export default function BlackFridayPopup() {
           />
 
           {/* Popup */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            transition={{ type: 'spring', duration: 0.5 }}
-            className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[95%] max-w-lg z-[9999]"
-          >
+          <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              transition={{ type: 'spring', duration: 0.5 }}
+              className="w-full max-w-lg max-h-[90vh] overflow-y-auto"
+            >
             <div className="relative bg-gradient-to-br from-zinc-900 via-black to-zinc-900 rounded-3xl p-6 md:p-8 shadow-2xl border-2 border-yellow-400">
               {/* Close Button */}
               <button
@@ -142,7 +143,8 @@ export default function BlackFridayPopup() {
                 Cerrar
               </button>
             </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </>
       )}
     </AnimatePresence>

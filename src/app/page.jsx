@@ -2,6 +2,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Hero from '@/components/Hero'
 import BlackFridayHeroBanner from '@/components/blackfriday/BlackFridayHeroBanner'
+import HowItWorksBlackFriday from '@/components/blackfriday/HowItWorksBlackFriday'
 import BestSellers from '@/components/BestSellersServer'
 import HowItWorks from '@/components/HowItWorks'
 import Testimonials from '@/components/Testimonials'
@@ -32,6 +33,9 @@ export default function Home() {
 
       {/* Best Sellers Carousel */}
       <BestSellers />
+
+      {/* How It Works - PAGO AL RECIBIR (Black Friday) */}
+      <HowItWorksBlackFriday />
 
       {/* How It Works - COMPRA 1 LLEVA 3 */}
       <HowItWorks />
@@ -68,11 +72,6 @@ export default function Home() {
       <CollectionGrid
         collectionSlug="ligue-1"
         collectionImage="Ligue 1.jpg"
-      />
-
-      <CollectionGrid
-        collectionSlug="national-teams"
-        collectionImage="national teams.jpg"
       />
 
       {/* Featured Products Grid */}

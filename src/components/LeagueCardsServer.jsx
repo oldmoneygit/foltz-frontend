@@ -44,7 +44,11 @@ export default async function LeagueCards() {
     }
   ]
 
-  const allLeagues = [...filteredLeagues, ...manualLeagues]
+  // Filter out manual leagues that already exist in filteredLeagues to avoid duplicates
+  const existingLeagueNames = filteredLeagues.map(l => l.name)
+  const uniqueManualLeagues = manualLeagues.filter(ml => !existingLeagueNames.includes(ml.name))
+
+  const allLeagues = [...filteredLeagues, ...uniqueManualLeagues]
 
   // Sort leagues by popularity order
   const sortedLeagues = allLeagues.sort((a, b) => {
