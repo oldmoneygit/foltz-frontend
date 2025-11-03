@@ -1,10 +1,9 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Hero from '@/components/Hero'
-import BlackFridayHeroBanner from '@/components/blackfriday/BlackFridayHeroBanner'
-import HowItWorksBlackFriday from '@/components/blackfriday/HowItWorksBlackFriday'
+import Combo3xHeroBanner from '@/components/combo3x/Combo3xHeroBanner'
+import HowItWorksCombo3x from '@/components/combo3x/HowItWorksCombo3x'
 import BestSellers from '@/components/BestSellersServer'
-import HowItWorks from '@/components/HowItWorks'
 import Testimonials from '@/components/Testimonials'
 import LeagueCards from '@/components/LeagueCardsServer'
 import CollectionGrid from '@/components/CollectionGridServer'
@@ -25,8 +24,8 @@ export default function Home() {
       {/* Header with Promotional Banner */}
       <Header />
 
-      {/* Black Friday Banner */}
-      <BlackFridayHeroBanner />
+      {/* Combo 3x Banner */}
+      <Combo3xHeroBanner />
 
       {/* Hero Section */}
       <Hero />
@@ -34,11 +33,8 @@ export default function Home() {
       {/* Best Sellers Carousel */}
       <BestSellers />
 
-      {/* How It Works - PAGO AL RECIBIR (Black Friday) */}
-      <HowItWorksBlackFriday />
-
-      {/* How It Works - COMPRA 1 LLEVA 3 */}
-      <HowItWorks />
+      {/* How It Works - COMBO 3x BLACK FRIDAY */}
+      <HowItWorksCombo3x />
 
       {/* League Cards - Glassmorphic Design */}
       <LeagueCards />

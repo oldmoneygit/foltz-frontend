@@ -3,12 +3,12 @@ import './globals.css'
 import { ThemeProvider } from '@/contexts/ThemeContext'
 import { CartProvider } from '@/contexts/CartContext'
 import { FavoritesProvider } from '@/contexts/FavoritesContext'
-import { PayOnDeliveryProvider } from '@/contexts/PayOnDeliveryContext'
+import { Combo3xProvider } from '@/contexts/Combo3xContext'
 import ScrollToTop from '@/components/ScrollToTop'
 import CacheInitializer from '@/components/CacheInitializer'
 import FoltzWidget from '@/components/FoltzWidget'
 import MetaPixelLoader from '@/components/MetaPixelLoader'
-import BlackFridayPopup from '@/components/blackfriday/BlackFridayPopup'
+import Combo3xPopup from '@/components/combo3x/Combo3xPopup'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -76,14 +76,14 @@ export default function RootLayout({ children }) {
         <ThemeProvider>
           <CartProvider>
             <FavoritesProvider>
-              <PayOnDeliveryProvider>
+              <Combo3xProvider>
                 <CacheInitializer />
                 <MetaPixelLoader />
-                <BlackFridayPopup />
+                <Combo3xPopup />
                 {children}
                 <ScrollToTop />
                 <FoltzWidget />
-              </PayOnDeliveryProvider>
+              </Combo3xProvider>
             </FavoritesProvider>
           </CartProvider>
         </ThemeProvider>

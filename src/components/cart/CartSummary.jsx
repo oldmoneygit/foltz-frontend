@@ -5,13 +5,13 @@ import { ShoppingCart, Truck, Tag, CreditCard, Loader2 } from 'lucide-react'
 import { createCheckoutWithItems, findVariantBySize } from '@/lib/shopify'
 import { triggerInitiateCheckout } from '@/components/MetaPixelEvents'
 import { addUTMsToURL } from '@/utils/utmTracking'
-import { usePayOnDelivery, SHIPPING_FEE } from '@/contexts/PayOnDeliveryContext'
-import PayOnDeliveryCartOption from '@/components/blackfriday/PayOnDeliveryCartOption'
+import { useCombo3x } from '@/contexts/Combo3xContext'
+import Combo3xCartOption from '@/components/combo3x/Combo3xCartOption'
 
 const CartSummary = ({ subtotal, cartItems, saveCart }) => {
   const [isCheckingOut, setIsCheckingOut] = useState(false)
   const [checkoutError, setCheckoutError] = useState(null)
-  const { payOnDeliveryEnabled, calculatePayOnDeliveryTotals } = usePayOnDelivery()
+  const { calculateCombo3xTotals, COMBO_PRICE } = useCombo3x()
 
   // Formata o preço como "AR$ XX.XXX,XX"
   const formatPrice = (value) => {
@@ -21,36 +21,14 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
     return `AR$ ${parts.join(',')}`
   }
 
-  // Calcular quantidade TOTAL de produtos (soma de todas as quantities)
-  const totalQuantity = cartItems && cartItems.length > 0
-    ? cartItems.reduce((total, item) => total + item.quantity, 0)
-    : 0
-
-  // Cálculo da promoção 3x1 (2 produtos de menor valor GRÁTIS) - APENAS com 3+ produtos (quantidade total)
-  let discount = 0
-  let cheapestProducts = []
-
-  if (totalQuantity >= 3 && cartItems && cartItems.length > 0) {
-    // Ordenar produtos por preço (do menor para o maior)
-    const sortedByPrice = [...cartItems].sort((a, b) => a.price - b.price)
-
-    // Pegar os 2 produtos de menor valor
-    cheapestProducts = sortedByPrice.slice(0, 2)
-
-    // Desconto é a soma dos 2 produtos mais baratos (ficam grátis)
-    discount = cheapestProducts.reduce((sum, item) => sum + item.price, 0)
-  }
-
-  const shipping = 0 // Envío gratis
-  const total = subtotal - discount + shipping
+  // Calcular dados do combo
+  const comboData = calculateCombo3xTotals(cartItems)
 
   // Format values
-  const formattedSubtotal = formatPrice(subtotal)
-  const formattedDiscount = formatPrice(discount)
-  const formattedTotal = formatPrice(total)
-
-  // Verificar se promoção está ativa (baseado na quantidade total)
-  const hasPromotion = totalQuantity >= 3
+  const formattedSubtotalNormal = formatPrice(comboData.subtotalNormal)
+  const formattedSubtotalCombo = formatPrice(comboData.subtotalCombo)
+  const formattedSavings = formatPrice(comboData.savings)
+  const formattedTotal = formatPrice(comboData.total)
 
   // Handle Shopify Checkout
   const handleCheckout = async () => {
@@ -63,14 +41,9 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
     setCheckoutError(null)
 
     try {
-      // Check if Pay on Delivery is active
-      const podTotals = calculatePayOnDeliveryTotals(cartItems, subtotal - discount)
-      // POD só aparece no checkout quando há 3+ produtos (promoção 3x1 ativa)
-      const isPODActive = payOnDeliveryEnabled && podTotals.isValid && totalQuantity >= 3
-
       // Map cart items to Shopify line items
       const lineItems = []
-      let isFirstItem = true // Flag para adicionar atributos POD apenas no primeiro produto
+      let isFirstItem = true // Flag para adicionar atributos do combo apenas no primeiro produto
 
       for (const item of cartItems) {
         // Find the correct variant ID based on size
@@ -119,19 +92,29 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
           }
         }
 
-        // Add Pay on Delivery attributes APENAS NO PRIMEIRO PRODUTO para evitar confusão
-        if (isPODActive && isFirstItem) {
+        // Add Combo 3x attributes APENAS NO PRIMEIRO PRODUTO para evitar confusão
+        if (comboData.hasCombo && isFirstItem) {
           lineItem.attributes.push({
-            key: '🔥 PAGO AL RECIBIR - Black Friday',
+            key: '🔥 COMBO 3x BLACK FRIDAY',
             value: '✅ Activado'
           })
           lineItem.attributes.push({
-            key: '💳 Pagarás AHORA (solo envío)',
-            value: formatPrice(SHIPPING_FEE)
+            key: '📦 Combos',
+            value: `${comboData.fullCombos} ${comboData.fullCombos === 1 ? 'combo' : 'combos'} (${comboData.fullCombos * 3} camisetas)`
           })
           lineItem.attributes.push({
-            key: '💰 TOTAL a pagar al recibir',
-            value: formatPrice(podTotals.payOnDelivery)
+            key: '💰 Precio Combo',
+            value: `${formatPrice(COMBO_PRICE)} c/u`
+          })
+          if (comboData.savings > 0) {
+            lineItem.attributes.push({
+              key: '🎉 Ahorro total',
+              value: formatPrice(comboData.savings)
+            })
+          }
+          lineItem.attributes.push({
+            key: '🚚 Envío',
+            value: 'GRATIS incluido'
           })
           isFirstItem = false // Marcar que já adicionamos no primeiro
         }
@@ -146,19 +129,21 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
       // Track InitiateCheckout event ANTES de redirecionar
       triggerInitiateCheckout(cartItems)
 
-      // Track Pay on Delivery event if active
-      if (isPODActive) {
-        console.log('[Pay on Delivery] Checkout criado com POD ativo')
-        console.log('[Pay on Delivery] Valor a pagar agora:', formatPrice(SHIPPING_FEE))
-        console.log('[Pay on Delivery] Valor a pagar na entrega:', formatPrice(podTotals.payOnDelivery))
+      // Track Combo 3x event if active
+      if (comboData.hasCombo) {
+        console.log('[Combo 3x] Checkout criado com combo ativo')
+        console.log('[Combo 3x] Combos:', comboData.fullCombos)
+        console.log('[Combo 3x] Total:', formatPrice(comboData.total))
+        console.log('[Combo 3x] Economia:', formatPrice(comboData.savings))
 
         // Track to Meta Pixel
         if (typeof window !== 'undefined' && window.fbq) {
-          window.fbq('trackCustom', 'PayOnDeliveryCheckout', {
+          window.fbq('trackCustom', 'Combo3xCheckout', {
             currency: 'ARS',
-            value: SHIPPING_FEE,
-            delivery_value: podTotals.payOnDelivery,
-            num_items: podTotals.itemCount
+            value: comboData.total,
+            num_combos: comboData.fullCombos,
+            num_items: comboData.itemCount,
+            savings: comboData.savings
           })
         }
       }
@@ -198,47 +183,43 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
 
         {/* Summary Details */}
         <div className="space-y-4">
-          {/* Subtotal */}
+          {/* Quantidade de produtos */}
           <div className="flex items-center justify-between">
-            <span className="text-white/60 text-sm">Subtotal ({totalQuantity} {totalQuantity === 1 ? 'producto' : 'productos'})</span>
-            <span className="text-white font-semibold">
-              {formattedSubtotal}
+            <span className="text-white/60 text-sm">
+              {comboData.itemCount} {comboData.itemCount === 1 ? 'producto' : 'productos'}
+            </span>
+            <span className="text-white/60 text-sm">
+              {formattedSubtotalNormal}
             </span>
           </div>
 
-          {/* Discount 3x1 - APENAS se tiver 3+ produtos */}
-          {hasPromotion ? (
+          {/* Combo 3x - Display */}
+          {comboData.hasCombo ? (
             <div className="flex items-start gap-2 bg-green-500/10 border border-green-500/30 rounded-lg p-3">
               <Tag className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
               <div className="flex-1 min-w-0">
                 <div className="flex items-center justify-between mb-1">
-                  <span className="text-green-500 text-sm font-bold">Promo 3x1</span>
+                  <span className="text-green-500 text-sm font-bold">
+                    Combo 3x Activado
+                  </span>
                   <span className="text-green-500 font-bold">
-                    -{formattedDiscount}
+                    -{formattedSavings}
                   </span>
                 </div>
                 <p className="text-green-500/80 text-xs">
-                  ¡Los 2 productos de menor valor GRATIS!
+                  ¡{comboData.fullCombos} {comboData.fullCombos === 1 ? 'combo' : 'combos'} de 3 camisetas por ARS 32.900!
                 </p>
               </div>
             </div>
           ) : (
-            <div className="flex items-start gap-2 bg-brand-yellow/10 border border-brand-yellow/30 rounded-lg p-3">
-              <Tag className="w-5 h-5 text-brand-yellow flex-shrink-0 mt-0.5" />
+            <div className="flex items-start gap-2 bg-orange-500/10 border border-orange-500/30 rounded-lg p-3">
+              <Tag className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />
               <div className="flex-1 min-w-0">
-                <p className="text-brand-yellow text-xs font-semibold">
-                  <span className="md:hidden">
-                    {totalQuantity === 0
-                      ? 'Agrega productos para 3x1'
-                      : `Agrega ${3 - totalQuantity} más para 3x1`
-                    }
-                  </span>
-                  <span className="hidden md:inline">
-                    {totalQuantity === 0
-                      ? '¡Agrega productos para activar la promo 3x1!'
-                      : `¡Agrega ${3 - totalQuantity} producto${3 - totalQuantity > 1 ? 's' : ''} más para activar la promo 3x1!`
-                    }
-                  </span>
+                <p className="text-orange-500 text-xs font-semibold">
+                  {comboData.itemCount === 0
+                    ? '¡Agrega 3 camisetas para combo de ARS 32.900!'
+                    : `¡Agrega ${comboData.productsNeeded} más para combo de ARS 32.900!`
+                  }
                 </p>
               </div>
             </div>
@@ -262,18 +243,18 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
                 {formattedTotal}
               </span>
             </div>
-            {hasPromotion && (
+            {comboData.hasCombo && comboData.savings > 0 && (
               <p className="text-green-500 text-xs text-right font-semibold">
-                ¡Ahorraste {formattedDiscount}!
+                ¡Ahorraste {formattedSavings}!
               </p>
             )}
           </div>
         </div>
 
-        {/* Pay on Delivery Option - Black Friday */}
-        <PayOnDeliveryCartOption
+        {/* Combo 3x Option */}
+        <Combo3xCartOption
           items={cartItems}
-          subtotal={subtotal - discount}
+          subtotal={comboData.subtotalCombo}
         />
 
         {/* Error Message */}
@@ -286,18 +267,13 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
         {/* Checkout Button */}
         <button
           onClick={handleCheckout}
-          disabled={isCheckingOut || totalQuantity === 0}
+          disabled={isCheckingOut || comboData.itemCount === 0}
           className="w-full bg-brand-yellow text-black py-4 rounded-lg font-bold text-lg uppercase tracking-wide hover:bg-yellow-400 active:scale-95 transition-all duration-300 shadow-lg shadow-brand-yellow/20 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isCheckingOut ? (
             <>
               <Loader2 className="w-5 h-5 animate-spin" />
               Procesando...
-            </>
-          ) : payOnDeliveryEnabled && calculatePayOnDeliveryTotals(cartItems, subtotal - discount).isValid ? (
-            <>
-              <CreditCard className="w-5 h-5" />
-              Pagar {formatPrice(SHIPPING_FEE)} Ahora
             </>
           ) : (
             <>
@@ -332,7 +308,7 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
           </div>
           <div className="flex items-center gap-2 text-white/60 text-xs">
             <div className="w-1.5 h-1.5 bg-brand-yellow rounded-full" />
-            <span>Envío rápido 3-5 días</span>
+            <span>Envío rápido hasta 10 días</span>
           </div>
           <div className="flex items-center gap-2 text-white/60 text-xs">
             <div className="w-1.5 h-1.5 bg-brand-yellow rounded-full" />
@@ -345,18 +321,13 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
       <div className="fixed bottom-0 left-0 right-0 lg:hidden bg-black border-t-2 border-brand-yellow p-4 z-[60] shadow-2xl">
         <button
           onClick={handleCheckout}
-          disabled={isCheckingOut || totalQuantity === 0}
+          disabled={isCheckingOut || comboData.itemCount === 0}
           className="w-full bg-brand-yellow text-black py-4 rounded-lg font-bold text-lg uppercase tracking-wide hover:bg-yellow-400 active:scale-95 transition-all flex items-center justify-center gap-2 shadow-lg min-h-[56px] disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isCheckingOut ? (
             <>
               <Loader2 className="w-5 h-5 animate-spin" />
               Procesando...
-            </>
-          ) : payOnDeliveryEnabled && calculatePayOnDeliveryTotals(cartItems, subtotal - discount).isValid ? (
-            <>
-              <CreditCard className="w-5 h-5" />
-              Pagar {formatPrice(SHIPPING_FEE)}
             </>
           ) : (
             <>
