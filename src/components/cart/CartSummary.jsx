@@ -69,6 +69,7 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
 
       // Map cart items to Shopify line items
       const lineItems = []
+      let isFirstItem = true // Flag para adicionar atributos POD apenas no primeiro produto
 
       for (const item of cartItems) {
         // Find the correct variant ID based on size
@@ -117,20 +118,25 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
           }
         }
 
-        // Add Pay on Delivery attributes if active
-        if (isPODActive) {
+        // Add Pay on Delivery attributes APENAS NO PRIMEIRO PRODUTO para evitar confusão
+        if (isPODActive && isFirstItem) {
           lineItem.attributes.push({
-            key: 'Pago na Entrega',
-            value: 'Sim - Black Friday'
+            key: '🔥 PAGO AL RECIBIR - Black Friday',
+            value: '✅ Activado'
           })
           lineItem.attributes.push({
-            key: 'Valor a Pagar Agora',
+            key: '💳 Pagarás AHORA (solo envío)',
             value: formatPrice(SHIPPING_FEE)
           })
           lineItem.attributes.push({
-            key: 'Valor a Pagar na Entrega',
+            key: '📦 Pagarás AL RECIBIR (productos)',
             value: formatPrice(podTotals.payOnDelivery)
           })
+          lineItem.attributes.push({
+            key: '💰 TOTAL del pedido',
+            value: formatPrice(podTotals.total)
+          })
+          isFirstItem = false // Marcar que já adicionamos no primeiro
         }
 
         lineItems.push(lineItem)
