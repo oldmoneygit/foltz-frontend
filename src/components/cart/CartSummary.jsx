@@ -134,7 +134,7 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
             value: formatPrice(podTotals.payOnDelivery)
           })
           lineItem.attributes.push({
-            key: '💰 TOTAL del pedido',
+            key: '💰 TOTAL a pagar al recibir',
             value: formatPrice(podTotals.total)
           })
           isFirstItem = false // Marcar que já adicionamos no primeiro
