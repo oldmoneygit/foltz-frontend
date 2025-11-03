@@ -65,7 +65,8 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
     try {
       // Check if Pay on Delivery is active
       const podTotals = calculatePayOnDeliveryTotals(cartItems, subtotal - discount)
-      const isPODActive = payOnDeliveryEnabled && podTotals.isValid
+      // POD só aparece no checkout quando há 3+ produtos (promoção 3x1 ativa)
+      const isPODActive = payOnDeliveryEnabled && podTotals.isValid && totalQuantity >= 3
 
       // Map cart items to Shopify line items
       const lineItems = []
