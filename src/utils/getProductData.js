@@ -18,9 +18,9 @@ export function getAllProducts() {
             country: league.country,
             color: league.color,
           },
-          // Add default values
-          price: 35900, // Preço padrão atualizado
-          regularPrice: 53850, // Preço de comparação (50% a mais)
+          // Add default values - BLACK FRIDAY COMBO 3x
+          price: 32900, // Preço único para todos os produtos
+          regularPrice: 53850, // Preço de comparação (para mostrar desconto)
           stock: 'available',
           tags: [leagueId],
         })
