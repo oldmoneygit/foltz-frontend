@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Heart } from 'lucide-react'
 import { useFavorites } from '@/contexts/FavoritesContext'
-import PayOnDeliveryBadge from '@/components/blackfriday/PayOnDeliveryBadge'
+import Combo3xBadge from '@/components/combo3x/Combo3xBadge'
 
 function ProductCard({ product }) {
   const { toggleFavorite, isFavorite } = useFavorites()
@@ -47,8 +47,8 @@ function ProductCard({ product }) {
   return (
     <Link href={`/product/${product.slug}`}>
       <div className="group relative bg-gradient-to-br from-zinc-900 to-black rounded-2xl overflow-hidden border border-zinc-800 hover:border-brand-yellow/50 transition-all duration-300 hover:-translate-y-2 cursor-pointer h-full flex flex-col">
-        {/* Black Friday Badge (priority) or Stock Badge */}
-        {product.stock !== 'soldout' && product.stock !== 'limited' && <PayOnDeliveryBadge />}
+        {/* Combo 3x Badge (priority) or Stock Badge */}
+        {product.stock !== 'soldout' && product.stock !== 'limited' && <Combo3xBadge />}
         {getStockBadge()}
 
         {/* Wishlist Button */}

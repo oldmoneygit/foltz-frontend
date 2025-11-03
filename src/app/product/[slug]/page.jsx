@@ -2,7 +2,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import ProductGallery from '@/components/product/ProductGallery'
 import ProductInfo from '@/components/product/ProductInfo'
-import PayOnDeliveryCard from '@/components/blackfriday/PayOnDeliveryCard'
+import Combo3xProductCard from '@/components/combo3x/Combo3xProductCard'
 import BackButton from '@/components/product/BackButton'
 import ProductInfoTabs from '@/components/ProductInfoTabs'
 import ProductDescription from '@/components/product/ProductDescription'
@@ -115,8 +115,8 @@ export default async function ProductPage({ params }) {
             <div>
               <ProductInfo product={enhancedProduct} />
 
-              {/* Black Friday - Pay on Delivery */}
-              <PayOnDeliveryCard />
+              {/* Black Friday - Combo 3x */}
+              <Combo3xProductCard />
             </div>
           </div>
         </div>
