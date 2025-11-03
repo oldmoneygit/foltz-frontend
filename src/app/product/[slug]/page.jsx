@@ -2,6 +2,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import ProductGallery from '@/components/product/ProductGallery'
 import ProductInfo from '@/components/product/ProductInfo'
+import PayOnDeliveryCard from '@/components/blackfriday/PayOnDeliveryCard'
 import BackButton from '@/components/product/BackButton'
 import ProductInfoTabs from '@/components/ProductInfoTabs'
 import ProductDescription from '@/components/product/ProductDescription'
@@ -113,6 +114,9 @@ export default async function ProductPage({ params }) {
             {/* Right Column - Product Info */}
             <div>
               <ProductInfo product={enhancedProduct} />
+
+              {/* Black Friday - Pay on Delivery */}
+              <PayOnDeliveryCard />
             </div>
           </div>
         </div>

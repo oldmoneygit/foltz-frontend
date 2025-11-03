@@ -5,10 +5,13 @@ import { ShoppingCart, Truck, Tag, CreditCard, Loader2 } from 'lucide-react'
 import { createCheckoutWithItems, findVariantBySize } from '@/lib/shopify'
 import { triggerInitiateCheckout } from '@/components/MetaPixelEvents'
 import { addUTMsToURL } from '@/utils/utmTracking'
+import { usePayOnDelivery, SHIPPING_FEE } from '@/contexts/PayOnDeliveryContext'
+import PayOnDeliveryCartOption from '@/components/blackfriday/PayOnDeliveryCartOption'
 
 const CartSummary = ({ subtotal, cartItems, saveCart }) => {
   const [isCheckingOut, setIsCheckingOut] = useState(false)
   const [checkoutError, setCheckoutError] = useState(null)
+  const { payOnDeliveryEnabled, calculatePayOnDeliveryTotals } = usePayOnDelivery()
 
   // Formata o preço como "AR$ XX.XXX,XX"
   const formatPrice = (value) => {
@@ -60,6 +63,10 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
     setCheckoutError(null)
 
     try {
+      // Check if Pay on Delivery is active
+      const podTotals = calculatePayOnDeliveryTotals(cartItems, subtotal - discount)
+      const isPODActive = payOnDeliveryEnabled && podTotals.isValid
+
       // Map cart items to Shopify line items
       const lineItems = []
 
@@ -90,9 +97,11 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
         }
 
         // Adicionar personalização como custom attributes
-        if (item.customization) {
+        if (!lineItem.attributes) {
           lineItem.attributes = []
+        }
 
+        if (item.customization) {
           if (item.customization.playerName) {
             lineItem.attributes.push({
               key: 'Nome',
@@ -108,6 +117,22 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
           }
         }
 
+        // Add Pay on Delivery attributes if active
+        if (isPODActive) {
+          lineItem.attributes.push({
+            key: 'Pago na Entrega',
+            value: 'Sim - Black Friday'
+          })
+          lineItem.attributes.push({
+            key: 'Valor a Pagar Agora',
+            value: formatPrice(SHIPPING_FEE)
+          })
+          lineItem.attributes.push({
+            key: 'Valor a Pagar na Entrega',
+            value: formatPrice(podTotals.payOnDelivery)
+          })
+        }
+
         lineItems.push(lineItem)
       }
 
@@ -117,6 +142,23 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
 
       // Track InitiateCheckout event ANTES de redirecionar
       triggerInitiateCheckout(cartItems)
+
+      // Track Pay on Delivery event if active
+      if (isPODActive) {
+        console.log('[Pay on Delivery] Checkout criado com POD ativo')
+        console.log('[Pay on Delivery] Valor a pagar agora:', formatPrice(SHIPPING_FEE))
+        console.log('[Pay on Delivery] Valor a pagar na entrega:', formatPrice(podTotals.payOnDelivery))
+
+        // Track to Meta Pixel
+        if (typeof window !== 'undefined' && window.fbq) {
+          window.fbq('trackCustom', 'PayOnDeliveryCheckout', {
+            currency: 'ARS',
+            value: SHIPPING_FEE,
+            delivery_value: podTotals.payOnDelivery,
+            num_items: podTotals.itemCount
+          })
+        }
+      }
 
       // Create Shopify checkout
       const checkout = await createCheckoutWithItems(lineItems)
@@ -225,6 +267,12 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
           </div>
         </div>
 
+        {/* Pay on Delivery Option - Black Friday */}
+        <PayOnDeliveryCartOption
+          items={cartItems}
+          subtotal={subtotal - discount}
+        />
+
         {/* Error Message */}
         {checkoutError && (
           <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-3">
@@ -242,6 +290,11 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
             <>
               <Loader2 className="w-5 h-5 animate-spin" />
               Procesando...
+            </>
+          ) : payOnDeliveryEnabled && calculatePayOnDeliveryTotals(cartItems, subtotal - discount).isValid ? (
+            <>
+              <CreditCard className="w-5 h-5" />
+              Pagar {formatPrice(SHIPPING_FEE)} Ahora
             </>
           ) : (
             <>
@@ -296,6 +349,11 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
             <>
               <Loader2 className="w-5 h-5 animate-spin" />
               Procesando...
+            </>
+          ) : payOnDeliveryEnabled && calculatePayOnDeliveryTotals(cartItems, subtotal - discount).isValid ? (
+            <>
+              <CreditCard className="w-5 h-5" />
+              Pagar {formatPrice(SHIPPING_FEE)}
             </>
           ) : (
             <>

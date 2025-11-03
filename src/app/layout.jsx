@@ -2,11 +2,13 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/contexts/ThemeContext'
 import { CartProvider } from '@/contexts/CartContext'
-import { FavoritesProvider } from '@/contexts/FavoritesContext'
+import { FavoritesProvider } from '@/contexts/FavoritesProvider'
+import { PayOnDeliveryProvider } from '@/contexts/PayOnDeliveryContext'
 import ScrollToTop from '@/components/ScrollToTop'
 import CacheInitializer from '@/components/CacheInitializer'
 import FoltzWidget from '@/components/FoltzWidget'
 import MetaPixelLoader from '@/components/MetaPixelLoader'
+import BlackFridayPopup from '@/components/blackfriday/BlackFridayPopup'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -74,11 +76,14 @@ export default function RootLayout({ children }) {
         <ThemeProvider>
           <CartProvider>
             <FavoritesProvider>
-              <CacheInitializer />
-              <MetaPixelLoader />
-              {children}
-              <ScrollToTop />
-              <FoltzWidget />
+              <PayOnDeliveryProvider>
+                <CacheInitializer />
+                <MetaPixelLoader />
+                <BlackFridayPopup />
+                {children}
+                <ScrollToTop />
+                <FoltzWidget />
+              </PayOnDeliveryProvider>
             </FavoritesProvider>
           </CartProvider>
         </ThemeProvider>

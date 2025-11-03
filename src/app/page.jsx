@@ -1,6 +1,7 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Hero from '@/components/Hero'
+import BlackFridayHeroBanner from '@/components/blackfriday/BlackFridayHeroBanner'
 import BestSellers from '@/components/BestSellersServer'
 import HowItWorks from '@/components/HowItWorks'
 import Testimonials from '@/components/Testimonials'
@@ -22,6 +23,9 @@ export default function Home() {
     <main className="min-h-screen transition-colors duration-300 dark:bg-[#0A0A0A] bg-black">
       {/* Header with Promotional Banner */}
       <Header />
+
+      {/* Black Friday Banner */}
+      <BlackFridayHeroBanner />
 
       {/* Hero Section */}
       <Hero />
