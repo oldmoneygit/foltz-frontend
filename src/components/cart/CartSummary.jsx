@@ -130,12 +130,8 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
             value: formatPrice(SHIPPING_FEE)
           })
           lineItem.attributes.push({
-            key: '📦 Pagarás AL RECIBIR (productos)',
-            value: formatPrice(podTotals.payOnDelivery)
-          })
-          lineItem.attributes.push({
             key: '💰 TOTAL a pagar al recibir',
-            value: formatPrice(podTotals.total)
+            value: formatPrice(podTotals.payOnDelivery)
           })
           isFirstItem = false // Marcar que já adicionamos no primeiro
         }
