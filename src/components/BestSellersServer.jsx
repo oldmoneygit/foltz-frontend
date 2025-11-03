@@ -103,8 +103,9 @@ export default async function BestSellers() {
     // 3. Barcelona 13/14 Away (listras amarelo/vermelho)
     findSpecificProduct(allProducts, ['barcelona', '13', 'away'], 'Barcelona 13/14 Away'),
     
-    // 4. Barcelona 10/11 Away (teal/turquesa)
-    findSpecificProduct(allProducts, ['barcelona', '10', 'away'], 'Barcelona 10/11 Away'),
+    // 4. Paris Saint Germain 18/19 v2
+    findSpecificProduct(allProducts, ['psg', '18', '19'], 'PSG 18/19 v2')
+    || findSpecificProduct(allProducts, ['paris', '18', '19'], 'Paris 18/19 v2'),
     
     // 5. AC Milan 07/08 Away (branca)
     findSpecificProduct(allProducts, ['milan', '07', 'away'], 'Milan 07/08 Away'),

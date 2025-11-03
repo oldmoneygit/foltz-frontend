@@ -87,7 +87,7 @@ export default function BlackFridayPopup() {
               </h2>
 
               <p className="text-xl md:text-2xl font-black text-center text-yellow-400 mb-6">
-                PAGUE SÓ QUANDO RECEBER!
+                ¡PAGÁ SOLO AL RECIBIR!
               </p>
 
               {/* Benefits */}
@@ -95,32 +95,32 @@ export default function BlackFridayPopup() {
                 <div className="flex items-start gap-3 bg-white/5 p-3 rounded-xl border border-white/10">
                   <Check className="w-5 h-5 text-green-400 shrink-0 mt-0.5" />
                   <div>
-                    <p className="text-white font-bold">Até 6 jerseys</p>
-                    <p className="text-white/60 text-sm">Escolha seus favoritos</p>
+                    <p className="text-white font-bold">Hasta 6 jerseys</p>
+                    <p className="text-white/60 text-sm">Elegí tus favoritos</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3 bg-white/5 p-3 rounded-xl border border-white/10">
                   <Truck className="w-5 h-5 text-yellow-400 shrink-0 mt-0.5" />
                   <div>
-                    <p className="text-white font-bold">Pague só o frete: <span className="text-yellow-400">ARS 8.000</span></p>
-                    <p className="text-white/60 text-sm">Agora no checkout</p>
+                    <p className="text-white font-bold">Pagá solo el envío: <span className="text-yellow-400">ARS 8.000</span></p>
+                    <p className="text-white/60 text-sm">Ahora en el checkout</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3 bg-white/5 p-3 rounded-xl border border-white/10">
                   <Package className="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
                   <div>
-                    <p className="text-white font-bold">Restante na entrega</p>
-                    <p className="text-white/60 text-sm">Quando receber em casa</p>
+                    <p className="text-white font-bold">El resto al recibir</p>
+                    <p className="text-white/60 text-sm">Cuando llegue a tu casa</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3 bg-white/5 p-3 rounded-xl border border-white/10">
                   <CreditCard className="w-5 h-5 text-purple-400 shrink-0 mt-0.5" />
                   <div>
-                    <p className="text-white font-bold">Todos os métodos</p>
-                    <p className="text-white/60 text-sm">Cartão, Mercado Pago, dinheiro...</p>
+                    <p className="text-white font-bold">Todos los métodos</p>
+                    <p className="text-white/60 text-sm">Tarjeta, Mercado Pago, efectivo...</p>
                   </div>
                 </div>
               </div>
@@ -132,14 +132,14 @@ export default function BlackFridayPopup() {
                 whileTap={{ scale: 0.98 }}
                 className="w-full py-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-black uppercase text-lg rounded-xl shadow-lg hover:shadow-xl transition-all"
               >
-                QUERO APROVEITAR
+                QUIERO APROVECHAR
               </motion.button>
 
               <button
                 onClick={handleClose}
                 className="w-full mt-3 py-2 text-white/60 hover:text-white text-sm font-medium transition-colors"
               >
-                Fechar
+                Cerrar
               </button>
             </div>
           </motion.div>

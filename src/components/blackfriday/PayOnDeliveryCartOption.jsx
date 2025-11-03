@@ -5,20 +5,25 @@ import { CreditCard, Truck, AlertTriangle, Check, X } from 'lucide-react'
 import { usePayOnDelivery } from '@/contexts/PayOnDeliveryContext'
 import { useCart } from '@/contexts/CartContext'
 
-export default function PayOnDeliveryCartOption() {
+export default function PayOnDeliveryCartOption({ items: itemsProp, subtotal: subtotalProp }) {
   const { payOnDeliveryEnabled, enablePayOnDelivery, disablePayOnDelivery, calculatePayOnDeliveryTotals } =
     usePayOnDelivery()
-  const { items } = useCart()
+  const { items: cartItems } = useCart()
+
+  // Use props if provided, otherwise use cart context
+  const items = itemsProp || cartItems || []
 
   // Calculate cart subtotal
-  const subtotal = items.reduce((sum, item) => sum + item.price * item.quantity, 0)
+  const subtotal = subtotalProp !== undefined
+    ? subtotalProp
+    : items.reduce((sum, item) => sum + item.price * item.quantity, 0)
 
   // Calculate pay on delivery totals
   const podTotals = calculatePayOnDeliveryTotals(items, subtotal)
 
   const handleToggle = () => {
     if (podTotals.maxItemsReached) {
-      alert('⚠️ Máximo 6 jerseys para pagamento na entrega!')
+      alert('⚠️ ¡Máximo 6 jerseys para pago al recibir!')
       return
     }
 
@@ -55,11 +60,11 @@ export default function PayOnDeliveryCartOption() {
           <div className="flex items-center gap-2 mb-1">
             <CreditCard className="w-5 h-5 text-orange-500" />
             <h3 className="text-white font-black text-base md:text-lg">
-              Pagar na Entrega (Black Friday)
+              Pagar al Recibir (Black Friday)
             </h3>
           </div>
           <p className="text-white/60 text-xs md:text-sm">
-            Pague só o frete agora, o resto quando receber
+            Pagá solo el envío ahora, el resto al recibir
           </p>
         </div>
       </motion.label>
@@ -74,9 +79,9 @@ export default function PayOnDeliveryCartOption() {
           <div className="flex items-start gap-2">
             <AlertTriangle className="w-4 h-4 text-red-400 shrink-0 mt-0.5" />
             <div>
-              <p className="text-red-300 text-sm font-bold">Limite de 6 jerseys!</p>
+              <p className="text-red-300 text-sm font-bold">¡Límite de 6 jerseys!</p>
               <p className="text-red-300/80 text-xs mt-1">
-                Você tem {podTotals.itemCount} itens. Remova {podTotals.itemCount - 6} para ativar.
+                Tenés {podTotals.itemCount} items. Eliminá {podTotals.itemCount - 6} para activar.
               </p>
             </div>
           </div>
@@ -98,7 +103,7 @@ export default function PayOnDeliveryCartOption() {
                 <Check className="w-5 h-5 text-green-400 shrink-0" />
                 <div>
                   <p className="text-green-300 font-bold text-sm">
-                    💡 Pagamento na Entrega Ativado!
+                    💡 ¡Pago al Recibir Activado!
                   </p>
                 </div>
               </div>
@@ -111,8 +116,8 @@ export default function PayOnDeliveryCartOption() {
                 <div className="flex items-center gap-2">
                   <Truck className="w-5 h-5 text-yellow-400" />
                   <div>
-                    <p className="text-white font-bold text-sm">Você pagará AGORA</p>
-                    <p className="text-white/60 text-xs">Só o frete</p>
+                    <p className="text-white font-bold text-sm">Pagarás AHORA</p>
+                    <p className="text-white/60 text-xs">Solo el envío</p>
                   </div>
                 </div>
                 <p className="text-yellow-400 font-black text-lg">{formatPrice(podTotals.shipping)}</p>
@@ -123,8 +128,8 @@ export default function PayOnDeliveryCartOption() {
                 <div className="flex items-center gap-2">
                   <CreditCard className="w-5 h-5 text-orange-500" />
                   <div>
-                    <p className="text-white font-bold text-sm">Você pagará NA ENTREGA</p>
-                    <p className="text-white/60 text-xs">Valor dos produtos</p>
+                    <p className="text-white font-bold text-sm">Pagarás AL RECIBIR</p>
+                    <p className="text-white/60 text-xs">Valor de los productos</p>
                   </div>
                 </div>
                 <p className="text-orange-500 font-black text-lg">{formatPrice(podTotals.payOnDelivery)}</p>
@@ -133,22 +138,22 @@ export default function PayOnDeliveryCartOption() {
 
             {/* Payment Methods */}
             <div className="p-3 bg-black/30 rounded-lg">
-              <p className="text-white/80 text-xs font-bold mb-2">Formas aceitas na entrega:</p>
+              <p className="text-white/80 text-xs font-bold mb-2">Formas aceptadas al recibir:</p>
               <div className="flex flex-wrap gap-2 text-[10px] md:text-xs">
-                <span className="px-2 py-1 bg-white/10 rounded text-white/80">💳 Cartão</span>
+                <span className="px-2 py-1 bg-white/10 rounded text-white/80">💳 Tarjeta</span>
                 <span className="px-2 py-1 bg-white/10 rounded text-white/80">📱 Mercado Pago</span>
-                <span className="px-2 py-1 bg-white/10 rounded text-white/80">💵 Dinheiro</span>
-                <span className="px-2 py-1 bg-white/10 rounded text-white/80">🏦 Transferência</span>
+                <span className="px-2 py-1 bg-white/10 rounded text-white/80">💵 Efectivo</span>
+                <span className="px-2 py-1 bg-white/10 rounded text-white/80">🏦 Transferencia</span>
               </div>
             </div>
 
             {/* Delivery Info */}
             <div className="p-3 bg-blue-500/10 border border-blue-500/30 rounded-lg">
               <p className="text-blue-300 text-xs">
-                <strong>Prazo:</strong> até 10 dias úteis
+                <strong>Plazo:</strong> hasta 10 días hábiles
                 <br />
                 <X className="w-3 h-3 inline mr-1" />
-                Pode recusar se não gostar (frete não reembolsável)
+                Podés rechazar si no te gusta (envío no reembolsable)
               </p>
             </div>
           </motion.div>

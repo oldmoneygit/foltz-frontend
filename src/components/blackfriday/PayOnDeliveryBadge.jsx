@@ -17,7 +17,7 @@ export default function PayOnDeliveryBadge({ className = '' }) {
       >
         <Flame className="w-3 h-3 md:w-4 md:h-4 text-yellow-300" fill="currentColor" />
         <span className="text-white text-[10px] md:text-xs font-black uppercase tracking-tight whitespace-nowrap">
-          Pague na Entrega
+          Pagá al Recibir
         </span>
       </motion.div>
     </motion.div>

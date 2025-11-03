@@ -28,24 +28,24 @@ export default function PayOnDeliveryCard() {
         </div>
         <div className="flex-1">
           <h3 className="text-lg md:text-xl font-black text-white uppercase">
-            💳 PROMOÇÃO BLACK FRIDAY
+            💳 PROMOCIÓN BLACK FRIDAY
           </h3>
           <p className="text-yellow-400 font-bold text-sm md:text-base">
-            PAGUE NA ENTREGA
+            PAGÁ AL RECIBIR
           </p>
         </div>
       </div>
 
       {/* How it works */}
       <div className="space-y-3 mb-5">
-        <p className="text-white font-bold mb-2">Como funciona:</p>
+        <p className="text-white font-bold mb-2">Cómo funciona:</p>
 
         <div className="flex items-start gap-2 text-sm text-white/90">
           <span className="flex items-center justify-center w-5 h-5 bg-yellow-500 text-black rounded-full font-black text-xs shrink-0">
             1
           </span>
           <p>
-            Pague apenas o frete agora:{' '}
+            Pagá solo el envío ahora:{' '}
             <span className="text-yellow-400 font-bold">ARS {SHIPPING_FEE.toLocaleString('es-AR')}</span>
           </p>
         </div>
@@ -54,14 +54,14 @@ export default function PayOnDeliveryCard() {
           <span className="flex items-center justify-center w-5 h-5 bg-yellow-500 text-black rounded-full font-black text-xs shrink-0">
             2
           </span>
-          <p>Receba em até 10 dias úteis</p>
+          <p>Recibí en hasta 10 días hábiles</p>
         </div>
 
         <div className="flex items-start gap-2 text-sm text-white/90">
           <span className="flex items-center justify-center w-5 h-5 bg-yellow-500 text-black rounded-full font-black text-xs shrink-0">
             3
           </span>
-          <p>Pague o restante na entrega (todas as formas)</p>
+          <p>Pagá el resto al recibir (todas las formas)</p>
         </div>
       </div>
 
@@ -69,19 +69,19 @@ export default function PayOnDeliveryCard() {
       <div className="grid grid-cols-2 gap-2 mb-4">
         <div className="flex items-center gap-2 text-xs text-white/80">
           <Check className="w-4 h-4 text-green-400" />
-          <span>Até 6 jerseys</span>
+          <span>Hasta 6 jerseys</span>
         </div>
         <div className="flex items-center gap-2 text-xs text-white/80">
           <Package className="w-4 h-4 text-blue-400" />
-          <span>Pode recusar</span>
+          <span>Podés rechazar</span>
         </div>
         <div className="flex items-center gap-2 text-xs text-white/80">
           <CreditCard className="w-4 h-4 text-purple-400" />
-          <span>Todos métodos</span>
+          <span>Todos los métodos</span>
         </div>
         <div className="flex items-center gap-2 text-xs text-white/80">
           <Clock className="w-4 h-4 text-yellow-400" />
-          <span>10 dias úteis</span>
+          <span>10 días hábiles</span>
         </div>
       </div>
 
@@ -89,7 +89,7 @@ export default function PayOnDeliveryCard() {
       <div className="flex items-start gap-2 p-3 bg-black/30 rounded-lg mb-4">
         <X className="w-4 h-4 text-red-400 shrink-0 mt-0.5" />
         <p className="text-xs text-white/70">
-          Não gostou? Recuse! (Frete não reembolsável)
+          ¿No te gustó? ¡Rechazalo! (Envío no reembolsable)
         </p>
       </div>
 
@@ -107,12 +107,12 @@ export default function PayOnDeliveryCard() {
         />
         <div className="flex-1">
           <p className="text-white font-bold text-sm">
-            {payOnDeliveryEnabled ? '✅ Ativado!' : '☑️ Ativar pagamento na entrega'}
+            {payOnDeliveryEnabled ? '✅ ¡Activado!' : '☑️ Activar pago al recibir'}
           </p>
           <p className="text-white/60 text-xs mt-0.5">
             {payOnDeliveryEnabled
-              ? 'Você pagará só o frete no checkout'
-              : 'Clique para pagar só quando receber'}
+              ? 'Pagarás solo el envío en el checkout'
+              : 'Cliqueá para pagar solo al recibir'}
           </p>
         </div>
       </motion.label>
@@ -126,7 +126,7 @@ export default function PayOnDeliveryCard() {
           <div className="flex items-start gap-2">
             <AlertCircle className="w-4 h-4 text-green-400 shrink-0 mt-0.5" />
             <p className="text-green-300 text-xs font-medium">
-              Pagamento na entrega ativado! Adicione até 6 jerseys ao carrinho.
+              ¡Pago al recibir activado! Agregá hasta 6 jerseys al carrito.
             </p>
           </div>
         </motion.div>

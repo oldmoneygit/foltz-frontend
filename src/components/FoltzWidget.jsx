@@ -268,10 +268,19 @@ export default function FoltzWidget() {
 
     // Cleanup ao desmontar
     return () => {
-      document.body.removeChild(overlay)
-      document.body.removeChild(widgetContainer)
-      document.body.removeChild(button)
-      document.head.removeChild(style)
+      // Verificar se elementos existem antes de remover
+      if (overlay && overlay.parentNode === document.body) {
+        document.body.removeChild(overlay)
+      }
+      if (widgetContainer && widgetContainer.parentNode === document.body) {
+        document.body.removeChild(widgetContainer)
+      }
+      if (button && button.parentNode === document.body) {
+        document.body.removeChild(button)
+      }
+      if (style && style.parentNode === document.head) {
+        document.head.removeChild(style)
+      }
       window.removeEventListener('message', handleMessage)
       window.removeEventListener('resize', handleResize)
       document.removeEventListener('keydown', handleKeyDown)

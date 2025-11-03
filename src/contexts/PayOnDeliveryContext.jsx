@@ -8,15 +8,18 @@ export const SHIPPING_FEE = 8000 // ARS 8.000
 export const MAX_ITEMS_POD = 6 // Máximo 6 jerseys
 
 export function PayOnDeliveryProvider({ children }) {
-  const [payOnDeliveryEnabled, setPayOnDeliveryEnabled] = useState(false)
+  const [payOnDeliveryEnabled, setPayOnDeliveryEnabled] = useState(true) // Default: enabled
   const [hasSeenPopup, setHasSeenPopup] = useState(false)
 
   // Load state from localStorage on mount
   useEffect(() => {
-    const savedEnabled = localStorage.getItem('payOnDeliveryEnabled') === 'true'
+    const savedEnabled = localStorage.getItem('payOnDeliveryEnabled')
     const savedPopup = localStorage.getItem('blackFridayPopupSeen') === 'true'
 
-    setPayOnDeliveryEnabled(savedEnabled)
+    // If there's a saved value, use it. Otherwise keep default (true)
+    if (savedEnabled !== null) {
+      setPayOnDeliveryEnabled(savedEnabled === 'true')
+    }
     setHasSeenPopup(savedPopup)
   }, [])
 
