@@ -106,14 +106,14 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
         if (item.customization) {
           if (item.customization.playerName) {
             lineItem.attributes.push({
-              key: 'Nome',
+              key: '👤 Nombre',
               value: item.customization.playerName
             })
           }
 
           if (item.customization.playerNumber) {
             lineItem.attributes.push({
-              key: 'Número',
+              key: '🔢 Número',
               value: item.customization.playerNumber.toString()
             })
           }
