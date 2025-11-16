@@ -81,14 +81,14 @@ const teamsData = {
     name: 'Manchester United',
     logo: '/images/collections/Manchester_United_FC.png',
     description: 'The Red Devils',
-    keywords: ['manchester united', 'man united', 'united'],
+    keywords: ['manchester united', 'man united', 'man utd'],
     league: 'Premier League'
   },
   'manchester-city': {
     name: 'Manchester City',
     logo: '/images/collections/Manchester_City.png',
     description: 'The Citizens',
-    keywords: ['manchester city', 'man city', 'city'],
+    keywords: ['manchester city', 'man city'],
     league: 'Premier League'
   },
   'liverpool': {
@@ -116,21 +116,23 @@ const teamsData = {
     name: 'Paris Saint-Germain',
     logo: '/images/collections/PSG.png',
     description: 'Ici c\'est Paris',
-    keywords: ['psg', 'paris', 'saint-germain'],
+    keywords: ['psg', 'paris saint-germain', 'paris saint germain'],
     league: 'Ligue 1'
   },
   'ac-milan': {
     name: 'AC Milan',
     logo: '/images/collections/milan.png',
     description: 'I Rossoneri',
-    keywords: ['milan', 'ac milan'],
-    league: 'Serie A'
+    keywords: ['ac milan'],
+    league: 'Serie A',
+    // Evita confusão com Inter Milan
+    excludeKeywords: ['inter milan', 'inter de milan']
   },
   'inter-miami': {
     name: 'Inter Miami',
     logo: '/images/collections/Inter-miami.png',
     description: 'The Herons',
-    keywords: ['inter miami', 'miami'],
+    keywords: ['inter miami'],
     league: 'MLS'
   }
 }
@@ -150,24 +152,45 @@ export default async function TeamPage({ params }) {
   // Buscar todos os produtos
   const allProducts = await getAllProducts()
 
-  // Filtrar produtos por time (buscar nas keywords)
+  // Filtrar produtos por time (priorizar tags exatas, depois títulos)
   const teamProducts = allProducts.filter(product => {
     const title = (product.title || product.name || '').toLowerCase()
-    const tags = (product.tags || []).join(' ').toLowerCase()
-    const searchText = `${title} ${tags}`
+    const tags = product.tags || []
 
-    // Verificar se o produto contém alguma das keywords
-    const hasKeyword = teamData.keywords.some(keyword => searchText.includes(keyword.toLowerCase()))
+    // 1. PRIORIDADE MÁXIMA: Verificar tags exatas do Shopify (case-insensitive)
+    const hasExactTag = teamData.keywords.some(keyword => {
+      // Para keywords compostas (ex: "boca juniors"), verificar tag exata
+      if (keyword.includes(' ')) {
+        return tags.some(tag => tag.toLowerCase() === keyword.toLowerCase())
+      }
+      // Para keywords simples, também verificar tag exata
+      return tags.some(tag => tag.toLowerCase() === keyword.toLowerCase())
+    })
+
+    // 2. SEGUNDA PRIORIDADE: Verificar keywords no título
+    // Para evitar falsos positivos, usar busca mais específica
+    const hasKeywordInTitle = teamData.keywords.some(keyword => {
+      // Keywords com múltiplas palavras devem corresponder exatamente
+      if (keyword.includes(' ')) {
+        return title.includes(keyword.toLowerCase())
+      }
+      // Keywords simples: verificar se é palavra completa (evita "river" em "driver")
+      const regex = new RegExp(`\\b${keyword.toLowerCase()}\\b`, 'i')
+      return regex.test(title)
+    })
+
+    const hasMatch = hasExactTag || hasKeywordInTitle
 
     // Se tiver excludeKeywords, verificar se o produto NÃO contém nenhuma delas
-    if (hasKeyword && teamData.excludeKeywords) {
-      const hasExcludedKeyword = teamData.excludeKeywords.some(excludeWord =>
-        title.includes(excludeWord.toLowerCase())
-      )
+    if (hasMatch && teamData.excludeKeywords) {
+      const hasExcludedKeyword = teamData.excludeKeywords.some(excludeWord => {
+        const excludeRegex = new RegExp(`\\b${excludeWord.toLowerCase()}\\b`, 'i')
+        return excludeRegex.test(title)
+      })
       return !hasExcludedKeyword
     }
 
-    return hasKeyword
+    return hasMatch
   })
 
   console.log(`🏟️ Equipo ${teamData.name}: Encontrado ${teamProducts.length} produtos`)
