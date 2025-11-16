@@ -147,6 +147,12 @@ const ProductInfo = ({ product }) => {
 
     setIsAddingToPack(true)
     try {
+      // Prepara dados de personalização se ativo
+      const customization = wantsCustomization ? {
+        name: customName.trim() || null,
+        number: customNumber.trim() || null
+      } : null
+
       const packProduct = {
         id: product.id,
         name: product.name,
@@ -160,10 +166,16 @@ const ProductInfo = ({ product }) => {
         shopifyId: product.shopifyId,
         variants: product.variants,
         handle: product.handle,
+        customization: customization, // Include customization in pack product
+      }
+
+      // Pass callback that includes customization
+      const addToCartWithCustomization = (prod, size, qty) => {
+        addToCart(prod, size, qty, customization)
       }
 
       // Pass addToCart callback so product is added to BOTH pack AND cart
-      const result = addToPack(packProduct, addToCart)
+      const result = addToPack(packProduct, addToCartWithCustomization)
       setPackMessage(result.message)
 
       // Clear message after 3 seconds

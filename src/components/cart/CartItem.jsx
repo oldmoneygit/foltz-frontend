@@ -40,7 +40,7 @@ const CartItem = ({ item, onUpdateQuantity, onRemove }) => {
       <div className="flex gap-4 md:gap-6">
         {/* Product Image */}
         <Link
-          href={`/ligas/${league?.id || league}/${slug}`}
+          href={`/product/${slug}`}
           className="flex-shrink-0 w-24 h-24 md:w-32 md:h-32 bg-white/5 rounded-lg overflow-hidden group"
         >
           <div className="relative w-full h-full">
@@ -59,7 +59,7 @@ const CartItem = ({ item, onUpdateQuantity, onRemove }) => {
           <div>
             {/* Product Name */}
             <Link
-              href={`/ligas/${league?.id || league}/${slug}`}
+              href={`/product/${slug}`}
               className="block mb-2 hover:text-brand-yellow transition-colors"
             >
               <h3 className="text-base md:text-lg font-bold text-white line-clamp-2">
