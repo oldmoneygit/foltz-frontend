@@ -12,6 +12,7 @@ import CacheInitializer from '@/components/CacheInitializer'
 import MetaPixelLoader from '@/components/MetaPixelLoader'
 import PackFoltzWidget from '@/components/PackFoltzWidget'
 import StructuredData from '@/components/StructuredData'
+import ChatwootWidget from '@/components/ChatwootWidget'
 
 // Font optimization with fallbacks (performance)
 const inter = Inter({
@@ -123,6 +124,7 @@ export default function RootLayout({ children }) {
         {/* Defer non-critical connections */}
         <link rel="dns-prefetch" href="https://connect.facebook.net" />
         <link rel="dns-prefetch" href="https://snkhouse-bot-foltz-widget.vercel.app" />
+        <link rel="dns-prefetch" href="https://app.chatwoot.com" />
 
         {/* Performance Optimization: DNS prefetch for critical resources */}
 
@@ -153,6 +155,7 @@ export default function RootLayout({ children }) {
                     <CacheInitializer />
                     {children}
                     <PackFoltzWidget />
+                    <ChatwootWidget />
                   </BlackFridayProvider>
                 </FavoritesProvider>
               </CartProvider>
