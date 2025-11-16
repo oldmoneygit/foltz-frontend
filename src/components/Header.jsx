@@ -45,7 +45,7 @@ const Header = () => {
     { name: 'EQUIPOS ARGENTINOS', href: '/liga/argentina-legends', hasSubmenu: 'equipos' },
     { name: 'LIGAS', href: '/ligas', hasSubmenu: 'ligas' },
     { name: 'SELECCIONES NACIONALES', href: '/liga/national-teams' },
-    { name: 'MYSTERYBOX', href: '/mysterybox' },
+    { name: 'MYSTERYBOX', href: '/#mysterybox' },
     { name: 'RASTREÁ TU PEDIDO', href: '/seguimiento' },
     { name: 'CONTACTO', href: '/contacto' },
   ]

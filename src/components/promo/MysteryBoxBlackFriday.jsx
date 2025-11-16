@@ -11,96 +11,97 @@ import AddToCartToast from '@/components/product/AddToCartToast'
 const DEFAULT_SIZES = ['S', 'M', 'L', 'XL', 'XXL', '3XL']
 
 // Dados dos Mystery Boxes na Shopify com variantes
+// IMPORTANTE: IDs devem estar no formato GID para Storefront API
 const MYSTERY_BOX_SHOPIFY_DATA = {
   'mystery-box-premier-league': {
-    shopifyId: '15715026403708',
+    shopifyId: 'gid://shopify/Product/15715026403708',
     handle: 'mystery-box-premier-league',
     title: 'Mystery Box Premier League',
     variants: [
-      { id: '55981717881212', title: 'S', available: false },
-      { id: '55981717913980', title: 'M', available: false },
-      { id: '55981717946748', title: 'L', available: false },
-      { id: '55981717979516', title: 'XL', available: false },
-      { id: '55981718012284', title: 'XXL', available: false },
-      { id: '55981718045052', title: '3XL', available: false }
+      { id: 'gid://shopify/ProductVariant/55981717881212', title: 'S', available: false },
+      { id: 'gid://shopify/ProductVariant/55981717913980', title: 'M', available: false },
+      { id: 'gid://shopify/ProductVariant/55981717946748', title: 'L', available: false },
+      { id: 'gid://shopify/ProductVariant/55981717979516', title: 'XL', available: false },
+      { id: 'gid://shopify/ProductVariant/55981718012284', title: 'XXL', available: false },
+      { id: 'gid://shopify/ProductVariant/55981718045052', title: '3XL', available: false }
     ]
   },
   'mystery-box-la-liga': {
-    shopifyId: '15715026436476',
+    shopifyId: 'gid://shopify/Product/15715026436476',
     handle: 'mystery-box-la-liga',
     title: 'Mystery Box La Liga',
     variants: [
-      { id: '55981718077820', title: 'S', available: false },
-      { id: '55981718110588', title: 'M', available: false },
-      { id: '55981718143356', title: 'L', available: false },
-      { id: '55981718176124', title: 'XL', available: false },
-      { id: '55981718208892', title: 'XXL', available: false },
-      { id: '55981718241660', title: '3XL', available: false }
+      { id: 'gid://shopify/ProductVariant/55981718077820', title: 'S', available: false },
+      { id: 'gid://shopify/ProductVariant/55981718110588', title: 'M', available: false },
+      { id: 'gid://shopify/ProductVariant/55981718143356', title: 'L', available: false },
+      { id: 'gid://shopify/ProductVariant/55981718176124', title: 'XL', available: false },
+      { id: 'gid://shopify/ProductVariant/55981718208892', title: 'XXL', available: false },
+      { id: 'gid://shopify/ProductVariant/55981718241660', title: '3XL', available: false }
     ]
   },
   'mystery-box-serie-a': {
-    shopifyId: '15715026567548',
+    shopifyId: 'gid://shopify/Product/15715026567548',
     handle: 'mystery-box-serie-a',
     title: 'Mystery Box Serie A',
     variants: [
-      { id: '55981718274428', title: 'S', available: false },
-      { id: '55981718307196', title: 'M', available: false },
-      { id: '55981718339964', title: 'L', available: false },
-      { id: '55981718372732', title: 'XL', available: false },
-      { id: '55981718405500', title: 'XXL', available: false },
-      { id: '55981718438268', title: '3XL', available: false }
+      { id: 'gid://shopify/ProductVariant/55981718274428', title: 'S', available: false },
+      { id: 'gid://shopify/ProductVariant/55981718307196', title: 'M', available: false },
+      { id: 'gid://shopify/ProductVariant/55981718339964', title: 'L', available: false },
+      { id: 'gid://shopify/ProductVariant/55981718372732', title: 'XL', available: false },
+      { id: 'gid://shopify/ProductVariant/55981718405500', title: 'XXL', available: false },
+      { id: 'gid://shopify/ProductVariant/55981718438268', title: '3XL', available: false }
     ]
   },
   'mystery-box-bundesliga': {
-    shopifyId: '15715026698620',
+    shopifyId: 'gid://shopify/Product/15715026698620',
     handle: 'mystery-box-bundesliga',
     title: 'Mystery Box Bundesliga',
     variants: [
-      { id: '55981718471036', title: 'S', available: false },
-      { id: '55981718503804', title: 'M', available: false },
-      { id: '55981718536572', title: 'L', available: false },
-      { id: '55981718569340', title: 'XL', available: false },
-      { id: '55981718602108', title: 'XXL', available: false },
-      { id: '55981718634876', title: '3XL', available: false }
+      { id: 'gid://shopify/ProductVariant/55981718471036', title: 'S', available: false },
+      { id: 'gid://shopify/ProductVariant/55981718503804', title: 'M', available: false },
+      { id: 'gid://shopify/ProductVariant/55981718536572', title: 'L', available: false },
+      { id: 'gid://shopify/ProductVariant/55981718569340', title: 'XL', available: false },
+      { id: 'gid://shopify/ProductVariant/55981718602108', title: 'XXL', available: false },
+      { id: 'gid://shopify/ProductVariant/55981718634876', title: '3XL', available: false }
     ]
   },
   'mystery-box-ligue-1': {
-    shopifyId: '15715026796924',
+    shopifyId: 'gid://shopify/Product/15715026796924',
     handle: 'mystery-box-ligue-1',
     title: 'Mystery Box Ligue 1',
     variants: [
-      { id: '55981718667644', title: 'S', available: false },
-      { id: '55981718700412', title: 'M', available: false },
-      { id: '55981718733180', title: 'L', available: false },
-      { id: '55981718765948', title: 'XL', available: false },
-      { id: '55981718798716', title: 'XXL', available: false },
-      { id: '55981718831484', title: '3XL', available: false }
+      { id: 'gid://shopify/ProductVariant/55981718667644', title: 'S', available: false },
+      { id: 'gid://shopify/ProductVariant/55981718700412', title: 'M', available: false },
+      { id: 'gid://shopify/ProductVariant/55981718733180', title: 'L', available: false },
+      { id: 'gid://shopify/ProductVariant/55981718765948', title: 'XL', available: false },
+      { id: 'gid://shopify/ProductVariant/55981718798716', title: 'XXL', available: false },
+      { id: 'gid://shopify/ProductVariant/55981718831484', title: '3XL', available: false }
     ]
   },
   'mystery-box-argentina': {
-    shopifyId: '15715026960764',
+    shopifyId: 'gid://shopify/Product/15715026960764',
     handle: 'mystery-box-argentina',
     title: 'Mystery Box Argentina',
     variants: [
-      { id: '55981718864252', title: 'S', available: false },
-      { id: '55981718897020', title: 'M', available: false },
-      { id: '55981718929788', title: 'L', available: false },
-      { id: '55981718962556', title: 'XL', available: false },
-      { id: '55981718995324', title: 'XXL', available: false },
-      { id: '55981719028092', title: '3XL', available: false }
+      { id: 'gid://shopify/ProductVariant/55981718864252', title: 'S', available: false },
+      { id: 'gid://shopify/ProductVariant/55981718897020', title: 'M', available: false },
+      { id: 'gid://shopify/ProductVariant/55981718929788', title: 'L', available: false },
+      { id: 'gid://shopify/ProductVariant/55981718962556', title: 'XL', available: false },
+      { id: 'gid://shopify/ProductVariant/55981718995324', title: 'XXL', available: false },
+      { id: 'gid://shopify/ProductVariant/55981719028092', title: '3XL', available: false }
     ]
   },
   'mystery-box-world-cup': {
-    shopifyId: '15715027059068',
+    shopifyId: 'gid://shopify/Product/15715027059068',
     handle: 'mystery-box-world-cup',
     title: 'Mystery Box FIFA World Cup',
     variants: [
-      { id: '55981719060860', title: 'S', available: false },
-      { id: '55981719093628', title: 'M', available: false },
-      { id: '55981719126396', title: 'L', available: false },
-      { id: '55981719159164', title: 'XL', available: false },
-      { id: '55981719191932', title: 'XXL', available: false },
-      { id: '55981719224700', title: '3XL', available: false }
+      { id: 'gid://shopify/ProductVariant/55981719060860', title: 'S', available: false },
+      { id: 'gid://shopify/ProductVariant/55981719093628', title: 'M', available: false },
+      { id: 'gid://shopify/ProductVariant/55981719126396', title: 'L', available: false },
+      { id: 'gid://shopify/ProductVariant/55981719159164', title: 'XL', available: false },
+      { id: 'gid://shopify/ProductVariant/55981719191932', title: 'XXL', available: false },
+      { id: 'gid://shopify/ProductVariant/55981719224700', title: '3XL', available: false }
     ]
   }
 }
@@ -283,7 +284,7 @@ export default function MysteryBoxBlackFriday() {
   }
 
   return (
-    <section className="py-6 md:py-8 bg-black relative overflow-hidden border-t border-white/5">
+    <section id="mysterybox" className="py-6 md:py-8 bg-black relative overflow-hidden border-t border-white/5">
       {/* Background Effects - Minimal */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-10 w-72 h-72 bg-white rounded-full blur-3xl animate-pulse" />
