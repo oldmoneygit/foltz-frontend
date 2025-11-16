@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { ShoppingCart, Truck, Tag, CreditCard, Loader2 } from 'lucide-react'
 import { createCheckoutWithItems, findVariantBySize } from '@/lib/shopify'
 import { triggerInitiateCheckout } from '@/components/MetaPixelEvents'
@@ -11,6 +11,28 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
   const [isCheckingOut, setIsCheckingOut] = useState(false)
   const [checkoutError, setCheckoutError] = useState(null)
   const { calculatePackBlackTotals, PACK_BLACK_PRICE, PACK_BLACK_SIZE } = useBlackFriday()
+
+  // Reset checkout state when component mounts or user comes back from checkout
+  useEffect(() => {
+    // Reset immediately on mount
+    setIsCheckingOut(false)
+    setCheckoutError(null)
+
+    // Also reset when user navigates back using browser history (bfcache)
+    const handlePageShow = (event) => {
+      // event.persisted is true when page is restored from bfcache
+      if (event.persisted) {
+        setIsCheckingOut(false)
+        setCheckoutError(null)
+      }
+    }
+
+    window.addEventListener('pageshow', handlePageShow)
+
+    return () => {
+      window.removeEventListener('pageshow', handlePageShow)
+    }
+  }, [])
 
   // Formata o preço como "AR$ XX.XXX,XX"
   const formatPrice = (value) => {
