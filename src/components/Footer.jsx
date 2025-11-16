@@ -48,9 +48,6 @@ const Footer = () => {
                 fill
                 className={`object-contain ${isRetro ? 'brightness-0 invert sepia saturate-[10] hue-rotate-[5deg]' : ''}`}
               />
-              {isRetro && (
-                <p className="absolute -bottom-1 left-0 text-[#D4AF37]/60 text-xs">Colección Retro</p>
-              )}
             </div>
             <p className="text-sm text-gray-300 leading-relaxed">
               {isRetro
