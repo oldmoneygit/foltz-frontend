@@ -1,0 +1,128 @@
+/* ========================================
+   MODO ATUAIS (Padrão - Limão Fosco)
+   ======================================== */
+.store-mode-atuais {
+  /* Cores Primárias */
+  --store-primary: #A8C930;
+  --store-primary-light: #BFD947;
+  --store-primary-dark: #8FAF25;
+
+  /* Backgrounds */
+  --store-bg-primary: #0A0A0A;
+  --store-bg-secondary: #161616;
+  --store-bg-tertiary: #1E1E1E;
+
+  /* Textos */
+  --store-text-primary: #FFFFFF;
+  --store-text-secondary: #A0A0A0;
+
+  /* Bordas */
+  --store-border: #2A2A2A;
+  --store-border-accent: #A8C930;
+
+  /* Sombras */
+  --store-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+
+  /* Badges */
+  --store-badge-bg: #A8C930;
+  --store-badge-text: #0A0A0A;
+}
+
+/* ========================================
+   MODO RETRO (Dourado Vintage)
+   ======================================== */
+.store-mode-retro {
+  /* Cores Primárias */
+  --store-primary: #D4AF37;
+  --store-primary-light: #E5C158;
+  --store-primary-dark: #B8935F;
+
+  /* Backgrounds */
+  --store-bg-primary: #0D0C0A;
+  --store-bg-secondary: #1A1814;
+  --store-bg-tertiary: #252218;
+
+  /* Textos */
+  --store-text-primary: #F5F1E8;
+  --store-text-secondary: #C4B8A0;
+
+  /* Bordas */
+  --store-border: #2A2620;
+  --store-border-accent: #D4AF37;
+
+  /* Sombras */
+  --store-shadow: 0 4px 6px -1px rgba(212, 175, 55, 0.1);
+
+  /* Badges */
+  --store-badge-bg: #D4AF37;
+  --store-badge-text: #0D0C0A;
+}
+
+/* ========================================
+   TRANSIÇÕES GLOBAIS
+   ======================================== */
+body {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Aplicar variáveis em elementos principais */
+.store-mode-atuais,
+.store-mode-retro {
+  background-color: var(--store-bg-primary);
+  color: var(--store-text-primary);
+}
+
+/* ========================================
+   UTILITIES PARA USO COM TAILWIND
+   ======================================== */
+
+/* Backgrounds */
+.bg-store-primary { background-color: var(--store-bg-primary); }
+.bg-store-secondary { background-color: var(--store-bg-secondary); }
+.bg-store-tertiary { background-color: var(--store-bg-tertiary); }
+.bg-store-accent { background-color: var(--store-primary); }
+
+/* Textos */
+.text-store-primary { color: var(--store-text-primary); }
+.text-store-secondary { color: var(--store-text-secondary); }
+.text-store-accent { color: var(--store-primary); }
+
+/* Bordas */
+.border-store { border-color: var(--store-border); }
+.border-store-accent { border-color: var(--store-border-accent); }
+
+/* Hover states */
+.hover\:bg-store-tertiary:hover { background-color: var(--store-bg-tertiary); }
+.hover\:border-store-accent:hover { border-color: var(--store-border-accent); }
+.hover\:text-store-accent:hover { color: var(--store-primary); }
+
+/* Botões */
+.btn-store-primary {
+  background-color: var(--store-primary);
+  color: var(--store-badge-text);
+  transition: background-color 0.3s ease;
+}
+
+.btn-store-primary:hover {
+  background-color: var(--store-primary-light);
+}
+
+/* Badges */
+.badge-store {
+  background-color: var(--store-badge-bg);
+  color: var(--store-badge-text);
+}
+
+/* Cards */
+.card-store {
+  background-color: var(--store-bg-secondary);
+  border: 1px solid var(--store-border);
+  transition: all 0.3s ease;
+}
+
+.card-store:hover {
+  border-color: var(--store-border-accent);
+  box-shadow: var(--store-shadow);
+}
