@@ -85,7 +85,7 @@ const CartItem = ({ item, onUpdateQuantity, onRemove }) => {
             {/* Personalización (si existe) */}
             {customization && (customization.name || customization.number) && (
               <div className="mb-3">
-                <div className="flex items-center gap-2 mb-2">
+                <div className="flex items-center gap-2">
                   <span className="inline-flex items-center px-2 py-0.5 bg-brand-yellow/20 border border-brand-yellow/40 rounded text-brand-yellow text-xs font-bold">
                     PERSONALIZADO
                   </span>
@@ -95,9 +95,6 @@ const CartItem = ({ item, onUpdateQuantity, onRemove }) => {
                     {customization.number && <span className="font-bold text-brand-yellow">#{customization.number}</span>}
                   </span>
                 </div>
-                <p className="text-white/50 text-xs italic bg-white/5 border border-white/10 rounded px-2 py-1.5">
-                  ℹ️ La personalización estará registrada en tu pedido, aunque no aparezca visualmente en el checkout.
-                </p>
               </div>
             )}
 
