@@ -73,17 +73,21 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
         }
 
         if (item.customization) {
-          if (item.customization.playerName) {
+          // Support both old format (playerName/playerNumber) and new format (name/number)
+          const customName = item.customization.name || item.customization.playerName
+          const customNumber = item.customization.number || item.customization.playerNumber
+
+          if (customName) {
             lineItem.attributes.push({
               key: '👤 Nombre',
-              value: item.customization.playerName
+              value: customName
             })
           }
 
-          if (item.customization.playerNumber) {
+          if (customNumber) {
             lineItem.attributes.push({
               key: '🔢 Número',
-              value: item.customization.playerNumber.toString()
+              value: customNumber.toString()
             })
           }
         }
@@ -91,7 +95,7 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
         // Add Pack Black attributes APENAS NO PRIMEIRO PRODUTO para evitar confusão
         if (packData.hasPack && isFirstItem) {
           lineItem.attributes.push({
-            key: '🔥 PACK BLACK',
+            key: '🔥 PACK FOLTZ',
             value: '✅ Activado'
           })
           lineItem.attributes.push({
@@ -210,6 +214,30 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
             </span>
           </div>
 
+          {/* Personalizações - Display */}
+          {cartItems.some(item => item.customization && (item.customization.name || item.customization.number)) && (
+            <div className="flex items-start gap-2 bg-purple-500/10 border border-purple-500/30 rounded-lg p-3">
+              <div className="w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span className="text-purple-400">✨</span>
+              </div>
+              <div className="flex-1 min-w-0">
+                <span className="text-purple-400 text-sm font-bold block mb-1">
+                  Personalizaciones
+                </span>
+                <div className="space-y-1">
+                  {cartItems.filter(item => item.customization && (item.customization.name || item.customization.number)).map((item, idx) => (
+                    <p key={idx} className="text-purple-400/80 text-xs">
+                      • {item.name.substring(0, 30)}{item.name.length > 30 ? '...' : ''}: {' '}
+                      {item.customization.name && <span className="font-semibold">{item.customization.name}</span>}
+                      {item.customization.name && item.customization.number && ' '}
+                      {item.customization.number && <span className="font-bold">#{item.customization.number}</span>}
+                    </p>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
           {/* Pack Black - Display */}
           {packData.hasPack ? (
             <div className="flex items-start gap-2 bg-green-500/10 border border-green-500/30 rounded-lg p-3">
@@ -217,7 +245,7 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
               <div className="flex-1 min-w-0">
                 <div className="flex items-center justify-between mb-1">
                   <span className="text-green-500 text-sm font-bold">
-                    Pack Black Activado
+                    Pack Foltz Activado
                   </span>
                   <span className="text-green-500 font-bold">
                     -{formattedSavings}
@@ -253,8 +281,8 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
               <div className="flex-1 min-w-0">
                 <p className="text-orange-500 text-xs font-semibold">
                   {packData.itemCount === 0
-                    ? `¡Agrega ${PACK_BLACK_SIZE} camisetas para Pack Black de ARS ${PACK_BLACK_PRICE.toLocaleString()}!`
-                    : `¡Agrega ${packData.productsNeeded} más para Pack Black de ARS ${PACK_BLACK_PRICE.toLocaleString()}!`
+                    ? `¡Agrega ${PACK_BLACK_SIZE} camisetas para Pack Foltz de ARS ${PACK_BLACK_PRICE.toLocaleString()}!`
+                    : `¡Agrega ${packData.productsNeeded} más para Pack Foltz de ARS ${PACK_BLACK_PRICE.toLocaleString()}!`
                   }
                 </p>
               </div>
