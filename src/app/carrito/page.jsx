@@ -1,15 +1,17 @@
 'use client'
 
 import Link from 'next/link'
-import { ChevronLeft, ShoppingBag } from 'lucide-react'
+import { ChevronLeft, ShoppingBag, Package } from 'lucide-react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import CartItem from '@/components/cart/CartItem'
 import CartSummary from '@/components/cart/CartSummary'
 import { useCart } from '@/contexts/CartContext'
+import { usePackFoltz } from '@/contexts/PackFoltzContext'
 
 export default function CarrinhoPage() {
-  const { cartItems, updateQuantity, removeFromCart, getSubtotal, saveCart } = useCart()
+  const { cartItems, updateQuantity, removeFromCart, getSubtotal, saveCart, isLoaded } = useCart()
+  const { packSize, packPrice, formatPrice } = usePackFoltz()
 
   const handleUpdateQuantity = (id, size, newQuantity) => {
     updateQuantity(id, size, newQuantity)
@@ -23,6 +25,26 @@ export default function CarrinhoPage() {
 
   // Calcular quantidade TOTAL de produtos (soma de todas as quantities)
   const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0)
+
+  // Calcular informações do Pack baseado no carrinho REAL
+  const isCartPackComplete = totalQuantity >= packSize
+  const remainingForCartPack = Math.max(0, packSize - totalQuantity)
+
+  // Mostrar loading enquanto carrega do localStorage (evita flash de carrinho vazio)
+  if (!isLoaded) {
+    return (
+      <>
+        <Header />
+        <main className="min-h-screen bg-black">
+          <div className="container mx-auto px-4 py-20 text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-brand-yellow mx-auto"></div>
+            <p className="text-white/60 mt-4">Cargando carrito...</p>
+          </div>
+        </main>
+        <Footer />
+      </>
+    )
+  }
 
   return (
     <>
@@ -97,21 +119,21 @@ export default function CarrinhoPage() {
             </div>
           )}
 
-          {/* Promotional Banner - Compra 1 Lleva 3 - APENAS com 3+ produtos (quantidade total) */}
-          {totalQuantity >= 3 ? (
+          {/* Promotional Banner - Pack Foltz */}
+          {isCartPackComplete ? (
             <div className="mt-8 md:mt-12 bg-gradient-to-r from-green-500/10 to-green-500/5 border-2 border-green-500/30 rounded-xl p-6 md:p-8">
               <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
                 <div className="flex-shrink-0">
                   <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center">
-                    <span className="text-white text-2xl font-black">3x1</span>
+                    <Package className="w-8 h-8 text-white" />
                   </div>
                 </div>
                 <div className="text-center md:text-left">
                   <h3 className="text-xl md:text-2xl font-bold text-white mb-1">
-                    ¡Promoción 3x1 Activada! 🎉
+                    ¡Pack Foltz Activado! 🎉
                   </h3>
                   <p className="text-white/80 text-sm md:text-base">
-                    ¡Los 2 productos de menor valor son GRATIS! Descuento aplicado automáticamente.
+                    {packSize} camisetas por {formatPrice(packPrice)} • ¡Descuento aplicado automáticamente!
                   </p>
                 </div>
               </div>
@@ -121,15 +143,15 @@ export default function CarrinhoPage() {
               <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
                 <div className="flex-shrink-0">
                   <div className="w-16 h-16 bg-brand-yellow rounded-full flex items-center justify-center">
-                    <span className="text-black text-2xl font-black">3x1</span>
+                    <Package className="w-8 h-8 text-black" />
                   </div>
                 </div>
                 <div className="text-center md:text-left">
                   <h3 className="text-xl md:text-2xl font-bold text-white mb-1">
-                    ¡Agrega {3 - totalQuantity} Producto{3 - totalQuantity > 1 ? 's' : ''} Más!
+                    ¡Agrega {remainingForCartPack} Camiseta{remainingForCartPack > 1 ? 's' : ''} Más!
                   </h3>
                   <p className="text-white/80 text-sm md:text-base">
-                    Activa la promoción 3x1 y los 2 productos de menor valor serán GRATIS!
+                    Completa el Pack Foltz: {packSize} camisetas por solo {formatPrice(packPrice)}
                   </p>
                 </div>
               </div>

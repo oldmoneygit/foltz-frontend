@@ -35,7 +35,6 @@ export async function hashValue(value) {
 
     return hashHex
   } catch (error) {
-    console.error('Error hashing value:', error)
     return null
   }
 }
@@ -135,7 +134,6 @@ export function getFacebookClickId() {
     // 4. Tentar recuperar do sessionStorage
     return sessionStorage.getItem('_fbc') || null
   } catch (error) {
-    console.error('Error getting fbc:', error)
     return null
   }
 }
@@ -157,7 +155,6 @@ export function getFacebookBrowserId() {
 
     return null
   } catch (error) {
-    console.error('Error getting fbp:', error)
     return null
   }
 }
@@ -249,10 +246,10 @@ export async function sendToConversionsAPI(
       body: JSON.stringify(payload),
       keepalive: true, // Garante envio mesmo se página fechar
     }).catch(err => {
-      console.warn('Conversions API failed (non-blocking):', err)
+      // Silently fail - don't block UX
     })
   } catch (error) {
-    console.warn('Error sending to Conversions API:', error)
+    // Silently fail
   }
 }
 
@@ -263,7 +260,6 @@ export async function sendToConversionsAPI(
 export async function trackPixelEvent(eventName, eventData = {}, userData = {}) {
   // Validar que pixel está carregado
   if (typeof window === 'undefined' || !window.fbq) {
-    console.warn('[Meta Pixel] Not loaded yet')
     return null
   }
 
@@ -304,20 +300,11 @@ export async function trackPixelEvent(eventName, eventData = {}, userData = {}) 
       })
     }
 
-    console.log(`[Meta Pixel] ${eventName} tracked:`, {
-      eventId,
-      fbc: fbc ? 'present' : 'missing',
-      fbp: fbp ? 'present' : 'missing',
-      utm: Object.keys(utmParams).length > 0 ? 'present' : 'missing',
-      advancedMatching: Object.keys(hashedUserData).length > 0,
-    })
-
     // 7. Enviar para Conversions API (SERVER-SIDE)
     sendToConversionsAPI(eventName, fullEventData, eventId, { fbc, fbp }, hashedUserData)
 
     return eventId
   } catch (error) {
-    console.error(`[Meta Pixel] Error tracking ${eventName}:`, error)
     return null
   }
 }

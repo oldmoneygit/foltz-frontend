@@ -1,44 +1,50 @@
-import { getProductsByLeague } from '@/utils/shopifyData'
+import { getCachedProducts } from '@/lib/productCache'
 import CollectionGridClient from './CollectionGridClient'
 
 /**
  * Server Component that fetches products for a league/collection from Shopify
  * Displays products in a grid layout with league image on the side
+ * Now uses cached products to avoid multiple API calls
  */
 export default async function CollectionGrid({ collectionSlug, collectionImage }) {
   // Map collection slugs to multiple search terms (tries all variations)
   const leagueSearchTerms = {
-    'premier-league': ['Premier League', 'liga:premier-league', 'premier', 'england'],
-    'la-liga': ['La Liga', 'liga:la-liga', 'laliga', 'spain', 'españa'],
-    'serie-a': ['Serie A', 'liga:serie-a', 'seriea', 'italy', 'italia'],
-    'bundesliga': ['Bundesliga', 'liga:bundesliga', 'germany', 'alemanha'],
-    'ligue-1': ['Ligue 1', 'liga:ligue-1', 'ligue1', 'france', 'frança'],
-    'liga-mx': ['Liga MX', 'liga:liga-mx', 'ligamx', 'mexico', 'méxico'],
-    'sul-americana': ['Sul-Americana', 'liga:sul-americana', 'sulamericana', 'south-america'],
-    'primeira-liga': ['Primeira Liga', 'liga:primeira-liga', 'portugal'],
-    'eredivisie': ['Eredivisie', 'liga:eredivisie', 'netherlands', 'holanda'],
-    'mls': ['MLS', 'liga:mls', 'usa'],
-    'national-teams': ['National Teams', 'liga:national-teams', 'selecciones', 'seleções', 'international'],
-    'argentina-legends': ['Argentina', 'Argentina Legends', 'argentina-legends', 'ArgentinaLegends', 'argentina legends', 'legends', 'lendas'],
-    'manga-longa': ['Manga Longa', 'long-sleeve', 'longa']
+    'premier-league': ['premier league', 'premier'],
+    'la-liga': ['la liga', 'laliga'],
+    'serie-a': ['serie a', 'seriea'],
+    'bundesliga': ['bundesliga'],
+    'ligue-1': ['ligue 1', 'ligue1'],
+    'liga-mx': ['liga mx', 'ligamx'],
+    'sul-americana': ['sul-americana', 'sulamericana'],
+    'primeira-liga': ['primeira liga', 'portugal'],
+    'eredivisie': ['eredivisie'],
+    'mls': ['mls'],
+    'national-teams': ['national teams', 'selecciones'],
+    'argentina-legends': ['argentina'],
+    'manga-longa': ['long sleeve', 'manga longa']
   }
 
   // Get search terms for this collection
   const searchTerms = leagueSearchTerms[collectionSlug] || [collectionSlug]
 
-  // Try each search term until we find products
+  // Get all products from cache (shared across all components)
+  const allProducts = await getCachedProducts()
+
+  // Filter products locally instead of making API calls
   let products = []
-  console.log(`🔍 Searching for ${collectionSlug} with terms:`, searchTerms)
 
   for (const term of searchTerms) {
-    console.log(`  ⏳ Trying term: "${term}"`)
-    products = await getProductsByLeague(term, 12)
+    products = allProducts.filter(product => {
+      const productType = (product.productType || '').toLowerCase()
+      const tags = (product.tags || []).join(' ').toLowerCase()
+      const title = (product.name || '').toLowerCase()
+      const searchText = `${productType} ${tags} ${title}`
 
-    if (products && products.length > 0) {
-      console.log(`  ✅ Found ${products.length} products for ${collectionSlug} using term: "${term}"`)
+      return searchText.includes(term.toLowerCase())
+    }).slice(0, 12)
+
+    if (products.length > 0) {
       break
-    } else {
-      console.log(`  ❌ No products found with term: "${term}"`)
     }
   }
 

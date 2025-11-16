@@ -4,9 +4,11 @@ import { createContext, useContext, useState, useEffect } from 'react'
 
 const Combo3xContext = createContext()
 
-export const COMBO_PRICE = 32900 // ARS 32.900 por 3 camisetas
-export const COMBO_SIZE = 3 // Combo de 3 jerseys
-export const SHIPPING_FEE = 0 // Envio gratis incluído no combo
+export const COMBO_PRICE = 49900 // ARS 49.900 por 3 camisetas (Pack Insano)
+export const COMBO_SIZE = 3 // Pack de 3 jerseys
+export const COMBO_ORIGINAL_PRICE = 110700 // ARS 110.700 (precio normal sin descuento)
+export const COMBO_DISCOUNT = 55 // 55% OFF
+export const SHIPPING_FEE = 0 // Envio gratis incluído
 
 export function Combo3xProvider({ children }) {
   const [hasSeenPopup, setHasSeenPopup] = useState(false)
@@ -126,6 +128,8 @@ export function Combo3xProvider({ children }) {
         calculateCombo3xTotals,
         COMBO_PRICE,
         COMBO_SIZE,
+        COMBO_ORIGINAL_PRICE,
+        COMBO_DISCOUNT,
         SHIPPING_FEE
       }}
     >

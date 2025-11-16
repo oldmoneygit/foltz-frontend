@@ -777,9 +777,28 @@ export function findVariantBySize(variants, size) {
   if (!variants || !variants.edges) return null
 
   const variant = variants.edges.find(({ node }) => {
-    // Match exact size or check if variant title contains the size
-    return node.title === size || node.title.includes(size)
+    if (!node) return false
+
+    // Handle nested node.node structure (from some cart data formats)
+    const variantData = node.node || node
+
+    // First check selectedOptions (most reliable for Storefront API)
+    if (variantData.selectedOptions) {
+      const sizeOption = variantData.selectedOptions.find(opt =>
+        opt.name === 'Size' || opt.name === 'Tamanho' || opt.name === 'Talla'
+      )
+      if (sizeOption && sizeOption.value === size) return true
+    }
+
+    // Fallback to title check (if title exists)
+    if (variantData.title) {
+      return variantData.title === size || variantData.title.includes(size)
+    }
+
+    return false
   })
 
-  return variant ? variant.node.id : null
+  if (!variant) return null
+  // Handle nested node.node structure for ID
+  return variant.node.node?.id || variant.node.id
 }

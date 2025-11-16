@@ -3,10 +3,12 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Minus, Plus, X } from 'lucide-react'
+import { Minus, Plus, X, Package } from 'lucide-react'
+import { usePackFoltz } from '@/contexts/PackFoltzContext'
 
 const CartItem = ({ item, onUpdateQuantity, onRemove }) => {
   const { id, name, slug, image, price, size, quantity, league, customization } = item
+  const { isInPack } = usePackFoltz()
 
   const itemTotal = price * quantity
 
@@ -69,6 +71,16 @@ const CartItem = ({ item, onUpdateQuantity, onRemove }) => {
             <p className="text-white/60 text-sm mb-1">
               Talla: <span className="text-white font-semibold">{size}</span>
             </p>
+
+            {/* Pack Foltz Badge */}
+            {isInPack(id, size) && (
+              <div className="mb-2">
+                <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-brand-yellow/20 border border-brand-yellow/40 rounded text-brand-yellow text-xs font-bold">
+                  <Package className="w-3 h-3" />
+                  PACK FOLTZ
+                </span>
+              </div>
+            )}
 
             {/* Personalización (si existe) */}
             {customization && (customization.name || customization.number) && (

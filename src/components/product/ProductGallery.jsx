@@ -1,164 +1,199 @@
 'use client'
 
-import { useState } from 'react'
-import Image from 'next/image'
-import { ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react'
+import { useState, useEffect, useCallback } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import OptimizedImage from '@/components/OptimizedImage'
+import { ChevronLeft, ChevronRight, X, Sparkles } from 'lucide-react'
+import useEmblaCarousel from 'embla-carousel-react'
 
 const ProductGallery = ({ images = [], productName }) => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
-  const [touchStart, setTouchStart] = useState(null)
-  const [touchEnd, setTouchEnd] = useState(null)
-  const [hasSwipedOnce, setHasSwipedOnce] = useState(false)
+  const [isZoomed, setIsZoomed] = useState(false)
+  const [selectedIndex, setSelectedIndex] = useState(0)
 
-  // Mínimo de distância para considerar swipe (em pixels)
-  const minSwipeDistance = 50
+  // Embla Carousel for main gallery with loop
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+    skipSnaps: false,
+    dragFree: false
+  })
 
-  const handlePrevious = () => {
-    setCurrentImageIndex((prev) =>
-      prev === 0 ? images.length - 1 : prev - 1
-    )
-  }
+  // Embla Carousel for thumbnails
+  const [emblaThumbsRef, emblaThumbsApi] = useEmblaCarousel({
+    containScroll: 'keepSnaps',
+    dragFree: true
+  })
 
-  const handleNext = () => {
-    setCurrentImageIndex((prev) =>
-      prev === images.length - 1 ? 0 : prev + 1
-    )
-  }
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev()
+  }, [emblaApi])
 
-  const handleThumbnailClick = (index) => {
-    setCurrentImageIndex(index)
-  }
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext()
+  }, [emblaApi])
 
-  // Touch handlers para swipe
-  const onTouchStart = (e) => {
-    setTouchEnd(null) // Reset touchEnd
-    setTouchStart(e.targetTouches[0].clientX)
-  }
+  const onSelect = useCallback(() => {
+    if (!emblaApi || !emblaThumbsApi) return
+    setSelectedIndex(emblaApi.selectedScrollSnap())
+    emblaThumbsApi.scrollTo(emblaApi.selectedScrollSnap())
+  }, [emblaApi, emblaThumbsApi])
 
-  const onTouchMove = (e) => {
-    setTouchEnd(e.targetTouches[0].clientX)
-  }
+  const onThumbClick = useCallback(
+    (index) => {
+      if (!emblaApi || !emblaThumbsApi) return
+      emblaApi.scrollTo(index)
+    },
+    [emblaApi, emblaThumbsApi]
+  )
 
-  const onTouchEnd = () => {
-    if (!touchStart || !touchEnd) return
-    
-    const distance = touchStart - touchEnd
-    const isLeftSwipe = distance > minSwipeDistance
-    const isRightSwipe = distance < -minSwipeDistance
+  useEffect(() => {
+    if (!emblaApi) return
+    onSelect()
+    emblaApi.on('select', onSelect)
+    emblaApi.on('reInit', onSelect)
 
-    if (isLeftSwipe) {
-      handleNext() // Swipe esquerda = próxima imagem
-      setHasSwipedOnce(true) // Esconde indicador após primeiro swipe
+    return () => {
+      emblaApi.off('select', onSelect)
+      emblaApi.off('reInit', onSelect)
     }
-    if (isRightSwipe) {
-      handlePrevious() // Swipe direita = imagem anterior
-      setHasSwipedOnce(true) // Esconde indicador após primeiro swipe
-    }
-  }
+  }, [emblaApi, onSelect])
 
   if (images.length === 0) {
     return (
-      <div className="w-full aspect-square bg-white/5 rounded-lg flex items-center justify-center">
-        <p className="text-white/40">Sin imágenes disponibles</p>
+      <div className="w-full aspect-square dark:bg-white/5 bg-black/5 rounded-lg flex items-center justify-center">
+        <p className="dark:text-white/40 text-black/40 text-sm md:text-base">Sin imágenes disponibles</p>
       </div>
     )
   }
 
-  return (
-    <div className="space-y-4">
-      {/* Main Image */}
-      <div 
-        className="relative aspect-square bg-zinc-900 rounded-lg overflow-hidden group cursor-grab active:cursor-grabbing"
-        onTouchStart={onTouchStart}
-        onTouchMove={onTouchMove}
-        onTouchEnd={onTouchEnd}
-      >
-        <Image
-          src={images[currentImageIndex]}
-          alt={`${productName} - Imagen ${currentImageIndex + 1}`}
-          fill
-          className="object-contain select-none"
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 500px"
-          priority={currentImageIndex === 0}
-          quality={70}
-          placeholder="blur"
-          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
-          draggable={false}
-        />
+  const handleImageClick = () => {
+    setIsZoomed(!isZoomed)
+  }
 
-        {/* Navigation Arrows */}
+  return (
+    <div className="space-y-2 md:space-y-4">
+      {/* Main Carousel */}
+      <div className="relative">
+        <div className="overflow-hidden rounded-2xl md:rounded-3xl" ref={emblaRef}>
+          <div className="flex">
+            {images.map((image, index) => (
+              <div
+                key={index}
+                className="flex-[0_0_100%] min-w-0 relative aspect-square"
+              >
+                <div
+                  className="absolute inset-0 cursor-zoom-in"
+                  onClick={handleImageClick}
+                >
+                  <OptimizedImage
+                    src={image}
+                    alt={`${productName} - Imagen ${index + 1}`}
+                    fill
+                    className="object-contain p-2 md:p-4"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    priority={index === 0}
+                    quality={90}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Navigation Arrows - Desktop only */}
         {images.length > 1 && (
           <>
             <button
-              onClick={handlePrevious}
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/60 hover:bg-black/80 text-white rounded-full flex items-center justify-center transition-all opacity-0 group-hover:opacity-100"
+              onClick={scrollPrev}
+              className="hidden md:flex absolute left-2 md:left-4 top-1/2 -translate-y-1/2 w-8 h-8 md:w-12 md:h-12 dark:bg-black/70 dark:hover:bg-black/90 dark:text-white bg-white/70 hover:bg-white/90 text-black rounded-full items-center justify-center transition-all backdrop-blur-sm z-10"
+              aria-label="Imagen anterior"
             >
-              <ChevronLeft className="w-6 h-6" />
+              <ChevronLeft size={20} className="md:w-6 md:h-6" />
             </button>
             <button
-              onClick={handleNext}
-              className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/60 hover:bg-black/80 text-white rounded-full flex items-center justify-center transition-all opacity-0 group-hover:opacity-100"
+              onClick={scrollNext}
+              className="hidden md:flex absolute right-2 md:right-4 top-1/2 -translate-y-1/2 w-8 h-8 md:w-12 md:h-12 dark:bg-black/70 dark:hover:bg-black/90 dark:text-white bg-white/70 hover:bg-white/90 text-black rounded-full items-center justify-center transition-all backdrop-blur-sm z-10"
+              aria-label="Imagen siguiente"
             >
-              <ChevronRight className="w-6 h-6" />
+              <ChevronRight size={20} className="md:w-6 md:h-6" />
             </button>
           </>
         )}
 
         {/* Image Counter */}
-        <div className="absolute bottom-4 right-4 bg-black/60 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
-          {currentImageIndex + 1} / {images.length}
-        </div>
-
-        {/* Swipe Indicator - Mobile Only - Desaparece após primeiro swipe */}
-        {images.length > 1 && !hasSwipedOnce && (
-          <div className="absolute bottom-4 left-4 md:hidden bg-black/60 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs flex items-center gap-1.5 animate-pulse">
-            <ChevronLeft className="w-3 h-3" />
-            <span className="font-medium">Deslizar</span>
-            <ChevronRight className="w-3 h-3" />
+        {images.length > 1 && (
+          <div className="absolute bottom-2 md:bottom-4 right-2 md:right-4 dark:bg-black/70 dark:text-white bg-white/70 text-black backdrop-blur-sm px-2 py-1 md:px-3 md:py-1.5 rounded-md md:rounded-lg text-xs md:text-sm font-bold">
+            {selectedIndex + 1} / {images.length}
           </div>
         )}
 
-        {/* Zoom Hint - Desktop */}
-        <div className="hidden md:block absolute top-4 right-4 bg-black/60 backdrop-blur-sm text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
-          <ZoomIn className="w-5 h-5" />
+        {/* Swipe Indicator - Mobile only */}
+        <div className="md:hidden absolute bottom-2 left-2 dark:bg-black/70 dark:text-white bg-white/70 text-black backdrop-blur-sm px-2 py-1 rounded-md text-xs font-medium flex items-center gap-1.5">
+          <Sparkles className="w-3 h-3" />
+          Deslizá
         </div>
       </div>
 
-      {/* Thumbnails */}
+      {/* Thumbnails Carousel */}
       {images.length > 1 && (
-        <div className="overflow-x-auto scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
-          <div className="flex md:grid md:grid-cols-5 gap-2 pb-2">
+        <div className="overflow-hidden" ref={emblaThumbsRef}>
+          <div className="flex gap-1.5 md:gap-2">
             {images.map((image, index) => (
               <button
                 key={index}
-                onClick={() => handleThumbnailClick(index)}
-                className={`
-                  relative aspect-square rounded-lg overflow-hidden bg-white/5
-                  transition-all duration-200 flex-shrink-0
-                  w-20 h-20 md:w-auto md:h-auto
-                  ${
-                    currentImageIndex === index
-                      ? 'ring-2 ring-brand-yellow scale-105'
-                      : 'ring-2 ring-transparent hover:ring-white/30 opacity-60 hover:opacity-100'
-                  }
-                `}
+                onClick={() => onThumbClick(index)}
+                className={`flex-[0_0_auto] w-14 h-14 md:w-16 md:h-16 relative rounded-md md:rounded-xl overflow-hidden dark:bg-white/5 bg-black/5 transition-all duration-200 ${
+                  selectedIndex === index
+                    ? 'dark:ring-2 dark:ring-white dark:shadow-white/30 ring-2 ring-black scale-105 shadow-lg shadow-black/30'
+                    : 'ring-1 md:ring-2 ring-transparent dark:hover:ring-white/30 hover:ring-black/30 opacity-60 hover:opacity-100'
+                }`}
               >
-                <Image
+                <OptimizedImage
                   src={image}
                   alt={`${productName} - Miniatura ${index + 1}`}
                   fill
-                  className="object-contain"
-                  sizes="80px"
-                  quality={40}
-                  loading="lazy"
-                  placeholder="blur"
-                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+                  className="object-contain p-1"
+                  sizes="64px"
+                  quality={60}
                 />
+                {selectedIndex === index && (
+                  <div className="absolute inset-0 dark:bg-gradient-to-t dark:from-white/20 dark:to-transparent bg-gradient-to-t from-black/20 to-transparent" />
+                )}
               </button>
             ))}
           </div>
         </div>
       )}
+
+      {/* Zoom Modal */}
+      <AnimatePresence>
+        {isZoomed && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 dark:bg-black/95 bg-white/95 backdrop-blur-sm flex items-center justify-center p-4"
+            onClick={() => setIsZoomed(false)}
+          >
+            <button
+              onClick={() => setIsZoomed(false)}
+              className="absolute top-4 right-4 p-2 md:p-3 dark:bg-white/10 dark:hover:bg-white/20 bg-black/10 hover:bg-black/20 rounded-full transition-colors"
+              aria-label="Cerrar zoom"
+            >
+              <X className="w-5 h-5 md:w-6 md:h-6 dark:text-white text-black" />
+            </button>
+            <div className="relative w-full h-full max-w-6xl max-h-[90vh]">
+              <OptimizedImage
+                src={images[selectedIndex]}
+                alt={`${productName} - Zoom`}
+                fill
+                className="object-contain"
+                sizes="100vw"
+                quality={100}
+              />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   )
 }

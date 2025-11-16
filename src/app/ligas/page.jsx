@@ -2,11 +2,15 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { leagues, leagueStats } from '../../data/leagues';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 export default function LigasPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-brand-navy to-black pt-32 pb-16">
-      <div className="container mx-auto px-4">
+    <main className="min-h-screen bg-black">
+      <Header />
+      <div className="bg-gradient-to-b from-black via-brand-navy to-black pt-8 pb-16">
+        <div className="container mx-auto px-4">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -143,6 +147,8 @@ export default function LigasPage() {
           </Link>
         </motion.div>
       </div>
-    </div>
+      </div>
+      <Footer />
+    </main>
   );
 }

@@ -1,0 +1,202 @@
+╔══════════════════════════════════════════════════════════════════════╗
+║                                                                      ║
+║    🚀 ATUALIZAR PREÇOS NO SHOPIFY AUTOMATICAMENTE - PASSO A PASSO   ║
+║                                                                      ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+✨ O script está PRONTO! Só precisa configurar as credenciais.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📋 PASSO 1: OBTER CREDENCIAIS DO SHOPIFY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Entre no Shopify Admin da sua loja
+
+2. Vá em: Settings > Apps and sales channels
+
+3. Clique em "Develop apps" (ou "Desenvolver apps")
+
+4. Clique em "Create an app" (ou crie se não tiver)
+   Nome: "Foltz Price Manager" (ou qualquer nome)
+
+5. Vá na aba "Configuration"
+   
+6. Em "Admin API access scopes", marque:
+   ✅ read_products
+   ✅ write_products
+   
+   Clique em "Save"
+
+7. Clique em "Install app" e confirme
+
+8. Vá na aba "API credentials"
+   
+9. Clique em "Reveal token once" no "Admin API access token"
+   
+10. COPIE O TOKEN (começa com "shpat_")
+    ⚠️ ELE SÓ APARECE UMA VEZ! Guarde bem!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📋 PASSO 2: CRIAR ARQUIVO .env.local
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Na RAIZ do projeto (pasta Foltz), crie um arquivo chamado: .env.local
+
+2. Cole este conteúdo (SUBSTITUA com seus dados):
+
+SHOPIFY_STORE_DOMAIN=sua-loja.myshopify.com
+NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN=sua-loja.myshopify.com
+SHOPIFY_ADMIN_ACCESS_TOKEN=shpat_seu_token_aqui
+
+EXEMPLO:
+SHOPIFY_STORE_DOMAIN=foltz-fanwear.myshopify.com
+NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN=foltz-fanwear.myshopify.com
+SHOPIFY_ADMIN_ACCESS_TOKEN=shpat_a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6
+
+3. Salve o arquivo
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📋 PASSO 3: EXECUTAR ATUALIZAÇÃO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Abra o terminal na pasta do projeto
+
+2. Execute:
+
+   npm run update-shopify-prices
+
+3. Aguarde o processamento (5-15 minutos)
+
+4. Pronto! ✅
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💰 PREÇOS QUE SERÃO APLICADOS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+👕 Jerseys Normais:
+   Preço: ARS 35.900
+   Comparado: ARS 53.850 (riscado)
+   Desconto: 33%
+
+👔 Manga Longa:
+   Preço: ARS 39.900
+   Comparado: ARS 59.850 (riscado)
+   Desconto: 33%
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ O QUE O SCRIPT FAZ
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ATUALIZA:
+✅ Preços promocionais
+✅ Preços comparados (riscados)
+✅ Todas as variantes de tamanho
+
+MANTÉM INTACTO:
+✅ Títulos
+✅ Descrições
+✅ Imagens (TODAS as imagens permanecem)
+✅ Tags
+✅ Coleções
+✅ Reviews
+✅ Tudo mais!
+
+RESULTADO: Apenas os preços mudam! 🎯
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⚠️ IMPORTANTE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+- ✅ Seguro: Só atualiza preços
+- ✅ Reversível: Pode executar novamente com outros valores
+- ✅ Rápido: ~5-15 minutos
+- ⚠️ Token: Nunca compartilhe seu token!
+- ⚠️ Arquivo .env.local: Já está no .gitignore (não vai pro Git)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 EXEMPLO DE OUTPUT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Você verá algo assim:
+
+🏷️  ATUALIZAÇÃO DE PREÇOS NO SHOPIFY
+
+📌 Novos preços:
+   👕 Jerseys: ARS 35.900
+   👔 Manga Longa: ARS 39.900
+
+✅ Conectando à loja: sua-loja.myshopify.com
+⏳ Buscando produtos publicados...
+
+   Carregados: 50 produtos...
+   Carregados: 100 produtos...
+
+✅ 279 produtos encontrados
+
+👕 Jersey: Bayern Munich 25-26 Home
+   Variantes: 7
+   Novo preço: ARS 35.900
+
+👔 Manga Longa: AC Milan Long Sleeve
+   Variantes: 5
+   Novo preço: ARS 39.900
+
+⏳ Progresso: 100/279 produtos processados...
+
+✨ ATUALIZAÇÃO CONCLUÍDA!
+
+📊 Estatísticas:
+   👕 Jerseys atualizados: 236 produtos
+   👔 Manga longa atualizados: 43 produtos
+   📦 Variantes atualizadas: 1608
+
+🎉 Os preços foram atualizados com sucesso!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🆘 PROBLEMAS?
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Erro: "Configuração incompleta"
+→ Crie o arquivo .env.local com suas credenciais
+
+Erro: "Shopify API Error"
+→ Verifique se o token está correto
+→ Confirme as permissões: read_products e write_products
+
+Script muito lento?
+→ Normal! A API tem limites. Aguarde pacientemente.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📚 DOCUMENTAÇÃO COMPLETA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Guia detalhado: EXECUTAR-ATUALIZACAO-SHOPIFY.md
+Status final: STATUS-FINAL-PRECOS.md
+Documentação técnica: ATUALIZACAO-PRECOS-POR-TIPO-29-OUT.md
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✨ RESUMO ULTRA RÁPIDO:
+
+1. Criar app no Shopify Admin > Settings > Apps
+2. Obter token (shpat_xxxxx)
+3. Criar .env.local com token e domínio
+4. Executar: npm run update-shopify-prices
+5. Aguardar 5-15 minutos
+6. Conferir preços na loja
+
+PRONTO! 🎉
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Data: 29/10/2025
+Status: ✅ PRONTO PARA USO
+Dificuldade: ⭐⭐☆☆☆ Fácil
+Tempo: 20 minutos total
+
+╚══════════════════════════════════════════════════════════════════════╝
+
+
+
+
+

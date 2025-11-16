@@ -19,7 +19,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ['var(--font-sink)', 'Inter', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-inter)', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        bebas: ['var(--font-bebas)', 'Impact', 'Arial Black', 'sans-serif'],
       },
       fontWeight: {
         normal: '400',

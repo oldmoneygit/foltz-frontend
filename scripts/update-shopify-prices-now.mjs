@@ -20,13 +20,14 @@ dotenv.config({ path: path.join(__dirname, '../.env.local') })
 const shopifyDomain = process.env.NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN || process.env.SHOPIFY_STORE_DOMAIN
 const adminAccessToken = process.env.SHOPIFY_ADMIN_ACCESS_TOKEN
 
-// Novos preços - BLACK FRIDAY COMBO 3x
-// TODOS os produtos: ARS 32.900,00 (jerseys normais e manga longa)
-const JERSEY_PRICE = 32900.00
-const JERSEY_COMPARE_PRICE = 53850.00 // Preço "de" para mostrar desconto
+// Novos preços - BLACK NOVEMBER
+// TODOS os produtos: ARS 36.900,00 (jerseys normais e manga longa)
+// Preço de comparação: 50% mais caro = ARS 73.800,00
+const JERSEY_PRICE = 36900.00
+const JERSEY_COMPARE_PRICE = 73800.00 // 50% mais caro para mostrar desconto
 
-const LONG_SLEEVE_PRICE = 32900.00 // MESMO PREÇO que jerseys normais
-const LONG_SLEEVE_COMPARE_PRICE = 59850.00 // Preço "de" para manga longa
+const LONG_SLEEVE_PRICE = 36900.00 // MESMO PREÇO que jerseys normais
+const LONG_SLEEVE_COMPARE_PRICE = 73800.00 // 50% mais caro para manga longa também
 
 const SHOPIFY_API_VERSION = '2024-10'
 

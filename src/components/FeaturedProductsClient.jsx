@@ -48,7 +48,7 @@ export default function FeaturedProducts({ products = [] }) {
               viewport={{ once: true, margin: "0px 0px -50px 0px" }}
               transition={{ duration: 0.2, delay: index * 0.02 }}
             >
-              <ProductCard product={product} />
+              <ProductCard product={product} index={index} showBlackNovemberBadge={true} />
             </motion.div>
           ))}
         </div>
@@ -61,7 +61,7 @@ export default function FeaturedProducts({ products = [] }) {
           transition={{ duration: 0.3 }}
           className="text-center"
         >
-          <Link href="/collection/featured">
+          <Link href="/productos">
             <button className="px-8 py-4 bg-brand-yellow text-black font-black uppercase tracking-wide text-sm rounded-full hover:bg-yellow-400 transition-colors duration-200 shadow-xl">
               VER TODOS LOS PRODUCTOS
             </button>

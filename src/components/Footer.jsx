@@ -4,9 +4,11 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Instagram, Facebook, Twitter, Mail, MapPin, Phone } from 'lucide-react'
 import { useTheme } from '@/contexts/ThemeContext'
+import { useStoreMode } from '@/contexts/StoreModeContext'
 
 const Footer = () => {
   const { isDark } = useTheme()
+  const { isRetro, isAtuais } = useStoreMode()
   const currentYear = new Date().getFullYear()
 
   const footerLinks = {
@@ -33,9 +35,7 @@ const Footer = () => {
   }
 
   return (
-    <footer className="bg-gradient-to-b from-black via-zinc-950 to-black text-white border-t-4 border-brand-yellow relative">
-      {/* Subtle gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/5 via-transparent to-transparent pointer-events-none" />
+    <footer className="bg-black text-white border-t border-white/10 relative">
       {/* Main Footer Content */}
       <div className="container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -43,50 +43,56 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="relative w-40 h-20">
               <Image
-                src={isDark ? "/images/logo/logo-white.png" : "/images/logo/logo.png"}
+                src="/images/logo/logo-white.png"
                 alt="Foltz Fanwear"
                 fill
-                className={`object-contain ${isDark ? '' : 'brightness-0 invert'}`}
+                className={`object-contain ${isRetro ? 'brightness-0 invert sepia saturate-[10] hue-rotate-[5deg]' : ''}`}
               />
+              {isRetro && (
+                <p className="absolute -bottom-1 left-0 text-[#D4AF37]/60 text-xs">Colección Retro</p>
+              )}
             </div>
             <p className="text-sm text-gray-300 leading-relaxed">
-              Los mejores jerseys de fútbol importados. Réplicas 1:1 Premium, envío a toda Argentina.
+              {isRetro
+                ? 'Camisetas retro históricas. Revive los momentos legendarios del fútbol con réplicas auténticas.'
+                : 'Los mejores jerseys de fútbol importados. Réplicas 1:1 Premium, envío a toda Argentina.'
+              }
             </p>
             {/* Social Media */}
-            <div className="flex gap-4">
+            <div className="flex gap-3">
               <a
                 href="https://instagram.com/foltz.oficial"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-brand-yellow text-black rounded-full hover:bg-white transition-colors"
+                className="p-2 bg-white/10 text-white rounded-full hover:bg-white hover:text-black transition-all duration-300"
                 aria-label="Instagram"
               >
-                <Instagram size={20} />
+                <Instagram size={18} />
               </a>
               <a
                 href="https://facebook.com/foltzfanwear"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-brand-yellow text-black rounded-full hover:bg-white transition-colors"
+                className="p-2 bg-white/10 text-white rounded-full hover:bg-white hover:text-black transition-all duration-300"
                 aria-label="Facebook"
               >
-                <Facebook size={20} />
+                <Facebook size={18} />
               </a>
               <a
                 href="https://twitter.com/foltzfanwear"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-brand-yellow text-black rounded-full hover:bg-white transition-colors"
+                className="p-2 bg-white/10 text-white rounded-full hover:bg-white hover:text-black transition-all duration-300"
                 aria-label="Twitter"
               >
-                <Twitter size={20} />
+                <Twitter size={18} />
               </a>
             </div>
           </div>
 
           {/* Company Links */}
           <div>
-            <h3 className="text-brand-yellow font-black text-lg mb-4 uppercase tracking-wider">
+            <h3 className="text-white font-black text-base mb-4 uppercase tracking-wider">
               Empresa
             </h3>
             <ul className="space-y-2">
@@ -94,7 +100,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-300 hover:text-brand-yellow transition-colors text-sm"
+                    className="text-gray-400 hover:text-white transition-colors text-sm"
                   >
                     {link.name}
                   </Link>
@@ -105,7 +111,7 @@ const Footer = () => {
 
           {/* Shop Links */}
           <div>
-            <h3 className="text-brand-yellow font-black text-lg mb-4 uppercase tracking-wider">
+            <h3 className="text-white font-black text-base mb-4 uppercase tracking-wider">
               Comprar
             </h3>
             <ul className="space-y-2">
@@ -113,7 +119,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-300 hover:text-brand-yellow transition-colors text-sm"
+                    className="text-gray-400 hover:text-white transition-colors text-sm"
                   >
                     {link.name}
                   </Link>
@@ -124,7 +130,7 @@ const Footer = () => {
 
           {/* Help Links */}
           <div>
-            <h3 className="text-brand-yellow font-black text-lg mb-4 uppercase tracking-wider">
+            <h3 className="text-white font-black text-base mb-4 uppercase tracking-wider">
               Ayuda
             </h3>
             <ul className="space-y-2">
@@ -132,7 +138,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-300 hover:text-brand-yellow transition-colors text-sm"
+                    className="text-gray-400 hover:text-white transition-colors text-sm"
                   >
                     {link.name}
                   </Link>
@@ -143,38 +149,23 @@ const Footer = () => {
         </div>
 
         {/* Contact Info */}
-        <div className="mt-12 pt-8 border-t border-brand-yellow/30">
+        <div className="mt-12 pt-8 border-t border-white/5">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
-            <div className="flex items-center gap-3 text-gray-300">
-              <Mail className="text-brand-yellow flex-shrink-0" size={20} />
-              <a href="mailto:contacto@foltzoficial.com" className="hover:text-brand-yellow transition-colors">
+            <div className="flex items-center gap-3 text-gray-400">
+              <Mail className="text-white/60 flex-shrink-0" size={18} />
+              <a href="mailto:contacto@foltzoficial.com" className="hover:text-white transition-colors">
                 contacto@foltzoficial.com
               </a>
             </div>
-            <div className="flex items-center gap-3 text-gray-300">
-              <Phone className="text-brand-yellow flex-shrink-0" size={20} />
-              <a href="tel:+5592991620674" className="hover:text-brand-yellow transition-colors">
+            <div className="flex items-center gap-3 text-gray-400">
+              <Phone className="text-white/60 flex-shrink-0" size={18} />
+              <a href="tel:+5592991620674" className="hover:text-white transition-colors">
                 +55 92 99162-0674
               </a>
             </div>
-            <div className="flex items-center gap-3 text-gray-300">
-              <MapPin className="text-brand-yellow flex-shrink-0" size={20} />
+            <div className="flex items-center gap-3 text-gray-400">
+              <MapPin className="text-white/60 flex-shrink-0" size={18} />
               <span>Buenos Aires, Argentina</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Payment Methods */}
-        <div className="mt-8 pt-8 border-t border-brand-yellow/30">
-          <p className="text-center text-sm text-gray-400 mb-4">Métodos de pago aceptados</p>
-          <div className="flex justify-center items-center">
-            <div className="relative w-full max-w-2xl h-16">
-              <Image
-                src="/images/payment-methods/bandeira-de-cartoes-11.webp"
-                alt="Métodos de pago"
-                fill
-                className="object-contain"
-              />
             </div>
           </div>
         </div>

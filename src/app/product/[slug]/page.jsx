@@ -2,11 +2,11 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import ProductGallery from '@/components/product/ProductGallery'
 import ProductInfo from '@/components/product/ProductInfo'
-import Combo3xProductCard from '@/components/combo3x/Combo3xProductCard'
 import BackButton from '@/components/product/BackButton'
 import ProductInfoTabs from '@/components/ProductInfoTabs'
 import ProductDescription from '@/components/product/ProductDescription'
-import Testimonials from '@/components/Testimonials'
+import CustomerFeedbacks from '@/components/store/CustomerFeedbacks'
+import SinCostosAduaneros from '@/components/store/SinCostosAduaneros'
 import { getProductBySlug, getAllProductSlugs } from '@/utils/shopifyData'
 
 // Generate static params for all products
@@ -114,9 +114,6 @@ export default async function ProductPage({ params }) {
             {/* Right Column - Product Info */}
             <div>
               <ProductInfo product={enhancedProduct} />
-
-              {/* Black Friday - Combo 3x */}
-              <Combo3xProductCard />
             </div>
           </div>
         </div>
@@ -126,11 +123,14 @@ export default async function ProductPage({ params }) {
           <ProductDescription product={enhancedProduct} />
         </div>
 
+        {/* Sin Costos Aduaneros - Customs Information */}
+        <SinCostosAduaneros />
+
         {/* Product Info Tabs - Shipping, Warranty, Care */}
         <ProductInfoTabs />
 
-        {/* Customer Testimonials - Real Reviews */}
-        <Testimonials />
+        {/* Customer Feedbacks - Real Reviews */}
+        <CustomerFeedbacks />
       </main>
       <Footer />
     </>

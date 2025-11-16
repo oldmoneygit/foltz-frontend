@@ -37,7 +37,6 @@ export default function MetaPixelLoader() {
   const pixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID
 
   if (!pixelId) {
-    console.warn('[Meta Pixel] NEXT_PUBLIC_META_PIXEL_ID not configured')
     return null
   }
 

@@ -5,13 +5,12 @@ import { ShoppingCart, Truck, Tag, CreditCard, Loader2 } from 'lucide-react'
 import { createCheckoutWithItems, findVariantBySize } from '@/lib/shopify'
 import { triggerInitiateCheckout } from '@/components/MetaPixelEvents'
 import { addUTMsToURL } from '@/utils/utmTracking'
-import { useCombo3x } from '@/contexts/Combo3xContext'
-import Combo3xCartOption from '@/components/combo3x/Combo3xCartOption'
+import { useBlackFriday } from '@/contexts/BlackFridayContext'
 
 const CartSummary = ({ subtotal, cartItems, saveCart }) => {
   const [isCheckingOut, setIsCheckingOut] = useState(false)
   const [checkoutError, setCheckoutError] = useState(null)
-  const { calculateCombo3xTotals, COMBO_PRICE } = useCombo3x()
+  const { calculatePackBlackTotals, PACK_BLACK_PRICE, PACK_BLACK_SIZE } = useBlackFriday()
 
   // Formata o preço como "AR$ XX.XXX,XX"
   const formatPrice = (value) => {
@@ -21,14 +20,14 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
     return `AR$ ${parts.join(',')}`
   }
 
-  // Calcular dados do combo
-  const comboData = calculateCombo3xTotals(cartItems)
+  // Calcular dados do Pack Black
+  const packData = calculatePackBlackTotals(cartItems)
 
   // Format values
-  const formattedSubtotalNormal = formatPrice(comboData.subtotalNormal)
-  const formattedSubtotalCombo = formatPrice(comboData.subtotalCombo)
-  const formattedSavings = formatPrice(comboData.savings)
-  const formattedTotal = formatPrice(comboData.total)
+  const formattedSubtotalNormal = formatPrice(packData.subtotalNormal)
+  const formattedSubtotalWithPack = formatPrice(packData.subtotalWithPack)
+  const formattedSavings = formatPrice(packData.savings)
+  const formattedTotal = formatPrice(packData.total)
 
   // Handle Shopify Checkout
   const handleCheckout = async () => {
@@ -48,20 +47,17 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
       for (const item of cartItems) {
         // Find the correct variant ID based on size
         if (!item.variants || item.variants.length === 0) {
-          console.error(`Product ${item.name} doesn't have variants data`)
           continue
         }
 
         // Adaptar estrutura: variants pode ser array direto ou objeto com edges
         const variantsData = Array.isArray(item.variants)
-          ? { edges: item.variants }
+          ? { edges: item.variants.map(v => ({ node: v })) }
           : item.variants
 
         const variantId = findVariantBySize(variantsData, item.size)
 
         if (!variantId) {
-          console.error(`Variant not found for ${item.name} - Size: ${item.size}`)
-          console.log('Available variants:', variantsData)
           throw new Error(`No se encontró la talla ${item.size} para ${item.name}`)
         }
 
@@ -92,24 +88,24 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
           }
         }
 
-        // Add Combo 3x attributes APENAS NO PRIMEIRO PRODUTO para evitar confusão
-        if (comboData.hasCombo && isFirstItem) {
+        // Add Pack Black attributes APENAS NO PRIMEIRO PRODUTO para evitar confusão
+        if (packData.hasPack && isFirstItem) {
           lineItem.attributes.push({
-            key: '🔥 COMBO 3x BLACK FRIDAY',
+            key: '🔥 PACK BLACK',
             value: '✅ Activado'
           })
           lineItem.attributes.push({
-            key: '📦 Combos',
-            value: `${comboData.fullCombos} ${comboData.fullCombos === 1 ? 'combo' : 'combos'} (${comboData.fullCombos * 3} camisetas)`
+            key: '📦 Packs',
+            value: `${packData.fullPacks} ${packData.fullPacks === 1 ? 'pack' : 'packs'} (${packData.fullPacks * PACK_BLACK_SIZE} camisetas)`
           })
           lineItem.attributes.push({
-            key: '💰 Precio Combo',
-            value: `${formatPrice(COMBO_PRICE)} c/u`
+            key: '💰 Precio Pack',
+            value: `${formatPrice(PACK_BLACK_PRICE)} por ${PACK_BLACK_SIZE} camisetas`
           })
-          if (comboData.savings > 0) {
+          if (packData.savings > 0) {
             lineItem.attributes.push({
               key: '🎉 Ahorro total',
-              value: formatPrice(comboData.savings)
+              value: formatPrice(packData.savings)
             })
           }
           lineItem.attributes.push({
@@ -117,6 +113,20 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
             value: 'GRATIS incluido'
           })
           isFirstItem = false // Marcar que já adicionamos no primeiro
+        }
+
+        // Add Mystery Box attributes
+        if (packData.hasMysteryBox && isFirstItem) {
+          lineItem.attributes.push({
+            key: '📦 MYSTERY BOX',
+            value: `${packData.mysteryBoxCount} ${packData.mysteryBoxCount === 1 ? 'box' : 'boxes'}`
+          })
+          if (packData.mysteryBoxDiscount > 0) {
+            lineItem.attributes.push({
+              key: '🎉 Descuento Mystery Box',
+              value: formatPrice(packData.mysteryBoxDiscount)
+            })
+          }
         }
 
         lineItems.push(lineItem)
@@ -129,21 +139,29 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
       // Track InitiateCheckout event ANTES de redirecionar
       triggerInitiateCheckout(cartItems)
 
-      // Track Combo 3x event if active
-      if (comboData.hasCombo) {
-        console.log('[Combo 3x] Checkout criado com combo ativo')
-        console.log('[Combo 3x] Combos:', comboData.fullCombos)
-        console.log('[Combo 3x] Total:', formatPrice(comboData.total))
-        console.log('[Combo 3x] Economia:', formatPrice(comboData.savings))
-
+      // Track Pack Black event if active
+      if (packData.hasPack) {
         // Track to Meta Pixel
         if (typeof window !== 'undefined' && window.fbq) {
-          window.fbq('trackCustom', 'Combo3xCheckout', {
+          window.fbq('trackCustom', 'PackBlackCheckout', {
             currency: 'ARS',
-            value: comboData.total,
-            num_combos: comboData.fullCombos,
-            num_items: comboData.itemCount,
-            savings: comboData.savings
+            value: packData.total,
+            num_packs: packData.fullPacks,
+            num_items: packData.itemCount,
+            savings: packData.savings
+          })
+        }
+      }
+
+      // Track Mystery Box event if active
+      if (packData.hasMysteryBox) {
+        // Track to Meta Pixel
+        if (typeof window !== 'undefined' && window.fbq) {
+          window.fbq('trackCustom', 'MysteryBoxCheckout', {
+            currency: 'ARS',
+            value: packData.total,
+            num_boxes: packData.mysteryBoxCount,
+            discount: packData.mysteryBoxDiscount
           })
         }
       }
@@ -160,7 +178,6 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
       if (checkout && checkout.webUrl) {
         // Adicionar parâmetros UTM à URL do checkout
         const checkoutUrlWithUTMs = addUTMsToURL(checkout.webUrl)
-        console.log('[Checkout] Redirecting with UTMs:', checkoutUrlWithUTMs)
         window.location.href = checkoutUrlWithUTMs
       } else {
         throw new Error('No se recibió URL de checkout')
@@ -186,28 +203,47 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
           {/* Quantidade de produtos */}
           <div className="flex items-center justify-between">
             <span className="text-white/60 text-sm">
-              {comboData.itemCount} {comboData.itemCount === 1 ? 'producto' : 'productos'}
+              {packData.itemCount} {packData.itemCount === 1 ? 'producto' : 'productos'}
             </span>
             <span className="text-white/60 text-sm">
               {formattedSubtotalNormal}
             </span>
           </div>
 
-          {/* Combo 3x - Display */}
-          {comboData.hasCombo ? (
+          {/* Pack Black - Display */}
+          {packData.hasPack ? (
             <div className="flex items-start gap-2 bg-green-500/10 border border-green-500/30 rounded-lg p-3">
               <Tag className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
               <div className="flex-1 min-w-0">
                 <div className="flex items-center justify-between mb-1">
                   <span className="text-green-500 text-sm font-bold">
-                    Combo 3x Activado
+                    Pack Black Activado
                   </span>
                   <span className="text-green-500 font-bold">
                     -{formattedSavings}
                   </span>
                 </div>
                 <p className="text-green-500/80 text-xs">
-                  ¡{comboData.fullCombos} {comboData.fullCombos === 1 ? 'combo' : 'combos'} de 3 camisetas por ARS 32.900!
+                  ¡{packData.fullPacks} {packData.fullPacks === 1 ? 'pack' : 'packs'} de {PACK_BLACK_SIZE} camisetas por ARS {PACK_BLACK_PRICE.toLocaleString()}!
+                </p>
+              </div>
+            </div>
+          ) : packData.hasMysteryBox ? (
+            <div className="flex items-start gap-2 bg-green-500/10 border border-green-500/30 rounded-lg p-3">
+              <Tag className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center justify-between mb-1">
+                  <span className="text-green-500 text-sm font-bold">
+                    Mystery Box Activado
+                  </span>
+                  {packData.mysteryBoxDiscount > 0 && (
+                    <span className="text-green-500 font-bold">
+                      -{formatPrice(packData.mysteryBoxDiscount)}
+                    </span>
+                  )}
+                </div>
+                <p className="text-green-500/80 text-xs">
+                  ¡{packData.mysteryBoxCount} Mystery {packData.mysteryBoxCount === 1 ? 'Box' : 'Boxes'} con descuento progresivo!
                 </p>
               </div>
             </div>
@@ -216,9 +252,9 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
               <Tag className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />
               <div className="flex-1 min-w-0">
                 <p className="text-orange-500 text-xs font-semibold">
-                  {comboData.itemCount === 0
-                    ? '¡Agrega 3 camisetas para combo de ARS 32.900!'
-                    : `¡Agrega ${comboData.productsNeeded} más para combo de ARS 32.900!`
+                  {packData.itemCount === 0
+                    ? `¡Agrega ${PACK_BLACK_SIZE} camisetas para Pack Black de ARS ${PACK_BLACK_PRICE.toLocaleString()}!`
+                    : `¡Agrega ${packData.productsNeeded} más para Pack Black de ARS ${PACK_BLACK_PRICE.toLocaleString()}!`
                   }
                 </p>
               </div>
@@ -243,19 +279,13 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
                 {formattedTotal}
               </span>
             </div>
-            {comboData.hasCombo && comboData.savings > 0 && (
+            {(packData.hasPack || packData.hasMysteryBox) && packData.savings > 0 && (
               <p className="text-green-500 text-xs text-right font-semibold">
                 ¡Ahorraste {formattedSavings}!
               </p>
             )}
           </div>
         </div>
-
-        {/* Combo 3x Option */}
-        <Combo3xCartOption
-          items={cartItems}
-          subtotal={comboData.subtotalCombo}
-        />
 
         {/* Error Message */}
         {checkoutError && (
@@ -267,7 +297,7 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
         {/* Checkout Button */}
         <button
           onClick={handleCheckout}
-          disabled={isCheckingOut || comboData.itemCount === 0}
+          disabled={isCheckingOut || packData.itemCount === 0}
           className="w-full bg-brand-yellow text-black py-4 rounded-lg font-bold text-lg uppercase tracking-wide hover:bg-yellow-400 active:scale-95 transition-all duration-300 shadow-lg shadow-brand-yellow/20 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isCheckingOut ? (
@@ -321,7 +351,7 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
       <div className="fixed bottom-0 left-0 right-0 lg:hidden bg-black border-t-2 border-brand-yellow p-4 z-[60] shadow-2xl">
         <button
           onClick={handleCheckout}
-          disabled={isCheckingOut || comboData.itemCount === 0}
+          disabled={isCheckingOut || packData.itemCount === 0}
           className="w-full bg-brand-yellow text-black py-4 rounded-lg font-bold text-lg uppercase tracking-wide hover:bg-yellow-400 active:scale-95 transition-all flex items-center justify-center gap-2 shadow-lg min-h-[56px] disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isCheckingOut ? (

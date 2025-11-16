@@ -2,7 +2,6 @@
 
 import { useState, useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 import SizeSelector from './SizeSelector'
 import QuantitySelector from './QuantitySelector'
 import AddToCartToast from './AddToCartToast'
@@ -10,11 +9,13 @@ import SizeGuideModal from '@/components/SizeGuideModal'
 import ReservationCountdown from './ReservationCountdown'
 import { useCart } from '@/contexts/CartContext'
 import { useFavorites } from '@/contexts/FavoritesContext'
-import { ShoppingCart, Package, Shield, Truck, Check, Heart } from 'lucide-react'
+import { usePackFoltz } from '@/contexts/PackFoltzContext'
+import { ShoppingCart, Package, Shield, Truck, Check, Heart, Shirt } from 'lucide-react'
 
 const ProductInfo = ({ product }) => {
   const { addToCart } = useCart()
   const { toggleFavorite, isFavorite } = useFavorites()
+  const { addToPack, isInPack, currentCount, packSize, isComplete, packPrice } = usePackFoltz()
   const [selectedSize, setSelectedSize] = useState(null)
   const [quantity, setQuantity] = useState(1)
   const [addedToCart, setAddedToCart] = useState(false)
@@ -22,8 +23,10 @@ const ProductInfo = ({ product }) => {
   const [sizeGuideOpen, setSizeGuideOpen] = useState(false)
   const [showStickyButton, setShowStickyButton] = useState(false)
   const [showStickyModal, setShowStickyModal] = useState(false)
+  const [packMessage, setPackMessage] = useState('')
+  const [isAddingToPack, setIsAddingToPack] = useState(false)
   const buttonRef = useRef(null)
-  
+
   // Personalização (GRÁTIS com promo 3x1!)
   const [wantsCustomization, setWantsCustomization] = useState(false)
   const [customName, setCustomName] = useState('')
@@ -135,6 +138,46 @@ const ProductInfo = ({ product }) => {
     }, 100)
   }
 
+  // Adicionar produto ao Pack Foltz
+  const handleAddToPack = async () => {
+    if (!selectedSize) {
+      alert('Por favor selecciona una talla')
+      return
+    }
+
+    setIsAddingToPack(true)
+    try {
+      const packProduct = {
+        id: product.id,
+        name: product.name,
+        slug: product.slug,
+        price: product.price,
+        main_image: product.main_image || product.gallery?.[0] || product.images?.[0],
+        images: product.gallery || product.images || [product.main_image],
+        gallery: product.gallery || product.images || [product.main_image],
+        size: selectedSize,
+        league: product.league,
+        shopifyId: product.shopifyId,
+        variants: product.variants,
+        handle: product.handle,
+      }
+
+      // Pass addToCart callback so product is added to BOTH pack AND cart
+      const result = addToPack(packProduct, addToCart)
+      setPackMessage(result.message)
+
+      // Clear message after 3 seconds
+      setTimeout(() => {
+        setPackMessage('')
+      }, 3000)
+    } catch (error) {
+      console.error('Error adding to pack:', error)
+      setPackMessage('Error al agregar al pack')
+    } finally {
+      setIsAddingToPack(false)
+    }
+  }
+
   return (
     <div className="space-y-4 md:space-y-6">
       {/* Product Title */}
@@ -144,34 +187,31 @@ const ProductInfo = ({ product }) => {
         </h1>
       </div>
 
-      {/* Promotional Banner Image */}
-      <div className="relative w-full max-w-md rounded-lg overflow-hidden">
-        <Image
-          src="/images/promo-banner.jpeg"
-          alt="Promoción Compra 1 Lleva 3"
-          width={600}
-          height={150}
-          className="w-full h-auto object-cover"
-          priority
-        />
-      </div>
-
-      {/* Price */}
-      <div className="space-y-2 py-3 md:py-4">
-        <div className="flex items-center gap-2 md:gap-3 flex-wrap">
-          <p className="text-2xl md:text-3xl font-bold text-brand-yellow flex-shrink-0 font-sans">
-            {formattedPrice}
-          </p>
+      {/* Price Section - Retrobox Style with Foltz Colors */}
+      <div className="space-y-3">
+        {/* Black November Badge */}
+        <div className="flex items-center gap-2">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-red-600 to-red-500 text-white text-xs font-black uppercase tracking-wide rounded-md">
+            <span className="text-sm">🔥</span>
+            BLACK NOVEMBER
+          </span>
           {hasDiscount && (
-            <>
-              <p className="text-base md:text-lg text-white/40 line-through flex-shrink-0 font-sans">
-                {formattedRegularPrice}
-              </p>
-              <span className="bg-red-600 text-white text-xs md:text-sm font-semibold px-2.5 py-1 rounded flex-shrink-0">
-                -{discountPercentage}%
-              </span>
-            </>
+            <span className="px-3 py-1.5 bg-zinc-900 border border-zinc-700 text-white text-xs font-bold rounded-md">
+              -{discountPercentage}% OFF
+            </span>
           )}
+        </div>
+
+        {/* Prices */}
+        <div className="space-y-1">
+          {hasDiscount && (
+            <p className="text-lg text-white/50 line-through font-mono">
+              ${displayRegularPrice.toLocaleString('es-AR', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}
+            </p>
+          )}
+          <p className="text-4xl md:text-5xl font-black text-white tracking-tight">
+            ${price.toLocaleString('es-AR', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}
+          </p>
         </div>
       </div>
 
@@ -183,188 +223,120 @@ const ProductInfo = ({ product }) => {
         onOpenSizeGuide={() => setSizeGuideOpen(true)}
       />
 
-      {/* Personalización (GRÁTIS!) */}
-      <motion.div 
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.3, delay: 0.2 }}
-        className="relative space-y-4 py-6 border-t border-zinc-800/50"
-      >
-        {/* Subtle gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-yellow/[0.02] via-transparent to-transparent pointer-events-none rounded-lg" />
-        
-        {/* Toggle Personalización */}
-        <div className="relative flex items-center justify-between p-4 rounded-xl bg-gradient-to-r from-zinc-900/50 to-zinc-950/50 border border-zinc-800/50 hover:border-brand-yellow/20 transition-all duration-300 group">
-          <div className="flex items-center gap-4">
-            {/* Custom Checkbox */}
-            <div className="relative">
-              <input
-                type="checkbox"
-                id="customization"
-                checked={wantsCustomization}
-                onChange={(e) => setWantsCustomization(e.target.checked)}
-                className="sr-only peer"
-              />
-              <label
-                htmlFor="customization"
-                className="flex items-center justify-center w-6 h-6 rounded-md border-2 border-zinc-700 bg-zinc-900 cursor-pointer transition-all duration-300 peer-checked:border-brand-yellow peer-checked:bg-brand-yellow/10 hover:border-brand-yellow/50 group-hover:scale-105"
-              >
-                {wantsCustomization && (
-                  <motion.svg
-                    initial={{ scale: 0, rotate: -180 }}
-                    animate={{ scale: 1, rotate: 0 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                    className="w-4 h-4 text-brand-yellow"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={3}
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                  </motion.svg>
-                )}
-              </label>
-            </div>
-            
-            <label htmlFor="customization" className="text-white font-semibold cursor-pointer group-hover:text-brand-yellow transition-colors duration-300">
-              ¿Quieres personalizar tu camiseta?
-            </label>
+      {/* Personalización - Retrobox Style */}
+      <div className="space-y-4 border-t border-zinc-800 pt-6">
+        {/* Header with Icon */}
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 bg-zinc-900 rounded-lg flex items-center justify-center">
+            <Shirt className="w-5 h-5 text-brand-yellow" />
           </div>
-          
-          <motion.span 
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center px-3 py-1.5 bg-gradient-to-r from-brand-yellow/20 to-brand-yellow/10 border border-brand-yellow/40 rounded-full text-brand-yellow text-xs font-black uppercase tracking-wider shadow-lg shadow-brand-yellow/10"
-          >
-            GRÁTIS
-          </motion.span>
+          <div>
+            <h3 className="text-white font-bold text-base">Personalización</h3>
+            <p className="text-gray-400 text-xs">Agregá nombre y número a tu camiseta</p>
+          </div>
+          <span className="ml-auto bg-green-500/20 text-green-400 text-xs font-bold px-2.5 py-1 rounded-md uppercase">
+            GRATIS
+          </span>
         </div>
 
-        {/* Campos de Personalização (aparecem quando checkbox marcado) */}
+        {/* Toggle Button */}
+        <button
+          onClick={() => setWantsCustomization(!wantsCustomization)}
+          className={`w-full p-4 rounded-lg border-2 transition-all duration-300 flex items-center justify-between ${
+            wantsCustomization
+              ? 'bg-brand-yellow/10 border-brand-yellow text-brand-yellow'
+              : 'bg-zinc-900 border-zinc-700 text-white hover:border-zinc-600'
+          }`}
+        >
+          <span className="font-semibold">
+            {wantsCustomization ? 'Personalización activada' : '¿Quieres personalizar tu camiseta?'}
+          </span>
+          <div className={`w-12 h-6 rounded-full transition-all duration-300 relative ${
+            wantsCustomization ? 'bg-brand-yellow' : 'bg-zinc-700'
+          }`}>
+            <div className={`absolute top-1 w-4 h-4 rounded-full bg-white transition-all duration-300 ${
+              wantsCustomization ? 'right-1' : 'left-1'
+            }`} />
+          </div>
+        </button>
+
+        {/* Campos de Personalização */}
         {wantsCustomization && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-            className="space-y-4 pl-8 relative"
+            transition={{ duration: 0.3 }}
+            className="space-y-4 bg-zinc-900/50 p-4 rounded-lg border border-zinc-800"
           >
-            {/* Linha lateral amarela sutil */}
-            <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-brand-yellow/50 via-brand-yellow/20 to-transparent rounded-full" />
-            
-            <motion.p 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.1 }}
-              className="text-sm text-gray-400 mb-4 italic"
-            >
+            <p className="text-sm text-gray-400">
               Sin personalización, tu camiseta vendrá con la espalda lisa
-            </motion.p>
-            
+            </p>
+
             {/* Campo Nome */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.15 }}
-            >
-              <label htmlFor="customName" className="block text-sm font-medium text-gray-300 mb-2 flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-brand-yellow/60" />
+            <div>
+              <label htmlFor="customName" className="block text-sm font-medium text-white mb-2">
                 Nombre (opcional)
               </label>
-              <div className="relative group">
-                <input
-                  type="text"
-                  id="customName"
-                  value={customName}
-                  onChange={(e) => setCustomName(e.target.value.toUpperCase().slice(0, 15))}
-                  placeholder="MESSI"
-                  maxLength={15}
-                  className="w-full px-4 py-3 bg-gradient-to-br from-zinc-900 to-zinc-950 border border-zinc-700/50 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-brand-yellow/50 focus:border-brand-yellow/50 hover:border-brand-yellow/30 transition-all duration-300 uppercase font-semibold tracking-wide"
-                />
-                {/* Subtle glow on focus */}
-                <div className="absolute inset-0 rounded-xl bg-brand-yellow/5 opacity-0 group-focus-within:opacity-100 transition-opacity duration-300 pointer-events-none" />
-              </div>
-              <p className="text-xs text-gray-500 mt-1.5 flex items-center gap-1">
-                <span className="text-brand-yellow/60">•</span> Máximo 15 caracteres
+              <input
+                type="text"
+                id="customName"
+                value={customName}
+                onChange={(e) => setCustomName(e.target.value.toUpperCase().slice(0, 15))}
+                placeholder="MESSI"
+                maxLength={15}
+                className="w-full px-4 py-3 bg-black border border-zinc-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-brand-yellow transition-colors uppercase font-bold tracking-wider"
+              />
+              <p className="text-xs text-gray-500 mt-1">
+                Máximo 15 caracteres
               </p>
-            </motion.div>
+            </div>
 
             {/* Campo Número */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2 }}
-            >
-              <label htmlFor="customNumber" className="block text-sm font-medium text-gray-300 mb-2 flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-brand-yellow/60" />
+            <div>
+              <label htmlFor="customNumber" className="block text-sm font-medium text-white mb-2">
                 Número (opcional)
               </label>
-              <div className="relative group">
-                <input
-                  type="text"
-                  id="customNumber"
-                  value={customNumber}
-                  onChange={(e) => {
-                    const value = e.target.value.replace(/\D/g, '').slice(0, 2)
-                    setCustomNumber(value)
-                  }}
-                  placeholder="10"
-                  maxLength={2}
-                  className="w-full px-4 py-3 bg-gradient-to-br from-zinc-900 to-zinc-950 border border-zinc-700/50 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-brand-yellow/50 focus:border-brand-yellow/50 hover:border-brand-yellow/30 transition-all duration-300 font-bold text-xl"
-                />
-                <div className="absolute inset-0 rounded-xl bg-brand-yellow/5 opacity-0 group-focus-within:opacity-100 transition-opacity duration-300 pointer-events-none" />
-              </div>
-              <p className="text-xs text-gray-500 mt-1.5 flex items-center gap-1">
-                <span className="text-brand-yellow/60">•</span> Números 0-99
+              <input
+                type="text"
+                id="customNumber"
+                value={customNumber}
+                onChange={(e) => {
+                  const value = e.target.value.replace(/\D/g, '').slice(0, 2)
+                  setCustomNumber(value)
+                }}
+                placeholder="10"
+                maxLength={2}
+                className="w-full px-4 py-3 bg-black border border-zinc-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-brand-yellow transition-colors font-bold text-xl"
+              />
+              <p className="text-xs text-gray-500 mt-1">
+                Números 0-99
               </p>
-            </motion.div>
+            </div>
 
             {/* Preview */}
             {(customName || customNumber) && (
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.3, delay: 0.1 }}
-                className="relative mt-6 p-6 rounded-2xl overflow-hidden"
-              >
-                {/* Gradient background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-brand-yellow/10 via-brand-yellow/5 to-transparent" />
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(218,241,13,0.1),transparent_70%)]" />
-                
-                {/* Border with gradient */}
-                <div className="absolute inset-0 rounded-2xl border border-brand-yellow/20" />
-                
-                <div className="relative">
-                  <p className="text-xs text-gray-400 mb-3 uppercase tracking-wider flex items-center gap-2">
-                    <span className="w-1 h-1 rounded-full bg-brand-yellow animate-pulse" />
-                    Vista previa
-                  </p>
-                  <div className="text-center py-4 space-y-2">
-                    {customName && (
-                      <motion.p 
-                        initial={{ opacity: 0, y: -10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="text-white font-bold text-xl tracking-[0.2em] drop-shadow-lg"
-                      >
-                        {customName}
-                      </motion.p>
-                    )}
-                    {customNumber && (
-                      <motion.p 
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="text-brand-yellow font-black text-4xl drop-shadow-[0_0_15px_rgba(218,241,13,0.3)]"
-                      >
-                        {customNumber}
-                      </motion.p>
-                    )}
-                  </div>
+              <div className="mt-4 p-4 bg-black rounded-lg border border-zinc-700">
+                <p className="text-xs text-gray-400 mb-3 uppercase tracking-wider">
+                  Vista previa
+                </p>
+                <div className="text-center py-4 space-y-1">
+                  {customName && (
+                    <p className="text-white font-bold text-lg tracking-[0.2em]">
+                      {customName}
+                    </p>
+                  )}
+                  {customNumber && (
+                    <p className="text-brand-yellow font-black text-3xl">
+                      {customNumber}
+                    </p>
+                  )}
                 </div>
-              </motion.div>
+              </div>
             )}
           </motion.div>
         )}
-      </motion.div>
+      </div>
 
       {/* Quantity Selector */}
       <QuantitySelector
@@ -374,34 +346,84 @@ const ProductInfo = ({ product }) => {
         max={10}
       />
 
+      {/* Pack Message Feedback */}
+      {packMessage && (
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          className={`text-center py-3 px-4 rounded-lg text-sm font-semibold ${
+            packMessage.includes('agregado')
+              ? 'bg-green-500/20 text-green-400 border border-green-500/30'
+              : 'bg-red-500/20 text-red-400 border border-red-500/30'
+          }`}
+        >
+          {packMessage}
+        </motion.div>
+      )}
+
+      {/* Add to Pack Button - MAIN CTA - Most prominent */}
+      {stock !== 'soldout' && !isComplete && (
+        <motion.button
+          onClick={handleAddToPack}
+          disabled={!selectedSize || isAddingToPack || (selectedSize && isInPack(product.id, selectedSize))}
+          whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 0.97 }}
+          className="w-full bg-brand-yellow text-black font-black uppercase py-4 md:py-5 rounded-xl hover:brightness-110 hover:shadow-2xl hover:shadow-brand-yellow/40 active:scale-95 md:hover:scale-[1.02] shadow-xl shadow-brand-yellow/30 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3 text-base md:text-lg relative overflow-hidden"
+        >
+          {/* Animated background effect */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full animate-shimmer" />
+
+          {isAddingToPack ? (
+            <>
+              <div className="w-6 h-6 border-3 border-black border-t-transparent rounded-full animate-spin" />
+              Agregando al Pack...
+            </>
+          ) : selectedSize && isInPack(product.id, selectedSize) ? (
+            <>
+              <Check className="w-6 h-6" />
+              Ya está en el Pack
+            </>
+          ) : (
+            <>
+              <Package className="w-6 h-6" />
+              <span>AGREGAR AL PACK</span>
+              <span className="bg-black/20 px-2 py-0.5 rounded-md text-sm font-bold">
+                {currentCount}/{packSize}
+              </span>
+            </>
+          )}
+        </motion.button>
+      )}
+
       {/* Action Buttons - Normal Position (sempre visível) */}
       <div ref={buttonRef} className="flex gap-3">
-        {/* Add to Cart Button - Takes most space */}
+        {/* Add to Cart Button - Secondary option */}
         <button
           onClick={handleAddToCart}
           disabled={stock === 'soldout' || addedToCart}
           className={`
-            flex-1 py-3 md:py-4 rounded-lg font-bold text-base md:text-lg uppercase tracking-wide
-            flex items-center justify-center gap-2 md:gap-3
+            flex-1 py-3 md:py-4 rounded-lg font-bold text-sm md:text-base uppercase tracking-wide
+            flex items-center justify-center gap-2
             transition-all duration-300
             ${
               stock === 'soldout'
                 ? 'bg-white/10 text-white/40 cursor-not-allowed'
                 : addedToCart
                 ? 'bg-green-500 text-white'
-                : 'bg-brand-yellow text-black hover:brightness-110 hover:shadow-xl hover:shadow-brand-yellow/30 active:scale-95 md:hover:scale-105 shadow-lg shadow-brand-yellow/20 transition-all duration-300'
+                : 'bg-green-900/60 text-green-100 hover:bg-green-800/70 border border-green-700/50 active:scale-95'
             }
           `}
         >
           {addedToCart ? (
             <>
-              <Check className="w-5 h-5 md:w-6 md:h-6" />
+              <Check className="w-5 h-5" />
               ¡Agregado!
             </>
           ) : (
             <>
-              <ShoppingCart className="w-5 h-5 md:w-6 md:h-6" />
-              {stock === 'soldout' ? 'Agotado' : 'Agregar al Carrito'}
+              <ShoppingCart className="w-5 h-5" />
+              {stock === 'soldout' ? 'Agotado' : 'Agregar Solo'}
             </>
           )}
         </button>
@@ -434,7 +456,7 @@ const ProductInfo = ({ product }) => {
       {showStickyButton && (
         <div className="fixed bottom-0 left-0 right-0 md:hidden bg-black/95 backdrop-blur-md p-4 border-t border-white/10 z-50 animate-in slide-in-from-bottom duration-200">
           <div className="flex gap-3 max-w-screen-xl mx-auto">
-            {/* Add to Cart Button Sticky */}
+            {/* Add to Pack Button Sticky */}
             <button
               onClick={handleStickyAddToCart}
               disabled={stock === 'soldout' || addedToCart}
@@ -458,8 +480,8 @@ const ProductInfo = ({ product }) => {
                 </>
               ) : (
                 <>
-                  <ShoppingCart className="w-5 h-5" />
-                  {selectedSize ? 'Agregar' : 'Seleccionar Talla'}
+                  <Package className="w-5 h-5" />
+                  {selectedSize ? 'Agregar al Pack' : 'Seleccionar Talla'}
                 </>
               )}
             </button>

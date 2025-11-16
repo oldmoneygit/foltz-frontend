@@ -3,9 +3,11 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown, HelpCircle } from 'lucide-react'
+import { useStoreMode } from '@/contexts/StoreModeContext'
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(null)
+  const { isRetro } = useStoreMode()
 
   const faqs = [
     {
@@ -47,10 +49,22 @@ const FAQ = () => {
   }
 
   return (
-    <section className="py-20 px-6 bg-gradient-to-b from-black via-zinc-950 to-black relative overflow-hidden">
+    <section className={`py-20 px-6 relative overflow-hidden transition-colors duration-300
+                        ${isRetro
+                          ? 'bg-gradient-to-b from-[#0D0C0A] via-[#1A1814] to-[#0D0C0A]'
+                          : 'bg-gradient-to-b from-black via-zinc-950 to-black'
+                        }`}>
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,215,0,0.05),transparent_50%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(0,71,171,0.05),transparent_50%)]" />
+      <div className={`absolute inset-0
+                      ${isRetro
+                        ? 'bg-[radial-gradient(circle_at_30%_50%,rgba(212,175,55,0.05),transparent_50%)]'
+                        : 'bg-[radial-gradient(circle_at_30%_50%,rgba(255,215,0,0.05),transparent_50%)]'
+                      }`} />
+      <div className={`absolute inset-0
+                      ${isRetro
+                        ? 'bg-[radial-gradient(circle_at_70%_50%,rgba(212,175,55,0.03),transparent_50%)]'
+                        : 'bg-[radial-gradient(circle_at_70%_50%,rgba(0,71,171,0.05),transparent_50%)]'
+                      }`} />
 
       <div className="container mx-auto max-w-4xl relative z-10">
         {/* Header */}
@@ -61,16 +75,22 @@ const FAQ = () => {
           transition={{ duration: 0.3 }}
           className="text-center mb-12"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-yellow/10 border border-brand-yellow/30 rounded-full mb-4">
-            <HelpCircle size={16} className="text-brand-yellow" />
-            <span className="text-brand-yellow text-xs font-bold uppercase tracking-wider">
+          <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full mb-4
+                          ${isRetro
+                            ? 'bg-[#D4AF37]/10 border border-[#D4AF37]/30'
+                            : 'bg-brand-yellow/10 border border-brand-yellow/30'
+                          }`}>
+            <HelpCircle size={16} className={isRetro ? 'text-[#D4AF37]' : 'text-brand-yellow'} />
+            <span className={`text-xs font-bold uppercase tracking-wider
+                             ${isRetro ? 'text-[#D4AF37]' : 'text-brand-yellow'}`}>
               Preguntas Frecuentes
             </span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
+          <h2 className={`text-4xl md:text-5xl font-black mb-4
+                         ${isRetro ? 'text-[#F5F1E8]' : 'text-white'}`}>
             ¿Tenés Dudas?
           </h2>
-          <p className="text-gray-400 text-lg">
+          <p className={`text-lg ${isRetro ? 'text-[#C4B8A0]' : 'text-gray-400'}`}>
             Encuentra respuestas a las preguntas más comunes
           </p>
         </motion.div>
@@ -84,13 +104,22 @@ const FAQ = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "0px 0px -50px 0px" }}
               transition={{ duration: 0.2, delay: index * 0.02 }}
-              className="bg-gradient-to-br from-zinc-900 to-black border border-zinc-800 rounded-2xl overflow-hidden"
+              className={`rounded-2xl overflow-hidden
+                         ${isRetro
+                           ? 'bg-gradient-to-br from-[#1A1814] to-[#0D0C0A] border border-[#D4AF37]/20'
+                           : 'bg-gradient-to-br from-zinc-900 to-black border border-zinc-800'
+                         }`}
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-zinc-800/50 transition-colors"
+                className={`w-full px-6 py-5 flex items-center justify-between text-left transition-colors
+                           ${isRetro
+                             ? 'hover:bg-[#D4AF37]/5'
+                             : 'hover:bg-zinc-800/50'
+                           }`}
               >
-                <span className="text-white font-bold text-base md:text-lg pr-4">
+                <span className={`font-bold text-base md:text-lg pr-4
+                                 ${isRetro ? 'text-[#F5F1E8]' : 'text-white'}`}>
                   {faq.question}
                 </span>
                 <motion.div
@@ -100,7 +129,9 @@ const FAQ = () => {
                   <ChevronDown
                     size={24}
                     className={`flex-shrink-0 ${
-                      openIndex === index ? 'text-brand-yellow' : 'text-gray-400'
+                      openIndex === index
+                        ? (isRetro ? 'text-[#D4AF37]' : 'text-brand-yellow')
+                        : (isRetro ? 'text-[#C4B8A0]' : 'text-gray-400')
                     }`}
                   />
                 </motion.div>
@@ -114,7 +145,8 @@ const FAQ = () => {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <div className="px-6 pb-5 text-gray-300 leading-relaxed">
+                    <div className={`px-6 pb-5 leading-relaxed
+                                    ${isRetro ? 'text-[#C4B8A0]' : 'text-gray-300'}`}>
                       {faq.answer}
                     </div>
                   </motion.div>
@@ -132,12 +164,16 @@ const FAQ = () => {
           transition={{ duration: 0.3, delay: 0.2 }}
           className="mt-12 text-center"
         >
-          <p className="text-gray-400 mb-4">
+          <p className={`mb-4 ${isRetro ? 'text-[#C4B8A0]' : 'text-gray-400'}`}>
             ¿No encontraste lo que buscabas?
           </p>
           <a
             href="/contacto"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-brand-yellow text-black font-bold rounded-full hover:bg-white transition-all hover:scale-105"
+            className={`inline-flex items-center gap-2 px-6 py-3 font-bold rounded-full transition-all hover:scale-105
+                       ${isRetro
+                         ? 'bg-[#D4AF37] text-[#0D0C0A] hover:bg-[#E5C158]'
+                         : 'bg-brand-yellow text-black hover:bg-white'
+                       }`}
           >
             Contactanos
           </a>

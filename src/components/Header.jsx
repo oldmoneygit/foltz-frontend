@@ -7,7 +7,9 @@ import Link from 'next/link'
 import { useState, useEffect, useRef } from 'react'
 import PromotionalBanner from './PromotionalBanner'
 import ThemeToggle from './ThemeToggle'
+import ModeToggle from './ModeToggle'
 import { useTheme } from '@/contexts/ThemeContext'
+import { useStoreMode } from '@/contexts/StoreModeContext'
 import { useCart } from '@/contexts/CartContext'
 import { useFavorites } from '@/contexts/FavoritesContext'
 import { getAllProducts } from '@/utils/shopifyData'
@@ -15,6 +17,7 @@ import { getAllProducts } from '@/utils/shopifyData'
 const Header = () => {
   // Theme hook
   const { isDark } = useTheme()
+  const { isRetro, isAtuais } = useStoreMode()
 
   // Cart and Favorites context
   const { cartItems } = useCart()
@@ -29,24 +32,37 @@ const Header = () => {
   const [isSearching, setIsSearching] = useState(false)
   const [allProducts, setAllProducts] = useState([])
   const searchRef = useRef(null)
+  const [equiposMenuOpen, setEquiposMenuOpen] = useState(false)
 
   // Calculate item counts
   const cartItemCount = cartItems?.reduce((total, item) => total + item.quantity, 0) || 0
   const wishlistItemCount = favorites?.length || 0
 
-  // Menu reorganizado - Coleções em destaque
+  // Menu igual ao Retrobox
   const menuItems = [
-    { name: 'INICIO', href: '/' },
+    { name: 'TODOS LOS PRODUCTOS', href: '/productos' },
     { name: 'MÁS VENDIDOS', href: '/#bestsellers' },
-    { name: 'TODAS LAS LIGAS', href: '/ligas', hasSubmenu: true },
-    { name: 'NATIONAL TEAMS', href: '/liga/national-teams' },
-    { name: 'ARGENTINA LEGENDS', href: '/liga/argentina-legends' },
-    { name: 'RETRO', href: '/collection/retro' },
-    { name: 'SEGUIMIENTO', href: '/seguimiento' },
+    { name: 'EQUIPOS ARGENTINOS', href: '/liga/argentina-legends', hasSubmenu: 'equipos' },
+    { name: 'LIGAS', href: '/ligas', hasSubmenu: 'ligas' },
+    { name: 'SELECCIONES NACIONALES', href: '/liga/national-teams' },
+    { name: 'MYSTERYBOX', href: '/mysterybox' },
+    { name: 'RASTREÁ TU PEDIDO', href: '/seguimiento' },
     { name: 'CONTACTO', href: '/contacto' },
   ]
 
-  // Submenu de TODAS LAS LIGAS (agora com todas as ligas)
+  // Submenu de EQUIPOS ARGENTINOS
+  const equiposSubMenu = [
+    { name: 'Boca Juniors', href: '/equipo/boca-juniors' },
+    { name: 'River Plate', href: '/equipo/river-plate' },
+    { name: 'Racing Club', href: '/equipo/racing-club' },
+    { name: 'Independiente', href: '/equipo/independiente' },
+    { name: 'San Lorenzo', href: '/equipo/san-lorenzo' },
+    { name: 'Newell\'s Old Boys', href: '/equipo/newells-old-boys' },
+    { name: 'Rosario Central', href: '/equipo/rosario-central' },
+    { name: 'Selección Argentina', href: '/equipo/seleccion-argentina' },
+  ]
+
+  // Submenu de LIGAS
   const ligasSubMenu = [
     { name: 'Premier League', href: '/liga/premier-league' },
     { name: 'La Liga', href: '/liga/la-liga' },
@@ -54,9 +70,8 @@ const Header = () => {
     { name: 'Bundesliga', href: '/liga/bundesliga' },
     { name: 'Ligue 1', href: '/liga/ligue-1' },
     { name: 'Liga MX', href: '/liga/liga-mx' },
-    { name: 'Sudamericana', href: '/liga/sul-americana' },
-    { name: 'Primera Liga', href: '/liga/primeira-liga' },
     { name: 'Eredivisie', href: '/liga/eredivisie' },
+    { name: 'Liga Portugal', href: '/liga/primeira-liga' },
     { name: 'MLS', href: '/liga/mls' },
   ]
 
@@ -72,7 +87,6 @@ const Header = () => {
         })
         
         setAllProducts(products)
-        console.log('✅ Produtos carregados para busca:', products.length)
       } catch (error) {
         console.error('Erro ao carregar produtos:', error)
         // Fallback: tenta carregar direto
@@ -202,9 +216,11 @@ const Header = () => {
       <motion.header
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className="sticky top-0 z-40 backdrop-blur-xl border-b-2 shadow-lg transition-colors duration-300
-                   dark:bg-[#0A0A0A] dark:border-white/10 dark:shadow-white/5
-                   bg-brand-yellow border-black/30 shadow-black/10"
+        className={`sticky top-0 z-40 backdrop-blur-xl border-b-2 shadow-lg transition-colors duration-300
+                   ${isRetro
+                     ? 'bg-[#0D0C0A] border-[#D4AF37]/30 shadow-[#D4AF37]/10'
+                     : 'dark:bg-[#0A0A0A] dark:border-white/10 dark:shadow-white/5 bg-brand-yellow border-black/30 shadow-black/10'
+                   }`}
       >
         {/* TOP BAR - Logo, Search, Cart */}
         <div className="container mx-auto px-4 md:px-6 py-3">
@@ -213,9 +229,11 @@ const Header = () => {
             {/* Mobile Menu Button - Left */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 transition-colors duration-200 order-1
-                         dark:text-white dark:hover:text-brand-yellow
-                         text-black hover:text-brand-navy"
+              className={`lg:hidden p-2 transition-colors duration-200 order-1
+                         ${isRetro
+                           ? 'text-[#F5F1E8] hover:text-[#D4AF37]'
+                           : 'dark:text-white dark:hover:text-brand-yellow text-black hover:text-brand-navy'
+                         }`}
               aria-label="Abrir Menú"
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -225,13 +243,14 @@ const Header = () => {
             <Link href="/" className="flex items-center group flex-shrink-0 order-2 lg:order-1">
               <div className="relative w-36 h-11 md:w-40 md:h-12 transition-all duration-300 group-hover:scale-105">
                 <Image
-                  src={isDark ? "/images/logo/logo-white.png" : "/images/logo/logo-black.png"}
+                  src={isRetro ? "/images/logo/logo-white.png" : (isDark ? "/images/logo/logo-white.png" : "/images/logo/logo-black.png")}
                   alt="Foltz Fanwear Logo"
                   fill
-                  className="object-contain transition-opacity duration-300"
+                  className={`object-contain transition-opacity duration-300 ${isRetro ? 'brightness-0 invert sepia saturate-[10] hue-rotate-[5deg]' : ''}`}
                   priority
                 />
-                <div className="absolute inset-0 dark:bg-brand-yellow/5 bg-brand-yellow/0 group-hover:bg-brand-yellow/5 transition-all duration-300 blur-xl" />
+                <div className={`absolute inset-0 group-hover:opacity-100 opacity-0 transition-all duration-300 blur-xl
+                                ${isRetro ? 'bg-[#D4AF37]/10' : 'dark:bg-brand-yellow/5 bg-brand-yellow/0 group-hover:bg-brand-yellow/5'}`} />
               </div>
             </Link>
 
@@ -240,19 +259,23 @@ const Header = () => {
               <div className="relative w-full">
                 <input
                   type="text"
-                  placeholder="Buscar camisas..."
+                  placeholder={isRetro ? "Buscar camisetas retro..." : "Buscar camisas..."}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   onKeyPress={handleKeyPress}
-                  className="w-full px-4 py-3 pr-12 rounded-lg transition-colors duration-200
-                             dark:bg-white/10 dark:border-white/20 dark:text-white dark:placeholder-gray-400 dark:focus:border-brand-yellow
-                             bg-white border-2 border-black/20 text-black placeholder-zinc-500 focus:outline-none focus:border-black"
+                  className={`w-full px-4 py-3 pr-12 rounded-lg transition-colors duration-200
+                             ${isRetro
+                               ? 'bg-[#1A1814] border-2 border-[#D4AF37]/30 text-[#F5F1E8] placeholder-[#C4B8A0]/60 focus:outline-none focus:border-[#D4AF37]'
+                               : 'dark:bg-white/10 dark:border-white/20 dark:text-white dark:placeholder-gray-400 dark:focus:border-brand-yellow bg-white border-2 border-black/20 text-black placeholder-zinc-500 focus:outline-none focus:border-black'
+                             }`}
                 />
                 <button
                   onClick={handleSearch}
-                  className="absolute right-0 top-0 h-full px-4 rounded-r-lg transition-colors duration-200
-                             dark:bg-brand-yellow dark:text-black dark:hover:bg-brand-yellow/80
-                             bg-black text-brand-yellow hover:bg-brand-navy"
+                  className={`absolute right-0 top-0 h-full px-4 rounded-r-lg transition-colors duration-200
+                             ${isRetro
+                               ? 'bg-[#D4AF37] text-[#0D0C0A] hover:bg-[#E5C158]'
+                               : 'dark:bg-brand-yellow dark:text-black dark:hover:bg-brand-yellow/80 bg-black text-brand-yellow hover:bg-brand-navy'
+                             }`}
                   aria-label="Buscar"
                 >
                   <Search size={20} />
@@ -356,15 +379,17 @@ const Header = () => {
 
             {/* Wishlist & Cart Icons - Right */}
             <div className="flex items-center gap-2 md:gap-3 flex-shrink-0 order-3 lg:order-3">
-              {/* Theme Toggle */}
-              <ThemeToggle />
+              {/* Theme Toggle - Hidden in Retro mode */}
+              {!isRetro && <ThemeToggle />}
 
               {/* Wishlist Icon */}
               <Link
                 href="/favoritos"
-                className="relative p-2 transition-colors duration-200 group
-                           dark:text-white dark:hover:text-red-500
-                           text-black hover:text-red-500"
+                className={`relative p-2 transition-colors duration-200 group
+                           ${isRetro
+                             ? 'text-[#F5F1E8] hover:text-red-500'
+                             : 'dark:text-white dark:hover:text-red-500 text-black hover:text-red-500'
+                           }`}
                 aria-label="Favoritos"
               >
                 <Heart size={24} className={wishlistItemCount > 0 ? 'fill-red-500 text-red-500' : ''} />
@@ -378,14 +403,20 @@ const Header = () => {
               {/* Cart Icon */}
               <Link
                 href="/carrito"
-                className="relative p-2 transition-colors duration-200
-                           dark:text-white dark:hover:text-brand-yellow
-                           text-black hover:text-brand-navy"
+                className={`relative p-2 transition-colors duration-200
+                           ${isRetro
+                             ? 'text-[#F5F1E8] hover:text-[#D4AF37]'
+                             : 'dark:text-white dark:hover:text-brand-yellow text-black hover:text-brand-navy'
+                           }`}
                 aria-label="Carrito de Compras"
               >
                 <ShoppingCart size={24} />
                 {cartItemCount > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-black text-brand-yellow text-[11px] font-bold w-6 h-6 flex items-center justify-center rounded-full shadow-lg dark:bg-brand-yellow dark:text-black">
+                  <span className={`absolute -top-1 -right-1 text-[11px] font-bold w-6 h-6 flex items-center justify-center rounded-full shadow-lg
+                                   ${isRetro
+                                     ? 'bg-[#D4AF37] text-[#0D0C0A]'
+                                     : 'bg-black text-brand-yellow dark:bg-brand-yellow dark:text-black'
+                                   }`}>
                     {cartItemCount}
                   </span>
                 )}
@@ -395,45 +426,71 @@ const Header = () => {
         </div>
 
         {/* BOTTOM BAR - Navigation Menu (Desktop Only) */}
-        <nav className="hidden lg:block border-t transition-colors
-                        dark:border-white/10
-                        border-black/20">
-          <ul className="container mx-auto px-6 flex items-center justify-center space-x-1 py-3">
+        <nav className={`hidden lg:block border-t transition-colors
+                        ${isRetro
+                          ? 'border-[#D4AF37]/20'
+                          : 'dark:border-white/10 border-black/20'
+                        }`}>
+          <div className="container mx-auto px-6 py-3">
+            {/* Mode Toggle - Centralizado acima do menu */}
+            <div className="flex justify-center mb-3">
+              <ModeToggle className="scale-90" />
+            </div>
+
+            <ul className="flex items-center justify-center space-x-1">
             {menuItems.map((item) => (
               <li
                 key={item.name}
                 className="relative"
-                onMouseEnter={() => item.hasSubmenu && setLigasMenuOpen(true)}
-                onMouseLeave={() => item.hasSubmenu && setLigasMenuOpen(false)}
+                onMouseEnter={() => {
+                  if (item.hasSubmenu === 'equipos') setEquiposMenuOpen(true)
+                  if (item.hasSubmenu === 'ligas') setLigasMenuOpen(true)
+                }}
+                onMouseLeave={() => {
+                  if (item.hasSubmenu === 'equipos') setEquiposMenuOpen(false)
+                  if (item.hasSubmenu === 'ligas') setLigasMenuOpen(false)
+                }}
               >
                 {item.hasSubmenu ? (
                   <>
                     <button
-                      className="flex items-center gap-1.5 px-3 py-2 font-black text-[13px] tracking-wider uppercase transition-colors duration-200
-                                 dark:text-white dark:hover:text-brand-yellow
-                                 text-black hover:text-brand-navy"
+                      className={`flex items-center gap-1.5 px-3 py-2 font-black text-sm tracking-wider uppercase transition-colors duration-200
+                                 ${isRetro
+                                   ? 'text-[#F5F1E8] hover:text-[#D4AF37]'
+                                   : 'dark:text-white dark:hover:text-brand-yellow text-black hover:text-brand-navy'
+                                 }`}
                     >
                       {item.name}
-                      <ChevronDown size={16} className={`transition-transform duration-200 ${ligasMenuOpen ? 'rotate-180' : ''}`} />
+                      <ChevronDown size={14} className={`transition-transform duration-200 ${
+                        (item.hasSubmenu === 'equipos' && equiposMenuOpen) ||
+                        (item.hasSubmenu === 'ligas' && ligasMenuOpen)
+                          ? 'rotate-180'
+                          : ''
+                      }`} />
                     </button>
                     <AnimatePresence>
-                      {ligasMenuOpen && (
+                      {((item.hasSubmenu === 'equipos' && equiposMenuOpen) ||
+                        (item.hasSubmenu === 'ligas' && ligasMenuOpen)) && (
                         <motion.div
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: 10 }}
                           transition={{ duration: 0.2 }}
-                          className="absolute top-full left-0 mt-2 w-56 border-2 rounded-lg shadow-xl py-2 z-50
-                                     dark:bg-zinc-900 dark:border-brand-yellow/30 dark:shadow-brand-yellow/10
-                                     bg-black border-brand-yellow/30 shadow-brand-yellow/10"
+                          className={`absolute top-full left-0 mt-2 w-56 border-2 rounded-lg shadow-xl py-2 z-50
+                                     ${isRetro
+                                       ? 'bg-[#1A1814] border-[#D4AF37]/30 shadow-[#D4AF37]/10'
+                                       : 'dark:bg-zinc-900 dark:border-brand-yellow/30 dark:shadow-brand-yellow/10 bg-black border-brand-yellow/30 shadow-brand-yellow/10'
+                                     }`}
                         >
-                          {ligasSubMenu.map((subItem) => (
+                          {(item.hasSubmenu === 'equipos' ? equiposSubMenu : ligasSubMenu).map((subItem) => (
                             <Link
                               key={subItem.name}
                               href={subItem.href}
-                              className="block px-4 py-2.5 text-sm font-semibold transition-colors duration-200
-                                         dark:text-white dark:hover:bg-brand-yellow/10 dark:hover:text-brand-yellow
-                                         text-white hover:bg-brand-yellow/10 hover:text-brand-yellow"
+                              className={`block px-4 py-2.5 text-sm font-semibold transition-colors duration-200
+                                         ${isRetro
+                                           ? 'text-[#F5F1E8] hover:bg-[#D4AF37]/10 hover:text-[#D4AF37]'
+                                           : 'dark:text-white dark:hover:bg-brand-yellow/10 dark:hover:text-brand-yellow text-white hover:bg-brand-yellow/10 hover:text-brand-yellow'
+                                         }`}
                             >
                               {subItem.name}
                             </Link>
@@ -445,9 +502,11 @@ const Header = () => {
                 ) : (
                   <Link
                     href={item.href}
-                    className="flex items-center gap-1.5 px-3 py-2 font-black text-[13px] tracking-wider uppercase transition-colors duration-200
-                               dark:text-white dark:hover:text-brand-yellow
-                               text-black hover:text-brand-navy"
+                    className={`flex items-center gap-1.5 px-3 py-2 font-black text-sm tracking-wider uppercase transition-colors duration-200
+                               ${isRetro
+                                 ? 'text-[#F5F1E8] hover:text-[#D4AF37]'
+                                 : 'dark:text-white dark:hover:text-brand-yellow text-black hover:text-brand-navy'
+                               }`}
                   >
                     {item.name}
                   </Link>
@@ -455,6 +514,7 @@ const Header = () => {
               </li>
             ))}
           </ul>
+          </div>
         </nav>
       </motion.header>
 
@@ -542,6 +602,11 @@ const Header = () => {
                 {/* Linha Separadora Amarela */}
                 <div className="h-[2px] bg-brand-yellow/80 mx-4" />
 
+                {/* Mode Toggle - Mobile */}
+                <div className="px-4 py-4 flex justify-center border-b border-white/10">
+                  <ModeToggle className="scale-90" />
+                </div>
+
                 {/* Mobile Menu Items */}
                 <div className="flex-1 px-4 py-6 space-y-2">
                   {menuItems.map((item, index) => (
@@ -555,14 +620,23 @@ const Header = () => {
                       {item.hasSubmenu ? (
                         <div className="w-full">
                           <button
-                            onClick={() => setLigasMenuOpen(!ligasMenuOpen)}
-                            className="flex items-center justify-between w-full px-4 py-3 text-white hover:text-brand-yellow text-base font-bold uppercase tracking-wide transition-colors duration-200 hover:bg-brand-yellow/5 rounded-lg"
+                            onClick={() => {
+                              if (item.hasSubmenu === 'equipos') setEquiposMenuOpen(!equiposMenuOpen)
+                              if (item.hasSubmenu === 'ligas') setLigasMenuOpen(!ligasMenuOpen)
+                            }}
+                            className="flex items-center justify-between w-full px-4 py-3 text-white hover:text-brand-yellow text-sm font-bold uppercase tracking-wide transition-colors duration-200 hover:bg-brand-yellow/5 rounded-lg"
                           >
                             {item.name}
-                            <ChevronDown size={18} className={`transition-transform duration-200 ${ligasMenuOpen ? 'rotate-180' : ''}`} />
+                            <ChevronDown size={18} className={`transition-transform duration-200 ${
+                              (item.hasSubmenu === 'equipos' && equiposMenuOpen) ||
+                              (item.hasSubmenu === 'ligas' && ligasMenuOpen)
+                                ? 'rotate-180'
+                                : ''
+                            }`} />
                           </button>
                           <AnimatePresence>
-                            {ligasMenuOpen && (
+                            {((item.hasSubmenu === 'equipos' && equiposMenuOpen) ||
+                              (item.hasSubmenu === 'ligas' && ligasMenuOpen)) && (
                               <motion.div
                                 initial={{ height: 0, opacity: 0 }}
                                 animate={{ height: 'auto', opacity: 1 }}
@@ -570,7 +644,7 @@ const Header = () => {
                                 transition={{ duration: 0.2 }}
                                 className="overflow-hidden ml-4 mt-2 space-y-1"
                               >
-                                {ligasSubMenu.map((subItem) => (
+                                {(item.hasSubmenu === 'equipos' ? equiposSubMenu : ligasSubMenu).map((subItem) => (
                                   <Link
                                     key={subItem.name}
                                     href={subItem.href}
@@ -588,7 +662,7 @@ const Header = () => {
                         <Link
                           href={item.href}
                           onClick={() => setMobileMenuOpen(false)}
-                          className="flex items-center px-4 py-3 text-white hover:text-brand-yellow text-base font-bold uppercase tracking-wide transition-colors duration-200 hover:bg-brand-yellow/5 rounded-lg"
+                          className="flex items-center px-4 py-3 text-white hover:text-brand-yellow text-sm font-bold uppercase tracking-wide transition-colors duration-200 hover:bg-brand-yellow/5 rounded-lg"
                         >
                           {item.name}
                         </Link>

@@ -1,137 +1,165 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import Image from 'next/image'
-import ProductCard from '@/components/ProductCard'
+import dynamic from 'next/dynamic'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { Clock } from 'lucide-react'
+import { Suspense } from 'react'
+
+// Dynamic imports for better performance
+const RetroBestSellers = dynamic(() => import('@/components/retro/RetroBestSellers'), {
+  loading: () => <SectionSkeleton />,
+})
+const RetroPromoBanner = dynamic(() => import('@/components/retro/RetroPromoBanner'), {
+  loading: () => <BannerSkeleton />,
+})
+const RetroNuestrasColecciones = dynamic(() => import('@/components/retro/RetroNuestrasColecciones'), {
+  loading: () => <SectionSkeleton />,
+})
+const RetroWeekTopSellers = dynamic(() => import('@/components/retro/RetroWeekTopSellers'), {
+  loading: () => <SectionSkeleton />,
+})
+const RetroLiveSlots = dynamic(() => import('@/components/retro/RetroLiveSlots'), {
+  loading: () => <SectionSkeleton />,
+})
+const RetroTeamSection = dynamic(() => import('@/components/retro/RetroTeamSection'), {
+  loading: () => <SectionSkeleton />,
+})
+const RetroHowItWorks = dynamic(() => import('@/components/retro/RetroHowItWorks'), {
+  loading: () => <SectionSkeleton />,
+})
+const RetroFeaturedProducts = dynamic(() => import('@/components/retro/RetroFeaturedProducts'), {
+  loading: () => <SectionSkeleton />,
+})
+const RetroLeaguesGrid = dynamic(() => import('@/components/retro/RetroLeaguesGrid'), {
+  loading: () => <SectionSkeleton />,
+})
+const RetroMysteryBox = dynamic(() => import('@/components/retro/RetroMysteryBox'), {
+  loading: () => <SectionSkeleton />,
+})
+const RetroFeedbacks = dynamic(() => import('@/components/retro/RetroFeedbacks'), {
+  loading: () => <SectionSkeleton />,
+})
+
+// Loading skeletons
+function SectionSkeleton() {
+  return (
+    <div className="py-12 bg-black">
+      <div className="container mx-auto px-4">
+        <div className="animate-pulse">
+          <div className="h-8 bg-zinc-800 rounded w-1/3 mx-auto mb-8" />
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[...Array(4)].map((_, i) => (
+              <div key={i} className="bg-zinc-800 rounded-lg aspect-[3/4]" />
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function BannerSkeleton() {
+  return (
+    <div className="py-8 bg-black">
+      <div className="container mx-auto px-4">
+        <div className="animate-pulse">
+          <div className="h-48 bg-zinc-800 rounded-2xl" />
+        </div>
+      </div>
+    </div>
+  )
+}
 
 export default function RetroContent({ products = [] }) {
   return (
     <>
       <Header />
       <main className="min-h-screen bg-black">
-        {/* Hero Section */}
-        <section className="relative py-20 bg-gradient-to-b from-zinc-950 via-black to-black">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
-              {/* Left Side - Banner */}
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                className="lg:col-span-5 relative rounded-2xl overflow-hidden"
-              >
-                <div className="relative h-[400px] lg:h-[600px]">
-                  <Image
-                    src="/images/leagues/retro.jpg"
-                    alt="Retro Collection"
-                    fill
-                    className="object-cover"
-                    priority
-                    quality={85}
-                    sizes="(max-width: 1024px) 100vw, 40vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-                </div>
-              </motion.div>
-
-              {/* Right Side - Info */}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                className="lg:col-span-7 flex flex-col justify-center space-y-6"
-              >
-                <div>
-                  <h2 className="text-brand-yellow text-xs md:text-sm font-black uppercase tracking-[0.3em] mb-2">
-                    COLECCIÓN
-                  </h2>
-                  <h3 className="text-4xl md:text-6xl font-black uppercase text-white mb-4">
-                    RETRO COLLECTION
-                  </h3>
-                </div>
-
-                {/* Product Count */}
-                <div>
-                  <span className="text-5xl md:text-6xl font-black text-brand-yellow">
-                    {products.length}
-                  </span>
-                  <span className="text-white text-xl ml-2">productos</span>
-                </div>
-
-                {/* Features */}
-                <ul className="space-y-3">
-                  <li className="flex items-center gap-3 text-white">
-                    <span className="text-brand-yellow text-xl">●</span>
-                    <span>Camisetas vintage de los 70s-2000s</span>
-                  </li>
-                  <li className="flex items-center gap-3 text-white">
-                    <span className="text-brand-yellow text-xl">●</span>
-                    <span>Ediciones clásicas y nostálgicas</span>
-                  </li>
-                  <li className="flex items-center gap-3 text-white">
-                    <span className="text-brand-yellow text-xl">●</span>
-                    <span className="flex items-center gap-2">
-                      Calidad Premium 1:1
-                    </span>
-                  </li>
-                </ul>
-
-                {/* Highlight Badge */}
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-yellow/10 border border-brand-yellow/30 rounded-full w-fit">
-                  <Clock className="text-brand-yellow" size={20} />
-                  <span className="text-brand-yellow text-sm font-bold">
-                    Ediciones Limitadas
-                  </span>
-                </div>
-              </motion.div>
+        {/* Hero Banner - Compact */}
+        <section className="relative py-10 bg-gradient-to-b from-zinc-950 via-black to-black">
+          <div className="container mx-auto px-4">
+            <div className="text-center">
+              <h1 className="text-4xl md:text-6xl font-black text-white mb-2">
+                COLECCIÓN <span className="text-brand-yellow">RETRO</span>
+              </h1>
+              <p className="text-gray-400 text-base md:text-lg mb-4">
+                Camisetas clásicas de los 70s a 2000s - Ediciones Limitadas
+              </p>
+              <div className="inline-flex items-center gap-2 bg-brand-yellow/10 px-4 py-2 rounded-full">
+                <span className="text-brand-yellow font-bold">
+                  {products.length} productos disponibles
+                </span>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Products Section */}
-        <section className="py-12 bg-black">
-          <div className="container mx-auto px-4 md:px-6">
-            {products.length > 0 ? (
-              <>
-                {/* Product Counter */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  className="mb-8"
-                >
-                  <p className="text-gray-400 text-sm">
-                    Mostrando <span className="text-brand-yellow font-bold">1 - {products.length}</span> de{' '}
-                    <span className="text-brand-yellow font-bold">{products.length}</span> productos
-                  </p>
-                </motion.div>
+        <Suspense fallback={<SectionSkeleton />}>
+          {/* 1. Los Más Vendidos */}
+          <RetroBestSellers products={products} />
+        </Suspense>
 
-                {/* Products Grid - 2 columns mobile */}
-                <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mb-12">
-                  {products.map((product, index) => (
-                    <motion.div
-                      key={product.id}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: index * 0.05 }}
-                    >
-                      <ProductCard product={product} />
-                    </motion.div>
-                  ))}
-                </div>
-              </>
-            ) : (
-              <div className="text-center text-gray-400 text-xl py-12">
-                Pronto tendremos productos retro en esta colección!
-              </div>
-            )}
-          </div>
-        </section>
+        <Suspense fallback={<BannerSkeleton />}>
+          {/* 2. Banner Promocional */}
+          <RetroPromoBanner />
+        </Suspense>
+
+        <Suspense fallback={<SectionSkeleton />}>
+          {/* 3. Nuestras Colecciones (Team Badges Carousel) */}
+          <RetroNuestrasColecciones />
+        </Suspense>
+
+        <Suspense fallback={<SectionSkeleton />}>
+          {/* 4. Los más vendidos de esta semana */}
+          <RetroWeekTopSellers products={products} />
+        </Suspense>
+
+        <Suspense fallback={<SectionSkeleton />}>
+          {/* 5. Disponibilidad en Tiempo Real */}
+          <RetroLiveSlots />
+        </Suspense>
+
+        <Suspense fallback={<SectionSkeleton />}>
+          {/* 6. Sección BOCA JUNIORS */}
+          <RetroTeamSection team="boca-juniors" products={products} />
+        </Suspense>
+
+        <Suspense fallback={<SectionSkeleton />}>
+          {/* 7. Sección RIVER PLATE */}
+          <RetroTeamSection team="river-plate" products={products} />
+        </Suspense>
+
+        <Suspense fallback={<SectionSkeleton />}>
+          {/* 8. Sección SELECCIÓN ARGENTINA */}
+          <RetroTeamSection team="argentina" products={products} />
+        </Suspense>
+
+        <Suspense fallback={<SectionSkeleton />}>
+          {/* 9. ¿Cómo Funciona el PACK BLACK? */}
+          <RetroHowItWorks />
+        </Suspense>
+
+        <Suspense fallback={<SectionSkeleton />}>
+          {/* 10. Productos Destacados */}
+          <RetroFeaturedProducts products={products} />
+        </Suspense>
+
+        <Suspense fallback={<SectionSkeleton />}>
+          {/* 11. Explora por Liga */}
+          <RetroLeaguesGrid />
+        </Suspense>
+
+        <Suspense fallback={<SectionSkeleton />}>
+          {/* 12. Mystery Box */}
+          <RetroMysteryBox />
+        </Suspense>
+
+        <Suspense fallback={<SectionSkeleton />}>
+          {/* 12. Feedbacks */}
+          <RetroFeedbacks />
+        </Suspense>
       </main>
       <Footer />
     </>
   )
 }
-
-
-

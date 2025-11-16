@@ -81,7 +81,7 @@ export default function CollectionGridClient({ collectionSlug, collectionImage, 
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
                 >
-                  <ProductCard product={product} />
+                  <ProductCard product={product} index={index} showBlackNovemberBadge={true} />
                 </motion.div>
               ))}
             </div>
@@ -126,7 +126,7 @@ export default function CollectionGridClient({ collectionSlug, collectionImage, 
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                 >
-                  <ProductCard product={product} />
+                  <ProductCard product={product} index={index} showBlackNovemberBadge={true} />
                 </motion.div>
               ))}
             </div>
