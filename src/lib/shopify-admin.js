@@ -69,51 +69,40 @@ function extractNumericId(gid) {
  * "11 2345-6789" -> "+541123456789"
  */
 function formatPhoneE164(phone, countryCode = '54') {
-  console.log('[PHONE-DEBUG] 📞 Input phone:', phone);
-  console.log('[PHONE-DEBUG] 📞 Phone type:', typeof phone);
-
   if (!phone || phone.trim() === '') {
-    console.log('[PHONE-DEBUG] ❌ Phone is empty or null, returning null');
     return null;
   }
 
   // Remove todos os caracteres não numéricos e espaços
   let cleaned = phone.replace(/[^\d+]/g, '');
-  console.log('[PHONE-DEBUG] 🧹 After removing non-numeric:', cleaned);
 
   // Se já começa com +, remove para reprocessar
   if (cleaned.startsWith('+')) {
     cleaned = cleaned.substring(1);
-    console.log('[PHONE-DEBUG] ➖ After removing +:', cleaned);
   }
 
   // Remove código do país se já estiver presente
   if (cleaned.startsWith(countryCode)) {
     cleaned = cleaned.substring(countryCode.length);
-    console.log('[PHONE-DEBUG] 🌍 After removing country code:', cleaned);
   }
 
   // Remove zero inicial se houver (comum em Argentina)
   if (cleaned.startsWith('0')) {
     cleaned = cleaned.substring(1);
-    console.log('[PHONE-DEBUG] 0️⃣ After removing leading zero:', cleaned);
   }
 
   // Valida comprimento mínimo (Argentina tem 10 dígitos)
   if (cleaned.length < 10) {
-    console.warn('[PHONE-DEBUG] ⚠️ Phone number too short:', phone, '- cleaned:', cleaned, '- length:', cleaned.length);
-    return null; // Retorna null se inválido, melhor que enviar formato errado
+    console.warn('[SHOPIFY-ADMIN] Phone number too short, skipping:', phone);
+    return null;
   }
 
   // Trunca se for muito longo
   if (cleaned.length > 10) {
-    console.log('[PHONE-DEBUG] ✂️ Truncating from', cleaned.length, 'to 10 digits');
     cleaned = cleaned.substring(0, 10);
   }
 
-  const formatted = `+${countryCode}${cleaned}`;
-  console.log('[PHONE-DEBUG] ✅ Final formatted phone:', formatted);
-  return formatted;
+  return `+${countryCode}${cleaned}`;
 }
 
 /**
@@ -176,16 +165,8 @@ export async function createShopifyOrderFromDLocal(orderData) {
   });
 
   // Formatar telefone para E.164
-  console.log('\n[PHONE-DEBUG] 🔍 RAW PHONE DATA RECEIVED:');
-  console.log('[PHONE-DEBUG] 📦 shippingAddress.phone:', shippingAddress.phone);
-  console.log('[PHONE-DEBUG] 👤 customer?.phone:', customer?.phone);
-
   const formattedShippingPhone = formatPhoneE164(shippingAddress.phone);
   const formattedCustomerPhone = customer?.phone ? formatPhoneE164(customer.phone) : null;
-
-  console.log('\n[PHONE-DEBUG] 🎯 FORMATTED RESULTS:');
-  console.log('[PHONE-DEBUG] 📦 formattedShippingPhone:', formattedShippingPhone);
-  console.log('[PHONE-DEBUG] 👤 formattedCustomerPhone:', formattedCustomerPhone);
 
   // Preparar endereço de envio
   const shipping = {
@@ -199,8 +180,6 @@ export async function createShopifyOrderFromDLocal(orderData) {
     country: shippingAddress.country,
     ...(formattedShippingPhone && { phone: formattedShippingPhone }),
   };
-
-  console.log('\n[PHONE-DEBUG] 📮 SHIPPING OBJECT WILL HAVE PHONE:', shipping.phone || 'NO PHONE');
 
   // Determine financial status
   const financialStatus = dlocalStatus === 'PAID' ? 'paid' : 'pending';
@@ -306,11 +285,6 @@ export async function createShopifyOrderFromDLocal(orderData) {
   };
 
   try {
-    console.log('\n[PHONE-DEBUG] 🚀 FINAL PAYLOAD TO SHOPIFY:');
-    console.log('[PHONE-DEBUG] 📞 shipping_address.phone:', orderPayload.order.shipping_address.phone || 'NO PHONE');
-    console.log('[PHONE-DEBUG] 👤 customer.phone:', orderPayload.order.customer?.phone || 'NO CUSTOMER PHONE');
-    console.log('[PHONE-DEBUG] 📄 Full customer object:', JSON.stringify(orderPayload.order.customer || {}, null, 2));
-
     const response = await shopifyAdminRequest('/orders.json', 'POST', orderPayload);
 
     console.log('[SHOPIFY-ADMIN] ✅ Order created:', response.order.name);

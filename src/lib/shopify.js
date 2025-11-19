@@ -454,9 +454,12 @@ export async function searchProducts(searchQuery, limit = 20) {
 /**
  * Create a cart with multiple items (Nova Cart API - substituiu Checkout API)
  * @param {Array} lineItems - Array of {variantId, quantity}
+ * @param {Object} options - Optional cart settings
+ * @param {Array} options.attributes - Cart-level attributes
+ * @param {string} options.note - Order note
  * @returns {Promise<Object>} Cart object with checkoutUrl
  */
-export async function createCheckoutWithItems(lineItems) {
+export async function createCheckoutWithItems(lineItems, options = {}) {
   const query = `
     mutation cartCreate($input: CartInput!) {
       cartCreate(input: $input) {
@@ -503,23 +506,33 @@ export async function createCheckoutWithItems(lineItems) {
     }
   `
 
-  const response = await ShopifyData(query, {
-    input: {
-      lines: lineItems.map(item => {
-        const line = {
-          merchandiseId: item.variantId,
-          quantity: item.quantity
-        }
+  const cartInput = {
+    lines: lineItems.map(item => {
+      const line = {
+        merchandiseId: item.variantId,
+        quantity: item.quantity
+      }
 
-        // Adicionar custom attributes se existirem (personalização)
-        if (item.attributes && item.attributes.length > 0) {
-          line.attributes = item.attributes
-        }
+      // Adicionar custom attributes se existirem (personalização)
+      if (item.attributes && item.attributes.length > 0) {
+        line.attributes = item.attributes
+      }
 
-        return line
-      })
-    }
-  })
+      return line
+    })
+  }
+
+  // Adicionar cart attributes se fornecidos
+  if (options.attributes && options.attributes.length > 0) {
+    cartInput.attributes = options.attributes
+  }
+
+  // Adicionar note se fornecida
+  if (options.note) {
+    cartInput.note = options.note
+  }
+
+  const response = await ShopifyData(query, { input: cartInput })
 
   if (response.data.cartCreate.userErrors.length > 0) {
     throw new Error(response.data.cartCreate.userErrors[0].message)

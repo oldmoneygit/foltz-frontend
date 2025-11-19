@@ -193,8 +193,23 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
         }
       }
 
+      // Preparar cart attributes e note para dLocal Go
+      const cartOptions = {
+        attributes: [
+          {
+            key: '💳 Métodos Locales',
+            value: 'Efectivo, transferencia o débito disponibles'
+          },
+          {
+            key: '📍 Instrucciones',
+            value: 'Selecciona "dLocal Go Local Payments" (2da opción)'
+          }
+        ],
+        note: '💡 Para pagar con efectivo, transferencia o débito:\nSelecciona "dLocal Go Local Payments" (segunda opción) y elige tu método: Rapipago, Pago Fácil, transferencia bancaria o tarjeta de débito.'
+      }
+
       // Create Shopify checkout
-      const checkout = await createCheckoutWithItems(lineItems)
+      const checkout = await createCheckoutWithItems(lineItems, cartOptions)
 
       // Salvar carrinho ANTES de redirecionar (para persistir quando o usuário voltar)
       if (saveCart) {
@@ -366,8 +381,8 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
           )}
         </button>
 
-        {/* Feature Flag Check - Only show if dlocal is enabled */}
-        {process.env.NEXT_PUBLIC_ENABLE_DLOCAL_CHECKOUT === 'true' && (
+        {/* dlocal Checkout Section - OCULTA (agora usa dLocal Go integrado no checkout da Shopify) */}
+        {false && process.env.NEXT_PUBLIC_ENABLE_DLOCAL_CHECKOUT === 'true' && (
           <>
             {/* Divider */}
             <div className="relative">
@@ -451,8 +466,8 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
           )}
         </button>
 
-        {/* Botão Azul - dlocal (Mobile) */}
-        {process.env.NEXT_PUBLIC_ENABLE_DLOCAL_CHECKOUT === 'true' && packData.itemCount > 0 && (
+        {/* Botão Azul - dlocal (Mobile) - OCULTO */}
+        {false && process.env.NEXT_PUBLIC_ENABLE_DLOCAL_CHECKOUT === 'true' && packData.itemCount > 0 && (
           <Link
             href="/checkout"
             className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg font-bold text-xs uppercase tracking-wide hover:bg-blue-700 active:scale-95 transition-all flex items-center justify-center shadow-lg border-2 border-[#DAF10D]/30"
