@@ -103,8 +103,23 @@ const leaguesData = {
     name: 'Selecciones Nacionales',
     logo: '/images/collections/national teams.jpg',
     description: 'Camisetas de las selecciones nacionales del mundo',
-    exactTags: ['National Team', 'Seleccion', 'national-team', 'seleccion'],
-    titleKeywords: ['seleccion argentina', 'seleccion brasil', 'seleccion francia', 'seleccion alemania', 'seleccion españa', 'seleccion portugal', 'seleccion england', 'world cup', 'copa america'],
+    exactTags: ['National Team', 'Seleccion', 'national-team', 'seleccion', 'Selecciones', 'National Teams'],
+    // Keywords mais abrangentes - incluindo nomes de países sem "seleccion"
+    titleKeywords: [
+      'seleccion argentina', 'argentina nacional', 'argentina retro',
+      'seleccion brasil', 'brasil nacional', 'brasil retro',
+      'seleccion france', 'seleccion francia', 'france national', 'francia nacional',
+      'seleccion alemania', 'seleccion germany', 'germany national', 'alemania nacional',
+      'seleccion españa', 'seleccion spain', 'spain national', 'españa nacional',
+      'seleccion portugal', 'portugal national', 'portugal nacional',
+      'seleccion england', 'seleccion inglaterra', 'england national', 'inglaterra nacional',
+      'seleccion italia', 'seleccion italy', 'italy national', 'italia nacional',
+      'seleccion uruguay', 'uruguay national', 'uruguay nacional',
+      'seleccion mexico', 'mexico national', 'mexico nacional',
+      'seleccion colombia', 'colombia national', 'colombia nacional',
+      'seleccion holanda', 'seleccion netherlands', 'netherlands national', 'holanda nacional',
+      'world cup', 'copa mundial', 'copa america', 'euro'
+    ],
     country: 'Mundial',
     flagCode: 'un'
   }
@@ -141,7 +156,47 @@ export default async function LeaguePage({ params }) {
       return true
     }
 
-    // 2. SEGUNDA PRIORIDADE: Verificar keywords específicas no título
+    // 2. FILTRO ESPECIAL PARA SELEÇÕES NACIONAIS
+    if (slug === 'national-teams') {
+      // Lista de países (em português, espanhol e inglês)
+      const countries = [
+        'argentina', 'brasil', 'brazil', 'france', 'francia',
+        'germany', 'alemania', 'spain', 'españa', 'portugal',
+        'england', 'inglaterra', 'italy', 'italia', 'uruguay',
+        'mexico', 'colombia', 'chile', 'peru', 'ecuador',
+        'netherlands', 'holanda', 'belgium', 'belgica',
+        'croatia', 'croacia', 'denmark', 'dinamarca',
+        'sweden', 'suecia', 'norway', 'noruega',
+        'japan', 'japon', 'korea', 'corea',
+        'usa', 'states', 'eeuu', 'estados unidos'
+      ]
+
+      // Lista de clubes para EXCLUIR (evitar falsos positivos)
+      const clubKeywords = [
+        'boca', 'river', 'racing', 'independiente', 'san lorenzo',
+        'newells', 'rosario central', 'velez', 'estudiantes',
+        'barcelona', 'real madrid', 'atletico', 'sevilla',
+        'manchester', 'liverpool', 'chelsea', 'arsenal', 'tottenham',
+        'milan', 'inter', 'juventus', 'napoli', 'roma',
+        'bayern', 'dortmund', 'leipzig',
+        'psg', 'marseille', 'lyon', 'monaco',
+        'ajax', 'psv', 'feyenoord',
+        'benfica', 'porto', 'sporting'
+      ]
+
+      // Verifica se tem nome de país no título
+      const hasCountry = countries.some(country => title.includes(country))
+
+      // Verifica se NÃO é de um clube
+      const isNotClub = !clubKeywords.some(club => title.includes(club))
+
+      // Se tem país E não é clube, provavelmente é seleção nacional
+      if (hasCountry && isNotClub) {
+        return true
+      }
+    }
+
+    // 3. SEGUNDA PRIORIDADE: Verificar keywords específicas no título
     // (usa nomes completos de times para evitar falsos positivos)
     const hasSpecificKeyword = leagueData.titleKeywords.some(keyword =>
       title.includes(keyword.toLowerCase())

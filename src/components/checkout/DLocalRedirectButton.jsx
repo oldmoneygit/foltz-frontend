@@ -90,8 +90,14 @@ export default function DLocalRedirectButton({
 
         // Retrieve payment status
         const response = await fetch(`/api/dlocal/retrieve-payment?payment_id=${paymentId}`);
-        const data = await response.json();
 
+        // Tratamento defensivo de resposta
+        if (!response.ok) {
+          console.error('[DLOCAL-BTN] Failed to retrieve payment status:', response.status);
+          return; // Continue polling
+        }
+
+        const data = await response.json();
         console.log('[DLOCAL-BTN] Payment status:', data.status);
 
         if (data.status === 'PAID') {
@@ -111,9 +117,35 @@ export default function DLocalRedirectButton({
             }),
           });
 
-          if (updateResponse.ok) {
-            const updateData = await updateResponse.json();
-            console.log('[DLOCAL-BTN] ✅ Order updated successfully!');
+          // Tratamento defensivo de resposta
+          if (!updateResponse.ok) {
+            const contentType = updateResponse.headers.get('content-type');
+            let errorMessage = 'Failed to update order';
+
+            try {
+              if (contentType && contentType.includes('application/json')) {
+                const errorData = await updateResponse.json();
+                errorMessage = errorData.error || errorData.message || errorMessage;
+              } else {
+                const errorText = await updateResponse.text();
+                console.error('[DLOCAL-BTN] Update order error (non-JSON):', errorText);
+                errorMessage = `Update order error (${updateResponse.status})`;
+              }
+            } catch (parseError) {
+              console.error('[DLOCAL-BTN] Failed to parse update error:', parseError);
+            }
+
+            console.error('[DLOCAL-BTN] ❌ Update order failed:', errorMessage);
+
+            // Mostrar mensagem de erro mas continuar (pedido foi criado)
+            setPaymentStatus('pending_confirmation');
+            setStatusMessage('Pago recibido. Tu pedido está siendo procesado.');
+            setLoading(false);
+            return;
+          }
+
+          const updateData = await updateResponse.json();
+          console.log('[DLOCAL-BTN] ✅ Order updated successfully!');
 
             setPaymentStatus('success');
             setStatusMessage('¡Pago exitoso! Redirigiendo...');
@@ -512,8 +544,26 @@ export default function DLocalRedirectButton({
       });
 
       if (!paymentResponse.ok) {
-        const errorData = await paymentResponse.json();
-        throw new Error(errorData.error || 'Failed to create payment');
+        // Tratamento defensivo: verificar se resposta é JSON
+        const contentType = paymentResponse.headers.get('content-type');
+        let errorMessage = 'Failed to create payment';
+
+        try {
+          if (contentType && contentType.includes('application/json')) {
+            const errorData = await paymentResponse.json();
+            errorMessage = errorData.error || errorData.message || errorMessage;
+          } else {
+            // Se não for JSON, pegar texto da resposta
+            const errorText = await paymentResponse.text();
+            console.error('[DLOCAL-BTN] Non-JSON error response:', errorText);
+            errorMessage = `Payment API error (${paymentResponse.status})`;
+          }
+        } catch (parseError) {
+          console.error('[DLOCAL-BTN] Failed to parse error response:', parseError);
+          errorMessage = `Payment API error (${paymentResponse.status})`;
+        }
+
+        throw new Error(errorMessage);
       }
 
       const paymentData = await paymentResponse.json();
@@ -534,8 +584,26 @@ export default function DLocalRedirectButton({
       });
 
       if (!orderResponse.ok) {
-        const errorData = await orderResponse.json();
-        throw new Error(errorData.error || 'Failed to create pending order');
+        // Tratamento defensivo: verificar se resposta é JSON
+        const contentType = orderResponse.headers.get('content-type');
+        let errorMessage = 'Failed to create pending order';
+
+        try {
+          if (contentType && contentType.includes('application/json')) {
+            const errorData = await orderResponse.json();
+            errorMessage = errorData.error || errorData.message || errorMessage;
+          } else {
+            // Se não for JSON, pegar texto da resposta
+            const errorText = await orderResponse.text();
+            console.error('[DLOCAL-BTN] Non-JSON error response:', errorText);
+            errorMessage = `Order API error (${orderResponse.status})`;
+          }
+        } catch (parseError) {
+          console.error('[DLOCAL-BTN] Failed to parse error response:', parseError);
+          errorMessage = `Order API error (${orderResponse.status})`;
+        }
+
+        throw new Error(errorMessage);
       }
 
       const orderResult = await orderResponse.json();
