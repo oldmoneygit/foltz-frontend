@@ -386,7 +386,7 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
                 packData.itemCount === 0 ? 'opacity-50 cursor-not-allowed pointer-events-none' : ''
               }`}
             >
-              <span className="leading-tight text-center">Pagar con tarjeta, transferencia o efectivo</span>
+              <span className="leading-tight text-center">Pagar con efectivo, transferencia o tarjeta de débito</span>
             </Link>
 
             {/* Info Text */}
@@ -457,7 +457,7 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
             href="/checkout"
             className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg font-bold text-xs uppercase tracking-wide hover:bg-blue-700 active:scale-95 transition-all flex items-center justify-center shadow-lg border-2 border-[#DAF10D]/30"
           >
-            <span className="text-center">Pago Argentina (3 métodos)</span>
+            <span className="text-center">Efectivo, transferencia o débito</span>
           </Link>
         )}
       </div>
