@@ -1,5 +1,9 @@
 import { NextResponse } from 'next/server'
 
+// Force Node.js runtime for external API calls
+export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
+
 const PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID
 const ACCESS_TOKEN = process.env.META_CONVERSIONS_API_TOKEN
 const API_VERSION = 'v21.0'
