@@ -194,9 +194,9 @@ export default function DLocalRedirectButton({
           // Clear cart
           clearCart();
 
-          // Redirect to success page
+          // Redirect to success page with confirmed status
           setTimeout(() => {
-            router.push(`/checkout/success?order=${updateData.order.name}`);
+            router.push(`/checkout/success?order=${updateData.order.name}&status=confirmed`);
           }, 2000);
 
         } else if (data.status === 'REJECTED' || data.status === 'CANCELLED') {
