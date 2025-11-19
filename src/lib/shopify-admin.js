@@ -57,6 +57,53 @@ function extractNumericId(gid) {
 }
 
 /**
+ * Formatar número de telefone para o formato E.164
+ * Shopify aceita apenas E.164: +[country code][number]
+ *
+ * Argentina: +54XXXXXXXXXX (10 dígitos após +54)
+ *
+ * Exemplos:
+ * "1123456789" -> "+541123456789"
+ * "541123456789" -> "+541123456789"
+ * "+541123456789" -> "+541123456789"
+ * "11 2345-6789" -> "+541123456789"
+ */
+function formatPhoneE164(phone, countryCode = '54') {
+  if (!phone || phone.trim() === '') return null;
+
+  // Remove todos os caracteres não numéricos e espaços
+  let cleaned = phone.replace(/[^\d+]/g, '');
+
+  // Se já começa com +, remove para reprocessar
+  if (cleaned.startsWith('+')) {
+    cleaned = cleaned.substring(1);
+  }
+
+  // Remove código do país se já estiver presente
+  if (cleaned.startsWith(countryCode)) {
+    cleaned = cleaned.substring(countryCode.length);
+  }
+
+  // Remove zero inicial se houver (comum em Argentina)
+  if (cleaned.startsWith('0')) {
+    cleaned = cleaned.substring(1);
+  }
+
+  // Valida comprimento mínimo (Argentina tem 10 dígitos)
+  if (cleaned.length < 10) {
+    console.warn('[SHOPIFY-ADMIN] Phone number too short:', phone);
+    return null; // Retorna null se inválido, melhor que enviar formato errado
+  }
+
+  // Trunca se for muito longo
+  if (cleaned.length > 10) {
+    cleaned = cleaned.substring(0, 10);
+  }
+
+  return `+${countryCode}${cleaned}`;
+}
+
+/**
  * Criar pedido na Shopify a partir de dados do dlocal
  *
  * @param {Object} orderData - Dados do pedido
@@ -115,6 +162,10 @@ export async function createShopifyOrderFromDLocal(orderData) {
     return lineItem;
   });
 
+  // Formatar telefone para E.164
+  const formattedShippingPhone = formatPhoneE164(shippingAddress.phone);
+  const formattedCustomerPhone = customer?.phone ? formatPhoneE164(customer.phone) : null;
+
   // Preparar endereço de envio
   const shipping = {
     first_name: shippingAddress.firstName,
@@ -125,7 +176,7 @@ export async function createShopifyOrderFromDLocal(orderData) {
     province: shippingAddress.province,
     zip: shippingAddress.zip,
     country: shippingAddress.country,
-    phone: shippingAddress.phone || '',
+    ...(formattedShippingPhone && { phone: formattedShippingPhone }),
   };
 
   // Determine financial status
@@ -173,7 +224,7 @@ export async function createShopifyOrderFromDLocal(orderData) {
           email: customer.email,
           first_name: customer.firstName,
           last_name: customer.lastName,
-          ...(customer.phone && customer.phone.trim() !== '' && { phone: customer.phone }),
+          ...(formattedCustomerPhone && { phone: formattedCustomerPhone }),
         },
       }),
 
