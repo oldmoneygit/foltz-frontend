@@ -158,12 +158,12 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
         // Add dLocal Go payment instructions APENAS NO PRIMEIRO PRODUTO (aparece no checkout UI)
         if (isFirstItem) {
           lineItem.attributes.push({
-            key: '💳 Métodos de Pago',
-            value: 'Efectivo, Transferencia, Tarjeta de Débito'
+            key: '💳 Querés pagar con métodos locales?',
+            value: 'Transferencia, Tarjeta de Débito, Efectivo (Rapipago, Pago Fácil, QR Interoperable)'
           })
           lineItem.attributes.push({
-            key: '📍 Instrucciones',
-            value: 'Selecciona "dLocal Go Local Payments" en el checkout'
+            key: '👉 Cómo proceder',
+            value: 'Seleccioná la opción "dLocal Go Local Payments" en la siguiente pantalla'
           })
           isFirstItem = false // Marcar que já adicionamos no primeiro
         }
