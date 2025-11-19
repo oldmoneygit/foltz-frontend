@@ -147,60 +147,57 @@ export default function DLocalRedirectButton({
           const updateData = await updateResponse.json();
           console.log('[DLOCAL-BTN] ✅ Order updated successfully!');
 
-            setPaymentStatus('success');
-            setStatusMessage('¡Pago exitoso! Redirigiendo...');
+          setPaymentStatus('success');
+          setStatusMessage('¡Pago exitoso! Redirigiendo...');
 
-            // 🎯 TRACK PURCHASE EVENT (META PIXEL)
-            try {
-              const cartData = formatCartData(cartItems);
-              const shippingCost = shippingCost || 0;
-              const finalTotal = totalArs + shippingCost;
+          // 🎯 TRACK PURCHASE EVENT (META PIXEL)
+          try {
+            const cartData = formatCartData(cartItems);
+            const shippingCost = shippingCost || 0;
+            const finalTotal = totalArs + shippingCost;
 
-              await trackPixelEvent('Purchase', {
-                ...cartData,
-                transaction_id: paymentId, // dlocal payment ID
-                order_id: updateData.order.name, // Shopify order number
-                order_number: updateData.order.orderNumber,
-                value: finalTotal,
-                currency: 'ARS',
-                shipping: shippingCost,
-                has_pack: hasPack,
-                savings: promotionalSavings || 0,
-                payment_method: 'dlocal_go',
-                shipping_method: shippingMethod,
-              }, {
-                // User data for Advanced Matching
-                email: shippingInfo.email,
-                firstName: shippingInfo.firstName,
-                lastName: shippingInfo.lastName,
-                phone: shippingInfo.phone,
-                city: shippingInfo.city,
-                state: shippingInfo.province,
-                zip: shippingInfo.zip,
-                country: shippingInfo.country,
-              });
+            await trackPixelEvent('Purchase', {
+              ...cartData,
+              transaction_id: paymentId, // dlocal payment ID
+              order_id: updateData.order.name, // Shopify order number
+              order_number: updateData.order.orderNumber,
+              value: finalTotal,
+              currency: 'ARS',
+              shipping: shippingCost,
+              has_pack: hasPack,
+              savings: promotionalSavings || 0,
+              payment_method: 'dlocal_go',
+              shipping_method: shippingMethod,
+            }, {
+              // User data for Advanced Matching
+              email: shippingInfo.email,
+              firstName: shippingInfo.firstName,
+              lastName: shippingInfo.lastName,
+              phone: shippingInfo.phone,
+              city: shippingInfo.city,
+              state: shippingInfo.province,
+              zip: shippingInfo.zip,
+              country: shippingInfo.country,
+            });
 
-              console.log('[DLOCAL-BTN] 🎯 Purchase event tracked successfully!');
-            } catch (pixelError) {
-              console.error('[DLOCAL-BTN] ⚠️ Failed to track Purchase event:', pixelError);
-              // Don't block the flow if tracking fails
-            }
-
-            // Close popup if still open
-            if (popupRef.current && !popupRef.current.closed) {
-              popupRef.current.close();
-            }
-
-            // Clear cart
-            clearCart();
-
-            // Redirect to success page
-            setTimeout(() => {
-              router.push(`/checkout/success?order=${updateData.order.name}`);
-            }, 2000);
-          } else {
-            throw new Error('Failed to update order status');
+            console.log('[DLOCAL-BTN] 🎯 Purchase event tracked successfully!');
+          } catch (pixelError) {
+            console.error('[DLOCAL-BTN] ⚠️ Failed to track Purchase event:', pixelError);
+            // Don't block the flow if tracking fails
           }
+
+          // Close popup if still open
+          if (popupRef.current && !popupRef.current.closed) {
+            popupRef.current.close();
+          }
+
+          // Clear cart
+          clearCart();
+
+          // Redirect to success page
+          setTimeout(() => {
+            router.push(`/checkout/success?order=${updateData.order.name}`);
+          }, 2000);
 
         } else if (data.status === 'REJECTED' || data.status === 'CANCELLED') {
           console.log('[DLOCAL-BTN] ❌ Payment rejected/cancelled');
