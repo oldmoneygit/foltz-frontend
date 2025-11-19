@@ -12,28 +12,16 @@ const CustomerFeedbacks = () => {
   const [preloadedImages, setPreloadedImages] = useState(new Set())
   const { isRetro } = useStoreMode()
 
-  // Array com todas as imagens de feedback ÚNICAS (1.png a 19.png) - duplicatas removidas
+  // Array com todas as imagens de feedback verificadas
   const feedbacks = useMemo(() => [
     { id: 1, image: '/images/feedbacks/1.png' },
     { id: 2, image: '/images/feedbacks/2.png' },
     { id: 3, image: '/images/feedbacks/3.png' },
-    { id: 4, image: '/images/feedbacks/4.png' },
-    { id: 5, image: '/images/feedbacks/5.png' },
-    { id: 6, image: '/images/feedbacks/6.png' },
-    { id: 7, image: '/images/feedbacks/7.png' },
-    { id: 8, image: '/images/feedbacks/8.png' },
-    { id: 9, image: '/images/feedbacks/9.png' },
-    { id: 10, image: '/images/feedbacks/10.png' },
-    { id: 11, image: '/images/feedbacks/11.png' },
-    { id: 12, image: '/images/feedbacks/12.png' },
-    { id: 13, image: '/images/feedbacks/13.png' },
-    { id: 14, image: '/images/feedbacks/14.png' },
-    { id: 15, image: '/images/feedbacks/15.png' },
-    { id: 16, image: '/images/feedbacks/16.png' },
-    { id: 17, image: '/images/feedbacks/17.png' },
-    { id: 18, image: '/images/feedbacks/18.png' },
-    { id: 19, image: '/images/feedbacks/19.png' },
-    { id: 20, isInstagram: true }
+    { id: 4, image: '/images/feedbacks/5.png' },
+    { id: 5, image: '/images/feedbacks/6.png' },
+    { id: 6, image: '/images/feedbacks/8.png' },
+    { id: 7, image: '/images/feedbacks/9.png' },
+    { id: 8, isInstagram: true }
   ], [])
 
   // Preload próximas imagens do carousel usando img tag (mais confiável)
