@@ -139,7 +139,6 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
             key: '🚚 Envío',
             value: 'GRATIS incluido'
           })
-          isFirstItem = false // Marcar que já adicionamos no primeiro
         }
 
         // Add Mystery Box attributes
@@ -154,6 +153,19 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
               value: formatPrice(packData.mysteryBoxDiscount)
             })
           }
+        }
+
+        // Add dLocal Go payment instructions APENAS NO PRIMEIRO PRODUTO (aparece no checkout UI)
+        if (isFirstItem) {
+          lineItem.attributes.push({
+            key: '💳 Métodos de Pago',
+            value: 'Efectivo, Transferencia, Tarjeta de Débito'
+          })
+          lineItem.attributes.push({
+            key: '📍 Instrucciones',
+            value: 'Selecciona "dLocal Go Local Payments" en el checkout'
+          })
+          isFirstItem = false // Marcar que já adicionamos no primeiro
         }
 
         lineItems.push(lineItem)
@@ -193,23 +205,11 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
         }
       }
 
-      // Preparar cart attributes e note para dLocal Go
-      const cartOptions = {
-        attributes: [
-          {
-            key: '💳 Métodos Locales',
-            value: 'Efectivo, transferencia o débito disponibles'
-          },
-          {
-            key: '📍 Instrucciones',
-            value: 'Selecciona "dLocal Go Local Payments" (2da opción)'
-          }
-        ],
-        note: '💡 Para pagar con efectivo, transferencia o débito:\nSelecciona "dLocal Go Local Payments" (segunda opción) y elige tu método: Rapipago, Pago Fácil, transferencia bancaria o tarjeta de débito.'
-      }
+      // Preparar note detalhada para dLocal Go (aparece nas notas do pedido)
+      const note = '💡 MÉTODOS DE PAGO LOCALES DISPONIBLES\n\nPara pagar con efectivo, transferencia o tarjeta de débito argentinas, selecciona la opción "dLocal Go Local Payments" en el checkout.\n\nIncluye: Rapipago, Pago Fácil, transferencia bancaria y tarjetas de débito.\n\nContacto: Instagram @foltz.ar'
 
-      // Create Shopify checkout
-      const checkout = await createCheckoutWithItems(lineItems, cartOptions)
+      // Create Shopify checkout (note aparece nas order notes)
+      const checkout = await createCheckoutWithItems(lineItems, { note })
 
       // Salvar carrinho ANTES de redirecionar (para persistir quando o usuário voltar)
       if (saveCart) {

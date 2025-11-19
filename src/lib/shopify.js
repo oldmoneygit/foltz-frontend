@@ -453,10 +453,9 @@ export async function searchProducts(searchQuery, limit = 20) {
 
 /**
  * Create a cart with multiple items (Nova Cart API - substituiu Checkout API)
- * @param {Array} lineItems - Array of {variantId, quantity}
+ * @param {Array} lineItems - Array of {variantId, quantity, attributes}
  * @param {Object} options - Optional cart settings
- * @param {Array} options.attributes - Cart-level attributes
- * @param {string} options.note - Order note
+ * @param {string} options.note - Order note (aparece nas order notes)
  * @returns {Promise<Object>} Cart object with checkoutUrl
  */
 export async function createCheckoutWithItems(lineItems, options = {}) {
@@ -513,7 +512,7 @@ export async function createCheckoutWithItems(lineItems, options = {}) {
         quantity: item.quantity
       }
 
-      // Adicionar custom attributes se existirem (personalização)
+      // Adicionar line item attributes se existirem (aparecem no checkout UI)
       if (item.attributes && item.attributes.length > 0) {
         line.attributes = item.attributes
       }
@@ -522,12 +521,7 @@ export async function createCheckoutWithItems(lineItems, options = {}) {
     })
   }
 
-  // Adicionar cart attributes se fornecidos
-  if (options.attributes && options.attributes.length > 0) {
-    cartInput.attributes = options.attributes
-  }
-
-  // Adicionar note se fornecida
+  // Adicionar note se fornecida (aparece nas order notes)
   if (options.note) {
     cartInput.note = options.note
   }
