@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 import { ShoppingCart, Truck, Tag, CreditCard, Loader2 } from 'lucide-react'
 import { createCheckoutWithItems, findVariantBySize } from '@/lib/shopify'
 import { triggerInitiateCheckout } from '@/components/MetaPixelEvents'
@@ -344,7 +345,9 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
           </div>
         )}
 
-        {/* Checkout Button */}
+        {/* Checkout Buttons - DUAL CHECKOUT */}
+
+        {/* Botón Amarillo - Shopify Checkout (Original) */}
         <button
           onClick={handleCheckout}
           disabled={isCheckingOut || packData.itemCount === 0}
@@ -362,6 +365,36 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
             </>
           )}
         </button>
+
+        {/* Feature Flag Check - Only show if dlocal is enabled */}
+        {process.env.NEXT_PUBLIC_ENABLE_DLOCAL_CHECKOUT === 'true' && (
+          <>
+            {/* Divider */}
+            <div className="relative">
+              <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-t border-white/10"></div>
+              </div>
+              <div className="relative flex justify-center text-xs uppercase">
+                <span className="bg-black px-2 text-white/40">o</span>
+              </div>
+            </div>
+
+            {/* Botón Azul - dlocal Checkout (Nuevo) */}
+            <Link
+              href="/checkout"
+              className={`w-full bg-blue-600 text-white py-4 px-6 rounded-lg font-bold text-xs uppercase tracking-wide hover:bg-blue-700 active:scale-95 transition-all duration-300 shadow-lg shadow-blue-600/20 flex items-center justify-center border-2 border-[#DAF10D]/30 hover:border-[#DAF10D]/50 ${
+                packData.itemCount === 0 ? 'opacity-50 cursor-not-allowed pointer-events-none' : ''
+              }`}
+            >
+              <span className="leading-tight text-center">Pagar con tarjeta, transferencia o efectivo</span>
+            </Link>
+
+            {/* Info Text */}
+            <p className="text-white/40 text-xs text-center -mt-2">
+              💳 Aceptamos todas las tarjetas argentinas, transferencias y efectivo
+            </p>
+          </>
+        )}
 
         {/* Security Badge */}
         <div className="pt-4 border-t border-white/10">
@@ -399,10 +432,11 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
 
       {/* Botão Fixo Mobile - Sempre visível ao rolar */}
       <div className="fixed bottom-0 left-0 right-0 lg:hidden bg-black border-t-2 border-brand-yellow p-4 z-[60] shadow-2xl">
+        {/* Botão Amarelo - Shopify (Mobile) */}
         <button
           onClick={handleCheckout}
           disabled={isCheckingOut || packData.itemCount === 0}
-          className="w-full bg-brand-yellow text-black py-4 rounded-lg font-bold text-lg uppercase tracking-wide hover:bg-yellow-400 active:scale-95 transition-all flex items-center justify-center gap-2 shadow-lg min-h-[56px] disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full bg-brand-yellow text-black py-4 rounded-lg font-bold text-lg uppercase tracking-wide hover:bg-yellow-400 active:scale-95 transition-all flex items-center justify-center gap-2 shadow-lg min-h-[56px] disabled:opacity-50 disabled:cursor-not-allowed mb-2"
         >
           {isCheckingOut ? (
             <>
@@ -416,6 +450,16 @@ const CartSummary = ({ subtotal, cartItems, saveCart }) => {
             </>
           )}
         </button>
+
+        {/* Botão Azul - dlocal (Mobile) */}
+        {process.env.NEXT_PUBLIC_ENABLE_DLOCAL_CHECKOUT === 'true' && packData.itemCount > 0 && (
+          <Link
+            href="/checkout"
+            className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg font-bold text-xs uppercase tracking-wide hover:bg-blue-700 active:scale-95 transition-all flex items-center justify-center shadow-lg border-2 border-[#DAF10D]/30"
+          >
+            <span className="text-center">Pago Argentina (3 métodos)</span>
+          </Link>
+        )}
       </div>
 
       {/* Espaçador para não sobrepor conteúdo em mobile */}
